@@ -1,2 +1,1 @@
 In game UI will show hp, controll buttons, interaction button, pause menu button
-Damage taken? Damage done?
