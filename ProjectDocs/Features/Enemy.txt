@@ -1,0 +1,6 @@
+Different types of enemies. Each one has different hp, attack type, damage,
+fire rate, movement speed and behaviour at all.
+Enemies can take damage and die.
+Enemies can attack the player.
+Enemies can find player and move towards him.
+It will be a system that spawn enemies(Probably will use ObjectPool pattern).

@@ -1,0 +1,20 @@
+Will be three classes of player suits. Each one will have different hp, name, id, and weapon that suit use now.
+Weapon will determine shooting behaviour.
+Player can move left and rigth and jump.
+When player near the ladder, he can move up and down by using a ladder.
+Player can take damage, heal, die, respawn.
+Player can choose what weapon to use and also he can choose what suit he will use.
+
+Properties:
+- SuitHealth;
+- SuitName;
+- SuitID;
+- CurrentWeapon;
+
+Behaviour:
+- TakeDamage
+- Die
+- Move
+- Jump
+- Respawn
+- Shoot

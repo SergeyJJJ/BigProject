@@ -1,0 +1,10 @@
+Each weapon has different fire rate, damage amount, skin and shooting effect(VFX and SFX)
+
+Properties:
+- Texture
+- DamageAmount
+- FireRate
+
+Behaviour:
+- Shoot
+- Reaload?
