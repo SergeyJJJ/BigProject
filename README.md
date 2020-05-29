@@ -1,2 +1,2 @@
 # BigProject
-2d platformer, made with Unity
+2d platformer, made with Unity.
