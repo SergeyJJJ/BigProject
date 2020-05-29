@@ -1,3 +1,5 @@
+General description:
+
 Will be three classes of player suits. Each one will have different hp, name, id, and weapon that suit use now.
 Weapon will determine shooting behaviour.
 Player can move left or rigth and jump.
@@ -12,9 +14,45 @@ Properties:
 - CurrentWeapon;
 
 Behaviour:
-- TakeDamage *
-- Die *
-- Move *
-- Jump *
-- Respawn *
-- Shoot *
+- TakeDamage;
+- Die;?
+- Move;
+- Jump;
+- Respawn;?
+- Shoot;
+----------------------------------------------------------------------------------------------
+Player will consist of three(or more in future) main parts:
++ Movement system (PlayerMovement.cs)
++ Suit system (parent script - Suit.cs and child scripts MedicSuit.cs, TankSuit.cs, Soldier.cs)
+-----------------------------------------------------------------------------------------------
+Movement system:
+*PlayerMovement.cs
+    Class data:
+    + float moveSpeed
+    + float jumpHeight
+
+    Class interface:
+    + Move() // Player can move left or right depending on parametr
+    + Jump() // Player can Jump
+
+    Private Methods:
+    + IsOnGround()
+-----------------------------------------------------------------------------------------------
+Suit System:
+*Suit.cs
+    Class data:
+    + string name;
+    + string description;
+    + int id;
+    + int health;
+    + weapon ??
+
+    Class Interface:
+    + shoot()??
+    + takeDamage();
+    + respawn()??
+    + ultimate()?
+
+*AnySuit.cs : Suit.cs
+    // Override some functionality
+    // Add some specific behaviour
