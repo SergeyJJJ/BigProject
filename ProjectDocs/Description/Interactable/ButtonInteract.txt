@@ -1,0 +1,8 @@
+Button Interact
+Script will Activate Interect() method from interactable object,
+which player encontered with.
+
+Data:
+    - Object to activate;
+Beahaviour:
+    - Activate Objects Interact method; 

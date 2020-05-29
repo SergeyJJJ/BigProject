@@ -6,6 +6,7 @@ Player can move left or rigth and jump.
 When player near the ladder, he can move up and down by using a ladder.
 Player can take damage, heal, die, respawn.
 Player can choose what weapon to use and also he can choose what suit he will use.
+Player can interect with something
 
 Properties:
 - SuitHealth;
@@ -21,9 +22,10 @@ Behaviour:
 - Respawn;?
 - Shoot;
 ----------------------------------------------------------------------------------------------
-Player will consist of two(or more in future) main parts:
+Player will consist of three(or more in future) main parts:
 + Movement system (PlayerMovement.cs)
 + Suit system (parent script - Suit.cs and child scripts MedicSuit.cs, TankSuit.cs, Soldier.cs)
++ Player interaction (PlayerInterection.cs)
 -----------------------------------------------------------------------------------------------
 Movement system:
 *PlayerMovement.cs
@@ -57,3 +59,12 @@ Suit System:
 *AnySuit.cs : Suit.cs
     // Override some functionality
     // Add some specific behaviour
+-----------------------------------------------------------------------------------------------
+Player Interaction
+PlayerInterection.cs
+Player has a intearaction trigger. When player trigger something, PlayerInteracrtion script will try to 
+get IInteractable script. If the thing the player encountered doesn't have IInteractacble script,
+nothing will happen. Else we will activate the button, and pass ButtonInteract script gameObbject that
+we encountered. Try to use OnCollisionExit() to disable the button. Also if there more than one object
+to interact with, script will pass to button gameObject which is closest to player. If distances is equal 
+script will choose randomly.
