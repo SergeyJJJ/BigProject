@@ -1,0 +1,20 @@
+Heal the player. Different heal type will have different amount of health point that will be added to
+player health.
+
+Properties:
+- Healt points;
+
+Behabiour:
+- AddHealt;
+-----------------------------------------------------------------------------------------------------
+Heal System:
+*HealBox.cs : IInteractable.cs
+    Class data:
+    + int HealtPointCapacity
+
+    Class interface:
+    + Interact() // Hold interact actions
+
+    Private Methods:
+    + AddHealth(Capacity) // Add health to the player
+

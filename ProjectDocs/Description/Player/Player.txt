@@ -11,7 +11,7 @@ Properties:
 - SuitHealth;
 - SuitName;
 - SuitID;
-- CurrentWeapon;
+- CurrentWeapon;??
 
 Behaviour:
 - TakeDamage;
@@ -21,7 +21,7 @@ Behaviour:
 - Respawn;?
 - Shoot;
 ----------------------------------------------------------------------------------------------
-Player will consist of three(or more in future) main parts:
+Player will consist of two(or more in future) main parts:
 + Movement system (PlayerMovement.cs)
 + Suit system (parent script - Suit.cs and child scripts MedicSuit.cs, TankSuit.cs, Soldier.cs)
 -----------------------------------------------------------------------------------------------
@@ -49,7 +49,8 @@ Suit System:
 
     Class Interface:
     + shoot()??
-    + takeDamage();
+    + takeDamage(how many?);
+    + heal(how many?);
     + respawn()??
     + ultimate()?
 

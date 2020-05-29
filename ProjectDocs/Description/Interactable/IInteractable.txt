@@ -1,0 +1,4 @@
+Interface that gives the ability to interact with the thing.
+
+Interface functionality to inplement in interactable things scripts:
+ + Interact() // Allow player to interact with something
