@@ -68,3 +68,6 @@ nothing will happen. Else we will activate the button, and pass ButtonInteract s
 we encountered. Try to use OnCollisionExit() to disable the button. Also if there more than one object
 to interact with, script will pass to button gameObject which is closest to player. If distances is equal 
 script will choose randomly.
+
+Another variant to check if player can interact with object its just calculate the distance between player and
+object.

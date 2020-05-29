@@ -1,0 +1,11 @@
+DamageZones it`s a zones that will apply periodic or instant damage to player (and may be to enemies).
+
+Now we have three DamageZones:
+* Water;
+* Acid;
+* Spikes;
+
+Each one DamageZone will have trigger or collider to check if player (and may be enemies) is in danger zone
+If it is than DamageZone will apply damage to player.
+
+Also every DamageZone will have its own specific behawiour.
