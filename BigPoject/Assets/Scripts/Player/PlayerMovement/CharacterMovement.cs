@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class CharacterMovement : MonoBehaviour
@@ -15,8 +13,8 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] private CustomMovementButton _rightButton = null;
     [SerializeField] private CustomMovementButton _upButton = null;
     [SerializeField] private CustomMovementButton _downButton = null;
-    private Vector3 _currentVelocity = Vector2.zero;                         // Hold curent velocity from Vector3.SmoothDump().
-    private Rigidbody2D _characterRigidBody; 
+    private Vector3 _currentVelocity = Vector2.zero;                         // Hold current rate of change from Vector3.SmoothDump().
+    private Rigidbody2D _characterRigidBody;                                 // Hold character Rigidbody2d component.
     
     private void Start()
     {
@@ -26,7 +24,7 @@ public class CharacterMovement : MonoBehaviour
     private void FixedUpdate()
     {
         HorizontalMovement();
-        //VerticalMovement();
+        VerticalMovement();
     }
 
 
@@ -46,7 +44,7 @@ public class CharacterMovement : MonoBehaviour
 
         // Snooth out velocity and apple it to the character.
         _characterRigidBody.velocity = Vector3.SmoothDamp(_characterRigidBody.velocity, targetVelocity,
-                                                          ref _currentVelocity, _movementSmoothing);                                   
+                                                          ref _currentVelocity, _movementSmoothing);   
     }
 
 

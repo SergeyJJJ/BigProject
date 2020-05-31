@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2824605566533303579}
   - component: {fileID: 4746452946232570811}
   - component: {fileID: 3809531251737504216}
+  - component: {fileID: 8277626492255796097}
   - component: {fileID: -1767523105098985399}
   - component: {fileID: 1372963192}
   m_Layer: 0
@@ -99,11 +100,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _horizontalSpeed: 6
   _verticalSpeed: 3
-  _movementSmoothing: 0.07
+  _movementSmoothing: 0.05
   _leftButton: {fileID: 0}
   _rightButton: {fileID: 0}
   _upButton: {fileID: 0}
   _downButton: {fileID: 0}
+--- !u!114 &8277626492255796097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8702310545741433508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e52c6accdfdf6a4c830b7c979ae206a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _jumpForce: 400
 --- !u!50 &-1767523105098985399
 Rigidbody2D:
   serializedVersion: 4
@@ -119,8 +133,8 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_GravityScale: 15
+  m_Material: {fileID: 6200000, guid: 8b4e3c426390a73468889d989e07aa3c, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -134,7 +148,7 @@ PolygonCollider2D:
   m_GameObject: {fileID: 8702310545741433508}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 8b4e3c426390a73468889d989e07aa3c, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
