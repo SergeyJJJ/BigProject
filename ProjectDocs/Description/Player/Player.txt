@@ -28,17 +28,9 @@ Player will consist of three(or more in future) main parts:
 + Player interaction (PlayerInterection.cs)
 -----------------------------------------------------------------------------------------------
 Movement system:
-*PlayerMovement.cs
-    Class data:
-    + float moveSpeed
-    + float jumpHeight
-
-    Class interface:
-    + Move() // Player can move left or right depending on parametr
-    + Jump() // Player can Jump
-
-    Private Methods:
-    + IsOnGround()
+*CharacterMovement.cs
+*CharacterJump.cs
+*CustomMovementButton.cs
 -----------------------------------------------------------------------------------------------
 Suit System:
 *Suit.cs

@@ -1,0 +1,8 @@
+* Character Movement
+ + Player moves smoothly
+ + Player moves left and right
+ + When Player is near the ladder, he can move up and down
+
+* Character Jumping
+ + Player can jump during some time after he left the "ground" zone
+ + Controlled jump height (Jump performed by affect on pleyer velovity property	)
