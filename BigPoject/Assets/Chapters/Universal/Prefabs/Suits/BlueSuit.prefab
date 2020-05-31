@@ -98,9 +98,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7661c18bafa96945a21083de6c557d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _horizontalSpeed: 6
-  _verticalSpeed: 3
-  _movementSmoothing: 0.05
+  _horizontalSpeed: 10
+  _verticalSpeed: 7
+  _movementSmoothing: 0.055
   _leftButton: {fileID: 0}
   _rightButton: {fileID: 0}
   _upButton: {fileID: 0}
@@ -117,7 +117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e52c6accdfdf6a4c830b7c979ae206a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _jumpForce: 400
+  _jumpForce: 600
 --- !u!50 &-1767523105098985399
 Rigidbody2D:
   serializedVersion: 4
@@ -133,11 +133,11 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 15
+  m_GravityScale: 2
   m_Material: {fileID: 6200000, guid: 8b4e3c426390a73468889d989e07aa3c, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!60 &1372963192
 PolygonCollider2D:

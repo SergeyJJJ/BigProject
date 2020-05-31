@@ -11,6 +11,11 @@ public class CharacterJump : MonoBehaviour
         InitializeRigidBodyComponents();
     }
 
+    private void FixedUpdate()
+    {
+
+    }
+
 
     // Method that initialize RigidBodyComponents.
     private void InitializeRigidBodyComponents()
@@ -30,4 +35,9 @@ public class CharacterJump : MonoBehaviour
         // Apply force up to raise the character.
         _characterRigidBody.AddForce(jumpDirection, ForceMode2D.Force);
     }
+/*
+    private bool IsGrounded()
+    {
+
+    }*/
 }

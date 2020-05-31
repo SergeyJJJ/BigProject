@@ -1,20 +1,23 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class CharacterMovement : MonoBehaviour
 {    
+    private const short StopMovementSpeed = 0;                                // Value that stops movement in some direction.
     [Header("Movement controll")]
-    [SerializeField] private float _horizontalSpeed = 0f;                    // How fast character can run horizontally.
-    [SerializeField] private float _verticalSpeed = 0f;                      // How fast character can run vertically.
-    [Range(0f, 0.4f)] [SerializeField] private float _movementSmoothing = 0f;  // How mouch to smouth out character movement.  
+    [SerializeField] private float _horizontalSpeed = 0f;                     // How fast character can run horizontally.
+    [SerializeField] private float _verticalSpeed = 0f;                       // How fast character can run vertically.
+    [Range(0f, 0.4f)] [SerializeField] private float _movementSmoothing = 0f; // How mouch to smouth out character movement.  
     [Space]
     [Header("Controll buttons")]
     [SerializeField] private CustomMovementButton _leftButton = null;
     [SerializeField] private CustomMovementButton _rightButton = null;
     [SerializeField] private CustomMovementButton _upButton = null;
     [SerializeField] private CustomMovementButton _downButton = null;
-    private Vector3 _currentVelocity = Vector2.zero;                         // Hold current rate of change from Vector3.SmoothDump().
-    private Rigidbody2D _characterRigidBody;                                 // Hold character Rigidbody2d component.
+    private Vector3 _currentVelocity = Vector2.zero;                          // Hold curent velocity from Vector3.SmoothDump().
+    private Rigidbody2D _characterRigidBody;                                  // Hold character Rigidbody2d component.
     
     private void Start()
     {
@@ -23,8 +26,17 @@ public class CharacterMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        HorizontalMovement();
-        VerticalMovement();
+        // If appropriate buttons is enabled allow horizontal movement.
+        if (IsHorizontalMovementButtonsEnabled())
+        {
+            HorizontalMovement();
+        }
+
+        // If appropriate buttons is enabled allow vertical movement.
+        if (IsVerticalMovementButtonsEnabled())
+        {
+            VerticalMovement();
+        }
     }
 
 
@@ -42,9 +54,7 @@ public class CharacterMovement : MonoBehaviour
         // Find target character movement velocity.
         Vector2 targetVelocity = GetHorizontalTargetVelocity();
 
-        // Snooth out velocity and apple it to the character.
-        _characterRigidBody.velocity = Vector3.SmoothDamp(_characterRigidBody.velocity, targetVelocity,
-                                                          ref _currentVelocity, _movementSmoothing);   
+        SetSmoothedVelocity(targetVelocity);                             
     }
 
 
@@ -55,9 +65,15 @@ public class CharacterMovement : MonoBehaviour
         // Find target character movement velocity.
         Vector2 targetVelocity = GetVerticalTargetVelocity();
 
-        // Snooth out velocity and apple it to the character.
+        SetSmoothedVelocity(targetVelocity);                                
+    }
+
+
+    // Snooth out velocity and apply it to the character.
+    private void SetSmoothedVelocity(Vector2 targetVelocity)
+    {
         _characterRigidBody.velocity = Vector3.SmoothDamp(_characterRigidBody.velocity, targetVelocity,
-                                                          ref _currentVelocity, _movementSmoothing);                                   
+                                                          ref _currentVelocity, _movementSmoothing);
     }
 
 
@@ -74,6 +90,10 @@ public class CharacterMovement : MonoBehaviour
         else if (_rightButton.IsPressed)
         {
             targetVelocity = new Vector2(_horizontalSpeed, _characterRigidBody.velocity.y);
+        }
+        else
+        {
+            targetVelocity = new Vector2(StopMovementSpeed, _characterRigidBody.velocity.y);
         }
 
         // Return needed velocity.
@@ -95,8 +115,22 @@ public class CharacterMovement : MonoBehaviour
         {
             targetVelocity = new Vector2(_characterRigidBody.velocity.x, -_verticalSpeed);
         }
+        else
+        {
+            targetVelocity = new Vector2(_characterRigidBody.velocity.x, StopMovementSpeed);
+        }
 
         // Return needed velocity.
         return targetVelocity;
+    }
+
+    private bool IsHorizontalMovementButtonsEnabled()
+    {
+        return _leftButton.isActiveAndEnabled && _rightButton.isActiveAndEnabled;
+    }
+
+    private bool IsVerticalMovementButtonsEnabled()
+    {
+        return _upButton.isActiveAndEnabled && _downButton.isActiveAndEnabled;
     }
 }
