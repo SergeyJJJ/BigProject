@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class CustomMovementButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
+public class CustomMovementButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPointerExitHandler
 {
     public bool IsPressed{ get; private set; }
 
@@ -11,6 +11,11 @@ public class CustomMovementButton : MonoBehaviour, IPointerDownHandler, IPointer
     }
 
     public void OnPointerUp(PointerEventData eventData)
+    {
+        IsPressed = false;
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
     {
         IsPressed = false;
     }

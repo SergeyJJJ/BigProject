@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1118506233617382984}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GroundCheckPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3263637941013260341}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.2, y: -0.402, z: 0}
+  m_LocalPosition: {x: -0.15, y: -0.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2824605566533303579}
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 8277626492255796097}
   - component: {fileID: -1767523105098985399}
   - component: {fileID: 1372963192}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BlueSuit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -148,12 +148,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e52c6accdfdf6a4c830b7c979ae206a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _jumpVelocity: 4
+  _jumpVelocity: 11
+  _availableJumpTimeAfterFalling: 0.02
   _groundCheckPoint: {fileID: 1118506233617382984}
-  _grounCheckRadius: 0.2
+  _grounCheckRadius: 0.25
   _whatIsGound:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 512
+  _jumpButton: {fileID: 0}
 --- !u!50 &-1767523105098985399
 Rigidbody2D:
   serializedVersion: 4

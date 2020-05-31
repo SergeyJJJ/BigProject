@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class CharacterMovement : MonoBehaviour
@@ -19,10 +17,12 @@ public class CharacterMovement : MonoBehaviour
     private Vector3 _currentVelocity = Vector2.zero;                          // Hold curent velocity from Vector3.SmoothDump().
     private Rigidbody2D _characterRigidBody;                                  // Hold character Rigidbody2d component.
     
+
     private void Start()
     {
         InitializeRigidBodyComponents();
     }
+
 
     private void FixedUpdate()
     {
