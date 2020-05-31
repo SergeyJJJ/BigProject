@@ -5,7 +5,6 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class CharacterMovement : MonoBehaviour
 {    
-    private const short StopMovementSpeed = 0;                                // Value that stops movement in some direction.
     [Header("Movement controll")]
     [SerializeField] private float _horizontalSpeed = 0f;                     // How fast character can run horizontally.
     [SerializeField] private float _verticalSpeed = 0f;                       // How fast character can run vertically.
@@ -16,6 +15,7 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] private CustomMovementButton _rightButton = null;
     [SerializeField] private CustomMovementButton _upButton = null;
     [SerializeField] private CustomMovementButton _downButton = null;
+    private const short StopMovementSpeed = 0;                                // Value indicating that the object is not moving in some direction.
     private Vector3 _currentVelocity = Vector2.zero;                          // Hold curent velocity from Vector3.SmoothDump().
     private Rigidbody2D _characterRigidBody;                                  // Hold character Rigidbody2d component.
     

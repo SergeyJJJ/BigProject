@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3263637941013260341
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1118506233617382984}
+  m_Layer: 0
+  m_Name: GroundCheckPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1118506233617382984
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3263637941013260341}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.2, y: -0.402, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2824605566533303579}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8702310545741433508
 GameObject:
   m_ObjectHideFlags: 0
@@ -31,7 +61,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.32, y: -1.57, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1118506233617382984}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -117,7 +148,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e52c6accdfdf6a4c830b7c979ae206a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _jumpForce: 600
+  _jumpVelocity: 4
+  _groundCheckPoint: {fileID: 1118506233617382984}
+  _grounCheckRadius: 0.2
+  _whatIsGound:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!50 &-1767523105098985399
 Rigidbody2D:
   serializedVersion: 4
@@ -148,7 +184,7 @@ PolygonCollider2D:
   m_GameObject: {fileID: 8702310545741433508}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 8b4e3c426390a73468889d989e07aa3c, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
