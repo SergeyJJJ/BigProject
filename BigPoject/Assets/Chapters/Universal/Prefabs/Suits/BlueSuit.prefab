@@ -149,7 +149,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _jumpVelocity: 12
-  _availableJumpTimeAfterFalling: 0.2
+  _afterFallingJumpTime: 0.2
+  _pressBeforeGroundTime: 0.2
   _cutJumpHeight: 0.5
   _groundCheckPoint: {fileID: 1118506233617382984}
   _grounCheckRadius: 0.34

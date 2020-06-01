@@ -4,7 +4,8 @@ public class CharacterJump : MonoBehaviour
 {
     [Header("Jump controll")]
     [SerializeField] private float _jumpVelocity = 4;                      // Character jump force.
-    [SerializeField] private float _availableJumpTimeAfterFalling = 0f;    // The time during which the player can jump if he no longer touches the ground.
+    [SerializeField] private float _afterFallingJumpTime = 0f;             // The time during which the player can jump if he no longer touches the ground.
+    [SerializeField] private float _pressBeforeGroundTime = 0f;            // The time during which player can press jump button before touching the ground, and jump will be performed.
     [Range(0f, 1f)] [SerializeField] private float _cutJumpHeight = 1f;    // Cut jump height when player unpress the jump button. This variable allow us to controll jump height.
 
     [Space]
@@ -17,74 +18,93 @@ public class CharacterJump : MonoBehaviour
     [Header("Jump button")]
     [SerializeField] private CustomMovementButton _jumpButton = null;
 
-    private bool _isJumpbuttonWasReleased = true;                         // Check if button was released.
-    private bool _isGrounded = false;                                      // Determine if player is grounded or not.
+    private bool _isJumpButtonWasReleased = true;                          // Check if button was released.
     private Rigidbody2D _characterRigidBody = null;                        // Hold character Rigidbody2d component.
-    private float _lastGroundedTime = 0;                                   // Time when player touch the ground last time.
+    private float _afterFallingTimer = 0;                                  // Timer that count time after falling from the ground.
+    private float _pressBeforeGroundTimer = 0;                             // Timer that count time during which player can press jump button before touching the ground, and jump will be performed.
 
 
     private void Start()
     {
-        InitializeRigidBodyComponents();
+        InitializeRigidbodyComponents();
+        InitializeTimers();
     }
 
 
     private void FixedUpdate()
     {
-        // If button is is active and enabale
-        if (_jumpButton.isActiveAndEnabled)
+        // If button is active and enabale allow player to jump.
+        if (IsButtonEnabled())
         {
-            // If jump button is pressed
-            if (_jumpButton.IsPressed)
-            {
-                // Perform jump Actions
-                ButtonPressedJumpActions();
-            }
-            // Else if jump nuuton is relesaed and it wasn`t released
-            else if (!_jumpButton.IsPressed && !_isJumpbuttonWasReleased)
-            {
-                // perform button release actions
-                ButtonReleasedJumpActions();
-            }
+            CalculateJumpProcess();
         }
     }
 
 
-    // Method that initialize RigidBodyComponents.
-    private void InitializeRigidBodyComponents()
+    // Initialize rigidbody components.
+    private void InitializeRigidbodyComponents()
     {
         _characterRigidBody = gameObject.GetComponent<Rigidbody2D>();
     }
 
 
-    // Actions and calculations to do when player press jump button.
-    private void ButtonPressedJumpActions()
+    // Initilize timer components.
+    private void InitializeTimers()
     {
-        // If player is grounded and he still have time to jump
-        // change his vertical velocity to raise him up.
-        if (IsGrounded() || IsStillCanJump())
-        {
-            // Set player velocity.
-            _characterRigidBody.velocity = new Vector2(_characterRigidBody.velocity.x, _jumpVelocity);
-
-            // Set that the button wasn`t relesed.
-            _isJumpbuttonWasReleased = false;
-        }
+        _afterFallingTimer = _afterFallingJumpTime;
+        _pressBeforeGroundTimer = _pressBeforeGroundTime;
     }
 
 
-    // Actions and calculations to do when player releases jump button.
-    private void ButtonReleasedJumpActions()
+    // Jump processing method
+    private void CalculateJumpProcess()
     {
-        // If the player is falling down. 
-        if (_characterRigidBody.velocity.y > 0)
-        {
-            // Reduce player Y-Axis velocity
-            // by multiplying it to less then one coefficient.
-            _characterRigidBody.velocity = new Vector2(_characterRigidBody.velocity.x, _characterRigidBody.velocity.y * _cutJumpHeight);
+        // Decrement timers.
+        _afterFallingTimer -= Time.deltaTime;
+        _pressBeforeGroundTimer -= Time.deltaTime;
 
-            // Set that the button was released.
-            _isJumpbuttonWasReleased = true;
+        // If player touches the ground reset "after falling timer".
+        if (IsGrounded())
+        {
+            _afterFallingTimer = _afterFallingJumpTime;
+        }
+
+        // If jump button is pressed.
+        if (_jumpButton.IsPressed)
+        {   
+            // Set that the button is now relseased.
+            _isJumpButtonWasReleased = false;
+
+            // Reset "press before gound" timer.
+            _pressBeforeGroundTimer  = _pressBeforeGroundTime;
+        }
+
+        // If jump button is relesaed and it wasn`t released.
+        if (!_jumpButton.IsPressed && !_isJumpButtonWasReleased)
+        {
+            // Perform button release actions
+            // If the player is falling down. 
+            if (_characterRigidBody.velocity.y > 0)
+            {
+                // Cut player Y-Axis velocity
+                // by multiplying it to less then one coefficient.
+                _characterRigidBody.velocity = new Vector2(_characterRigidBody.velocity.x, _characterRigidBody.velocity.y * _cutJumpHeight);
+
+                // Set that the button was released.
+                _isJumpButtonWasReleased = true;
+            }
+        }
+        
+        // If the time after the falling is enough
+        // perform a jump.
+        if (_afterFallingTimer > 0 && _pressBeforeGroundTimer > 0)
+        {
+            // Set timers to zero to prevent multipy jumping.
+            _afterFallingTimer = 0;
+            _pressBeforeGroundTimer = 0;
+
+            // Set proper velocity to the player tp perform a jump.
+            _characterRigidBody.velocity = new Vector2(_characterRigidBody.velocity.x, _jumpVelocity);
         }
     }
 
@@ -93,7 +113,7 @@ public class CharacterJump : MonoBehaviour
     private bool IsGrounded()
     {
         // Set that the player is not on the ground.
-        _isGrounded = false;
+        bool _isGrounded = false;
         
         //Check if groundCheckPoint is not a null.
         if (_groundCheckPoint != null)
@@ -110,9 +130,6 @@ public class CharacterJump : MonoBehaviour
                 if ( colliders[colliderIndex].gameObject != gameObject)
                 {
                     _isGrounded = true;
-
-                    // Set time when player was grounded last time.
-                    _lastGroundedTime = Time.time;
                 }
             }
         }
@@ -121,14 +138,10 @@ public class CharacterJump : MonoBehaviour
         return _isGrounded;
     }
 
-    private bool IsStillCanJump()
-    {
-        // Calculate how much time pass after player was
-        // grounded last time.
-        float timePass = Time.time - _lastGroundedTime;
 
-        // Return true if player still have time to jump
-        // false if not.
-        return timePass < _availableJumpTimeAfterFalling;
+    // Check is jump button is enabled
+    private bool IsButtonEnabled()
+    {
+        return _jumpButton.isActiveAndEnabled;
     }
 }
