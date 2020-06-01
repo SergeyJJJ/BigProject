@@ -10,7 +10,6 @@ public class CharacterJump : MonoBehaviour
     [SerializeField] private CustomMovementButton _jumpButton = null;
     private bool _isGrounded = false;                                      // Determine if player is grounded or not.
     private Rigidbody2D _characterRigidBody = null;                        // Hold character Rigidbody2d component.
-    private const short StopMovementSpeed = 0;                             // Value indicating that the object is not moving in some direction.
     private float _lastGroundedTime = 0;
 
     private void Start()
@@ -42,18 +41,17 @@ public class CharacterJump : MonoBehaviour
     }
 
 
+    // Actions to do when player press jump button.
     private void ButtonPressedJumpActions()
     {
-        float zeroForce = 0f;
-
-        // Direction in which raise the character.
-        Vector2 jumpDirection = new Vector2(zeroForce, _jumpVelocity);
-
-        // If player is grounded chamnge his vertical velocity
-        // to raise him up.
+        // If player is grounded and he still have time to jump
+        // change his vertical velocity to raise him up.
         if (IsGrounded() || IsStillCanJump())
         {
-            _characterRigidBody.velocity = new Vector2(StopMovementSpeed, _jumpVelocity);
+            // Set player velocity.
+            _characterRigidBody.velocity = new Vector2(_characterRigidBody.velocity.x, _jumpVelocity);
+
+            // Set that the player is not on the ground.
             _isGrounded = false;
         }
     }

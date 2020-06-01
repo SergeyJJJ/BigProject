@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e52c6accdfdf6a4c830b7c979ae206a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _jumpVelocity: 11
+  _jumpVelocity: 15
   _availableJumpTimeAfterFalling: 0.02
   _groundCheckPoint: {fileID: 1118506233617382984}
   _grounCheckRadius: 0.25
@@ -171,7 +171,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 2
+  m_GravityScale: 3
   m_Material: {fileID: 6200000, guid: 8b4e3c426390a73468889d989e07aa3c, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
