@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e52c6accdfdf6a4c830b7c979ae206a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _jumpVelocity: 12
+  _jumpVelocity: 16
   _afterFallingJumpTime: 0.2
   _pressBeforeGroundTime: 0.2
   _cutJumpHeight: 0.5

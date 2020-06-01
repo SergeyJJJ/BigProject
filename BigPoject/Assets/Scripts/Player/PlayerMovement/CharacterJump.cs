@@ -51,8 +51,8 @@ public class CharacterJump : MonoBehaviour
     // Initilize timer components.
     private void InitializeTimers()
     {
-        _afterFallingTimer = _afterFallingJumpTime;
-        _pressBeforeGroundTimer = _pressBeforeGroundTime;
+        //_afterFallingTimer = _afterFallingJumpTime;
+        //_pressBeforeGroundTimer = _pressBeforeGroundTime;
     }
 
 
