@@ -2,15 +2,26 @@
 
 public class CharacterJump : MonoBehaviour
 {
+    [Header("Jump controll")]
     [SerializeField] private float _jumpVelocity = 4;                      // Character jump force.
-    [SerializeField] private float _availableJumpTimeAfterFalling = 0f;
+    [SerializeField] private float _availableJumpTimeAfterFalling = 0f;    // The time during which the player can jump if he no longer touches the ground.
+    [Range(0f, 1f)] [SerializeField] private float _cutJumpHeight = 1f;    // Cut jump height when player unpress the jump button. This variable allow us to controll jump height.
+
+    [Space]
+    [Header("Is on ground controll")]
     [SerializeField] private Transform _groundCheckPoint = null;           // A position marking where to check if the player is grounded.
     [SerializeField] private float _grounCheckRadius = 0.2f;               // Radius of the overlap circle to determine if grounded.
     [SerializeField] private LayerMask _whatIsGound = Physics2D.AllLayers; // A mask determine what is ground for the player.
+
+    [Space]
+    [Header("Jump button")]
     [SerializeField] private CustomMovementButton _jumpButton = null;
+
+    private bool _isJumpbuttonWasReleased = true;                         // Check if button was released.
     private bool _isGrounded = false;                                      // Determine if player is grounded or not.
     private Rigidbody2D _characterRigidBody = null;                        // Hold character Rigidbody2d component.
-    private float _lastGroundedTime = 0;
+    private float _lastGroundedTime = 0;                                   // Time when player touch the ground last time.
+
 
     private void Start()
     {
@@ -20,9 +31,21 @@ public class CharacterJump : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (IsJumpButtonEnabled() && IsJumpButtonPressed())
+        // If button is is active and enabale
+        if (_jumpButton.isActiveAndEnabled)
         {
-            Jump();
+            // If jump button is pressed
+            if (_jumpButton.IsPressed)
+            {
+                // Perform jump Actions
+                ButtonPressedJumpActions();
+            }
+            // Else if jump nuuton is relesaed and it wasn`t released
+            else if (!_jumpButton.IsPressed && !_isJumpbuttonWasReleased)
+            {
+                // perform button release actions
+                ButtonReleasedJumpActions();
+            }
         }
     }
 
@@ -34,14 +57,7 @@ public class CharacterJump : MonoBehaviour
     }
 
 
-    // Method that allows the character to jump.
-    private void Jump()
-    {
-        ButtonPressedJumpActions();
-    }
-
-
-    // Actions to do when player press jump button.
+    // Actions and calculations to do when player press jump button.
     private void ButtonPressedJumpActions()
     {
         // If player is grounded and he still have time to jump
@@ -51,8 +67,24 @@ public class CharacterJump : MonoBehaviour
             // Set player velocity.
             _characterRigidBody.velocity = new Vector2(_characterRigidBody.velocity.x, _jumpVelocity);
 
-            // Set that the player is not on the ground.
-            _isGrounded = false;
+            // Set that the button wasn`t relesed.
+            _isJumpbuttonWasReleased = false;
+        }
+    }
+
+
+    // Actions and calculations to do when player releases jump button.
+    private void ButtonReleasedJumpActions()
+    {
+        // If the player is falling down. 
+        if (_characterRigidBody.velocity.y > 0)
+        {
+            // Reduce player Y-Axis velocity
+            // by multiplying it to less then one coefficient.
+            _characterRigidBody.velocity = new Vector2(_characterRigidBody.velocity.x, _characterRigidBody.velocity.y * _cutJumpHeight);
+
+            // Set that the button was released.
+            _isJumpbuttonWasReleased = true;
         }
     }
 
@@ -60,6 +92,9 @@ public class CharacterJump : MonoBehaviour
     // Check if the player is grounded or not.
     private bool IsGrounded()
     {
+        // Set that the player is not on the ground.
+        _isGrounded = false;
+        
         //Check if groundCheckPoint is not a null.
         if (_groundCheckPoint != null)
         {
@@ -95,19 +130,5 @@ public class CharacterJump : MonoBehaviour
         // Return true if player still have time to jump
         // false if not.
         return timePass < _availableJumpTimeAfterFalling;
-    }
-
-
-    //Check if jump button is pressed.
-    private bool IsJumpButtonPressed()
-    {
-        return _jumpButton.IsPressed;
-    }
-
-
-    // Check if jump button is enabled.
-    private bool IsJumpButtonEnabled()
-    {
-        return _jumpButton.isActiveAndEnabled;
     }
 }

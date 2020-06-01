@@ -7,6 +7,7 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] private float _horizontalSpeed = 0f;                     // How fast character can run horizontally.
     [SerializeField] private float _verticalSpeed = 0f;                       // How fast character can run vertically.
     [Range(0f, 0.4f)] [SerializeField] private float _movementSmoothing = 0f; // How mouch to smouth out character movement.  
+
     [Space]
     [Header("Controll buttons")]
     [SerializeField] private CustomMovementButton _leftButton = null;
