@@ -2,37 +2,39 @@
 
 public class CameraFollow : MonoBehaviour
 {
-    [SerializeField] private Transform target = null;
-    [Range(1f,40f)] [SerializeField] public float laziness = 10f;
-    [SerializeField] public bool lookAtTarget = true;
-    [SerializeField] public bool takeOffsetFromInitialPos = true;
-    [SerializeField] public Vector3 generalOffset = Vector3.zero;
-    private Vector3 whereCameraShouldBe = Vector3.zero;
-    private bool warningAlreadyShown = false;
+    [SerializeField] private Transform _target = null;
+    [Range(0f, 0.4f)] [SerializeField] private float _laziness = 0f;
+    [SerializeField] private bool _lookAtTarget = true;
+    [SerializeField] private bool _takeOffsetFromInitialPos = true;
+    [SerializeField] private Vector3 _generalOffset = Vector3.zero;
+    private Vector3 _whereCameraShouldBe = Vector3.zero;
+    private bool _warningAlreadyShown = false;
+    private Vector3 _currentVelocity = Vector2.zero;
 
     private void Start()
     {
-        if (takeOffsetFromInitialPos && target != null) generalOffset = transform.position - target.position;
+        if (_takeOffsetFromInitialPos && _target != null) _generalOffset = transform.position - _target.position;
     }
 
-    void FixedUpdate()
+    private void LateUpdate()
     {
-        if (target != null)
+        if (_target != null)
         {
-            whereCameraShouldBe = target.position + generalOffset;
-            transform.position = Vector3.Lerp(transform.position, whereCameraShouldBe, 1 / laziness);
+            _whereCameraShouldBe = _target.position + _generalOffset;
+            transform.position = Vector3.SmoothDamp(transform.position, _whereCameraShouldBe,
+                                                          ref _currentVelocity, _laziness);
 
-            if (lookAtTarget)
+            if (_lookAtTarget)
             {
-                transform.LookAt(target);
+                transform.LookAt(_target);
             }
         } 
         else
         {
-            if (!warningAlreadyShown)
+            if (!_warningAlreadyShown)
             {
                 Debug.Log("Warning: You should specify a target in the simpleCamFollow script.", gameObject);
-                warningAlreadyShown = true;
+                _warningAlreadyShown = true;
             }
         }
     }

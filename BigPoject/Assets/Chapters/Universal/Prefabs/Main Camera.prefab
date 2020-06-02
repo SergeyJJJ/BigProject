@@ -110,8 +110,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d97aef6adf939848b9891dad4cf4dd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  laziness: 10
-  lookAtTarget: 1
-  takeOffsetFromInitialPos: 0
-  generalOffset: {x: 0, y: 0, z: -10}
+  _target: {fileID: 0}
+  _laziness: 0.25
+  _lookAtTarget: 1
+  _takeOffsetFromInitialPos: 0
+  _generalOffset: {x: 0, y: 0, z: -10}

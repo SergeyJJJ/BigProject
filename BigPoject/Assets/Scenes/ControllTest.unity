@@ -2012,7 +2012,7 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 474102764, guid: f5b4bc0a6d0c70942a273c4e5de96003, type: 3}
-      propertyPath: target
+      propertyPath: _target
       value: 
       objectReference: {fileID: 1891532599}
     - target: {fileID: 8376086278501332751, guid: f5b4bc0a6d0c70942a273c4e5de96003, type: 3}
