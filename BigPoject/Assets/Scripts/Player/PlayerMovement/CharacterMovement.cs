@@ -14,10 +14,11 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] private CustomMovementButton _rightButton = null;
     [SerializeField] private CustomMovementButton _upButton = null;
     [SerializeField] private CustomMovementButton _downButton = null;
+    
     private const short StopMovementSpeed = 0;                                // Value indicating that the object is not moving in some direction.
     private Vector3 _currentVelocity = Vector2.zero;                          // Hold curent velocity from Vector3.SmoothDump().
     private Rigidbody2D _characterRigidBody;                                  // Hold character Rigidbody2d component.
-    
+    private bool _isFacingRight = false;                                       // To determine which way the player is currently facing.
 
     private void Start()
     {
@@ -38,6 +39,8 @@ public class CharacterMovement : MonoBehaviour
         {
             VerticalMovement();
         }
+
+        Flip();
     }
 
 
@@ -124,6 +127,32 @@ public class CharacterMovement : MonoBehaviour
         // Return needed velocity.
         return targetVelocity;
     }
+
+
+    private void Flip()
+    {
+        if (_characterRigidBody.velocity.x > 0 && _isFacingRight)
+        {
+            RevertCharacter();
+        }
+        else if (_characterRigidBody.velocity.x < 0 && !_isFacingRight)
+        {
+            RevertCharacter();
+        }
+    }
+
+
+    private void RevertCharacter()
+    {
+        // Switch the way the player is labelled as facing.
+		_isFacingRight = !_isFacingRight;
+
+		// Multiply the player's x local scale by -1.
+		Vector3 theScale = transform.localScale;
+		theScale.x *= -1;
+		transform.localScale = theScale;
+    }
+
 
     private bool IsHorizontalMovementButtonsEnabled()
     {

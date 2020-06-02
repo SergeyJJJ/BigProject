@@ -538,10 +538,6 @@ PrefabInstance:
       propertyPath: _jumpButton
       value: 
       objectReference: {fileID: 666441631}
-    - target: {fileID: 8277626492255796097, guid: db841216772e4844187962a048cfddbb, type: 3}
-      propertyPath: _jumpVelocity
-      value: 15
-      objectReference: {fileID: 0}
     - target: {fileID: 8702310545741433508, guid: db841216772e4844187962a048cfddbb, type: 3}
       propertyPath: m_Name
       value: BlueSuit

@@ -1,8 +1,11 @@
 * Character Movement
- + Player moves smoothly
- + Player moves left and right
- + When Player is near the ladder, he can move up and down
+ + Can change vertical speed.
+ + Can change horizontal speed.
+ + Can change extent of movement smoothing.
 
 * Character Jumping
- + Player can jump during some time after he left the "ground" zone
- + Controlled jump height (Jump performed by affect on pleyer velovity property	)
+ + Can change jump velocity
+ + Can change time during which the player can jump after he fell form the ground.
+ + Can change time during which player can press jump button before touching the ground, and jump will be performed
+ + Can change extent of jump height controll.
+ + Can customize "ground check" parameters that determine if player is touching the ground and what actually is ground.
