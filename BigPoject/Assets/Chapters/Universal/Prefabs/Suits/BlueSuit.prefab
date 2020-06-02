@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3263637941013260341}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.15, y: -0.3, z: 0}
+  m_LocalPosition: {x: -0.15, y: -0.65, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2824605566533303579}
@@ -42,8 +42,10 @@ GameObject:
   - component: {fileID: 4746452946232570811}
   - component: {fileID: 3809531251737504216}
   - component: {fileID: 8277626492255796097}
+  - component: {fileID: 21399133001567398}
   - component: {fileID: -1767523105098985399}
   - component: {fileID: 7452835413203550249}
+  - component: {fileID: 1891532594}
   m_Layer: 8
   m_Name: BlueSuit
   m_TagString: Untagged
@@ -106,12 +108,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a9ff2a5de0c5ec04c8b4da4f1c6ad158, type: 3}
+  m_Sprite: {fileID: 9095853184155359625, guid: a9ff2a5de0c5ec04c8b4da4f1c6ad158, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 3.2, y: 3.2}
+  m_Size: {x: 1.1, y: 1.4}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -150,7 +152,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _jumpVelocity: 16
   _afterFallingJumpTime: 0.15
-  _pressBeforeGroundTime: 0.15
+  _pressBeforeGroundTime: 0.1
   _cutJumpHeight: 0.5
   _groundCheckPoint: {fileID: 1118506233617382984}
   _grounCheckRadius: 0.34
@@ -158,6 +160,18 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   _jumpButton: {fileID: 0}
+--- !u!114 &21399133001567398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8702310545741433508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b9e7770717091749a1ffba2618e39cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!50 &-1767523105098985399
 Rigidbody2D:
   serializedVersion: 4
@@ -192,16 +206,35 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.15448296, y: 0.19999999}
+  m_Offset: {x: -0.09917045, y: -0.005445957}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.2, y: 3.2}
-    newSize: {x: 3.2, y: 3.2}
+    oldSize: {x: 1.1, y: 1.4}
+    newSize: {x: 1.1, y: 1.4}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.71103406, y: 1.4}
+  m_Size: {x: 0.69523096, y: 1.4158039}
   m_EdgeRadius: 0
+--- !u!95 &1891532594
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8702310545741433508}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 20e9b1ace5a7e744a98655e80945a486, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

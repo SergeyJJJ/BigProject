@@ -24,10 +24,9 @@ public class CharacterJump : MonoBehaviour
     private float _pressBeforeGroundTimer = 0;                             // Timer that count time during which player can press jump button before touching the ground, and jump will be performed.
 
 
-    private void Start()
+    private void Awake()
     {
         InitializeRigidbodyComponents();
-        InitializeTimers();
     }
 
 
@@ -45,14 +44,6 @@ public class CharacterJump : MonoBehaviour
     private void InitializeRigidbodyComponents()
     {
         _characterRigidBody = gameObject.GetComponent<Rigidbody2D>();
-    }
-
-
-    // Initilize timer components.
-    private void InitializeTimers()
-    {
-        //_afterFallingTimer = _afterFallingJumpTime;
-        //_pressBeforeGroundTimer = _pressBeforeGroundTime;
     }
 
 
@@ -94,7 +85,7 @@ public class CharacterJump : MonoBehaviour
                 _isJumpButtonWasReleased = true;
             }
         }
-        
+
         // If the time after the falling is enough
         // perform a jump.
         if (_afterFallingTimer > 0 && _pressBeforeGroundTimer > 0)

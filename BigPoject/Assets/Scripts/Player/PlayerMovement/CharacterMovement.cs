@@ -14,13 +14,21 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] private CustomMovementButton _rightButton = null;
     [SerializeField] private CustomMovementButton _upButton = null;
     [SerializeField] private CustomMovementButton _downButton = null;
-    
+
+    // Events.
+    public delegate void OnRun();      
+    public static event OnRun onRun;                                          // Event that holds actions to do when player run.
+    public delegate void OnStop();
+    public static event OnStop onStop;
+
+
     private const short StopMovementSpeed = 0;                                // Value indicating that the object is not moving in some direction.
     private Vector3 _currentVelocity = Vector2.zero;                          // Hold curent velocity from Vector3.SmoothDump().
     private Rigidbody2D _characterRigidBody;                                  // Hold character Rigidbody2d component.
     private bool _isFacingRight = false;                                       // To determine which way the player is currently facing.
 
-    private void Start()
+
+    private void Awake()
     {
         InitializeRigidBodyComponents();
     }
@@ -58,6 +66,21 @@ public class CharacterMovement : MonoBehaviour
         // Find target character movement velocity.
         Vector2 targetVelocity = GetHorizontalTargetVelocity();
 
+        if (Mathf.Abs(targetVelocity.x) > 0.01f)
+        {
+            if (onRun != null)
+            {
+                onRun.Invoke();
+            }
+        }
+        else 
+        {
+            if (onStop != null)
+            {
+                onStop.Invoke();
+            }
+        }
+        
         SetSmoothedVelocity(targetVelocity);                             
     }
 
