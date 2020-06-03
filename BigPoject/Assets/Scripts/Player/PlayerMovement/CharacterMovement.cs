@@ -12,13 +12,11 @@ public class CharacterMovement : MonoBehaviour
     [Header("Controll buttons")]
     [SerializeField] private CustomMovementButton _leftButton = null;
     [SerializeField] private CustomMovementButton _rightButton = null;
-    [SerializeField] private CustomMovementButton _upButton = null;
-    [SerializeField] private CustomMovementButton _downButton = null;
 
     // Events.
     public delegate void OnRun();      
-    public static event OnRun onRun;                                          // Event that holds actions to do when player run.
-    public delegate void OnStop();
+    public static event OnRun onRun;                                          // Event that holds things to do when player run.
+    public delegate void OnStop();                                            // Evant that holds things to do when player stops running. 
     public static event OnStop onStop;
 
 
@@ -40,12 +38,6 @@ public class CharacterMovement : MonoBehaviour
         if (IsHorizontalMovementButtonsEnabled())
         {
             HorizontalMovement();
-        }
-
-        // If appropriate buttons is enabled allow vertical movement.
-        if (IsVerticalMovementButtonsEnabled())
-        {
-            VerticalMovement();
         }
 
         Flip();
@@ -85,18 +77,7 @@ public class CharacterMovement : MonoBehaviour
     }
 
 
-    // Method that perform character movement calculation,
-    // and actually move character in a vertical direction.
-    private void VerticalMovement()
-    {
-        // Find target character movement velocity.
-        Vector2 targetVelocity = GetVerticalTargetVelocity();
-
-        SetSmoothedVelocity(targetVelocity);                                
-    }
-
-
-    // Snooth out velocity and apply it to the character.
+    // Smooth out velocity and apply it to the character.
     private void SetSmoothedVelocity(Vector2 targetVelocity)
     {
         _characterRigidBody.velocity = Vector3.SmoothDamp(_characterRigidBody.velocity, targetVelocity,
@@ -121,30 +102,6 @@ public class CharacterMovement : MonoBehaviour
         else
         {
             targetVelocity = new Vector2(StopMovementSpeed, _characterRigidBody.velocity.y);
-        }
-
-        // Return needed velocity.
-        return targetVelocity;
-    }
-
-
-    // Method that return vertival target velocity based on button input.
-    private Vector2 GetVerticalTargetVelocity()
-    {
-        Vector2 targetVelocity = Vector2.zero;
-
-        // Check what button is pressed and set appropriate velocity.
-        if (_upButton.IsPressed)
-        {
-            targetVelocity = new Vector2(_characterRigidBody.velocity.x, _verticalSpeed);
-        }
-        else if (_downButton.IsPressed)
-        {
-            targetVelocity = new Vector2(_characterRigidBody.velocity.x, -_verticalSpeed);
-        }
-        else
-        {
-            targetVelocity = new Vector2(_characterRigidBody.velocity.x, StopMovementSpeed);
         }
 
         // Return needed velocity.
@@ -180,10 +137,5 @@ public class CharacterMovement : MonoBehaviour
     private bool IsHorizontalMovementButtonsEnabled()
     {
         return _leftButton.isActiveAndEnabled && _rightButton.isActiveAndEnabled;
-    }
-
-    private bool IsVerticalMovementButtonsEnabled()
-    {
-        return _upButton.isActiveAndEnabled && _downButton.isActiveAndEnabled;
     }
 }

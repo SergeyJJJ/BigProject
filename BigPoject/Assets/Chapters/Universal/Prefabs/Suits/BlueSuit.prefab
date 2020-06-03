@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3263637941013260341}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.15, y: -0.65, z: 0}
+  m_LocalPosition: {x: 0.06, y: -0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2824605566533303579}
@@ -42,13 +42,14 @@ GameObject:
   - component: {fileID: 4746452946232570811}
   - component: {fileID: 3809531251737504216}
   - component: {fileID: 8277626492255796097}
+  - component: {fileID: 8726022456352784372}
   - component: {fileID: 21399133001567398}
   - component: {fileID: -1767523105098985399}
   - component: {fileID: 7452835413203550249}
   - component: {fileID: 1891532594}
   m_Layer: 8
   m_Name: BlueSuit
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -105,10 +106,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 765987315
+  m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 9095853184155359625, guid: a9ff2a5de0c5ec04c8b4da4f1c6ad158, type: 3}
+  m_Sprite: {fileID: 8285379909243620130, guid: e19e23a5d3a7da14c8c98c73dc32b007, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -118,7 +119,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!114 &3809531251737504216
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -131,13 +132,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7661c18bafa96945a21083de6c557d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _horizontalSpeed: 10
+  _horizontalSpeed: 9
   _verticalSpeed: 7
   _movementSmoothing: 0.055
   _leftButton: {fileID: 0}
   _rightButton: {fileID: 0}
-  _upButton: {fileID: 0}
-  _downButton: {fileID: 0}
 --- !u!114 &8277626492255796097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,16 +149,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e52c6accdfdf6a4c830b7c979ae206a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _jumpVelocity: 16
+  _jumpVelocity: 15.6
   _afterFallingJumpTime: 0.15
   _pressBeforeGroundTime: 0.1
-  _cutJumpHeight: 0.5
+  _cutJumpHeight: 0.3
   _groundCheckPoint: {fileID: 1118506233617382984}
   _grounCheckRadius: 0.34
   _whatIsGound:
     serializedVersion: 2
     m_Bits: 512
   _jumpButton: {fileID: 0}
+--- !u!114 &8726022456352784372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8702310545741433508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58d9cc72b7f0612408f9c49fa19968d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _climbUpSpeed: 10
+  _climbDownSpeed: 4.5
+  _movementSmoothing: 0.055
+  _ladderClimbButton: {fileID: 0}
+  _scriptController: {fileID: 0}
 --- !u!114 &21399133001567398
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -206,18 +222,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.09917045, y: -0.005445957}
+  m_Offset: {x: 0.050184965, y: 0.6996876}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.1, y: 1.4}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 0.9, y: 1.4}
     newSize: {x: 1.1, y: 1.4}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.69523096, y: 1.4158039}
+  m_Size: {x: 0.59738684, y: 1.3990047}
   m_EdgeRadius: 0
 --- !u!95 &1891532594
 Animator:

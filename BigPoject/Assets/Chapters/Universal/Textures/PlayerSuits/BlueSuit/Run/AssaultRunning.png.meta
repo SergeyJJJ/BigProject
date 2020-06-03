@@ -14,6 +14,12 @@ TextureImporter:
   - first:
       213: 460750315662709893
     second: AssaultRunning_3
+  - first:
+      213: -4966370032166245795
+    second: AssaultRunning_4
+  - first:
+      213: 1721970981250694759
+    second: AssaultRunning_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -120,10 +126,10 @@ TextureImporter:
         serializedVersion: 2
         x: 10
         y: 43
-        width: 11
+        width: 9
         height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -141,10 +147,10 @@ TextureImporter:
         serializedVersion: 2
         x: 42
         y: 43
-        width: 11
-        height: 13
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 9
+        height: 14
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -162,10 +168,10 @@ TextureImporter:
         serializedVersion: 2
         x: 10
         y: 10
-        width: 11
-        height: 13
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 9
+        height: 14
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -183,10 +189,10 @@ TextureImporter:
         serializedVersion: 2
         x: 42
         y: 10
-        width: 11
+        width: 9
         height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
