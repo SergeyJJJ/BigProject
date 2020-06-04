@@ -34,7 +34,7 @@ public class CharacterJump : MonoBehaviour
     private float _afterFallingTimer = 0;                                  // Timer that count time after falling from the ground.
     private float _pressBeforeGroundTimer = 0;                             // Timer that count time during which player can press jump button before touching the ground, and jump will be performed.
     private bool _isGrounded = true;                                       // Determine if player is grounded now.
-
+    private bool _isFalling = false;                                       // Determine if player is falling.
 
     private void Awake()
     {
@@ -50,14 +50,6 @@ public class CharacterJump : MonoBehaviour
             CalculateJumpProcess();
         }
         
-        // If player is falling invoke falling actions.
-        if (IsFalling())
-        {
-            if (onFalling != null)
-            {
-                onFalling();  
-            }
-        }
     }
 
 
@@ -91,12 +83,13 @@ public class CharacterJump : MonoBehaviour
             _pressBeforeGroundTimer  = _pressBeforeGroundTime;
         }
 
-        // If jump button is relesaed and it wasn`t released.
-        if (!_jumpButton.IsPressed && !_isJumpButtonWasReleased)
+
+        // Perform button release actions
+        // If the player is falling down. 
+        if (IsFalling())
         {
-            // Perform button release actions
-            // If the player is falling down. 
-            if (IsFalling())
+            // If jump button is relesaed and it wasn`t released.
+            if (!_jumpButton.IsPressed && !_isJumpButtonWasReleased)
             {
                 // Cut player Y-Axis velocity
                 // by multiplying it to less then one coefficient.
@@ -171,14 +164,23 @@ public class CharacterJump : MonoBehaviour
 
     private bool IsFalling()
     {
-        bool isFalling = false;
+        bool wasFalling = _isFalling;
+        _isFalling = false;
 
         if (_characterRigidBody.velocity.y < -4f)
         {
-            isFalling = true;
+            _isFalling = true;
+
+            if (!wasFalling)
+            {
+                if (onFalling != null)
+                {
+                    onFalling();  
+                }
+            }
         }
 
-        return isFalling;
+        return _isFalling;
     }
 
 
