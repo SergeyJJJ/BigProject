@@ -173,7 +173,7 @@ public class CharacterJump : MonoBehaviour
     {
         bool isFalling = false;
 
-        if (_characterRigidBody.velocity.y < -2f)
+        if (_characterRigidBody.velocity.y < -4f)
         {
             isFalling = true;
         }

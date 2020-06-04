@@ -17,6 +17,12 @@ TextureImporter:
   - first:
       213: 8404794413573150453
     second: NewAssaultRun_4
+  - first:
+      213: -5624640606926635292
+    second: NewAssaultRun_5
+  - first:
+      213: -660623446195057121
+    second: NewAssaultRun_6
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -122,11 +128,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 9
-        y: 42
+        y: 73
         width: 10
         height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -143,11 +149,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 41
-        y: 42
+        y: 73
         width: 10
         height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -163,12 +169,12 @@ TextureImporter:
       name: NewAssaultRun_2
       rect:
         serializedVersion: 2
-        x: 9
-        y: 10
+        x: 73
+        y: 73
         width: 10
         height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -184,12 +190,12 @@ TextureImporter:
       name: NewAssaultRun_3
       rect:
         serializedVersion: 2
-        x: 41
-        y: 10
+        x: 9
+        y: 41
         width: 10
         height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -197,6 +203,69 @@ TextureImporter:
       bones: []
       spriteID: eb973ec3d61a86e20800000000000000
       internalID: 3344100213867641278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewAssaultRun_4
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 41
+        width: 10
+        height: 15
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f617371df3d3a470800000000000000
+      internalID: 8404794413573150453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewAssaultRun_5
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 41
+        width: 10
+        height: 15
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ee76ea2b2341f1b0800000000000000
+      internalID: -5624640606926635292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewAssaultRun_6
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 9
+        width: 10
+        height: 15
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1ecf3fc97ef4d6f0800000000000000
+      internalID: -660623446195057121
       vertices: []
       indices: 
       edges: []

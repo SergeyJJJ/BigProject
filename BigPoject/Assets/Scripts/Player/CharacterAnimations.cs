@@ -32,6 +32,7 @@ public class CharacterAnimations : MonoBehaviour
         CharacterJump.onJump += StartJumpAnimation;
         CharacterJump.onFalling += StopJumpAnimation;
         CharacterJump.onFalling += StartFallAnimation;
+        CharacterJump.onLand += StartLandingAnimation;
     }
 
 
@@ -72,12 +73,12 @@ public class CharacterAnimations : MonoBehaviour
 
     private void StartFallAnimation()
     {
-        //
+        _animator.SetTrigger("Falling");
     }
 
 
-    private void StopFallAnimation()
+    private void StartLandingAnimation()
     {
-        //
+        _animator.SetTrigger("Landing");
     }
 }
