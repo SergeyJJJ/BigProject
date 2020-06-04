@@ -22,9 +22,12 @@ public class CharacterJump : MonoBehaviour
 
     // Events.
     public delegate void OnJump();                                         
-    public static event OnJump onJump;                                     // Event that holds things to do when player jumping.
+    public static event OnJump onJump;                                     // Event that holds things to do when player is jumping.
+    public delegate void OnFalling();
+    public static event OnFalling onFalling;                               // Event that holds thing to do when character is falling.
     public delegate void OnLand();                                         
-    public static event OnLand onLand;                                     // Event that holds things to do when player landing.
+    public static event OnLand onLand;                                     // Event that holds things to do when character is landing.
+
 
     private bool _isJumpButtonWasReleased = true;                          // Check if button was released.
     private Rigidbody2D _characterRigidBody = null;                        // Hold character Rigidbody2d component.
@@ -45,6 +48,15 @@ public class CharacterJump : MonoBehaviour
         if (IsButtonEnabled())
         {
             CalculateJumpProcess();
+        }
+        
+        // If player is falling invoke falling actions.
+        if (IsFalling())
+        {
+            if (onFalling != null)
+            {
+                onFalling();  
+            }
         }
     }
 
@@ -84,7 +96,7 @@ public class CharacterJump : MonoBehaviour
         {
             // Perform button release actions
             // If the player is falling down. 
-            if (_characterRigidBody.velocity.y > 0)
+            if (IsFalling())
             {
                 // Cut player Y-Axis velocity
                 // by multiplying it to less then one coefficient.
@@ -154,6 +166,19 @@ public class CharacterJump : MonoBehaviour
         
         // Return status of player. Grounded or not.
         return _isGrounded;
+    }
+
+
+    private bool IsFalling()
+    {
+        bool isFalling = false;
+
+        if (_characterRigidBody.velocity.y < -2f)
+        {
+            isFalling = true;
+        }
+
+        return isFalling;
     }
 
 

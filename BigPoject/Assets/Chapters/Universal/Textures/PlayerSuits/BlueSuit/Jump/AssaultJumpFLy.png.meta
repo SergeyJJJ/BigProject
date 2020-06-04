@@ -1,7 +1,10 @@
 fileFormatVersion: 2
-guid: d7cbcf3584a19ea46b9aa3a1614f1bce
+guid: 29c76568ef075b44f9d65cd38a36c1a3
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -702261327523835908
+    second: AssaultJumpFLy_0
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -41,7 +44,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -101,7 +104,28 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: AssaultJumpFLy_0
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 13
+        width: 10
+        height: 12
+      alignment: 9
+      pivot: {x: 0.46899223, y: 0.43109384}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cff82791b011146f0800000000000000
+      internalID: -702261327523835908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

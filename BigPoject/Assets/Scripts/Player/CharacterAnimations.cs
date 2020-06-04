@@ -4,8 +4,8 @@
 [RequireComponent(typeof(SpriteRenderer))]
 public class CharacterAnimations : MonoBehaviour
 {
-    [SerializeField] private Sprite _defaultSprite;
-    [SerializeField] private Sprite _jumpSprite;
+    [SerializeField] private Sprite _defaultSprite = null;
+    [SerializeField] private Sprite _jumpSprite = null;
     private Animator _animator = null;
     private SpriteRenderer _spriteRenderer = null;
 
@@ -30,7 +30,8 @@ public class CharacterAnimations : MonoBehaviour
         CharacterMovement.onStop += StopRunAnimation;
 
         CharacterJump.onJump += StartJumpAnimation;
-        CharacterJump.onLand += StopJumpAnimation;
+        CharacterJump.onFalling += StopJumpAnimation;
+        CharacterJump.onFalling += StartFallAnimation;
     }
 
 
@@ -66,5 +67,17 @@ public class CharacterAnimations : MonoBehaviour
             _spriteRenderer.sprite = _defaultSprite;
             _animator.enabled = true;
         }
+    }
+
+
+    private void StartFallAnimation()
+    {
+        //
+    }
+
+
+    private void StopFallAnimation()
+    {
+        //
     }
 }
