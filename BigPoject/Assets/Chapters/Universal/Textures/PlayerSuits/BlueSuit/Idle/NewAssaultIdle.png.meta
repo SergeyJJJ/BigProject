@@ -1,106 +1,31 @@
 fileFormatVersion: 2
-guid: e19e23a5d3a7da14c8c98c73dc32b007
+guid: d6da20b8a2a482a46b7f0e3654d8d62d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8285379909243620130
-    second: AssaultIdle_0
+      213: 2935301807273544696
+    second: NewAssaultIdle_0
   - first:
-      213: 7267409442936696052
-    second: AssaultIdle_1
+      213: 6491845805535951140
+    second: NewAssaultIdle_1
   - first:
-      213: -1325505823526117360
-    second: AssaultIdle_2
+      213: -6226123655960942294
+    second: NewAssaultIdle_2
   - first:
-      213: 6815760196188406778
-    second: AssaultIdle_3
+      213: 636035529464056951
+    second: NewAssaultIdle_3
   - first:
-      213: -5565496188416705265
-    second: AssaultIdle_4
+      213: -3239729624653130408
+    second: NewAssaultIdle_4
   - first:
-      213: 4267817347226687015
-    second: AssaultIdle_5
+      213: 2912063314890856656
+    second: NewAssaultIdle_5
   - first:
-      213: 3971055535760636877
-    second: AssaultIdle_6
+      213: -128845161340676021
+    second: NewAssaultIdle_6
   - first:
-      213: 2540350498088449897
-    second: AssaultIdle_0
-  - first:
-      213: 3368233316025442926
-    second: AssaultIdle_1
-  - first:
-      213: 1894620997229464224
-    second: AssaultIdle_2
-  - first:
-      213: -4176981130178646868
-    second: AssaultIdle_3
-  - first:
-      213: -3361235543825186949
-    second: AssaultIdle_4
-  - first:
-      213: 1231392131216958352
-    second: AssaultIdle_5
-  - first:
-      213: 4497696160843980994
-    second: AssaultIdle_6
-  - first:
-      213: -6219256343472871757
-    second: AssaultIdle_7
-  - first:
-      213: -8631545211582419909
-    second: AssaultIdle_8
-  - first:
-      213: -1843455307049838309
-    second: AssaultIdle_9
-  - first:
-      213: -4541624360664303489
-    second: AssaultIdle_10
-  - first:
-      213: -4353431774625071500
-    second: AssaultIdle_11
-  - first:
-      213: -2235466004334572369
-    second: AssaultIdle_12
-  - first:
-      213: 5163094599003241894
-    second: AssaultIdle_13
-  - first:
-      213: -8994788391642556954
-    second: AssaultIdle_14
-  - first:
-      213: -7920889230382651499
-    second: AssaultIdle_15
-  - first:
-      213: 3448967156885140407
-    second: AssaultIdle_16
-  - first:
-      213: 1266913546759824588
-    second: AssaultIdle_17
-  - first:
-      213: 6112232961982108181
-    second: AssaultIdle_18
-  - first:
-      213: 933812085346121866
-    second: AssaultIdle_19
-  - first:
-      213: -6639308779238669314
-    second: AssaultIdle_20
-  - first:
-      213: -438581715128735314
-    second: AssaultIdle_21
-  - first:
-      213: 5253385285750787857
-    second: AssaultIdle_22
-  - first:
-      213: 2046502712173836080
-    second: AssaultIdle_23
-  - first:
-      213: -5010180336605434881
-    second: AssaultIdle_24
-  - first:
-      213: -471201153697365902
-    second: AssaultIdle_25
+      213: 3415854469540848749
+    second: NewAssaultIdle_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -202,148 +127,169 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: AssaultIdle_0
+      name: NewAssaultIdle_0
       rect:
         serializedVersion: 2
-        x: 10
+        x: 9
         y: 75
-        width: 9
+        width: 10
         height: 14
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9677c839153214320800000000000000
-      internalID: 2540350498088449897
+      spriteID: 8fb0a1b11794cb820800000000000000
+      internalID: 2935301807273544696
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AssaultIdle_1
+      name: NewAssaultIdle_1
       rect:
         serializedVersion: 2
-        x: 42
+        x: 41
         y: 75
-        width: 9
+        width: 10
         height: 14
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e622552fa5e5ebe20800000000000000
-      internalID: 3368233316025442926
+      spriteID: 42974976d5ba71a50800000000000000
+      internalID: 6491845805535951140
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AssaultIdle_3
+      name: NewAssaultIdle_2
       rect:
         serializedVersion: 2
-        x: 74
+        x: 73
         y: 75
-        width: 9
+        width: 10
         height: 14
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cac213eeac16806c0800000000000000
-      internalID: -4176981130178646868
+      spriteID: a29aac6b58d5899a0800000000000000
+      internalID: -6226123655960942294
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AssaultIdle_5
+      name: NewAssaultIdle_3
       rect:
         serializedVersion: 2
-        x: 10
+        x: 9
         y: 43
-        width: 9
+        width: 10
         height: 14
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 093e5608e98c61110800000000000000
-      internalID: 1231392131216958352
+      spriteID: 77c8b36b1f6a3d800800000000000000
+      internalID: 636035529464056951
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AssaultIdle_6
+      name: NewAssaultIdle_4
       rect:
         serializedVersion: 2
-        x: 42
+        x: 41
         y: 43
-        width: 9
+        width: 10
         height: 14
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2c06eb614d60b6e30800000000000000
-      internalID: 4497696160843980994
+      spriteID: 8559d3a321b2a03d0800000000000000
+      internalID: -3239729624653130408
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AssaultIdle_8
+      name: NewAssaultIdle_5
       rect:
         serializedVersion: 2
-        x: 74
+        x: 73
         y: 43
-        width: 9
+        width: 10
         height: 14
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b3ce7e8ac57963880800000000000000
-      internalID: -8631545211582419909
+      spriteID: 0d81487f72ab96820800000000000000
+      internalID: 2912063314890856656
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AssaultIdle_11
+      name: NewAssaultIdle_6
       rect:
         serializedVersion: 2
-        x: 10
+        x: 9
         y: 11
-        width: 9
+        width: 10
         height: 14
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 47ef29fcdd08593c0800000000000000
-      internalID: -4353431774625071500
+      spriteID: b48d2472200463ef0800000000000000
+      internalID: -128845161340676021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewAssaultIdle_7
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 11
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d64a965ca8d876f20800000000000000
+      internalID: 3415854469540848749
       vertices: []
       indices: 
       edges: []

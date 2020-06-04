@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3263637941013260341}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.06, y: -0, z: 0}
+  m_LocalPosition: {x: 0.1005, y: -0.68, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2824605566533303579}
@@ -109,12 +109,12 @@ SpriteRenderer:
   m_SortingLayerID: 765987315
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 8285379909243620130, guid: e19e23a5d3a7da14c8c98c73dc32b007, type: 3}
+  m_Sprite: {fileID: 2935301807273544696, guid: d6da20b8a2a482a46b7f0e3654d8d62d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.1, y: 1.4}
+  m_Size: {x: 1, y: 1.4}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -132,8 +132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7661c18bafa96945a21083de6c557d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _horizontalSpeed: 9
-  _verticalSpeed: 7
+  _horizontalSpeed: 9.75
   _movementSmoothing: 0.055
   _leftButton: {fileID: 0}
   _rightButton: {fileID: 0}
@@ -154,7 +153,7 @@ MonoBehaviour:
   _pressBeforeGroundTime: 0.1
   _cutJumpHeight: 0.3
   _groundCheckPoint: {fileID: 1118506233617382984}
-  _grounCheckRadius: 0.34
+  _grounCheckRadius: 0.29
   _whatIsGound:
     serializedVersion: 2
     m_Bits: 512
@@ -188,6 +187,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b9e7770717091749a1ffba2618e39cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _defaultSprite: {fileID: 2935301807273544696, guid: d6da20b8a2a482a46b7f0e3654d8d62d, type: 3}
+  _jumpSprite: {fileID: 21300000, guid: d7cbcf3584a19ea46b9aa3a1614f1bce, type: 3}
 --- !u!50 &-1767523105098985399
 Rigidbody2D:
   serializedVersion: 4
@@ -222,18 +223,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.050184965, y: 0.6996876}
+  m_Offset: {x: 0.10067415, y: 0.004455924}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0}
-    oldSize: {x: 0.9, y: 1.4}
-    newSize: {x: 1.1, y: 1.4}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1.4}
+    newSize: {x: 1, y: 1.4}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.59738684, y: 1.3990047}
+  m_Size: {x: 0.5916481, y: 1.3885787}
   m_EdgeRadius: 0
 --- !u!95 &1891532594
 Animator:

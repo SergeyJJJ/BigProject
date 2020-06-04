@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(BoxCollider2D))]
 public class CharacterJump : MonoBehaviour
 {
     [Header("Jump controll")]
@@ -10,19 +12,19 @@ public class CharacterJump : MonoBehaviour
 
     [Space]
     [Header("Is on ground controll")]
-    [SerializeField] private Transform _groundCheckPoint = null;           // A position marking where to check if the player is grounded.
-    [SerializeField] private float _grounCheckRadius = 0.2f;               // Radius of the overlap circle to determine if grounded.
-    [SerializeField] private LayerMask _whatIsGound = Physics2D.AllLayers; // A mask determine what is ground for the player.
+    [SerializeField] private Transform _groundCheckPoint = null;           // A position marking where to check if the character is grounded.
+    [SerializeField] private float _grounCheckRadius = 0.2f;               // Radius of the overlap circle to determine if character is grounded.
+    [SerializeField] private LayerMask _whatIsGound = Physics2D.AllLayers; // A mask determine what is ground for the character.
 
     [Space]
     [Header("Jump button")]
     [SerializeField] private CustomMovementButton _jumpButton = null;
 
     // Events.
-    public delegate void OnJump();                                         // Event that holds things to do when player jump.
-    public static event OnJump onJump;
-    public delegate void OnLand();
-    public static event OnLand onLand;
+    public delegate void OnJump();                                         
+    public static event OnJump onJump;                                     // Event that holds things to do when player jumping.
+    public delegate void OnLand();                                         
+    public static event OnLand onLand;                                     // Event that holds things to do when player landing.
 
     private bool _isJumpButtonWasReleased = true;                          // Check if button was released.
     private Rigidbody2D _characterRigidBody = null;                        // Hold character Rigidbody2d component.

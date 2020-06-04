@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(BoxCollider2D))]
 public class CharacterMovement : MonoBehaviour
 {    
     [Header("Movement controll")]
     [SerializeField] private float _horizontalSpeed = 0f;                     // How fast character can run horizontally.
-    [SerializeField] private float _verticalSpeed = 0f;                       // How fast character can run vertically.
     [Range(0f, 0.4f)] [SerializeField] private float _movementSmoothing = 0f; // How mouch to smouth out character movement.  
 
     [Space]
@@ -15,7 +15,7 @@ public class CharacterMovement : MonoBehaviour
 
     // Events.
     public delegate void OnRun();      
-    public static event OnRun onRun;                                          // Event that holds things to do when player run.
+    public static event OnRun onRun;                                          // Event that holds things to do when player running.
     public delegate void OnStop();                                            // Evant that holds things to do when player stops running. 
     public static event OnStop onStop;
 
