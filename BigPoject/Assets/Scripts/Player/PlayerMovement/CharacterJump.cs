@@ -5,16 +5,17 @@
 public class CharacterJump : MonoBehaviour
 {
     [Header("Jump controll")]
-    [SerializeField] private float _jumpVelocity = 4;                      // Character jump force.
+    [SerializeField] private float _jumpVelocity = 0;                      // Character jump velocity.
     [SerializeField] private float _afterFallingJumpTime = 0f;             // The time during which the player can jump if he no longer touches the ground.
     [SerializeField] private float _pressBeforeGroundTime = 0f;            // The time during which player can press jump button before touching the ground, and jump will be performed.
-    [Range(0f, 1f)] [SerializeField] private float _cutJumpHeight = 1f;    // Cut jump height when player unpress the jump button. This variable allow us to controll jump height.
+    [Range(0f, 1f), SerializeField] private float _cutJumpHeight = 0f;     // The multiplier by which is multiplied the length of the jump when falling.
+                                                                           // Allows you to adjust the dependence of the height of the jump on the duration of pressing.
 
     [Space]
     [Header("Is on ground controll")]
     [SerializeField] private Transform _groundCheckPoint = null;           // A position marking where to check if the character is grounded.
-    [SerializeField] private float _grounCheckRadius = 0.2f;               // Radius of the overlap circle to determine if character is grounded.
-    [SerializeField] private LayerMask _whatIsGound = Physics2D.AllLayers; // A mask determine what is ground for the character.
+    [SerializeField] private float _grounCheckRadius = 0f;                 // Radius of the overlap circle to determine if character is grounded.
+    [SerializeField] private LayerMask _whatIsGound = Physics2D.AllLayers; // A mask determine what is the ground for the character.
 
     [Space]
     [Header("Jump button")]
@@ -29,12 +30,16 @@ public class CharacterJump : MonoBehaviour
     public static event OnLand onLand;                                     // Event that holds things to do when character is landing.
 
 
-    private bool _isJumpButtonWasReleased = true;                          // Check if button was released.
     private Rigidbody2D _characterRigidBody = null;                        // Hold character Rigidbody2d component.
+
+    /*
+    private bool _isJumpButtonWasReleased = true;                          // Check if button was released.
     private float _afterFallingTimer = 0;                                  // Timer that count time after falling from the ground.
     private float _pressBeforeGroundTimer = 0;                             // Timer that count time during which player can press jump button before touching the ground, and jump will be performed.
     private bool _isGrounded = true;                                       // Determine if player is grounded now.
     private bool _isFalling = false;                                       // Determine if player is falling.
+    */
+
 
     private void Awake()
     {
@@ -42,7 +47,7 @@ public class CharacterJump : MonoBehaviour
     }
 
 
-    private void FixedUpdate()
+    /*private void FixedUpdate()
     {
         // If button is active and enabale allow player to jump.
         if (IsButtonEnabled())
@@ -50,6 +55,46 @@ public class CharacterJump : MonoBehaviour
             CalculateJumpProcess();
         }
         
+    }*/
+
+
+    private void FixedUpdate()
+    {
+        if button is isActiveAndEnabled and enabled.
+
+            Decrease timers: time after last touch of the earth, 
+            and time during which player can press jump button 
+            the jump button and jump will be performed.
+
+            If the conditions for the jump are met.
+
+                Set timers to zero.
+
+                Invoke jump event.
+
+            
+            If character is onFalling ground.
+
+                Set the last ground touch timer to the initial value.
+
+                Invoke landing event if character was not touch the ground before.
+
+            If character is falling
+
+                Invoke falling event if character was not in the fall before.
+
+                    If the button is released and it wasn`t released before.
+
+                        Set that the button is now was released.
+
+                        Cut the jump.
+
+            If button is pressed.
+
+                Reset timer that holds time, during which player can
+                press the jump button and jump will be performed.
+
+                Set that the button is now wasn`t released.
     }
 
 
@@ -60,6 +105,7 @@ public class CharacterJump : MonoBehaviour
     }
 
 
+    /*
     // Jump processing method
     private void CalculateJumpProcess()
     {
@@ -189,4 +235,4 @@ public class CharacterJump : MonoBehaviour
     {
         return _jumpButton.isActiveAndEnabled;
     }
-}
+}*/
