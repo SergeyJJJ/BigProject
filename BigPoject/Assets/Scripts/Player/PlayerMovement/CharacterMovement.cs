@@ -41,8 +41,6 @@ public class CharacterMovement : MonoBehaviour
         }
 
         Flip();
-
-        Time.timeScale = 0.2f;
     }
 
 

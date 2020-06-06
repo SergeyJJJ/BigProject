@@ -73,8 +73,6 @@ public class CharacterAnimations : MonoBehaviour
 
     private void StartFallAnimation()
     {
-        //int hash = Animator.StringToHash("Falling");
-        //_animator.Play(hash, 0, 0.25f);
         _animator.SetTrigger("Falling");
     }
 

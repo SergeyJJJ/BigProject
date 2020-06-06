@@ -768,14 +768,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 21399133001567398, guid: db841216772e4844187962a048cfddbb, type: 3}
-      propertyPath: _jumpSprite
-      value: 
-      objectReference: {fileID: -702261327523835908, guid: 29c76568ef075b44f9d65cd38a36c1a3, type: 3}
-    - target: {fileID: 1118506233617382984, guid: db841216772e4844187962a048cfddbb, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.009
-      objectReference: {fileID: 0}
     - target: {fileID: 2824605566533303579, guid: db841216772e4844187962a048cfddbb, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.115
@@ -828,18 +820,14 @@ PrefabInstance:
       propertyPath: _rightButton
       value: 
       objectReference: {fileID: 249648062}
-    - target: {fileID: 7452835413203550249, guid: db841216772e4844187962a048cfddbb, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.698205
-      objectReference: {fileID: 0}
-    - target: {fileID: 7452835413203550249, guid: db841216772e4844187962a048cfddbb, type: 3}
-      propertyPath: m_Size.y
-      value: 1.38662
-      objectReference: {fileID: 0}
     - target: {fileID: 8277626492255796097, guid: db841216772e4844187962a048cfddbb, type: 3}
       propertyPath: _jumpButton
       value: 
       objectReference: {fileID: 666441631}
+    - target: {fileID: 8277626492255796097, guid: db841216772e4844187962a048cfddbb, type: 3}
+      propertyPath: _cutJumpHeight
+      value: 0.25
+      objectReference: {fileID: 0}
     - target: {fileID: 8702310545741433508, guid: db841216772e4844187962a048cfddbb, type: 3}
       propertyPath: m_Name
       value: BlueSuit
