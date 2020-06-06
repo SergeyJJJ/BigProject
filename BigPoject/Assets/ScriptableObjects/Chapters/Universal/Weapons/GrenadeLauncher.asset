@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37d042dd89ba074586d46ead54f1df8, type: 3}
+  m_Name: GrenadeLauncher
+  m_EditorClassIdentifier: 
+  _name: Grenade Launcher
+  _descrpition: Grenade
+  _inHandImage: {fileID: 0}
+  _inSelectionMenuImage: {fileID: 0}
+  _bulletsAmount: 25
+  _fireRate: 5
