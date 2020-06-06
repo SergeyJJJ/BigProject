@@ -4,10 +4,10 @@
 [RequireComponent(typeof(SpriteRenderer))]
 public class CharacterAnimations : MonoBehaviour
 {
-    [SerializeField] private Sprite _defaultSprite = null;
-    [SerializeField] private Sprite _jumpSprite = null;
-    private Animator _animator = null;
-    private SpriteRenderer _spriteRenderer = null;
+    [SerializeField] private Sprite _defaultSprite = null;               // Contains default sprite of the character.
+    [SerializeField] private Sprite _jumpSprite = null;                  // Contains jump sprite of the character.
+    private Animator _animator = null;                                   // Contains animator compnent of the character.
+    private SpriteRenderer _spriteRenderer = null;                       // Contains spriteRenderer component of the character.
 
 
     private void Awake()

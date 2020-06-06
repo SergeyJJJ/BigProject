@@ -9,12 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f37d042dd89ba074586d46ead54f1df8, type: 3}
-  m_Name: RapidFireRiffle
+  m_Script: {fileID: 11500000, guid: 4a0c11ad37f26d147b379361f73ad406, type: 3}
+  m_Name: RapidFireRifle
   m_EditorClassIdentifier: 
-  _name: RapidFireRiffle
-  _descrpition: RapidFire
-  _inHandImage: {fileID: 0}
+  _name: Rapid-Fire Rifle
+  _descrpition: Rapid-Fire Rifle
+  _inGameImage: {fileID: 0}
   _inSelectionMenuImage: {fileID: 0}
-  _bulletsAmount: 150
-  _fireRate: 10
+  _bulletsAmount: 100
+  _fireRate: 60

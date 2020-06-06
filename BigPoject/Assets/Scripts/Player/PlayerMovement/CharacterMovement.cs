@@ -15,14 +15,14 @@ public class CharacterMovement : MonoBehaviour
 
     // Events.
     public delegate void OnRun();      
-    public static event OnRun onRun;                                          // Event that holds things to do when player running.
-    public delegate void OnStop();                                            // Evant that holds things to do when player stops running. 
+    public static event OnRun onRun;                                          // Event that contains things to do when player running.
+    public delegate void OnStop();                                            // Evant that contains things to do when player stops running. 
     public static event OnStop onStop;
 
 
     private const short StopMovementSpeed = 0;                                // Value indicating that the object is not moving in some direction.
-    private Vector3 _currentVelocity = Vector2.zero;                          // Hold curent velocity from Vector3.SmoothDump().
-    private Rigidbody2D _characterRigidBody;                                  // Hold character Rigidbody2d component.
+    private Vector3 _currentVelocity = Vector2.zero;                          // contains curent velocity from Vector3.SmoothDump().
+    private Rigidbody2D _characterRigidBody;                                  // contains character Rigidbody2d component.
     private bool _isFacingRight = false;                                       // To determine which way the player is currently facing.
 
 

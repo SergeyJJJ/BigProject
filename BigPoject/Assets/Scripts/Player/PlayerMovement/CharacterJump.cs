@@ -6,7 +6,7 @@ public class CharacterJump : MonoBehaviour
 {
     [Header("Jump controll")]
     [SerializeField] private float _jumpVelocity = 0;                      // Character jump velocity.
-    [SerializeField] private float _afterGroundTouchJumpTime = 0f;             // The time during which the player can jump if he no longer touches the ground.
+    [SerializeField] private float _afterGroundTouchJumpTime = 0f;         // The time during which the player can jump if he no longer touches the ground.
     [SerializeField] private float _pressBeforeGroundTime = 0f;            // The time during which player can press jump button before touching the ground, and jump will be performed.
     [Range(0f, 1f), SerializeField] private float _cutJumpHeight = 0f;     // The multiplier by which is multiplied the length of the jump when falling.
                                                                            // Allows you to adjust the dependence of the height of the jump on the duration of pressing.
@@ -23,15 +23,15 @@ public class CharacterJump : MonoBehaviour
 
     // Events.
     public delegate void OnJump();                                         
-    public static event OnJump onJump;                                     // Event that holds things to do when player is jumping.
+    public static event OnJump onJump;                                     // Event that contains things to do when player is jumping.
     public delegate void OnFalling();
-    public static event OnFalling onFalling;                               // Event that holds thing to do when character is falling.
+    public static event OnFalling onFalling;                               // Event that contains thing to do when character is falling.
     public delegate void OnLand();                                         
-    public static event OnLand onLand;                                     // Event that holds things to do when character is landing.
+    public static event OnLand onLand;                                     // Event that contains things to do when character is landing.
 
 
-    private Rigidbody2D _characterRigidBody = null;                        // Hold character Rigidbody2d component.
-    private float _afterGoundTouchTimer = 0;                                  // Timer that count time after falling from the ground.
+    private Rigidbody2D _characterRigidBody = null;                        // Contains character Rigidbody2d component.
+    private float _afterGoundTouchTimer = 0;                               // Timer that count time after falling from the ground.
     private float _pressButtonTimer = 0;                                   // Timer that count time during which player can press jump button before touching the ground, and jump will be performed.
     private bool _isGrounded = true;                                       // Determine if player is grounded now.
     private bool _isFalling = false;                                       // Determine if player is falling.
@@ -112,7 +112,7 @@ public class CharacterJump : MonoBehaviour
             //If button is pressed.
             if(IsButtonPressed())
             {
-                //Reset timer that holds time, during which player can
+                //Reset timer that contains time, during which player can
                 //press the jump button and jump will be performed.
                 TimerController.SetToValue(ref _pressButtonTimer, _pressBeforeGroundTime);
 

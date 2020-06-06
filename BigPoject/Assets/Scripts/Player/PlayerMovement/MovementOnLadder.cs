@@ -8,7 +8,7 @@ public class MovementOnLadder : MonoBehaviour
     [SerializeField] private CustomMovementButton _ladderClimbButton = null; 
 
     private Rigidbody2D _characterRigidBody = null;
-    private Vector3 _currentVelocity = Vector2.zero;                            // Hold curent velocity from Vector3.SmoothDump().
+    private Vector3 _currentVelocity = Vector2.zero;                            // Contains curent velocity from Vector3.SmoothDump().
     private bool _canClimb = false;                                             // Determine if player can jump a ladder.
     [SerializeField] private ScriptController _scriptController = null;
 

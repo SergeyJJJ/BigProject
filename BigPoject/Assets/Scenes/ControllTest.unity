@@ -768,6 +768,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 979133234116188566, guid: db841216772e4844187962a048cfddbb, type: 3}
+      propertyPath: _currenWeapon
+      value: 
+      objectReference: {fileID: 11400000, guid: 6ec761f19c6c7d84584cc5d0a17690b1, type: 2}
     - target: {fileID: 2824605566533303579, guid: db841216772e4844187962a048cfddbb, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.115
@@ -824,10 +828,6 @@ PrefabInstance:
       propertyPath: _jumpButton
       value: 
       objectReference: {fileID: 666441631}
-    - target: {fileID: 8277626492255796097, guid: db841216772e4844187962a048cfddbb, type: 3}
-      propertyPath: _cutJumpHeight
-      value: 0.25
-      objectReference: {fileID: 0}
     - target: {fileID: 8702310545741433508, guid: db841216772e4844187962a048cfddbb, type: 3}
       propertyPath: m_Name
       value: BlueSuit
