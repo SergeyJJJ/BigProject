@@ -28,7 +28,7 @@ public class CharacterMovement : MonoBehaviour
 
     private void Awake()
     {
-        InitializeRigidBodyComponents();
+        InitializeRigidBodyComponent();
     }
 
 
@@ -45,7 +45,7 @@ public class CharacterMovement : MonoBehaviour
 
 
     // Method that initialize RigidBodyComponents.
-    private void InitializeRigidBodyComponents()
+    private void InitializeRigidBodyComponent()
     {
         _characterRigidBody = gameObject.GetComponent<Rigidbody2D>();
     }
