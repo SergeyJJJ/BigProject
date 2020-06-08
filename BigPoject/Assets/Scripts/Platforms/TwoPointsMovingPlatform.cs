@@ -9,12 +9,11 @@ public class TwoPointsMovingPlatform : MonoBehaviour
     [SerializeField] private float _movementSpeed = 0;                   // Contains speed of platform movement;
     private Vector2 _firstTargetPosition = Vector2.zero;                 // Contains position of first target.
     private Vector2 _secondTargetPosition = Vector2.zero;                // Contains position of second target.
-    private CameraFollow _cameraFollow = null;                           // Contains camera follow script.
+    
 
     private void Awake()
     {
         InitializePositions();
-        _cameraFollow = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraFollow>();
     }
 
 
@@ -58,22 +57,11 @@ public class TwoPointsMovingPlatform : MonoBehaviour
     } 
 
 
-    private bool IsCameraScriptEnabled()
-    {
-        return _cameraFollow != null;
-    }
-
-
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
             other.transform.SetParent(gameObject.transform);
-
-            if (IsCameraScriptEnabled())
-            {
-                _cameraFollow.Target = gameObject.transform;
-            }
         }    
     }
 
@@ -83,11 +71,6 @@ public class TwoPointsMovingPlatform : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             other.transform.parent = null;
-
-            if (IsCameraScriptEnabled())
-            {
-                _cameraFollow.Target = other.transform;
-            }
         }  
     }
 }
