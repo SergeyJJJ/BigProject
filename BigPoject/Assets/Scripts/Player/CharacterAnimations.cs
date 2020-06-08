@@ -6,7 +6,7 @@ public class CharacterAnimations : MonoBehaviour
 {
     [SerializeField] private Sprite _defaultSprite = null;               // Contains default sprite of the character.
     [SerializeField] private Sprite _jumpSprite = null;                  // Contains jump sprite of the character.
-    private Animator _animator = null;                                   // Contains animator compnent of the character.
+    [SerializeField] private Animator _animator = null;                                   // Contains animator compnent of the character.
     private SpriteRenderer _spriteRenderer = null;                       // Contains spriteRenderer component of the character.
 
 
@@ -18,7 +18,7 @@ public class CharacterAnimations : MonoBehaviour
 
     private void InitializeCharacterComponents()
     {
-        _animator = gameObject.GetComponent<Animator>();
+        //_animator = gameObject.GetComponent<Animator>();
         _spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
     }
 

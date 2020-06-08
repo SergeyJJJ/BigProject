@@ -9,7 +9,7 @@ public class TwoPointsMovingPlatform : MonoBehaviour
     [SerializeField] private float _movementSpeed = 0;                   // Contains speed of platform movement;
     private Vector2 _firstTargetPosition = Vector2.zero;                 // Contains position of first target.
     private Vector2 _secondTargetPosition = Vector2.zero;                // Contains position of second target.
-    
+
 
     private void Awake()
     {
@@ -57,6 +57,7 @@ public class TwoPointsMovingPlatform : MonoBehaviour
     } 
 
 
+    // When platform collides with player. Player becomes child of a platform.
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Player"))
@@ -66,6 +67,7 @@ public class TwoPointsMovingPlatform : MonoBehaviour
     }
 
 
+    // When platform stops colliding with player. Player is no longer a child of a platform.
     private void OnCollisionExit2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Player"))

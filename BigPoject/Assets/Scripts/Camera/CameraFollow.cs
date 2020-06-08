@@ -12,20 +12,6 @@ public class CameraFollow : MonoBehaviour
     private Vector3 _currentVelocity = Vector2.zero;
 
 
-    public Transform Target
-    {
-        get
-        {
-            return _target;
-        }
-
-        set
-        {
-            _target = value;
-        }
-    }
-
-
     private void Start()
     {
         if (_takeOffsetFromInitialPos && _target != null) _generalOffset = transform.position - _target.position;
