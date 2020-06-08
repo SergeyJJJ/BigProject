@@ -126,6 +126,7 @@ public class CharacterMovement : MonoBehaviour
     {
         // Switch the way the player is labelled as facing.
 		_isFacingRight = !_isFacingRight;
+        Debug.Log("Turn");
 
         // Rotate the character 180 degrees along the Y-Axis,
         // and 0 degrees along X-Axis and Z-Axis.
