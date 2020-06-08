@@ -16,7 +16,7 @@ TagManager:
   - 
   - Player
   - Walkable Surface
-  - 
+  - Weapon
   - 
   - 
   - 
@@ -42,6 +42,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Platforms
+    uniqueID: 2247053133
+    locked: 0
+  - name: Pipes
+    uniqueID: 2982145627
+    locked: 0
   - name: Player
     uniqueID: 765987315
+    locked: 0
+  - name: Weapon
+    uniqueID: 582098943
     locked: 0
