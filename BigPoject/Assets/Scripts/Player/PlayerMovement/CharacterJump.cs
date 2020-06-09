@@ -65,6 +65,7 @@ public class CharacterJump : MonoBehaviour
                 TimerController.SetToZero(ref _afterGoundTouchTimer);
                 TimerController.SetToZero(ref _pressButtonTimer);
 
+                Debug.Log("jump");
                 //Invoke jump event.
                 InvokeOnJump();
 
@@ -214,7 +215,7 @@ public class CharacterJump : MonoBehaviour
     {
         _isFalling = false;
 
-        if (_characterRigidBody.velocity.y < -4f)
+        if (_characterRigidBody.velocity.y < -2.5f)
         {
             _isFalling = true;
         }
