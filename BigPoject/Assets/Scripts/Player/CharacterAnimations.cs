@@ -27,12 +27,47 @@ public class CharacterAnimations : MonoBehaviour
     {
         // Subscribe to character events 
         CharacterMovement.onRun += StartRunAnimation; 
-        CharacterMovement.onStop += StopRunAnimation;
 
+        CharacterMovement.onStop += StopRunAnimation;
+        CharacterMovement.onStop += StopLandingAnimation;
+
+        CharacterJump.onJump += DisableAnimations;
         CharacterJump.onJump += StartJumpAnimation;
-        CharacterJump.onFalling += StopJumpAnimation;
-        CharacterJump.onFalling += StartFallAnimation;
+
+        CharacterJump.onFalling += EnableAnimations;
+        CharacterJump.onFalling += StartFallingAnimation;
+
         CharacterJump.onLand += StartLandingAnimation;
+    }
+
+    
+    private void OnDisable()
+    {
+        // UNsubscribe to character events 
+        CharacterMovement.onRun -= StartRunAnimation; 
+
+        CharacterMovement.onStop -= StopRunAnimation;
+        CharacterMovement.onStop -= StopLandingAnimation;
+
+        CharacterJump.onJump -= DisableAnimations;
+        CharacterJump.onJump -= StartJumpAnimation;
+
+        CharacterJump.onFalling -= EnableAnimations;
+        CharacterJump.onFalling -= StartFallingAnimation;
+
+        CharacterJump.onLand -= StartLandingAnimation;
+    }
+
+
+    private void EnableAnimations()
+    {
+        _animator.enabled = true;
+    }
+
+
+    private void DisableAnimations()
+    {
+        _animator.enabled = false;
     }
 
 
@@ -55,9 +90,9 @@ public class CharacterAnimations : MonoBehaviour
         if (_jumpSprite != null)
         {
             _spriteRenderer.sprite = _jumpSprite; 
-            _animator.enabled = false;
         }
     }
+
 
     private void StopJumpAnimation()
     {
@@ -66,12 +101,11 @@ public class CharacterAnimations : MonoBehaviour
         if (_defaultSprite != null)
         {
             _spriteRenderer.sprite = _defaultSprite;
-            _animator.enabled = true;
         }
     }
 
 
-    private void StartFallAnimation()
+    private void StartFallingAnimation()
     {
         _animator.SetTrigger("Falling");
     }
@@ -79,6 +113,12 @@ public class CharacterAnimations : MonoBehaviour
 
     private void StartLandingAnimation()
     {
-        _animator.SetTrigger("Landing");
+        _animator.SetBool("Landing", true);
+    }
+
+
+    private void StopLandingAnimation()
+    {
+        _animator.SetBool("Landing", false);
     }
 }

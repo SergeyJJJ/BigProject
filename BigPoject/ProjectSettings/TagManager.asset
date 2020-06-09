@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ladder
+  - MovingPlatform
   layers:
   - Default
   - TransparentFX

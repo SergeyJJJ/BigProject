@@ -35,6 +35,7 @@ public class CharacterJump : MonoBehaviour
     private float _pressButtonTimer = 0;                                   // Timer that count time during which player can press jump button before touching the ground, and jump will be performed.
     private bool _isGrounded = true;                                       // Determine if player is grounded now.
     private bool _isFalling = false;                                       // Determine if player is falling.
+    private bool _wasFalling = false;                                      // Determine if player was falling. 
     private bool _isButtonAlreadyReleased = true;                          // Check if button was released.
     
 
@@ -85,18 +86,20 @@ public class CharacterJump : MonoBehaviour
                 }
             }
 
-            bool wasFalling = _isFalling;
             //If character is falling
             if (IsFalling())
             {
                 //Invoke falling event if character was not in the fall before.
-                if (!wasFalling)
+                if (!_wasFalling)
                 {
                     InvokeOnFalling();
+                    _wasFalling = true;
                 }
             }
             else
             {
+                _wasFalling = false;
+
                 //If the button is released and it wasn`t released before.
                 if (!IsButtonPressed() && !_isButtonAlreadyReleased)
                 {
