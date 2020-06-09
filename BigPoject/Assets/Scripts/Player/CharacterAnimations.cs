@@ -4,19 +4,18 @@
 [RequireComponent(typeof(SpriteRenderer))]
 public class CharacterAnimations : MonoBehaviour
 {
-    [SerializeField] private Animator _animator = null;                  // Contains animator compnent of the character.
+    /*[SerializeField]*/ private Animator _animator = null;                  // Contains animator compnent of the character.
 
 
     private void Awake()
     {
         InitializeCharacterComponents();
-        Time.timeScale = 0.05f;
     }
 
 
     private void InitializeCharacterComponents()
     {
-        //_animator = gameObject.GetComponent<Animator>();
+        _animator = gameObject.GetComponent<Animator>();
     }
 
 
