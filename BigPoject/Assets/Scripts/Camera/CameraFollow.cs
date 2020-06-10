@@ -17,7 +17,7 @@ public class CameraFollow : MonoBehaviour
         if (_takeOffsetFromInitialPos && _target != null) _generalOffset = transform.position - _target.position;
     }
 
-    private void FixedUpdate()
+    private void LateUpdate()
     {
         if (_target != null)
         {

@@ -112,6 +112,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 0}
   _laziness: 0.2
-  _lookAtTarget: 0
+  _lookAtTarget: 1
   _takeOffsetFromInitialPos: 0
   _generalOffset: {x: 0, y: 0, z: -10}

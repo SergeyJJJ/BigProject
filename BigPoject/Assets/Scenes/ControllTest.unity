@@ -147,7 +147,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5037724}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.724648, y: 0.7918453, z: -0.5225066}
+  m_LocalPosition: {x: -9.724648, y: 0.7918453, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 616068675}
@@ -409,7 +409,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 323660832}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.2477684, y: -0.77524716, z: -0.6446191}
+  m_LocalPosition: {x: 5.2477684, y: -0.77524716, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1757888314}
@@ -813,14 +813,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3809531251737504216, guid: db841216772e4844187962a048cfddbb, type: 3}
-      propertyPath: _leftButton
-      value: 
-      objectReference: {fileID: 1698936431}
-    - target: {fileID: 3809531251737504216, guid: db841216772e4844187962a048cfddbb, type: 3}
-      propertyPath: _rightButton
-      value: 
-      objectReference: {fileID: 249648062}
     - target: {fileID: 6764947766761146264, guid: db841216772e4844187962a048cfddbb, type: 3}
       propertyPath: _leftButton
       value: 
@@ -1312,7 +1304,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1587805684}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 46.7, y: -0.3, z: 0.5225066}
+  m_LocalPosition: {x: 29.73, y: -0.3, z: 0}
   m_LocalScale: {x: 3.9302886, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1381559181}

@@ -74,7 +74,7 @@ public class PlatformMovement : MonoBehaviour
     // Check if platform is reached point.
     private bool IsReachedPoint()
     {
-        float threshold = 0.01f;
+        float threshold = 0.1f;
 
         // If distance between platform and target point is less than allowable threshold
         // than return that the platform reached the goal.

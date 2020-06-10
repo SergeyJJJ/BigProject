@@ -63,7 +63,6 @@ public class CharacterJump : MonoBehaviour
                 //If the conditions for the jump are met.
                 if (IsCanJump(_afterGoundTouchTimer, _pressButtonTimer))
                 {
-                    Debug.Log("Jumping");
                     //Set timers to zero to prevent multiply jumping.
                     TimerController.SetToZero(ref _afterGoundTouchTimer);
                     TimerController.SetToZero(ref _pressButtonTimer);
