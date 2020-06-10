@@ -2,7 +2,7 @@
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(BoxCollider2D))]
-public class CharacterMovement : MonoBehaviour
+public class CharacterWalking : MonoBehaviour
 {    
     [Header("Movement controll")]
     [SerializeField] private float _horizontalSpeed = 0f;                     // How fast character can run horizontally.
@@ -16,14 +16,14 @@ public class CharacterMovement : MonoBehaviour
     // Events.
     public delegate void OnRun();      
     public static event OnRun onRun;                                          // Event that contains things to do when player running.
-    public delegate void OnStop();                                            // Evant that contains things to do when player stops running. 
-    public static event OnStop onStop;
+    public delegate void OnStop();                                            
+    public static event OnStop onStop;                                       // Evant that contains things to do when player stops running.
 
 
     private const short StopMovementSpeed = 0;                                // Value indicating that the object is not moving in some direction.
     private Vector3 _currentVelocity = Vector2.zero;                          // contains curent velocity from Vector3.SmoothDump().
     private Rigidbody2D _characterRigidBody;                                  // contains character Rigidbody2d component.
-    private bool _isFacingRight = false;                                       // To determine which way the player is currently facing.
+    private bool _isFacingRight = true;                                      // To determine which way the player is currently facing.
 
 
     private void Awake()
@@ -111,11 +111,11 @@ public class CharacterMovement : MonoBehaviour
 
     private void Flip()
     {
-        if (_characterRigidBody.velocity.x > 0 && _isFacingRight)
+        if (_characterRigidBody.velocity.x < -1 && _isFacingRight)
         {
             RevertCharacter();
         }
-        else if (_characterRigidBody.velocity.x < 0 && !_isFacingRight)
+        else if (_characterRigidBody.velocity.x > 1 && !_isFacingRight)
         {
             RevertCharacter();
         }
@@ -126,7 +126,6 @@ public class CharacterMovement : MonoBehaviour
     {
         // Switch the way the player is labelled as facing.
 		_isFacingRight = !_isFacingRight;
-        Debug.Log("Turn");
 
         // Rotate the character 180 degrees along the Y-Axis,
         // and 0 degrees along X-Axis and Z-Axis.

@@ -821,6 +821,14 @@ PrefabInstance:
       propertyPath: _rightButton
       value: 
       objectReference: {fileID: 249648062}
+    - target: {fileID: 6764947766761146264, guid: db841216772e4844187962a048cfddbb, type: 3}
+      propertyPath: _leftButton
+      value: 
+      objectReference: {fileID: 1698936431}
+    - target: {fileID: 6764947766761146264, guid: db841216772e4844187962a048cfddbb, type: 3}
+      propertyPath: _rightButton
+      value: 
+      objectReference: {fileID: 249648062}
     - target: {fileID: 8277626492255796097, guid: db841216772e4844187962a048cfddbb, type: 3}
       propertyPath: _jumpButton
       value: 

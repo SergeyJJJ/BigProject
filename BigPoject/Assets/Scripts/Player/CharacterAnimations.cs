@@ -4,7 +4,7 @@
 [RequireComponent(typeof(SpriteRenderer))]
 public class CharacterAnimations : MonoBehaviour
 {
-    /*[SerializeField]*/ private Animator _animator = null;                  // Contains animator compnent of the character.
+    private Animator _animator = null;                  // Contains animator compnent of the character.
 
 
     private void Awake()
@@ -22,9 +22,9 @@ public class CharacterAnimations : MonoBehaviour
     private void OnEnable()
     {
         // Subscribe to character events 
-        CharacterMovement.onRun += StartRunAnimation; 
+        CharacterWalking.onRun += StartRunAnimation; 
 
-        CharacterMovement.onStop += StartIdleAnimation;
+        CharacterWalking.onStop += StartIdleAnimation;
 
         CharacterJump.onJump += StartJumpAnimation;
 
@@ -37,9 +37,9 @@ public class CharacterAnimations : MonoBehaviour
     private void OnDisable()
     {
         // Unsubscribe to character events 
-        CharacterMovement.onRun -= StartRunAnimation; 
+        CharacterWalking.onRun -= StartRunAnimation; 
 
-        CharacterMovement.onStop -= StartIdleAnimation;
+        CharacterWalking.onStop -= StartIdleAnimation;
 
         CharacterJump.onJump -= StartJumpAnimation;
 
