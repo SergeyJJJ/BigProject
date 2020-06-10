@@ -36,6 +36,7 @@ public class CharacterJump : MonoBehaviour
     private bool _isGrounded = true;                                       // Determine if player is grounded now.
     private bool _isFalling = false;                                       // Determine if player is falling.
     private bool _wasFalling = false;                                      // Determine if player was falling. 
+    private bool _isJumping = false;                                       // Determine if player is already jumping.
     private bool _isButtonAlreadyReleased = true;                          // Check if button was released.
     
 
@@ -57,20 +58,24 @@ public class CharacterJump : MonoBehaviour
             TimerController.DecrementByDeltaTime(ref _afterGoundTouchTimer);
             TimerController.DecrementByDeltaTime(ref _pressButtonTimer);
 
-
-            //If the conditions for the jump are met.
-            if (IsCanJump(_afterGoundTouchTimer, _pressButtonTimer))
+            if (!_isJumping)
             {
-                //Set timers to zero to prevent multiply jumping.
-                TimerController.SetToZero(ref _afterGoundTouchTimer);
-                TimerController.SetToZero(ref _pressButtonTimer);
+                //If the conditions for the jump are met.
+                if (IsCanJump(_afterGoundTouchTimer, _pressButtonTimer))
+                {
+                    Debug.Log("Jumping");
+                    //Set timers to zero to prevent multiply jumping.
+                    TimerController.SetToZero(ref _afterGoundTouchTimer);
+                    TimerController.SetToZero(ref _pressButtonTimer);
 
-                Debug.Log("jump");
-                //Invoke jump event.
-                InvokeOnJump();
+                    //Invoke jump event.
+                    InvokeOnJump();
 
-                // Perform jump.
-                PerformJump();
+                    // Perform jump.
+                    PerformJump();
+
+                    _isJumping = true;
+                }
             }
             
             bool wasGrounded = _isGrounded;
@@ -85,6 +90,7 @@ public class CharacterJump : MonoBehaviour
                 {
                     InvokeOnLand();
                 }
+
             }
 
             //If character is falling
@@ -96,6 +102,7 @@ public class CharacterJump : MonoBehaviour
                     InvokeOnFalling();
                     _wasFalling = true;
                 }
+                _isJumping = false;
             }
             else
             {
