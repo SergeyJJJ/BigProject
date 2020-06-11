@@ -8,6 +8,7 @@ public class GroundCheck : MonoBehaviour
     [SerializeField] private LayerMask _whatIsGound = Physics2D.AllLayers; // A mask determine what is the ground for the character.
     private bool _isGrounded = true;                                       // Determine if character is grounded.
     private bool _isOnPlatform = false;                                    // Determine if character is on the platform.
+    private Collider2D _onWhatPlayerStanding = null;                         // On what player is now standing.
 
     public bool IsGrounded 
     {
@@ -26,16 +27,32 @@ public class GroundCheck : MonoBehaviour
     }
 
 
+    public Collider2D OnWhatPlayerStanding
+    {
+        get
+        {
+            return _onWhatPlayerStanding;
+        }
+    }
+
+
     private void Update()
     {
         Collider2D[] colliders;
 
         colliders = GetEncouteredColliders();
 
-        if(colliders != null)
+        if(colliders != null && colliders.Length > 0)
         {
             _isGrounded = IsPlayerGrounded(colliders);
             _isOnPlatform = IsPlayerOnPlatform(colliders);
+            _onWhatPlayerStanding = DetermineSurfaceOnWhichStands(colliders);
+        }
+        else 
+        {
+            _isGrounded = false;
+            _isOnPlatform = false;
+            _onWhatPlayerStanding = null;
         }
 
     }
@@ -92,5 +109,11 @@ public class GroundCheck : MonoBehaviour
         }
 
         return isOnPlatform;
+    }
+
+
+    private Collider2D DetermineSurfaceOnWhichStands(Collider2D[] colliders)
+    {
+        return colliders[colliders.Length-1];
     }
 }

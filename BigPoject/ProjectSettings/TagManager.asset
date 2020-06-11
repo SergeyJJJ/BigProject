@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ladder
   - MovingPlatform
+  - DynamicCamera
   layers:
   - Default
   - TransparentFX

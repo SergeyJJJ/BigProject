@@ -43,6 +43,8 @@ GameObject:
   - component: {fileID: 6764947766761146264}
   - component: {fileID: 8277626492255796097}
   - component: {fileID: 8726022456352784372}
+  - component: {fileID: 3216914768047637819}
+  - component: {fileID: 8445837602134968616}
   - component: {fileID: 21399133001567398}
   - component: {fileID: -1767523105098985399}
   - component: {fileID: 7452835413203550249}
@@ -175,6 +177,35 @@ MonoBehaviour:
   _movementSmoothing: 0.055
   _ladderClimbButton: {fileID: 0}
   _scriptController: {fileID: 0}
+--- !u!114 &3216914768047637819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8702310545741433508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cd95c957428ae24b9d96d40dc78ebeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8445837602134968616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8702310545741433508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b31b7c5ea5229c94793420907950652b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _groundCheckPoint: {fileID: 1118506233617382984}
+  _grounCheckRadius: 0.29
+  _whatIsGound:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!114 &21399133001567398
 MonoBehaviour:
   m_ObjectHideFlags: 0

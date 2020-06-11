@@ -4,6 +4,7 @@ public class CameraFollow : MonoBehaviour
 {
     [SerializeField] private Transform _target = null;
     [Range(0f, 0.4f)] [SerializeField] private float _laziness = 0f;
+    private float _lastLazines = 0f;
     [SerializeField] private bool _lookAtTarget = true;
     [SerializeField] private bool _takeOffsetFromInitialPos = true;
     [SerializeField] private Vector3 _generalOffset = Vector3.zero;
@@ -14,7 +15,12 @@ public class CameraFollow : MonoBehaviour
 
     private void Start()
     {
-        if (_takeOffsetFromInitialPos && _target != null) _generalOffset = transform.position - _target.position;
+        if (_takeOffsetFromInitialPos && _target != null)
+        {
+            _generalOffset = transform.position - _target.position;
+        }
+
+        _lastLazines = _laziness;
     }
 
     private void LateUpdate()
@@ -38,5 +44,21 @@ public class CameraFollow : MonoBehaviour
                 _warningAlreadyShown = true;
             }
         }
+    }
+
+
+    public void DisableCameraLaziness()
+    {
+        if (_laziness != 0f)
+        {
+            _lastLazines = _laziness;
+        }
+        _laziness = 0f;
+    }
+
+
+    public void EnableCameraLaziness()
+    {
+        _laziness = _lastLazines;
     }
 }
