@@ -28,36 +28,69 @@ public class GroundCheck : MonoBehaviour
 
     private void Update()
     {
-        CheckIfGrounded();
+        Collider2D[] colliders;
+
+        colliders = GetEncouteredColliders();
+
+        if(colliders != null)
+        {
+            _isGrounded = IsPlayerGrounded(colliders);
+            _isOnPlatform = IsPlayerOnPlatform(colliders);
+        }
+
     }
 
 
-    // Check if the player is grounded or not.
-    private bool CheckIfGrounded()
+    // Get all colliders that the object encountered.
+    private Collider2D[] GetEncouteredColliders()
     {
-        // Set that the player is now not on the ground.
-        _isGrounded = false;
+        Collider2D[] colliders = null;
 
-        //Check if groundCheckPoint is not a null.
+        // If point around which we check colliders is exist.
         if (_groundCheckPoint != null)
         {
-            // Get all colliders with which player collides.
-            Collider2D[] colliders = Physics2D.OverlapCircleAll(_groundCheckPoint.position, _grounCheckRadius, _whatIsGound);
+            // Get all colliders with wich we overlap around point with certain radius.
+            colliders = Physics2D.OverlapCircleAll(_groundCheckPoint.position, _grounCheckRadius, _whatIsGound);
+        }
 
-            // Check all colliders to know if at least one of them 
-            // is not owned by player.
-            for (var colliderIndex = 0; colliderIndex < colliders.Length; colliderIndex++)
+        return colliders;
+    }
+
+
+    // Check if player is stand on some walkable surface.
+    private bool IsPlayerGrounded(Collider2D[] colliders)
+    {
+        bool isGrounded = false;
+
+        for (var colliderIndex = 0; colliderIndex < colliders.Length; colliderIndex++)
+        {
+            // If some collider is not belong to the player
+            // Set that the player is Grounded.
+            if ( colliders[colliderIndex].gameObject != gameObject)
             {
-                // If some collider is not belong to the player
-                // Set that the player is Grounded.
-                if ( colliders[colliderIndex].gameObject != gameObject)
-                {
-                    _isGrounded = true;
-                }
+                isGrounded = true;
             }
         }
-        
-        // Return status of player. Grounded or not.
-        return _isGrounded;
+
+        return isGrounded;
+    }
+
+
+    // Check if the player is stand on the moving platform.
+    private bool IsPlayerOnPlatform(Collider2D[] colliders)
+    {
+        bool isOnPlatform = false;
+
+        for (var colliderIndex = 0; colliderIndex < colliders.Length; colliderIndex++)
+        {
+            // If some collider is not belong to the player
+            // Set that the player is Grounded.
+            if ( colliders[colliderIndex].gameObject.CompareTag("MovingPlatform"))
+            {
+                isOnPlatform = true;
+            }
+        }
+
+        return isOnPlatform;
     }
 }
