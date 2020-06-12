@@ -5,7 +5,6 @@ using UnityEngine;
 public class MovingPlatformInteraction : MonoBehaviour
 {
     private GroundCheck _groundCheck = null;
-    private CameraFollow _cameraFollow = null;
 
 
     private void Awake()
@@ -17,7 +16,6 @@ public class MovingPlatformInteraction : MonoBehaviour
     private void InitializeReferencesOnScripts()
     {
         _groundCheck = gameObject.GetComponent<GroundCheck>();
-        _cameraFollow = GameObject.FindGameObjectWithTag("DynamicCamera").GetComponent<CameraFollow>();
     }
 
 
@@ -28,18 +26,12 @@ public class MovingPlatformInteraction : MonoBehaviour
         {
             // Make player as a child of the platform.
             MakeChildOf(_groundCheck.OnWhatPlayerStanding.transform);
-
-            // Disable Camera laziness.
-            _cameraFollow.DisableCameraLaziness();
         }
         // If player isn`t already in the platform
         else
         {
             // Make player is now not as a child of the platform.
             MakeNotAChild();
-
-            // Enable camera laziness.
-            _cameraFollow.EnableCameraLaziness();
         }
     }
 
