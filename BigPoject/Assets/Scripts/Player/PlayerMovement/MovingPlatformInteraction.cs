@@ -1,10 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class MovingPlatformInteraction : MonoBehaviour
 {
-    private GroundCheck _groundCheck = null;
+    private SurfaceCheck _groundCheck = null;
 
 
     private void Awake()
@@ -15,19 +13,24 @@ public class MovingPlatformInteraction : MonoBehaviour
 
     private void InitializeReferencesOnScripts()
     {
-        _groundCheck = gameObject.GetComponent<GroundCheck>();
+        _groundCheck = gameObject.GetComponent<SurfaceCheck>();
     }
 
 
     private void Update()
     {
-        // If player is on the platform.
-        if (_groundCheck.IsOnPlatform == true)
+        Collider2D surfaceOnWhichPlayerStanding = _groundCheck.GetSurfaceOnWhichPlayerStanding();
+
+        if (surfaceOnWhichPlayerStanding != null)
         {
-            // Make player as a child of the platform.
-            MakeChildOf(_groundCheck.OnWhatPlayerStanding.transform);
+            // If player is on the platform.
+            if (surfaceOnWhichPlayerStanding.gameObject.CompareTag("MovingPlatform"))
+            {
+                // Make player as a child of the platform.
+                MakeChildOf(surfaceOnWhichPlayerStanding.gameObject.transform);
+            }
         }
-        // If player isn`t already in the platform
+        // If player isn`t already staying on something.
         else
         {
             // Make player is now not as a child of the platform.

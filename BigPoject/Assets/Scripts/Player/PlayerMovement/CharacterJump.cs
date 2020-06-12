@@ -9,14 +9,7 @@ public class CharacterJump : MonoBehaviour
     [SerializeField] private float _afterGroundTouchJumpTime = 0f;         // The time during which the player can jump if he no longer touches the ground.
     [SerializeField] private float _pressBeforeGroundTime = 0f;            // The time during which player can press jump button before touching the ground, and jump will be performed.
     [Range(0f, 1f), SerializeField] private float _cutJumpHeight = 0f;     // The multiplier by which is multiplied the length of the jump when falling.
-                                                                           // Allows you to adjust the dependence of the height of the jump on the duration of pressing.
-
-    [Space]
-    [Header("Is on ground controll")]
-    [SerializeField] private Transform _groundCheckPoint = null;           // A position marking where to check if the character is grounded.
-    [SerializeField] private float _grounCheckRadius = 0f;                 // Radius of the overlap circle to determine if character is grounded.
-    [SerializeField] private LayerMask _whatIsGound = Physics2D.AllLayers; // A mask determine what is the ground for the character.
-
+    
     [Space]
     [Header("Jump button")]
     [SerializeField] private CustomMovementButton _jumpButton = null;
@@ -29,11 +22,11 @@ public class CharacterJump : MonoBehaviour
     public delegate void OnLand();                                         
     public static event OnLand onLand;                                     // Event that contains things to do when character is landing.
 
-
+    private SurfaceCheck _surfaceCheck = null;
     private Rigidbody2D _characterRigidBody = null;                        // Contains character Rigidbody2d component.
     private float _afterGoundTouchTimer = 0;                               // Timer that count time after falling from the ground.
     private float _pressButtonTimer = 0;                                   // Timer that count time during which player can press jump button before touching the ground, and jump will be performed.
-    private bool _isGrounded = true;                                       // Determine if player is grounded now.
+    private bool _wasGrounded = true;
     private bool _isFalling = false;                                       // Determine if player is falling.
     private bool _wasFalling = false;                                      // Determine if player was falling. 
     private bool _isJumping = false;                                       // Determine if player is already jumping.
@@ -43,7 +36,7 @@ public class CharacterJump : MonoBehaviour
 
     private void Awake()
     {
-        InitializeRigidbodyComponents();
+        InitializeCharacterComponents();
     }
 
 
@@ -77,17 +70,18 @@ public class CharacterJump : MonoBehaviour
                 }
             }
             
-            bool wasGrounded = _isGrounded;
+         
             //If character is on ground.
-            if (IsGrounded())
+            if (_surfaceCheck.IsCharecterIsOnSurface())
             {
                 //Set the last ground touch timer to the initial value.
                 TimerController.SetToValue(ref _afterGoundTouchTimer, _afterGroundTouchJumpTime);
                 
                 //Invoke landing event if character was not touch the ground before.
-                if (!wasGrounded)
+                if (!_wasGrounded)
                 {
                     InvokeOnLand();
+                    _wasGrounded = true;
                 }
 
             }
@@ -102,6 +96,7 @@ public class CharacterJump : MonoBehaviour
                     _wasFalling = true;
                 }
                 _isJumping = false;
+                _wasGrounded = false;
             }
             else
             {
@@ -134,9 +129,10 @@ public class CharacterJump : MonoBehaviour
 
 
     // Initialize rigidbody components.
-    private void InitializeRigidbodyComponents()
+    private void InitializeCharacterComponents()
     {
         _characterRigidBody = gameObject.GetComponent<Rigidbody2D>();
+        _surfaceCheck = gameObject.GetComponent<SurfaceCheck>();
     }
 
 
@@ -183,36 +179,6 @@ public class CharacterJump : MonoBehaviour
         {
             onFalling.Invoke();
         }
-    }
-
-
-    // Check if the player is grounded or not.
-    private bool IsGrounded()
-    {
-        // Set that the player is now not on the ground.
-        _isGrounded = false;
-
-        //Check if groundCheckPoint is not a null.
-        if (_groundCheckPoint != null)
-        {
-            // Get all colliders with which player collides.
-            Collider2D[] colliders = Physics2D.OverlapCircleAll(_groundCheckPoint.position, _grounCheckRadius, _whatIsGound);
-
-            // Check all colliders to know if at least one of them 
-            // is not owned by player.
-            for (var colliderIndex = 0; colliderIndex < colliders.Length; colliderIndex++)
-            {
-                // If some collider is not belong to the player
-                // Set that the player is Grounded.
-                if ( colliders[colliderIndex].gameObject != gameObject)
-                {
-                    _isGrounded = true;
-                }
-            }
-        }
-        
-        // Return status of player. Grounded or not.
-        return _isGrounded;
     }
 
 
