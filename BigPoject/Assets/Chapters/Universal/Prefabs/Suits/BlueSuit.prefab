@@ -154,11 +154,6 @@ MonoBehaviour:
   _afterGroundTouchJumpTime: 0.1
   _pressBeforeGroundTime: 0.1
   _cutJumpHeight: 0.28
-  _groundCheckPoint: {fileID: 1118506233617382984}
-  _grounCheckRadius: 0.29
-  _whatIsGound:
-    serializedVersion: 2
-    m_Bits: 512
   _jumpButton: {fileID: 0}
 --- !u!114 &8726022456352784372
 MonoBehaviour:
@@ -189,6 +184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cd95c957428ae24b9d96d40dc78ebeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _cameraBehaviour: {fileID: 0}
 --- !u!114 &5378420560420703368
 MonoBehaviour:
   m_ObjectHideFlags: 0

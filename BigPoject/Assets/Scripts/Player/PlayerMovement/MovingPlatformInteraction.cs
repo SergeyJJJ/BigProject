@@ -2,6 +2,7 @@
 
 public class MovingPlatformInteraction : MonoBehaviour
 {
+    [SerializeField] CameraBehaviour _cameraBehaviour = null;
     private SurfaceCheck _groundCheck = null;
 
 
@@ -28,6 +29,12 @@ public class MovingPlatformInteraction : MonoBehaviour
             {
                 // Make player as a child of the platform.
                 MakeChildOf(surfaceOnWhichPlayerStanding.gameObject.transform);
+
+                // Disable camera damping.
+                if (_cameraBehaviour != null)
+                {
+                    _cameraBehaviour.DiasableDamping();
+                }
             }
         }
         // If player isn`t already staying on something.
@@ -35,6 +42,12 @@ public class MovingPlatformInteraction : MonoBehaviour
         {
             // Make player is now not as a child of the platform.
             MakeNotAChild();
+
+            // Enable camera damping.
+            if (_cameraBehaviour != null)
+            {
+                _cameraBehaviour.RestoreDamping();
+            }
         }
     }
 
