@@ -54,11 +54,6 @@ public class CharacterWalking : MonoBehaviour
         }
 
         _characterRigidBody.velocity = Vector2.Lerp(_characterRigidBody.velocity, targetVelocity, _movementSmoothing);
-
-        if (onRun != null)
-        {
-            onRun.Invoke();
-        }
     }
 
 
@@ -66,10 +61,7 @@ public class CharacterWalking : MonoBehaviour
     {
         _characterRigidBody.velocity = Vector2.zero;
 
-        if (onStop != null)
-        {
-            onStop.Invoke();
-        }
+        InvokeOnStop();
     }
 
 
@@ -88,5 +80,23 @@ public class CharacterWalking : MonoBehaviour
         // Rotate the character 180 degrees along the Y-Axis,
         // and 0 degrees along X-Axis and Z-Axis.
 		transform.Rotate(0f, 180f, 0f);
+    }
+
+
+    private void InvokeOnStop()
+    {
+        if (onStop != null)
+        {
+            onStop.Invoke();
+        }
+    }
+
+
+    private void InvokeOnRun()
+    {
+        if (onRun != null)
+        {
+            onRun.Invoke();
+        }
     }
 }
