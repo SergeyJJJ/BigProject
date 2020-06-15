@@ -215,8 +215,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f93697c01421c164a88d4b529cfc970f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _horizontalSpeed: 90
-  _movementSmothing: 0.1
+  _horizontalSpeed: 8.75
+  _movementSmothing: 0.06
   _jumpHeight: 15.6
   _climbUpSpeed: 5
   _groundCheckPoint: {fileID: 1118506233617382984}
@@ -231,7 +231,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8702310545741433508}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 58d9cc72b7f0612408f9c49fa19968d0, type: 3}
   m_Name: 

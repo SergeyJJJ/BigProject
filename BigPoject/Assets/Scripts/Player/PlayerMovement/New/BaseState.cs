@@ -48,10 +48,27 @@ public abstract class BaseState
 
     public virtual void PhysicsUpdate()
     {
-        Vector2 targetVelocity = Vector2.zero;
+        Vector2 targetVelocity = new Vector2(0, _characterMovement.RigidBody.velocity.y);
 
-        targetVelocity = new Vector2(_characterMovement.HorizontalSpeed * _direction, _characterMovement.RigidBody.velocity.y);
-        
+        if (_direction < 0)
+        {
+            targetVelocity = new Vector2(-_characterMovement.HorizontalSpeed, _characterMovement.RigidBody.velocity.y);
+
+            if(_isFacingRight)
+            {
+                Flip();
+            }
+        }
+        else if (_direction > 0)
+        {
+            targetVelocity = new Vector2(_characterMovement.HorizontalSpeed, _characterMovement.RigidBody.velocity.y);
+
+            if(!_isFacingRight)
+            {
+                Flip();
+            }
+        }
+
         _characterMovement.RigidBody.velocity = Vector2.SmoothDamp(_characterMovement.RigidBody.velocity,
                                                                    targetVelocity, ref _currentVelocity,
                                                                    _characterMovement.MoventSmoothing);

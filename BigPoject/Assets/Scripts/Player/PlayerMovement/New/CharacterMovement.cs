@@ -3,11 +3,11 @@
 public class CharacterMovement : MonoBehaviour
 {
     [Header("Horizontal movement")]
-    [SerializeField] private float _horizontalSpeed = 0;
-    [SerializeField] private float _movementSmothing = 0;
+    [SerializeField] private float _horizontalSpeed = 0f;
+    [SerializeField, Range(0f, 0.4f)] private float _movementSmothing = 0f;
 
     [Header("Vertical movement")]
-    [SerializeField] private float _jumpHeight = 0;
+    [SerializeField] private float _jumpHeight = 0f;
     [SerializeField] private float  _climbUpSpeed = 0f;
 
     [Header("Is on ground controll")]
@@ -182,12 +182,6 @@ public class CharacterMovement : MonoBehaviour
     public void HorizontalInput(int direction)
     {
         _stateMachine.CurrentState.HorizontalInput(direction);
-    }
-
-
-    public void StopHorizontalMovement()
-    {
-        _rigidBody.velocity = new Vector2(0, _rigidBody.velocity.y);
     }
 
 
