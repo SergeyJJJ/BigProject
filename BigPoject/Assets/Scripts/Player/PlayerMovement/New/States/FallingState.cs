@@ -16,9 +16,9 @@ public class FallingState : BaseState
     }
 
 
-    public override void HorizontalMovement(int direction)
+    public override void HorizontalInput(int direction)
     {
-        base.HorizontalMovement(direction);
+        base.HorizontalInput(direction);
     }
 
 
@@ -45,6 +45,8 @@ public class FallingState : BaseState
 
     public override void PhysicsUpdate()
     {
+        base.PhysicsUpdate();
+
         Collider2D[] _colliders = null;
         _colliders = GetEncouteredColliders();
 

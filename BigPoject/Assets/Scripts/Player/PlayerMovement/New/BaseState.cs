@@ -5,7 +5,9 @@ public abstract class BaseState
     protected CharacterMovement _characterMovement = null;
     protected StateMachine _stateMachine = null;
 
+    private Vector2 _currentVelocity = Vector2.zero;
     private static bool _isFacingRight = true;
+    private static float _direction = 0;
 
     protected BaseState(CharacterMovement characterMovement, StateMachine stateMachine)
     {
@@ -20,31 +22,9 @@ public abstract class BaseState
     }
 
 
-    public virtual void HorizontalMovement(int direction)
+    public virtual void HorizontalInput(int direction)
     {
-        Debug.Log("Move");
-        Vector2 targetVelocity = Vector2.zero;
-
-        if (direction == -1)
-        {
-            targetVelocity = new Vector2(_characterMovement.HorizontalSpeed * direction, _characterMovement.RigidBody.velocity.y);
-
-            if (_isFacingRight)
-            {
-                Flip();
-            }
-        }
-        else if (direction == 1)
-        {
-            targetVelocity = new Vector2(_characterMovement.HorizontalSpeed * direction, _characterMovement.RigidBody.velocity.y);
-
-            if (!_isFacingRight)
-            {
-                Flip();
-            }
-        }
-
-        _characterMovement.RigidBody.velocity = Vector2.Lerp(_characterMovement.RigidBody.velocity, targetVelocity, _characterMovement.MoventSmoothing);
+        _direction = direction;
     }
 
 
@@ -68,7 +48,13 @@ public abstract class BaseState
 
     public virtual void PhysicsUpdate()
     {
+        Vector2 targetVelocity = Vector2.zero;
+
+        targetVelocity = new Vector2(_characterMovement.HorizontalSpeed * _direction, _characterMovement.RigidBody.velocity.y);
         
+        _characterMovement.RigidBody.velocity = Vector2.SmoothDamp(_characterMovement.RigidBody.velocity,
+                                                                   targetVelocity, ref _currentVelocity,
+                                                                   _characterMovement.MoventSmoothing);
     }
 
 

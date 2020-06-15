@@ -13,9 +13,9 @@ public class JumpingState : BaseState
     }
 
 
-    public override void HorizontalMovement(int direction)
+    public override void HorizontalInput(int direction)
     {
-        base.HorizontalMovement(direction);
+        base.HorizontalInput(direction);
     }
 
 
@@ -42,6 +42,8 @@ public class JumpingState : BaseState
 
     public override void PhysicsUpdate()
     {
+        base.PhysicsUpdate();
+
         if (_characterMovement.RigidBody.velocity.y < -1f)
         {
             _stateMachine.TransitionToState(_characterMovement.Falling);

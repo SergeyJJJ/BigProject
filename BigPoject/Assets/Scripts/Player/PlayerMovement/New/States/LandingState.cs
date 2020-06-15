@@ -14,9 +14,9 @@ public class LandingState : BaseState
     }
 
 
-    public override void HorizontalMovement(int direction)
+    public override void HorizontalInput(int direction)
     {
-        base.HorizontalMovement(direction);
+        base.HorizontalInput(direction);
     }
 
 
@@ -40,6 +40,8 @@ public class LandingState : BaseState
 
     public override void PhysicsUpdate()
     {
+        base.PhysicsUpdate();
+
         if (Mathf.Approximately(_characterMovement.RigidBody.velocity.x, 0f))
         {
             _stateMachine.TransitionToState(_characterMovement.Idle);

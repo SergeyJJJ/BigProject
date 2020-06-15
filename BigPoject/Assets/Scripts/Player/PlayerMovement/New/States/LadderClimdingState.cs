@@ -13,9 +13,9 @@ public class LadderClimdingState : BaseState
     }
 
 
-    public override void HorizontalMovement(int direction)
+    public override void HorizontalInput(int direction)
     {
-        base.HorizontalMovement(direction);
+        base.HorizontalInput(direction);
     }
 
 
@@ -54,7 +54,7 @@ public class LadderClimdingState : BaseState
 
     public override void PhysicsUpdate()
     {
-
+        base.PhysicsUpdate();
     }
 
 
