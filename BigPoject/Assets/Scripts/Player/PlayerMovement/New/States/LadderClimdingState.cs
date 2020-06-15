@@ -36,7 +36,6 @@ public class LadderClimdingState : BaseState
     {
         if (other.CompareTag("Ladder"))
         {
-            Debug.Log("LOL");
             if (_characterMovement.RigidBody.velocity.y < 0)
             {
                 _stateMachine.TransitionToState(_characterMovement.Falling);
