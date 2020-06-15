@@ -1,15 +1,18 @@
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class JumpingState : BaseState
+public class FallingState : BaseState
 {
-    public JumpingState (CharacterMovement characterMovement, StateMachine stateMachine) : base(characterMovement, stateMachine)
+    public FallingState (CharacterMovement characterMovement, StateMachine stateMachine) : base (characterMovement, stateMachine)
     {
-    
+
     }
+
 
     public override void Enter()
     {
-        _characterMovement.RigidBody.velocity = new Vector2(_characterMovement.RigidBody.velocity.x, _characterMovement.JumpHeight);
+
     }
 
 
@@ -21,7 +24,7 @@ public class JumpingState : BaseState
 
     public override void RaisePlayerUp()
     {
-
+        
     }
 
 
@@ -42,11 +45,6 @@ public class JumpingState : BaseState
 
     public override void PhysicsUpdate()
     {
-        if (_characterMovement.RigidBody.velocity.y < -2f)
-        {
-            _stateMachine.TransitionToState(_characterMovement.Falling);
-        }
-
         Collider2D[] _colliders = null;
         _colliders = GetEncouteredColliders();
 
@@ -98,4 +96,4 @@ public class JumpingState : BaseState
 
         return filteredColliders;
     }
-} 
+}

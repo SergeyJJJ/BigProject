@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CharacterMovement : MonoBehaviour
 {
@@ -11,9 +9,19 @@ public class CharacterMovement : MonoBehaviour
     [Header("Vertical movement")]
     [SerializeField] private float _jumpHeight = 0;
 
+    [Header("Is on ground controll")]
+    [SerializeField] private Transform _groundCheckPoint = null;
+    [SerializeField] private float _groundCheckRadius = 0f;
+    [SerializeField] private LayerMask _whatIsGround = Physics2D.AllLayers;
+
+
     private StateMachine _stateMachine = null;
     private JumpingState _jumpingState = null;
     private IdleState _idleState = null;
+    private RunningState _runningState = null;
+    private FallingState _fallingState = null;
+    private LandingState _landingState = null;
+    private LadderClimdingState _ladderClimbingState = null;
 
     private Transform _transform = null;
     private Rigidbody2D _rigidBody = null;
@@ -43,6 +51,30 @@ public class CharacterMovement : MonoBehaviour
         }
     }
 
+    public Transform GroundCheckPoint
+    {
+        get
+        {
+            return _groundCheckPoint;
+        }
+    }
+
+    public float GrounCheckRadius
+    {
+        get
+        {
+            return _groundCheckRadius;
+        }
+    }
+
+    public LayerMask WhatIsGround
+    {
+        get
+        {
+            return _whatIsGround;
+        }
+    }
+
     public Transform Transform
     {
         get
@@ -67,7 +99,7 @@ public class CharacterMovement : MonoBehaviour
         }
     }
 
-    public JumpingState JumpingState
+    public JumpingState Jumping
     {
         get
         {
@@ -75,11 +107,42 @@ public class CharacterMovement : MonoBehaviour
         }
     }
 
-    public IdleState IdleState
+    public IdleState Idle
     {
         get
         {
             return _idleState;
+        }
+    }
+
+    public RunningState Running
+    {
+        get
+        {
+            return _runningState;
+        }
+    }
+
+    public FallingState Falling
+    {
+        get
+        {
+            return _fallingState;
+        }
+    }
+
+    public LandingState Landing
+    {
+        get
+        {
+            return _landingState;
+        }
+    }
+    public LadderClimdingState LadderClimbing
+    {
+        get
+        {
+            return _ladderClimbingState;
         }
     }
     #endregion Properties
@@ -92,9 +155,20 @@ public class CharacterMovement : MonoBehaviour
         _stateMachine = new StateMachine();
         _jumpingState = new JumpingState(this, _stateMachine);
         _idleState = new IdleState(this, _stateMachine);    
+        _runningState = new RunningState(this, _stateMachine);
+        _fallingState = new FallingState(this, _stateMachine);
+        _landingState = new LandingState(this, _stateMachine);
+        _ladderClimbingState = new LadderClimdingState(this, _stateMachine);
 
-        _stateMachine.Initialization(IdleState); 
+        _stateMachine.Initialization(Idle); 
     }
+
+    
+    private void FixedUpdate()
+    {
+        _stateMachine.CurrentState.PhysicsUpdate();
+    }
+
 
     public void HorizontalMovement(int direction)
     {

@@ -1,11 +1,12 @@
-using UnityEngine;
+﻿using UnityEngine;
 
-public class IdleState : BaseState
+public class RunningState : BaseState
 {
-    public IdleState (CharacterMovement characterMovement, StateMachine stateMachine) : base(characterMovement, stateMachine)
+    public RunningState (CharacterMovement characterMovement, StateMachine stateMachine) : base (characterMovement, stateMachine)
     {
-    
+
     }
+
 
     public override void Enter()
     {
@@ -47,9 +48,9 @@ public class IdleState : BaseState
             _stateMachine.TransitionToState(_characterMovement.Falling);
         }
 
-        if (_characterMovement.RigidBody.velocity.x != 0)
+        if (Mathf.Approximately(_characterMovement.RigidBody.velocity.x, 0f))
         {
-            _stateMachine.TransitionToState(_characterMovement.Running);
+            _stateMachine.TransitionToState(_characterMovement.Idle);
         }
     }
 
@@ -58,4 +59,4 @@ public class IdleState : BaseState
     {
 
     }
-} 
+}

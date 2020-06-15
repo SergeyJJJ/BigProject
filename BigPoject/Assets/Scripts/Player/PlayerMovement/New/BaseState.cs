@@ -59,6 +59,18 @@ public abstract class BaseState
     }
 
 
+    public virtual void OnTriggerExit2D(Collider2D other)
+    {
+
+    }
+
+
+    public virtual void PhysicsUpdate()
+    {
+        
+    }
+
+
     public virtual void Exit()
     {
 
