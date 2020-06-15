@@ -3485,6 +3485,10 @@ PrefabInstance:
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 548450980}
+    - target: {fileID: 505400990, guid: 95e99f9ab9e88d44ebc72051c375eb85, type: 3}
+      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StopHorizontalMovement
+      objectReference: {fileID: 0}
     - target: {fileID: 769698752, guid: 95e99f9ab9e88d44ebc72051c375eb85, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -3493,6 +3497,10 @@ PrefabInstance:
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 548450980}
+    - target: {fileID: 769698752, guid: 95e99f9ab9e88d44ebc72051c375eb85, type: 3}
+      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StopHorizontalMovement
+      objectReference: {fileID: 0}
     - target: {fileID: 7228295045035118980, guid: 95e99f9ab9e88d44ebc72051c375eb85, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

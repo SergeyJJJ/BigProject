@@ -22,6 +22,7 @@ public abstract class BaseState
 
     public virtual void HorizontalMovement(int direction)
     {
+        Debug.Log("Move");
         Vector2 targetVelocity = Vector2.zero;
 
         if (direction == -1)

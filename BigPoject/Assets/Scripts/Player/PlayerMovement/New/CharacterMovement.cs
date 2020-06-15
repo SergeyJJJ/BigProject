@@ -8,6 +8,7 @@ public class CharacterMovement : MonoBehaviour
 
     [Header("Vertical movement")]
     [SerializeField] private float _jumpHeight = 0;
+    [SerializeField] private float  _climbUpSpeed = 0f;
 
     [Header("Is on ground controll")]
     [SerializeField] private Transform _groundCheckPoint = null;
@@ -48,6 +49,14 @@ public class CharacterMovement : MonoBehaviour
         get
         {
             return _jumpHeight;
+        }
+    }
+
+    public float  ClimbUpSpeed
+    {
+        get
+        {
+            return _climbUpSpeed;
         }
     }
 
@@ -175,14 +184,27 @@ public class CharacterMovement : MonoBehaviour
         _stateMachine.CurrentState.HorizontalMovement(direction);
     }
 
-    public void Stop()
+
+    public void StopHorizontalMovement()
     {
-        _rigidBody.velocity = Vector2.zero;
+        _rigidBody.velocity = new Vector2(0, _rigidBody.velocity.y);
     }
+
 
     public void Jump()
     {
         _stateMachine.CurrentState.RaisePlayerUp();
     }
 
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        _stateMachine.CurrentState.OnTriggerEnter2D(other);    
+    }
+
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        _stateMachine.CurrentState.OnTriggerExit2D(other);
+    }
 }

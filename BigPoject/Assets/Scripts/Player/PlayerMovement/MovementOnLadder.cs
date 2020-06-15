@@ -42,7 +42,7 @@ public class MovementOnLadder : MonoBehaviour
         _characterRigidBody = gameObject.GetComponent<Rigidbody2D>();
     }
 
-
+    //
     private void ClimbUp()
     {
         Vector2 targetVelocity = new Vector2(_characterRigidBody.velocity.x, _climbUpSpeed);
