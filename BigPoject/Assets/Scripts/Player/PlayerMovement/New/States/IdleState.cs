@@ -13,15 +13,18 @@ public class IdleState : BaseState
     }
 
 
-    public override void HorizontalInput(int direction)
+    public override void HorizontalMovementInput(int direction)
     {
-        base.HorizontalInput(direction);
+        base.HorizontalMovementInput(direction);
     }
 
 
-    public override void RaisePlayerUp()
+    public override void RaisePlayerUpInput(int direction)
     {
-        _stateMachine.TransitionToState(_characterMovement.Jumping);
+        if (direction == 1)
+        {
+            _stateMachine.TransitionToState(_characterMovement.Jumping);
+        }
     }
 
 

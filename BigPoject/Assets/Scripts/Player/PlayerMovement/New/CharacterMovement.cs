@@ -179,15 +179,15 @@ public class CharacterMovement : MonoBehaviour
     }
 
 
-    public void HorizontalInput(int direction)
+    public void HorizontalMovementInput(int direction)
     {
-        _stateMachine.CurrentState.HorizontalInput(direction);
+        _stateMachine.CurrentState.HorizontalMovementInput(direction);
     }
 
 
-    public void Jump()
+    public void RaisePlayerUpInput(int direction)
     {
-        _stateMachine.CurrentState.RaisePlayerUp();
+        _stateMachine.CurrentState.RaisePlayerUpInput(direction);
     }
 
 

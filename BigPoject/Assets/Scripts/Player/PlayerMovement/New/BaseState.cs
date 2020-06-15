@@ -7,7 +7,7 @@ public abstract class BaseState
 
     private Vector2 _currentVelocity = Vector2.zero;
     private static bool _isFacingRight = true;
-    private static float _direction = 0;
+    private static float _horizontalDirection = 0;
 
     protected BaseState(CharacterMovement characterMovement, StateMachine stateMachine)
     {
@@ -22,13 +22,13 @@ public abstract class BaseState
     }
 
 
-    public virtual void HorizontalInput(int direction)
+    public virtual void HorizontalMovementInput(int direction)
     {
-        _direction = direction;
+        _horizontalDirection = direction;
     }
 
 
-    public virtual void RaisePlayerUp()
+    public virtual void RaisePlayerUpInput(int direction)
     {
 
     }
@@ -50,7 +50,7 @@ public abstract class BaseState
     {
         Vector2 targetVelocity = new Vector2(0, _characterMovement.RigidBody.velocity.y);
 
-        if (_direction < 0)
+        if (_horizontalDirection < 0)
         {
             targetVelocity = new Vector2(-_characterMovement.HorizontalSpeed, _characterMovement.RigidBody.velocity.y);
 
@@ -59,7 +59,7 @@ public abstract class BaseState
                 Flip();
             }
         }
-        else if (_direction > 0)
+        else if (_horizontalDirection > 0)
         {
             targetVelocity = new Vector2(_characterMovement.HorizontalSpeed, _characterMovement.RigidBody.velocity.y);
 

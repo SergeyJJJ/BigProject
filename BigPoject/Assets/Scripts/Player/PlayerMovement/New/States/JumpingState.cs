@@ -13,13 +13,13 @@ public class JumpingState : BaseState
     }
 
 
-    public override void HorizontalInput(int direction)
+    public override void HorizontalMovementInput(int direction)
     {
-        base.HorizontalInput(direction);
+        base.HorizontalMovementInput(direction);
     }
 
 
-    public override void RaisePlayerUp()
+    public override void RaisePlayerUpInput(int direction)
     {
 
     }
