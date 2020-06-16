@@ -30,6 +30,9 @@ public class CharacterMovement : MonoBehaviour
     private float _afterGoundTouchTimer = 0;
     private float _pressButtonTimer = 0;
 
+    // Keyboard controll
+    private PlayerControll _playerControll = null;
+
     #region Properties
     public float HorizontalSpeed
     {
@@ -193,6 +196,19 @@ public class CharacterMovement : MonoBehaviour
     }
     #endregion Properties
 
+    private void Awake()
+    {
+        // Keyboard input
+        _playerControll = new PlayerControll();
+
+        _playerControll.MainGame.LeftMove.started += ctx => HorizontalMovementInput(-1);
+        _playerControll.MainGame.RightMove.started += ctx => HorizontalMovementInput(1);
+        _playerControll.MainGame.LeftMove.canceled += ctx => HorizontalMovementInput(0);
+        _playerControll.MainGame.RightMove.canceled += ctx => HorizontalMovementInput(0);
+        _playerControll.MainGame.UpMove.started += ctx => RaisePlayerUpInput(1);
+        _playerControll.MainGame.UpMove.canceled += ctx => RaisePlayerUpInput(0);
+    }
+
     private void Start()
     {
         _transform = transform;
@@ -238,5 +254,17 @@ public class CharacterMovement : MonoBehaviour
     private void OnTriggerExit2D(Collider2D other)
     {
         _stateMachine.CurrentState.OnTriggerExit2D(other);
+    }
+
+
+    // For keyboard movement
+    private void OnEnable()
+    {
+        _playerControll.Enable();    
+    }
+
+    private void OnDisable()
+    {
+        _playerControll.Disable();
     }
 }
