@@ -124,8 +124,6 @@ GameObject:
   - component: {fileID: 4746452946232570811}
   - component: {fileID: 6700315359917075697}
   - component: {fileID: 8042811545743306057}
-  - component: {fileID: 8726022456352784372}
-  - component: {fileID: 3216914768047637819}
   - component: {fileID: 21399133001567398}
   - component: {fileID: -1767523105098985399}
   - component: {fileID: 7452835413203550249}
@@ -216,11 +214,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f93697c01421c164a88d4b529cfc970f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _horizontalSpeed: 8.75
+  _horizontalSpeed: 8.5
   _movementSmothing: 0.06
   _jumpHeight: 15.6
-  _afterGroundTouchJumpTime: 0.2
-  _pressBeforeGroundTime: 0.2
+  _afterGroundTouchJumpTime: 0.1
+  _pressBeforeGroundTime: 0.1
   _cutJumpHeight: 0.27
   _climbUpSpeedLadder: 5
   _surfaceCheck: {fileID: 8042811545743306057}
@@ -241,36 +239,6 @@ MonoBehaviour:
   _whatIsGround:
     serializedVersion: 2
     m_Bits: 512
---- !u!114 &8726022456352784372
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8702310545741433508}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58d9cc72b7f0612408f9c49fa19968d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _climbUpSpeed: 10
-  _climbDownSpeed: 4.5
-  _movementSmoothing: 0.055
-  _ladderClimbButton: {fileID: 0}
-  _scriptController: {fileID: 0}
---- !u!114 &3216914768047637819
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8702310545741433508}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8cd95c957428ae24b9d96d40dc78ebeb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _cameraBehaviour: {fileID: 0}
 --- !u!114 &21399133001567398
 MonoBehaviour:
   m_ObjectHideFlags: 0

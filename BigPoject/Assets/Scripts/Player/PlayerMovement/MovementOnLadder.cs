@@ -2,7 +2,7 @@
 
 public class MovementOnLadder : MonoBehaviour
 {
-    [SerializeField] private float  _climbUpSpeed = 5f;                         // How fast character can clib the ladder.
+/*    [SerializeField] private float  _climbUpSpeed = 5f;                         // How fast character can clib the ladder.
     [SerializeField] private float  _climbDownSpeed = 5f;                       // How fast character will go down the stairs.
     [Range(0f, 0.4f)] [SerializeField] private float _movementSmoothing = 0f;   // How mouch to smouth out character movement.  
     [SerializeField] private CustomMovementButton _ladderClimbButton = null; 
@@ -95,5 +95,5 @@ public class MovementOnLadder : MonoBehaviour
     private bool IsButtonEnabled()
     {
         return _ladderClimbButton != null;
-    }
+    }*/
 }

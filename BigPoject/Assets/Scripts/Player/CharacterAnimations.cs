@@ -3,7 +3,7 @@
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(SpriteRenderer))]
 public class CharacterAnimations : MonoBehaviour
-{
+{/*
     private Animator _animator = null;                  // Contains animator compnent of the character.
 
 
@@ -88,5 +88,5 @@ public class CharacterAnimations : MonoBehaviour
     private void StartLandingAnimation()
     {
         _animator.SetBool("Fall", false);
-    }
+    }*/
 }
