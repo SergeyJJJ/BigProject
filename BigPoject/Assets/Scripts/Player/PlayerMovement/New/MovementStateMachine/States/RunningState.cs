@@ -62,6 +62,8 @@ public class RunningState : BaseState
 
     public override void Exit()
     {
-
+        float afterGoundTouchTimer = _characterMovement.AfterGoundTouchTimer;
+        TimerController.SetToValue(ref afterGoundTouchTimer, _characterMovement.AfterGroundTouchJumpTime);
+        _characterMovement.AfterGoundTouchTimer = afterGoundTouchTimer;
     }
 }

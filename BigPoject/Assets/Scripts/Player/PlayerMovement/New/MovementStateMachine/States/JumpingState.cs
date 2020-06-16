@@ -1,15 +1,16 @@
 using UnityEngine;
 
-public class IdleState : BaseState
+public class JumpingState : BaseState
 {
-    public IdleState (CharacterMovement characterMovement, StateMachine stateMachine) : base(characterMovement, stateMachine)
+    public JumpingState (CharacterMovement characterMovement, StateMachine stateMachine) : base(characterMovement, stateMachine)
     {
     
     }
 
     public override void Enter()
     {
-
+        _characterMovement.RigidBody.velocity = new Vector2(_characterMovement.RigidBody.velocity.x,
+                                                            _characterMovement.JumpHeight);
     }
 
 
@@ -21,16 +22,17 @@ public class IdleState : BaseState
 
     public override void RaisePlayerUpInput(int direction)
     {
-        if (direction == 1)
+        if (direction == 0)
         {
-            _stateMachine.TransitionToState(_characterMovement.Jumping);
+            _characterMovement.RigidBody.velocity = new Vector2(_characterMovement.RigidBody.velocity.x,
+                                                                _characterMovement.RigidBody.velocity.y *
+                                                                _characterMovement.CutJumpHeight);
         }
     }
 
 
     public override void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("hit");
         if (other.CompareTag("Ladder"))
         {
             _stateMachine.TransitionToState(_characterMovement.LadderClimbing);
@@ -51,11 +53,6 @@ public class IdleState : BaseState
         if (_characterMovement.RigidBody.velocity.y < -1f)
         {
             _stateMachine.TransitionToState(_characterMovement.Falling);
-        }
-
-        if (_characterMovement.RigidBody.velocity.x != 0)
-        {
-            _stateMachine.TransitionToState(_characterMovement.Running);
         }
     }
 

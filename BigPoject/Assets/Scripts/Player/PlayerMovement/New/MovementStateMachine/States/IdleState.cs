@@ -1,15 +1,15 @@
 using UnityEngine;
 
-public class JumpingState : BaseState
+public class IdleState : BaseState
 {
-    public JumpingState (CharacterMovement characterMovement, StateMachine stateMachine) : base(characterMovement, stateMachine)
+    public IdleState (CharacterMovement characterMovement, StateMachine stateMachine) : base(characterMovement, stateMachine)
     {
     
     }
 
     public override void Enter()
     {
-        _characterMovement.RigidBody.velocity = new Vector2(_characterMovement.RigidBody.velocity.x, _characterMovement.JumpHeight);
+
     }
 
 
@@ -21,12 +21,16 @@ public class JumpingState : BaseState
 
     public override void RaisePlayerUpInput(int direction)
     {
-
+        if (direction == 1)
+        {
+            _stateMachine.TransitionToState(_characterMovement.Jumping);
+        }
     }
 
 
     public override void OnTriggerEnter2D(Collider2D other)
     {
+        Debug.Log("hit");
         if (other.CompareTag("Ladder"))
         {
             _stateMachine.TransitionToState(_characterMovement.LadderClimbing);
@@ -48,11 +52,18 @@ public class JumpingState : BaseState
         {
             _stateMachine.TransitionToState(_characterMovement.Falling);
         }
+
+        if (_characterMovement.RigidBody.velocity.x != 0)
+        {
+            _stateMachine.TransitionToState(_characterMovement.Running);
+        }
     }
 
 
     public override void Exit()
     {
-
+        float afterGoundTouchTimer = _characterMovement.AfterGoundTouchTimer;
+        TimerController.SetToValue(ref afterGoundTouchTimer, _characterMovement.AfterGroundTouchJumpTime);
+        _characterMovement.AfterGoundTouchTimer = afterGoundTouchTimer;
     }
 } 
