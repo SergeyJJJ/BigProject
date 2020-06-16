@@ -10,7 +10,10 @@ public class LandingState : BaseState
 
     public override void Enter()
     {
-
+        if (_characterMovement.PressButtonTimer > 0)
+        {
+            _stateMachine.TransitionToState(_characterMovement.Jumping);
+        }
     }
 
 

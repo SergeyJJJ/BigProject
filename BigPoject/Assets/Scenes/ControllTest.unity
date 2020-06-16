@@ -1114,6 +1114,14 @@ PrefabInstance:
       propertyPath: _cameraBehaviour
       value: 
       objectReference: {fileID: 916001384}
+    - target: {fileID: 6700315359917075697, guid: db841216772e4844187962a048cfddbb, type: 3}
+      propertyPath: _afterGroundTouchJumpTime
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6700315359917075697, guid: db841216772e4844187962a048cfddbb, type: 3}
+      propertyPath: _pressBeforeGroundTime
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 8702310545741433508, guid: db841216772e4844187962a048cfddbb, type: 3}
       propertyPath: m_Name
       value: BlueSuit

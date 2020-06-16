@@ -24,10 +24,15 @@ public class FallingState : BaseState
 
     public override void RaisePlayerUpInput(int direction)
     {
-        if (_characterMovement.AfterGoundTouchTimer > 0f)
+        if (direction == 1)
         {
-            if (direction == 1)
+            float pressButtonTimer = _characterMovement.PressButtonTimer;
+            TimerController.SetToValue(ref pressButtonTimer, _characterMovement.PressBeforeGroundTime);
+            _characterMovement.PressButtonTimer = pressButtonTimer;
+
+            if (_characterMovement.AfterGoundTouchTimer > 0f)
             {
+                Debug.Log("HEEEEEEEEEEEEEEERRRRRRRRRREEEEEEEEEE");
                 _stateMachine.TransitionToState(_characterMovement.Jumping);
             }
         }
@@ -61,6 +66,10 @@ public class FallingState : BaseState
         float afterGoundTouchTimer = _characterMovement.AfterGoundTouchTimer;
         TimerController.DecrementByDeltaTime(ref afterGoundTouchTimer);
         _characterMovement.AfterGoundTouchTimer = afterGoundTouchTimer;
+
+        float pressButtonTimer = _characterMovement.PressButtonTimer;
+        TimerController.DecrementByDeltaTime(ref pressButtonTimer);
+        _characterMovement.PressButtonTimer = pressButtonTimer;
     }
 
 

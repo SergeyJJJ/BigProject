@@ -172,6 +172,7 @@ public class CharacterMovement : MonoBehaviour
         {
             return _afterGoundTouchTimer;
         }
+
         set
         {
             _afterGoundTouchTimer = value;
@@ -184,6 +185,11 @@ public class CharacterMovement : MonoBehaviour
         {
             return _pressButtonTimer;
         }
+
+        set
+        {
+            _pressButtonTimer = value;
+        }    
     }
     #endregion Properties
 
@@ -206,8 +212,8 @@ public class CharacterMovement : MonoBehaviour
     
     private void FixedUpdate()
     {
-        _stateMachine.CurrentState.PhysicsUpdate();
         Debug.Log(_afterGoundTouchTimer);
+        _stateMachine.CurrentState.PhysicsUpdate();
     }
 
 

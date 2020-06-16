@@ -28,6 +28,12 @@ public class JumpingState : BaseState
                                                                 _characterMovement.RigidBody.velocity.y *
                                                                 _characterMovement.CutJumpHeight);
         }
+        else if (direction == 1)
+        {
+            float pressButtonTimer = _characterMovement.PressButtonTimer;
+            TimerController.SetToValue(ref pressButtonTimer, _characterMovement.PressButtonTimer);
+            _characterMovement.PressButtonTimer = pressButtonTimer;
+        }
     }
 
 
@@ -54,6 +60,10 @@ public class JumpingState : BaseState
         {
             _stateMachine.TransitionToState(_characterMovement.Falling);
         }
+
+        float afterGoundTouchTimer = _characterMovement.AfterGoundTouchTimer;
+        TimerController.DecrementByDeltaTime(ref afterGoundTouchTimer);
+        _characterMovement.AfterGoundTouchTimer = afterGoundTouchTimer;
     }
 
 
