@@ -201,10 +201,10 @@ public class CharacterMovement : MonoBehaviour
         // Keyboard input
         _playerControll = new PlayerControll();
 
-        _playerControll.MainGame.LeftMove.started += ctx => HorizontalMovementInput(-1);
-        _playerControll.MainGame.RightMove.started += ctx => HorizontalMovementInput(1);
-        _playerControll.MainGame.LeftMove.canceled += ctx => HorizontalMovementInput(0);
-        _playerControll.MainGame.RightMove.canceled += ctx => HorizontalMovementInput(0);
+        _playerControll.MainGame.LeftMove.started += ctx => LeftMovementInput(true);
+        _playerControll.MainGame.RightMove.started += ctx => RightMovementInput(true);
+        _playerControll.MainGame.LeftMove.canceled += ctx => LeftMovementInput(false);
+        _playerControll.MainGame.RightMove.canceled += ctx => RightMovementInput(false);
         _playerControll.MainGame.UpMove.started += ctx => RaisePlayerUpInput(1);
         _playerControll.MainGame.UpMove.canceled += ctx => RaisePlayerUpInput(0);
     }
@@ -228,14 +228,19 @@ public class CharacterMovement : MonoBehaviour
     
     private void FixedUpdate()
     {
-        Debug.Log(_afterGoundTouchTimer);
         _stateMachine.CurrentState.PhysicsUpdate();
     }
 
 
-    public void HorizontalMovementInput(int direction)
+    public void LeftMovementInput(bool moveLeft)
     {
-        _stateMachine.CurrentState.HorizontalMovementInput(direction);
+        _stateMachine.CurrentState.LeftMovementInput(moveLeft);
+    }
+
+
+    public void RightMovementInput(bool moveRight)
+    {
+        _stateMachine.CurrentState.RightMovementInput(moveRight);
     }
 
 

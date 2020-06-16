@@ -17,9 +17,15 @@ public class LandingState : BaseState
     }
 
 
-    public override void HorizontalMovementInput(int direction)
+    public override void LeftMovementInput(bool moveLeft)
     {
-        base.HorizontalMovementInput(direction);
+        base.LeftMovementInput(moveLeft);
+    }
+
+
+    public override void RightMovementInput(bool moveRight)
+    {
+        base.RightMovementInput(moveRight);
     }
 
 

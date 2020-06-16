@@ -7,7 +7,9 @@ public abstract class BaseState
 
     private Vector2 _currentVelocity = Vector2.zero;
     private static bool _isFacingRight = true;
-    private static float _horizontalDirection = 0;
+    
+    private bool _moveLeft = false;
+    private bool _moveRight = false;
 
     protected BaseState(CharacterMovement characterMovement, StateMachine stateMachine)
     {
@@ -22,9 +24,15 @@ public abstract class BaseState
     }
 
 
-    public virtual void HorizontalMovementInput(int direction)
+    public virtual void LeftMovementInput(bool moveLeft)
     {
-        _horizontalDirection = direction;
+        _moveLeft = moveLeft;
+    }
+
+
+    public virtual void RightMovementInput(bool moveRight)
+    {
+        _moveRight = moveRight;
     }
 
 
@@ -50,7 +58,7 @@ public abstract class BaseState
     {
         Vector2 targetVelocity = new Vector2(0, _characterMovement.RigidBody.velocity.y);
 
-        if (_horizontalDirection < 0)
+        if (_moveLeft)
         {
             targetVelocity = new Vector2(-_characterMovement.HorizontalSpeed, _characterMovement.RigidBody.velocity.y);
 
@@ -59,7 +67,7 @@ public abstract class BaseState
                 Flip();
             }
         }
-        else if (_horizontalDirection > 0)
+        else if (_moveRight)
         {
             targetVelocity = new Vector2(_characterMovement.HorizontalSpeed, _characterMovement.RigidBody.velocity.y);
 
@@ -82,6 +90,7 @@ public abstract class BaseState
 
     private void Flip()
     {
+        Debug.Log("work");
         // Switch the way the player is labelled as facing.
 		_isFacingRight = !_isFacingRight;
 

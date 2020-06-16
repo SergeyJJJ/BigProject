@@ -16,9 +16,15 @@ public class FallingState : BaseState
     }
 
 
-    public override void HorizontalMovementInput(int direction)
+    public override void LeftMovementInput(bool moveLeft)
     {
-        base.HorizontalMovementInput(direction);
+        base.LeftMovementInput(moveLeft);
+    }
+
+
+    public override void RightMovementInput(bool moveRight)
+    {
+        base.RightMovementInput(moveRight);
     }
 
 
@@ -32,7 +38,6 @@ public class FallingState : BaseState
 
             if (_characterMovement.AfterGoundTouchTimer > 0f)
             {
-                Debug.Log("HEEEEEEEEEEEEEEERRRRRRRRRREEEEEEEEEE");
                 _stateMachine.TransitionToState(_characterMovement.Jumping);
             }
         }

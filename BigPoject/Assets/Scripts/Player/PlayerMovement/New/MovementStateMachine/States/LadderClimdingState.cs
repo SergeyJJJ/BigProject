@@ -13,15 +13,20 @@ public class LadderClimdingState : BaseState
     }
 
 
-    public override void HorizontalMovementInput(int direction)
+    public override void LeftMovementInput(bool moveLeft)
     {
-        base.HorizontalMovementInput(direction);
+        base.LeftMovementInput(moveLeft);
+    }
+
+
+    public override void RightMovementInput(bool moveRight)
+    {
+        base.RightMovementInput(moveRight);
     }
 
 
     public override void RaisePlayerUpInput(int direction)
     {
-        Debug.Log("Climb");
         _characterMovement.RigidBody.velocity = new Vector2(_characterMovement.RigidBody.velocity.x, _characterMovement.ClimbUpSpeed);
     }
 
