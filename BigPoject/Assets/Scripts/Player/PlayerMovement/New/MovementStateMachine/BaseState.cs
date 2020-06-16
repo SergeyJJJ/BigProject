@@ -8,8 +8,8 @@ public abstract class BaseState
     private Vector2 _currentVelocity = Vector2.zero;
     private static bool _isFacingRight = true;
     
-    private bool _moveLeft = false;
-    private bool _moveRight = false;
+    private static bool _moveLeft = false;
+    private static bool _moveRight = false;
 
     protected BaseState(CharacterMovement characterMovement, StateMachine stateMachine)
     {
@@ -58,7 +58,7 @@ public abstract class BaseState
     {
         Vector2 targetVelocity = new Vector2(0, _characterMovement.RigidBody.velocity.y);
 
-        if (_moveLeft)
+        if (_moveLeft && !_moveRight)
         {
             targetVelocity = new Vector2(-_characterMovement.HorizontalSpeed, _characterMovement.RigidBody.velocity.y);
 
@@ -67,7 +67,7 @@ public abstract class BaseState
                 Flip();
             }
         }
-        else if (_moveRight)
+        else if (_moveRight && !_moveLeft)
         {
             targetVelocity = new Vector2(_characterMovement.HorizontalSpeed, _characterMovement.RigidBody.velocity.y);
 
@@ -76,6 +76,8 @@ public abstract class BaseState
                 Flip();
             }
         }
+
+        Debug.Log($"Right {_moveRight}; Left {_moveLeft}");
 
         _characterMovement.RigidBody.velocity = Vector2.SmoothDamp(_characterMovement.RigidBody.velocity,
                                                                    targetVelocity, ref _currentVelocity,

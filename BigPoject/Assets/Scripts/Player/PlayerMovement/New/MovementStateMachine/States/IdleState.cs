@@ -36,7 +36,6 @@ public class IdleState : BaseState
 
     public override void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("hit");
         if (other.CompareTag("Ladder"))
         {
             _stateMachine.TransitionToState(_characterMovement.LadderClimbing);
