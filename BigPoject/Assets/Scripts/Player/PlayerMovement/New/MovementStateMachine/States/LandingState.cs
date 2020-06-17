@@ -35,8 +35,10 @@ public class LandingState : BaseState
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
+        bool isStopRunning = _characterMovement.RigidBody.velocity.x < 1f;
+        bool isUpButtonPressed = _characterMovement.UpMoveButton.IsPressed;
 
-        if (Mathf.Approximately(_characterMovement.RigidBody.velocity.x, 0f))
+        if (isStopRunning)
         {
             _stateMachine.TransitionToState(_characterMovement.Idle);
         }
@@ -45,9 +47,17 @@ public class LandingState : BaseState
             _stateMachine.TransitionToState(_characterMovement.Running);
         }
 
-        if (_characterMovement.UpMoveButton.IsPressed)
+        if (isUpButtonPressed)
         {
             _stateMachine.TransitionToState(_characterMovement.Jumping);
+        }
+
+        if (_characterMovement.SurfaceCheck.IsCharecterIsOnSurface())
+        {
+            if (_characterMovement.SurfaceCheck.GetSurfaceOnWhichPlayerStanding().CompareTag("MovingPlatform"))
+            {
+                _stateMachine.TransitionToState(_characterMovement.PlatformInteraction);
+            }
         }
     }
 

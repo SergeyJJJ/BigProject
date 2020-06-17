@@ -32,9 +32,13 @@ public class FallingState : BaseState
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
-        float pressButtonTimer = _characterMovement.PressButtonTimer;
+        bool isUpButtonPressed = _characterMovement.UpMoveButton.IsPressed;
 
-        if (_characterMovement.UpMoveButton.IsPressed)
+        float pressButtonTimer = _characterMovement.PressButtonTimer;
+        TimerController.DecrementByDeltaTime(ref pressButtonTimer);
+        _characterMovement.PressButtonTimer = pressButtonTimer;
+
+        if (isUpButtonPressed)
         {
             TimerController.SetToValue(ref pressButtonTimer, _characterMovement.PressBeforeGroundTime);
             _characterMovement.PressButtonTimer = pressButtonTimer;
@@ -47,15 +51,19 @@ public class FallingState : BaseState
 
         if (_characterMovement.SurfaceCheck.IsCharecterIsOnSurface())
         {
-            _stateMachine.TransitionToState(_characterMovement.Landing);
+            if (_characterMovement.SurfaceCheck.GetSurfaceOnWhichPlayerStanding().CompareTag("MovingPlatform"))
+            {
+                _stateMachine.TransitionToState(_characterMovement.PlatformInteraction);
+            }
+            else
+            {
+                _stateMachine.TransitionToState(_characterMovement.Landing);
+            }
         }
 
         float afterGoundTouchTimer = _characterMovement.AfterGoundTouchTimer;
         TimerController.DecrementByDeltaTime(ref afterGoundTouchTimer);
         _characterMovement.AfterGoundTouchTimer = afterGoundTouchTimer;
-
-        TimerController.DecrementByDeltaTime(ref pressButtonTimer);
-        _characterMovement.PressButtonTimer = pressButtonTimer;
     }
 
 

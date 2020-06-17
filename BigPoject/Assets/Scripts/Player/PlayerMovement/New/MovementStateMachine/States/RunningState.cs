@@ -32,20 +32,32 @@ public class RunningState : BaseState
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
+        bool isStartFalling = _characterMovement.RigidBody.velocity.y < -1f;
+        bool isStopRunning = (_characterMovement.RigidBody.velocity.x < 1f) &&
+                             (_characterMovement.RigidBody.velocity.x > -1);
+        bool isUpButtonPressed = _characterMovement.UpMoveButton.IsPressed;
 
-        if (_characterMovement.RigidBody.velocity.y < -1f)
+        if (isStartFalling)
         {
             _stateMachine.TransitionToState(_characterMovement.Falling);
         }
 
-        if (_characterMovement.RigidBody.velocity.x < 0.5f)
+        if (isStopRunning)
         {
             _stateMachine.TransitionToState(_characterMovement.Idle);
         }
 
-        if (_characterMovement.UpMoveButton.IsPressed)
+        if (isUpButtonPressed)
         {
             _stateMachine.TransitionToState(_characterMovement.Jumping);
+        }
+
+        if (_characterMovement.SurfaceCheck.IsCharecterIsOnSurface())
+        {
+            if (_characterMovement.SurfaceCheck.GetSurfaceOnWhichPlayerStanding().CompareTag("MovingPlatform"))
+            {
+                _stateMachine.TransitionToState(_characterMovement.PlatformInteraction);
+            }
         }
     }
 

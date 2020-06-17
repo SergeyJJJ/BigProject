@@ -32,15 +32,17 @@ public class JumpingState : BaseState
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
+        bool isUpButtonPressed = _characterMovement.UpMoveButton.IsPressed;
 
-        if (!_characterMovement.UpMoveButton.IsPressed)
+        if (!isUpButtonPressed)
         {
             _characterMovement.RigidBody.velocity = new Vector2(_characterMovement.RigidBody.velocity.x,
                                                                 _characterMovement.RigidBody.velocity.y *
                                                                 _characterMovement.CutJumpHeight);
+
             _stateMachine.TransitionToState(_characterMovement.Falling);
         }
-        else if (_characterMovement.UpMoveButton.IsPressed)
+        else if (isUpButtonPressed)
         {
             float pressButtonTimer = _characterMovement.PressButtonTimer;
             TimerController.SetToValue(ref pressButtonTimer, _characterMovement.PressButtonTimer);

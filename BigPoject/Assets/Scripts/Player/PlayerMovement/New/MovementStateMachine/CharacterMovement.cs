@@ -29,6 +29,7 @@ public class CharacterMovement : MonoBehaviour
     private FallingState _fallingState = null;
     private LandingState _landingState = null;
     private LadderClimdingState _ladderClimbingState = null;
+    private PlatformInteractionState _platformInteraction = null;
 
     private Transform _transform = null;
     private Rigidbody2D _rigidBody = null;
@@ -180,11 +181,20 @@ public class CharacterMovement : MonoBehaviour
             return _landingState;
         }
     }
+
     public LadderClimdingState LadderClimbing
     {
         get
         {
             return _ladderClimbingState;
+        }
+    }
+
+    public PlatformInteractionState PlatformInteraction
+    {
+        get
+        {
+            return _platformInteraction;
         }
     }
 
@@ -243,6 +253,7 @@ public class CharacterMovement : MonoBehaviour
         _fallingState = new FallingState(this, _stateMachine);
         _landingState = new LandingState(this, _stateMachine);
         _ladderClimbingState = new LadderClimdingState(this, _stateMachine);
+        _platformInteraction = new PlatformInteractionState(this, _stateMachine);
 
         _stateMachine.Initialization(Idle); 
     }
@@ -251,7 +262,6 @@ public class CharacterMovement : MonoBehaviour
     private void FixedUpdate()
     {
         _stateMachine.CurrentState.PhysicsUpdate();
-        Debug.Log(_stateMachine.CurrentState);
     }
 
 

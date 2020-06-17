@@ -36,8 +36,10 @@ public abstract class BaseState
     public virtual void PhysicsUpdate()
     {
         Vector2 targetVelocity = new Vector2(0, _characterMovement.RigidBody.velocity.y);
+        bool isLeftButtonPressed = _characterMovement.LeftMoveButton.IsPressed;
+        bool isRightButtonPressed = _characterMovement.RightMoveButton.IsPressed;
 
-        if (_characterMovement.LeftMoveButton.IsPressed)
+        if (isLeftButtonPressed && !isRightButtonPressed)
         {
             targetVelocity = new Vector2(-_characterMovement.HorizontalSpeed, _characterMovement.RigidBody.velocity.y);
 
@@ -46,7 +48,7 @@ public abstract class BaseState
                 Flip();
             }
         }
-        else if (_characterMovement.RightMoveButton.IsPressed)
+        else if (isRightButtonPressed && !isLeftButtonPressed)
         {
             targetVelocity = new Vector2(_characterMovement.HorizontalSpeed, _characterMovement.RigidBody.velocity.y);
 
@@ -69,11 +71,8 @@ public abstract class BaseState
 
     private void Flip()
     {
-        // Switch the way the player is labelled as facing.
 		_isFacingRight = !_isFacingRight;
 
-        // Rotate the character 180 degrees along the Y-Axis,
-        // and 0 degrees along X-Axis and Z-Axis.
-		_characterMovement.Transform.Rotate(0f, 180f, 0f);
+        _characterMovement.Transform.Rotate(0f, 180f, 0f);
     }
 }

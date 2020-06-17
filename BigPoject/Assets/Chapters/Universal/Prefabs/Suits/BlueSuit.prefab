@@ -223,8 +223,8 @@ MonoBehaviour:
   _pressBeforeGroundTime: 0.1
   _cutJumpHeight: 0.27
   _upMoveButton: {fileID: 0}
-  _climbUpSpeed: 7
-  _climbDownSpeed: 5
+  _climbUpSpeed: 6
+  _climbDownSpeed: 4
   _surfaceCheck: {fileID: 8042811545743306057}
 --- !u!114 &8042811545743306057
 MonoBehaviour:

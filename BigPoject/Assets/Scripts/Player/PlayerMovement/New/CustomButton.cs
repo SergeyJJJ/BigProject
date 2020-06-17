@@ -3,20 +3,27 @@ using UnityEngine.EventSystems;
 
 public class CustomButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPointerExitHandler
 {
-    public bool IsPressed{ get; private set; }
+    private bool _isPressed = false;
+    public bool IsPressed
+    {
+        get
+        {
+            return _isPressed;
+        }
+    }
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        IsPressed = true;
+        _isPressed = true;
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        IsPressed = false;
+        _isPressed = false;
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        IsPressed = false;
+        _isPressed = false;
     }
 }

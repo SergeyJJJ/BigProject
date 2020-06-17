@@ -33,19 +33,32 @@ public class IdleState : BaseState
     {
         base.PhysicsUpdate();
 
-        if (_characterMovement.RigidBody.velocity.y < -1f)
+        bool isStartRunning = (_characterMovement.RigidBody.velocity.x > 1) &&
+                              (_characterMovement.RigidBody.velocity.x < -1);
+        bool isStartFalling = _characterMovement.RigidBody.velocity.y < -1f;
+        bool isUpButtonPressed = _characterMovement.UpMoveButton.IsPressed;
+
+        if (isStartFalling)
         {
             _stateMachine.TransitionToState(_characterMovement.Falling);
         }
 
-        if (_characterMovement.RigidBody.velocity.x != 0)
+        if (isStartRunning)
         {
             _stateMachine.TransitionToState(_characterMovement.Running);
         }
 
-        if (_characterMovement.UpMoveButton.IsPressed)
+        if (isUpButtonPressed)
         {
             _stateMachine.TransitionToState(_characterMovement.Jumping);
+        }
+
+        if (_characterMovement.SurfaceCheck.IsCharecterIsOnSurface())
+        {
+            if (_characterMovement.SurfaceCheck.GetSurfaceOnWhichPlayerStanding().CompareTag("MovingPlatform"))
+            {
+                _stateMachine.TransitionToState(_characterMovement.PlatformInteraction);
+            }
         }
     }
 

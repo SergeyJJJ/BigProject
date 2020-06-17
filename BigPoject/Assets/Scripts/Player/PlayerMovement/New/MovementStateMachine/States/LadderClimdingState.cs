@@ -42,14 +42,17 @@ public class LadderClimdingState : BaseState
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
+        bool isUpButtonPressed = _characterMovement.UpMoveButton.IsPressed;
 
-        if (_characterMovement.UpMoveButton.IsPressed)
+        if (isUpButtonPressed)
         {
-            _characterMovement.RigidBody.velocity = new Vector2(_characterMovement.RigidBody.velocity.x, _characterMovement.ClimbUpSpeed);
+            _characterMovement.RigidBody.velocity = new Vector2(_characterMovement.RigidBody.velocity.x,
+                                                                _characterMovement.ClimbUpSpeed);
         }
-        else if (!_characterMovement.UpMoveButton.IsPressed)
+        else if (!isUpButtonPressed)
         {
-            _characterMovement.RigidBody.velocity = new Vector2(_characterMovement.RigidBody.velocity.x, -_characterMovement.ClimbDownSpeed);
+            _characterMovement.RigidBody.velocity = new Vector2(_characterMovement.RigidBody.velocity.x,
+                                                                -_characterMovement.ClimbDownSpeed);
         }
     }
 
