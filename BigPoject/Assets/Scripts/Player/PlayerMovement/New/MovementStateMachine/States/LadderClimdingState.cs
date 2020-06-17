@@ -2,8 +2,6 @@
 
 public class LadderClimdingState : BaseState
 {
-    private bool _climbUp = false;
-
     public LadderClimdingState (CharacterMovement characterMovement, StateMachine stateMachine) : base(characterMovement, stateMachine)
     {
     
@@ -12,12 +10,6 @@ public class LadderClimdingState : BaseState
     public override void Enter()
     {
          
-    }
-
-
-    public override void RaisePlayerUpInput(bool raiseUp)
-    {
-        _climbUp = raiseUp;
     }
 
 
@@ -51,11 +43,11 @@ public class LadderClimdingState : BaseState
     {
         base.PhysicsUpdate();
 
-        if (_climbUp)
+        if (_characterMovement.UpMoveButton.IsPressed)
         {
             _characterMovement.RigidBody.velocity = new Vector2(_characterMovement.RigidBody.velocity.x, _characterMovement.ClimbUpSpeed);
         }
-        else if (!_climbUp)
+        else if (!_characterMovement.UpMoveButton.IsPressed)
         {
             _characterMovement.RigidBody.velocity = new Vector2(_characterMovement.RigidBody.velocity.x, -_characterMovement.ClimbDownSpeed);
         }

@@ -17,15 +17,6 @@ public class LandingState : BaseState
     }
 
 
-    public override void RaisePlayerUpInput(bool raiseUp)
-    {
-        if (raiseUp)
-        {
-            _stateMachine.TransitionToState(_characterMovement.Jumping);
-        }
-    }
-
-
     public override void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Ladder"))
@@ -52,6 +43,11 @@ public class LandingState : BaseState
         else 
         {
             _stateMachine.TransitionToState(_characterMovement.Running);
+        }
+
+        if (_characterMovement.UpMoveButton.IsPressed)
+        {
+            _stateMachine.TransitionToState(_characterMovement.Jumping);
         }
     }
 

@@ -13,14 +13,6 @@ public class IdleState : BaseState
     }
 
 
-    public override void RaisePlayerUpInput(bool raiseUp)
-    {
-        if (raiseUp)
-        {
-            _stateMachine.TransitionToState(_characterMovement.Jumping);
-        }
-    }
-
 
     public override void OnTriggerEnter2D(Collider2D other)
     {
@@ -49,6 +41,11 @@ public class IdleState : BaseState
         if (_characterMovement.RigidBody.velocity.x != 0)
         {
             _stateMachine.TransitionToState(_characterMovement.Running);
+        }
+
+        if (_characterMovement.UpMoveButton.IsPressed)
+        {
+            _stateMachine.TransitionToState(_characterMovement.Jumping);
         }
     }
 

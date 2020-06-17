@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class FallingState : BaseState
 {
@@ -13,22 +11,6 @@ public class FallingState : BaseState
     public override void Enter()
     {
 
-    }
-
-
-    public override void RaisePlayerUpInput(bool raiseUp)
-    {
-        if (raiseUp)
-        {
-            float pressButtonTimer = _characterMovement.PressButtonTimer;
-            TimerController.SetToValue(ref pressButtonTimer, _characterMovement.PressBeforeGroundTime);
-            _characterMovement.PressButtonTimer = pressButtonTimer;
-
-            if (_characterMovement.AfterGoundTouchTimer > 0f)
-            {
-                _stateMachine.TransitionToState(_characterMovement.Jumping);
-            }
-        }
     }
 
 
@@ -50,6 +32,18 @@ public class FallingState : BaseState
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
+        float pressButtonTimer = _characterMovement.PressButtonTimer;
+
+        if (_characterMovement.UpMoveButton.IsPressed)
+        {
+            TimerController.SetToValue(ref pressButtonTimer, _characterMovement.PressBeforeGroundTime);
+            _characterMovement.PressButtonTimer = pressButtonTimer;
+
+            if (_characterMovement.AfterGoundTouchTimer > 0f)
+            {
+                _stateMachine.TransitionToState(_characterMovement.Jumping);
+            }
+        }
 
         if (_characterMovement.SurfaceCheck.IsCharecterIsOnSurface())
         {
@@ -60,7 +54,6 @@ public class FallingState : BaseState
         TimerController.DecrementByDeltaTime(ref afterGoundTouchTimer);
         _characterMovement.AfterGoundTouchTimer = afterGoundTouchTimer;
 
-        float pressButtonTimer = _characterMovement.PressButtonTimer;
         TimerController.DecrementByDeltaTime(ref pressButtonTimer);
         _characterMovement.PressButtonTimer = pressButtonTimer;
     }

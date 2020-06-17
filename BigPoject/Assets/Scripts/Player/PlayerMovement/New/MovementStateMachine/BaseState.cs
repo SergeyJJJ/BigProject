@@ -21,12 +21,6 @@ public abstract class BaseState
     }
 
 
-    public virtual void RaisePlayerUpInput(bool raiseUp)
-    {
-
-    }
-
-
     public virtual void OnTriggerEnter2D(Collider2D other)
     {
         

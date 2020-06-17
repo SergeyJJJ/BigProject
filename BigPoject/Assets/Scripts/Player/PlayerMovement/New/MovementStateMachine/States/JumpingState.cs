@@ -14,23 +14,6 @@ public class JumpingState : BaseState
     }
 
 
-    public override void RaisePlayerUpInput(bool raiseUp)
-    {
-        if (!raiseUp)
-        {
-            _characterMovement.RigidBody.velocity = new Vector2(_characterMovement.RigidBody.velocity.x,
-                                                                _characterMovement.RigidBody.velocity.y *
-                                                                _characterMovement.CutJumpHeight);
-        }
-        else if (raiseUp)
-        {
-            float pressButtonTimer = _characterMovement.PressButtonTimer;
-            TimerController.SetToValue(ref pressButtonTimer, _characterMovement.PressButtonTimer);
-            _characterMovement.PressButtonTimer = pressButtonTimer;
-        }
-    }
-
-
     public override void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Ladder"))
@@ -50,9 +33,18 @@ public class JumpingState : BaseState
     {
         base.PhysicsUpdate();
 
-        if (_characterMovement.RigidBody.velocity.y < -1f)
+        if (!_characterMovement.UpMoveButton.IsPressed)
         {
+            _characterMovement.RigidBody.velocity = new Vector2(_characterMovement.RigidBody.velocity.x,
+                                                                _characterMovement.RigidBody.velocity.y *
+                                                                _characterMovement.CutJumpHeight);
             _stateMachine.TransitionToState(_characterMovement.Falling);
+        }
+        else if (_characterMovement.UpMoveButton.IsPressed)
+        {
+            float pressButtonTimer = _characterMovement.PressButtonTimer;
+            TimerController.SetToValue(ref pressButtonTimer, _characterMovement.PressButtonTimer);
+            _characterMovement.PressButtonTimer = pressButtonTimer;
         }
 
         float afterGoundTouchTimer = _characterMovement.AfterGoundTouchTimer;

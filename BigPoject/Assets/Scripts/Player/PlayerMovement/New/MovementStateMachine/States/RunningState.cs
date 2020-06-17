@@ -14,15 +14,6 @@ public class RunningState : BaseState
     }
 
 
-    public override void RaisePlayerUpInput(bool raiseUp)
-    {
-        if (raiseUp)
-        {
-            _stateMachine.TransitionToState(_characterMovement.Jumping);
-        }
-    }
-
-
     public override void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Ladder"))
@@ -47,9 +38,14 @@ public class RunningState : BaseState
             _stateMachine.TransitionToState(_characterMovement.Falling);
         }
 
-        if (Mathf.Approximately(_characterMovement.RigidBody.velocity.x, 0f))
+        if (_characterMovement.RigidBody.velocity.x < 0.5f)
         {
             _stateMachine.TransitionToState(_characterMovement.Idle);
+        }
+
+        if (_characterMovement.UpMoveButton.IsPressed)
+        {
+            _stateMachine.TransitionToState(_characterMovement.Jumping);
         }
     }
 

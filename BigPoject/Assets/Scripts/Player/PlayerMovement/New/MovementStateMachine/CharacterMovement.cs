@@ -13,6 +13,7 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] private float _afterGroundTouchJumpTime = 0f;
     [SerializeField] private float _pressBeforeGroundTime = 0f;  
     [ Range(0f, 1f), SerializeField] private float _cutJumpHeight = 0;
+    [SerializeField] private CustomButton _upMoveButton = null;
 
     [Header("Ladder movement controll")]
     [SerializeField] private float  _climbUpSpeed = 0f;
@@ -97,6 +98,14 @@ public class CharacterMovement : MonoBehaviour
         get
         {
             return _cutJumpHeight;
+        }
+    }
+
+    public CustomButton UpMoveButton
+    {
+        get
+        {
+            return _upMoveButton;
         }
     }
 
@@ -242,12 +251,7 @@ public class CharacterMovement : MonoBehaviour
     private void FixedUpdate()
     {
         _stateMachine.CurrentState.PhysicsUpdate();
-    }
-
-
-    public void RaisePlayerUpInput(bool raiseUp)
-    {
-        _stateMachine.CurrentState.RaisePlayerUpInput(raiseUp);
+        Debug.Log(_stateMachine.CurrentState);
     }
 
 

@@ -1059,17 +1059,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b6a4fdca1112af4f898b66b67ccd84c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &548450980 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6700315359917075697, guid: db841216772e4844187962a048cfddbb, type: 3}
-  m_PrefabInstance: {fileID: 559604546}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f93697c01421c164a88d4b529cfc970f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &559604546
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1129,6 +1118,10 @@ PrefabInstance:
       propertyPath: _rightMoveButton
       value: 
       objectReference: {fileID: 1812688291}
+    - target: {fileID: 6700315359917075697, guid: db841216772e4844187962a048cfddbb, type: 3}
+      propertyPath: _upMoveButton
+      value: 
+      objectReference: {fileID: 1424362287}
     - target: {fileID: 8702310545741433508, guid: db841216772e4844187962a048cfddbb, type: 3}
       propertyPath: m_Name
       value: BlueSuit
@@ -2021,6 +2014,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1424362287 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8257950378412818842, guid: 95e99f9ab9e88d44ebc72051c375eb85, type: 3}
+  m_PrefabInstance: {fileID: 9004649170335139673}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b6a4fdca1112af4f898b66b67ccd84c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1433423959
 GameObject:
   m_ObjectHideFlags: 0
@@ -3398,14 +3402,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1671769226}
     m_Modifications:
-    - target: {fileID: 7228295045035118980, guid: 95e99f9ab9e88d44ebc72051c375eb85, type: 3}
-      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 548450980}
-    - target: {fileID: 7228295045035118980, guid: 95e99f9ab9e88d44ebc72051c375eb85, type: 3}
-      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 548450980}
     - target: {fileID: 9004649171288624030, guid: 95e99f9ab9e88d44ebc72051c375eb85, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
