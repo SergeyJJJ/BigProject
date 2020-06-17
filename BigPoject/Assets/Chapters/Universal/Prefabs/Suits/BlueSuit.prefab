@@ -220,7 +220,8 @@ MonoBehaviour:
   _afterGroundTouchJumpTime: 0.1
   _pressBeforeGroundTime: 0.1
   _cutJumpHeight: 0.27
-  _climbUpSpeedLadder: 5
+  _climbUpSpeed: 7
+  _climbDownSpeed: 5
   _surfaceCheck: {fileID: 8042811545743306057}
 --- !u!114 &8042811545743306057
 MonoBehaviour:

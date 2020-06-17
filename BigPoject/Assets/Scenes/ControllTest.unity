@@ -1110,6 +1110,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6700315359917075697, guid: db841216772e4844187962a048cfddbb, type: 3}
+      propertyPath: _climbUpSpeed
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6700315359917075697, guid: db841216772e4844187962a048cfddbb, type: 3}
+      propertyPath: _climbDownSpeed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8702310545741433508, guid: db841216772e4844187962a048cfddbb, type: 3}
       propertyPath: m_Name
       value: BlueSuit

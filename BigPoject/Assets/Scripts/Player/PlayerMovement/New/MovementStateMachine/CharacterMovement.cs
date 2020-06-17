@@ -2,16 +2,19 @@
 
 public class CharacterMovement : MonoBehaviour
 {
-    [Header("Horizontal movement")]
+    [Header("Horizontal movement controll")]
     [SerializeField] private float _horizontalSpeed = 0f;
     [Range(0f, 0.4f), SerializeField] private float _movementSmothing = 0f;
 
-    [Header("Vertical movement")]
+    [Header("Jump controll")]
     [SerializeField] private float _jumpHeight = 0f;
     [SerializeField] private float _afterGroundTouchJumpTime = 0f;
     [SerializeField] private float _pressBeforeGroundTime = 0f;  
     [ Range(0f, 1f), SerializeField] private float _cutJumpHeight = 0;
-    [SerializeField] private float  _climbUpSpeedLadder = 0f;
+
+    [Header("Ladder movement controll")]
+    [SerializeField] private float  _climbUpSpeed = 0f;
+    [SerializeField] private float _climbDownSpeed = 0f;
 
     [Header("Is on ground controll")]
     [SerializeField] private SurfaceCheck _surfaceCheck = null;
@@ -86,7 +89,15 @@ public class CharacterMovement : MonoBehaviour
     {
         get
         {
-            return _climbUpSpeedLadder;
+            return _climbUpSpeed;
+        }
+    }
+
+    public float ClimbDownSpeed
+    {
+        get
+        {
+            return _climbDownSpeed;
         }
     }
 
@@ -205,8 +216,8 @@ public class CharacterMovement : MonoBehaviour
         _playerControll.MainGame.RightMove.started += ctx => RightMovementInput(true);
         _playerControll.MainGame.LeftMove.canceled += ctx => LeftMovementInput(false);
         _playerControll.MainGame.RightMove.canceled += ctx => RightMovementInput(false);
-        _playerControll.MainGame.UpMove.started += ctx => RaisePlayerUpInput(1);
-        _playerControll.MainGame.UpMove.canceled += ctx => RaisePlayerUpInput(0);
+        _playerControll.MainGame.UpMove.started += ctx => RaisePlayerUpInput(true);
+        _playerControll.MainGame.UpMove.canceled += ctx => RaisePlayerUpInput(false);
     }
 
     private void Start()
@@ -244,9 +255,9 @@ public class CharacterMovement : MonoBehaviour
     }
 
 
-    public void RaisePlayerUpInput(int direction)
+    public void RaisePlayerUpInput(bool raiseUp)
     {
-        _stateMachine.CurrentState.RaisePlayerUpInput(direction);
+        _stateMachine.CurrentState.RaisePlayerUpInput(raiseUp);
     }
 
 

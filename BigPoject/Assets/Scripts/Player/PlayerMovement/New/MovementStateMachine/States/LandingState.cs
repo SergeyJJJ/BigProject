@@ -29,9 +29,9 @@ public class LandingState : BaseState
     }
 
 
-    public override void RaisePlayerUpInput(int direction)
+    public override void RaisePlayerUpInput(bool raiseUp)
     {
-        if (direction == 1)
+        if (raiseUp)
         {
             _stateMachine.TransitionToState(_characterMovement.Jumping);
         }
@@ -40,7 +40,10 @@ public class LandingState : BaseState
 
     public override void OnTriggerEnter2D(Collider2D other)
     {
-        
+        if (other.CompareTag("Ladder"))
+        {
+            _stateMachine.TransitionToState(_characterMovement.LadderClimbing);
+        }
     }
 
 

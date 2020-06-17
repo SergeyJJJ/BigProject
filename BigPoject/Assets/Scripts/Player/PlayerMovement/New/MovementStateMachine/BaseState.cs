@@ -36,7 +36,7 @@ public abstract class BaseState
     }
 
 
-    public virtual void RaisePlayerUpInput(int direction)
+    public virtual void RaisePlayerUpInput(bool raiseUp)
     {
 
     }
@@ -77,8 +77,6 @@ public abstract class BaseState
             }
         }
 
-        Debug.Log($"Right {_moveRight}; Left {_moveLeft}");
-
         _characterMovement.RigidBody.velocity = Vector2.SmoothDamp(_characterMovement.RigidBody.velocity,
                                                                    targetVelocity, ref _currentVelocity,
                                                                    _characterMovement.MoventSmoothing);
@@ -92,7 +90,6 @@ public abstract class BaseState
 
     private void Flip()
     {
-        Debug.Log("work");
         // Switch the way the player is labelled as facing.
 		_isFacingRight = !_isFacingRight;
 

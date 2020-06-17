@@ -28,9 +28,9 @@ public class FallingState : BaseState
     }
 
 
-    public override void RaisePlayerUpInput(int direction)
+    public override void RaisePlayerUpInput(bool raiseUp)
     {
-        if (direction == 1)
+        if (raiseUp)
         {
             float pressButtonTimer = _characterMovement.PressButtonTimer;
             TimerController.SetToValue(ref pressButtonTimer, _characterMovement.PressBeforeGroundTime);

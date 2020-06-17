@@ -25,9 +25,9 @@ public class IdleState : BaseState
     }
 
 
-    public override void RaisePlayerUpInput(int direction)
+    public override void RaisePlayerUpInput(bool raiseUp)
     {
-        if (direction == 1)
+        if (raiseUp)
         {
             _stateMachine.TransitionToState(_characterMovement.Jumping);
         }

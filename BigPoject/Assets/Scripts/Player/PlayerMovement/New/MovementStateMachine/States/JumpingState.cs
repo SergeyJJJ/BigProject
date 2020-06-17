@@ -26,15 +26,15 @@ public class JumpingState : BaseState
     }
 
 
-    public override void RaisePlayerUpInput(int direction)
+    public override void RaisePlayerUpInput(bool raiseUp)
     {
-        if (direction == 0)
+        if (!raiseUp)
         {
             _characterMovement.RigidBody.velocity = new Vector2(_characterMovement.RigidBody.velocity.x,
                                                                 _characterMovement.RigidBody.velocity.y *
                                                                 _characterMovement.CutJumpHeight);
         }
-        else if (direction == 1)
+        else if (raiseUp)
         {
             float pressButtonTimer = _characterMovement.PressButtonTimer;
             TimerController.SetToValue(ref pressButtonTimer, _characterMovement.PressButtonTimer);
