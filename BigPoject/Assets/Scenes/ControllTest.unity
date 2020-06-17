@@ -1048,6 +1048,17 @@ Transform:
   m_Father: {fileID: 1381559181}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &531364253 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7063273660895011079, guid: 95e99f9ab9e88d44ebc72051c375eb85, type: 3}
+  m_PrefabInstance: {fileID: 9004649170335139673}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b6a4fdca1112af4f898b66b67ccd84c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &548450980 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6700315359917075697, guid: db841216772e4844187962a048cfddbb, type: 3}
@@ -1110,6 +1121,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6700315359917075697, guid: db841216772e4844187962a048cfddbb, type: 3}
+      propertyPath: _leftMoveButton
+      value: 
+      objectReference: {fileID: 531364253}
+    - target: {fileID: 6700315359917075697, guid: db841216772e4844187962a048cfddbb, type: 3}
+      propertyPath: _rightMoveButton
+      value: 
+      objectReference: {fileID: 1812688291}
     - target: {fileID: 8702310545741433508, guid: db841216772e4844187962a048cfddbb, type: 3}
       propertyPath: m_Name
       value: BlueSuit
@@ -2891,6 +2910,17 @@ Transform:
   m_Father: {fileID: 323660833}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1812688291 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5897045106700030740, guid: 95e99f9ab9e88d44ebc72051c375eb85, type: 3}
+  m_PrefabInstance: {fileID: 9004649170335139673}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b6a4fdca1112af4f898b66b67ccd84c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1816984613
 GameObject:
   m_ObjectHideFlags: 0
@@ -3368,62 +3398,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1671769226}
     m_Modifications:
-    - target: {fileID: 505400990, guid: 95e99f9ab9e88d44ebc72051c375eb85, type: 3}
-      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 548450980}
-    - target: {fileID: 505400990, guid: 95e99f9ab9e88d44ebc72051c375eb85, type: 3}
-      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 548450980}
-    - target: {fileID: 505400990, guid: 95e99f9ab9e88d44ebc72051c375eb85, type: 3}
-      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: RightMovementInput
-      objectReference: {fileID: 0}
-    - target: {fileID: 505400990, guid: 95e99f9ab9e88d44ebc72051c375eb85, type: 3}
-      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 505400990, guid: 95e99f9ab9e88d44ebc72051c375eb85, type: 3}
-      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 505400990, guid: 95e99f9ab9e88d44ebc72051c375eb85, type: 3}
-      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: RightMovementInput
-      objectReference: {fileID: 0}
-    - target: {fileID: 505400990, guid: 95e99f9ab9e88d44ebc72051c375eb85, type: 3}
-      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 769698752, guid: 95e99f9ab9e88d44ebc72051c375eb85, type: 3}
-      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 548450980}
-    - target: {fileID: 769698752, guid: 95e99f9ab9e88d44ebc72051c375eb85, type: 3}
-      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 548450980}
-    - target: {fileID: 769698752, guid: 95e99f9ab9e88d44ebc72051c375eb85, type: 3}
-      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LeftMovementInput
-      objectReference: {fileID: 0}
-    - target: {fileID: 769698752, guid: 95e99f9ab9e88d44ebc72051c375eb85, type: 3}
-      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 769698752, guid: 95e99f9ab9e88d44ebc72051c375eb85, type: 3}
-      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 769698752, guid: 95e99f9ab9e88d44ebc72051c375eb85, type: 3}
-      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LeftMovementInput
-      objectReference: {fileID: 0}
-    - target: {fileID: 769698752, guid: 95e99f9ab9e88d44ebc72051c375eb85, type: 3}
-      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 6
-      objectReference: {fileID: 0}
     - target: {fileID: 7228295045035118980, guid: 95e99f9ab9e88d44ebc72051c375eb85, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

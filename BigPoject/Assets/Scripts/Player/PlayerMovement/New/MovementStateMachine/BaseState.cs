@@ -7,9 +7,6 @@ public abstract class BaseState
 
     private Vector2 _currentVelocity = Vector2.zero;
     private static bool _isFacingRight = true;
-    
-    private static bool _moveLeft = false;
-    private static bool _moveRight = false;
 
     protected BaseState(CharacterMovement characterMovement, StateMachine stateMachine)
     {
@@ -21,18 +18,6 @@ public abstract class BaseState
     public virtual void Enter()
     {
 
-    }
-
-
-    public virtual void LeftMovementInput(bool moveLeft)
-    {
-        _moveLeft = moveLeft;
-    }
-
-
-    public virtual void RightMovementInput(bool moveRight)
-    {
-        _moveRight = moveRight;
     }
 
 
@@ -58,7 +43,7 @@ public abstract class BaseState
     {
         Vector2 targetVelocity = new Vector2(0, _characterMovement.RigidBody.velocity.y);
 
-        if (_moveLeft && !_moveRight)
+        if (_characterMovement.LeftMoveButton.IsPressed)
         {
             targetVelocity = new Vector2(-_characterMovement.HorizontalSpeed, _characterMovement.RigidBody.velocity.y);
 
@@ -67,7 +52,7 @@ public abstract class BaseState
                 Flip();
             }
         }
-        else if (_moveRight && !_moveLeft)
+        else if (_characterMovement.RightMoveButton.IsPressed)
         {
             targetVelocity = new Vector2(_characterMovement.HorizontalSpeed, _characterMovement.RigidBody.velocity.y);
 

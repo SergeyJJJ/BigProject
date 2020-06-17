@@ -216,6 +216,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _horizontalSpeed: 8.5
   _movementSmothing: 0.06
+  _leftMoveButton: {fileID: 0}
+  _rightMoveButton: {fileID: 0}
   _jumpHeight: 15.6
   _afterGroundTouchJumpTime: 0.1
   _pressBeforeGroundTime: 0.1

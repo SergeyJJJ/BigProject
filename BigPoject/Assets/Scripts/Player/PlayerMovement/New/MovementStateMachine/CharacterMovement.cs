@@ -5,6 +5,8 @@ public class CharacterMovement : MonoBehaviour
     [Header("Horizontal movement controll")]
     [SerializeField] private float _horizontalSpeed = 0f;
     [Range(0f, 0.4f), SerializeField] private float _movementSmothing = 0f;
+    [SerializeField] private CustomButton _leftMoveButton = null;
+    [SerializeField] private CustomButton _rightMoveButton = null;
 
     [Header("Jump controll")]
     [SerializeField] private float _jumpHeight = 0f;
@@ -33,9 +35,6 @@ public class CharacterMovement : MonoBehaviour
     private float _afterGoundTouchTimer = 0;
     private float _pressButtonTimer = 0;
 
-    // Keyboard controll
-    private PlayerControll _playerControll = null;
-
     #region Properties
     public float HorizontalSpeed
     {
@@ -50,6 +49,22 @@ public class CharacterMovement : MonoBehaviour
         get
         {
             return _movementSmothing;
+        }
+    }
+
+    public CustomButton LeftMoveButton
+    {
+        get
+        {
+            return _leftMoveButton;
+        }
+    }
+
+    public CustomButton RightMoveButton
+    {
+        get
+        {
+            return _rightMoveButton;
         }
     }
 
@@ -207,19 +222,6 @@ public class CharacterMovement : MonoBehaviour
     }
     #endregion Properties
 
-    private void Awake()
-    {
-        // Keyboard input
-        _playerControll = new PlayerControll();
-
-        _playerControll.MainGame.LeftMove.started += ctx => LeftMovementInput(true);
-        _playerControll.MainGame.RightMove.started += ctx => RightMovementInput(true);
-        _playerControll.MainGame.LeftMove.canceled += ctx => LeftMovementInput(false);
-        _playerControll.MainGame.RightMove.canceled += ctx => RightMovementInput(false);
-        _playerControll.MainGame.UpMove.started += ctx => RaisePlayerUpInput(true);
-        _playerControll.MainGame.UpMove.canceled += ctx => RaisePlayerUpInput(false);
-    }
-
     private void Start()
     {
         _transform = transform;
@@ -243,18 +245,6 @@ public class CharacterMovement : MonoBehaviour
     }
 
 
-    public void LeftMovementInput(bool moveLeft)
-    {
-        _stateMachine.CurrentState.LeftMovementInput(moveLeft);
-    }
-
-
-    public void RightMovementInput(bool moveRight)
-    {
-        _stateMachine.CurrentState.RightMovementInput(moveRight);
-    }
-
-
     public void RaisePlayerUpInput(bool raiseUp)
     {
         _stateMachine.CurrentState.RaisePlayerUpInput(raiseUp);
@@ -270,17 +260,5 @@ public class CharacterMovement : MonoBehaviour
     private void OnTriggerExit2D(Collider2D other)
     {
         _stateMachine.CurrentState.OnTriggerExit2D(other);
-    }
-
-
-    // For keyboard movement
-    private void OnEnable()
-    {
-        _playerControll.Enable();    
-    }
-
-    private void OnDisable()
-    {
-        _playerControll.Disable();
     }
 }

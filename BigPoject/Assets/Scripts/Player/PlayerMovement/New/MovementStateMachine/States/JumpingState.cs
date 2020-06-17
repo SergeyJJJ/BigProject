@@ -14,18 +14,6 @@ public class JumpingState : BaseState
     }
 
 
-    public override void LeftMovementInput(bool moveLeft)
-    {
-        base.LeftMovementInput(moveLeft);
-    }
-
-
-    public override void RightMovementInput(bool moveRight)
-    {
-        base.RightMovementInput(moveRight);
-    }
-
-
     public override void RaisePlayerUpInput(bool raiseUp)
     {
         if (!raiseUp)
