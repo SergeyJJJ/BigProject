@@ -4,9 +4,12 @@ using UnityEngine;
 public class PlatformMovement : MonoBehaviour
 {
     [SerializeField] private List<Transform> _trajectoryPoints = null;         // Сontains path points along which the platform moves.
-    [SerializeField] private float _movementSpeed = 0f;                        // Contains Platform movemetn speed.
+    [SerializeField] private float _movementSpeed = 0f;                        // Contains Platform movement speed.
     private Vector2 _currentTargetPoint = Vector2.zero;                        // Current target point.
-    private int _currentPointIndex = 0;                                        // Current target point index.
+    private int _currentPointIndex = 0;    
+
+    private Rigidbody2D _playerRigidbody = null;
+    private Vector3 moveDelta = Vector3.zero;
 
     private void Start()
     {
@@ -16,7 +19,7 @@ public class PlatformMovement : MonoBehaviour
         }
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         if (IsPointsExist())
         {
@@ -29,11 +32,26 @@ public class PlatformMovement : MonoBehaviour
     }
 
 
+    private void LateUpdate()
+    {
+        if (_playerRigidbody != null)
+        {
+            Vector2 playerBody = _playerRigidbody.position;
+            _playerRigidbody.transform.position = new Vector3(playerBody.x, playerBody.y) + moveDelta;
+        }
+    }
+
+
     // Move the platform towards the target point.
     private void Move()
     {
         float step = _movementSpeed * Time.deltaTime;
-        gameObject.transform.position = Vector2.MoveTowards(gameObject.transform.position, _currentTargetPoint, step);
+        Vector2 desiredPosition = Vector2.MoveTowards(transform.position, _currentTargetPoint, step);
+        Debug.Log(step + " " + desiredPosition);
+
+        moveDelta = new Vector3(desiredPosition.x, desiredPosition.y, 0f) - transform.position;
+
+        transform.position = desiredPosition;
     }
 
 
@@ -83,5 +101,22 @@ public class PlatformMovement : MonoBehaviour
     private bool IsPointsExist()
     {
         return _trajectoryPoints != null;
+    }
+
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            _playerRigidbody = other.gameObject.GetComponent<Rigidbody2D>();
+        }
+    }
+ 
+    void OnCollisionExit2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            _playerRigidbody = null;
+        }
     }
 }
