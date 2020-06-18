@@ -10,7 +10,10 @@ public class PlatformMovement : MonoBehaviour
 
     private void Start()
     {
-
+        if (_trajectoryPoints != null)
+        {
+            _currentTargetPoint = _trajectoryPoints[0].transform.position;
+        }
     }
 
     private void FixedUpdate()
