@@ -8,15 +8,10 @@ public class PlatformMovement : MonoBehaviour
     private Vector2 _currentTargetPoint = Vector2.zero;                        // Current target point.
     private int _currentPointIndex = 0;                                        // Current target point index.
 
-
     private void Start()
     {
-        if (IsPointsExist())
-        {
-            _currentTargetPoint = _trajectoryPoints[0].position;    
-        }
-    }
 
+    }
 
     private void FixedUpdate()
     {

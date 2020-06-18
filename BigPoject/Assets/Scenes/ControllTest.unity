@@ -1126,6 +1126,10 @@ PrefabInstance:
       propertyPath: _climbDownSpeed
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7452835413203550249, guid: db841216772e4844187962a048cfddbb, type: 3}
+      propertyPath: m_AutoTiling
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8702310545741433508, guid: db841216772e4844187962a048cfddbb, type: 3}
       propertyPath: m_Name
       value: BlueSuit

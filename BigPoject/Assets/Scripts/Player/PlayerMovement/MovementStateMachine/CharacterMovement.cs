@@ -29,7 +29,6 @@ public class CharacterMovement : MonoBehaviour
     private FallingState _fallingState = null;
     private LandingState _landingState = null;
     private LadderClimdingState _ladderClimbingState = null;
-    private PlatformInteractionState _platformInteraction = null;
 
     private Transform _transform = null;
     private Rigidbody2D _rigidBody = null;
@@ -190,14 +189,6 @@ public class CharacterMovement : MonoBehaviour
         }
     }
 
-    public PlatformInteractionState PlatformInteraction
-    {
-        get
-        {
-            return _platformInteraction;
-        }
-    }
-
     public Transform Transform
     {
         get
@@ -253,7 +244,6 @@ public class CharacterMovement : MonoBehaviour
         _fallingState = new FallingState(this, _stateMachine);
         _landingState = new LandingState(this, _stateMachine);
         _ladderClimbingState = new LadderClimdingState(this, _stateMachine);
-        _platformInteraction = new PlatformInteractionState(this, _stateMachine);
 
         _stateMachine.Initialization(Idle); 
     }

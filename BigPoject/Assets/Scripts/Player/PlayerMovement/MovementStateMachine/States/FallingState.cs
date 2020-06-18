@@ -51,14 +51,7 @@ public class FallingState : BaseState
 
         if (_characterMovement.SurfaceCheck.IsCharecterIsOnSurface())
         {
-            if (_characterMovement.SurfaceCheck.GetSurfaceOnWhichPlayerStanding().CompareTag("MovingPlatform"))
-            {
-                _stateMachine.TransitionToState(_characterMovement.PlatformInteraction);
-            }
-            else
-            {
-                _stateMachine.TransitionToState(_characterMovement.Landing);
-            }
+            _stateMachine.TransitionToState(_characterMovement.Landing);
         }
 
         float afterGoundTouchTimer = _characterMovement.AfterGoundTouchTimer;

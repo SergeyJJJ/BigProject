@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 1007838475919758155}
   - component: {fileID: 1007838475919758152}
   - component: {fileID: 1007838475919758153}
-  - component: {fileID: 916001384}
   m_Layer: 0
   m_Name: DynamicCamera
   m_TagString: Untagged
@@ -119,16 +118,3 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &916001384
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1007838475919758158}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a832074f858f9cf43b822711a0983d9f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _cinemachineVirtualCamera: {fileID: 0}
