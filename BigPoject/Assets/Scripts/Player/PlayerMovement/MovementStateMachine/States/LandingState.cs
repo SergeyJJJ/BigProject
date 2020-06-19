@@ -21,7 +21,7 @@ public class LandingState : BaseState
     {
         if (other.CompareTag("Ladder"))
         {
-            _stateMachine.TransitionToState(_characterMovement.LadderClimbing);
+            _stateMachine.TransitionToState(_characterMovement.Climbing);
         }
     }
 
@@ -56,8 +56,6 @@ public class LandingState : BaseState
 
     public override void Exit()
     {
-        float afterGoundTouchTimer = _characterMovement.AfterGoundTouchTimer;
-        TimerController.SetToValue(ref afterGoundTouchTimer, _characterMovement.AfterGroundTouchJumpTime);
-        _characterMovement.AfterGoundTouchTimer = afterGoundTouchTimer;
+        _characterMovement.AfterGoundTouchTimer = _characterMovement.AfterGroundTouchJumpTime;
     }
 }

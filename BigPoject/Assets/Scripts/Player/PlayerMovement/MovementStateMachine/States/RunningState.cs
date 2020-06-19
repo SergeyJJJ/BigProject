@@ -18,7 +18,7 @@ public class RunningState : BaseState
     {
         if (other.CompareTag("Ladder"))
         {
-            _stateMachine.TransitionToState(_characterMovement.LadderClimbing);
+            _stateMachine.TransitionToState(_characterMovement.Climbing);
         }
     }
 
@@ -32,7 +32,7 @@ public class RunningState : BaseState
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
-        
+
         bool isStartFalling = _characterMovement.RigidBody.velocity.y < -1f;
         bool isStopRunning = (_characterMovement.RigidBody.velocity.x < 1f) &&
                              (_characterMovement.RigidBody.velocity.x > -1);
@@ -57,8 +57,6 @@ public class RunningState : BaseState
 
     public override void Exit()
     {
-        float afterGoundTouchTimer = _characterMovement.AfterGoundTouchTimer;
-        TimerController.SetToValue(ref afterGoundTouchTimer, _characterMovement.AfterGroundTouchJumpTime);
-        _characterMovement.AfterGoundTouchTimer = afterGoundTouchTimer;
+        _characterMovement.AfterGoundTouchTimer = _characterMovement.AfterGroundTouchJumpTime; 
     }
 }

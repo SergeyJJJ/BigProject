@@ -18,7 +18,7 @@ public class JumpingState : BaseState
     {
         if (other.CompareTag("Ladder"))
         {
-            _stateMachine.TransitionToState(_characterMovement.LadderClimbing);
+            _stateMachine.TransitionToState(_characterMovement.Climbing);
         }
     }
 
@@ -39,19 +39,14 @@ public class JumpingState : BaseState
             _characterMovement.RigidBody.velocity = new Vector2(_characterMovement.RigidBody.velocity.x,
                                                                 _characterMovement.RigidBody.velocity.y *
                                                                 _characterMovement.CutJumpHeight);
-
             _stateMachine.TransitionToState(_characterMovement.Falling);
         }
         else if (isUpButtonPressed)
         {
-            float pressButtonTimer = _characterMovement.PressButtonTimer;
-            TimerController.SetToValue(ref pressButtonTimer, _characterMovement.PressButtonTimer);
-            _characterMovement.PressButtonTimer = pressButtonTimer;
+            _characterMovement.PressButtonTimer = _characterMovement.PressBeforeGroundTime;
         }
 
-        float afterGoundTouchTimer = _characterMovement.AfterGoundTouchTimer;
-        TimerController.DecrementByDeltaTime(ref afterGoundTouchTimer);
-        _characterMovement.AfterGoundTouchTimer = afterGoundTouchTimer;
+        _characterMovement.AfterGoundTouchTimer -= Time.deltaTime;
     }
 
 

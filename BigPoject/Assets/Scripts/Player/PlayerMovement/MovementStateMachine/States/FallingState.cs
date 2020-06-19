@@ -18,7 +18,7 @@ public class FallingState : BaseState
     {
         if (other.CompareTag("Ladder"))
         {
-            _stateMachine.TransitionToState(_characterMovement.LadderClimbing);
+            _stateMachine.TransitionToState(_characterMovement.Climbing);
         }
     }
 
@@ -34,14 +34,11 @@ public class FallingState : BaseState
         base.PhysicsUpdate();
         bool isUpButtonPressed = _characterMovement.UpMoveButton.IsPressed;
 
-        float pressButtonTimer = _characterMovement.PressButtonTimer;
-        TimerController.DecrementByDeltaTime(ref pressButtonTimer);
-        _characterMovement.PressButtonTimer = pressButtonTimer;
+        _characterMovement.PressButtonTimer -= Time.deltaTime;
 
         if (isUpButtonPressed)
         {
-            TimerController.SetToValue(ref pressButtonTimer, _characterMovement.PressBeforeGroundTime);
-            _characterMovement.PressButtonTimer = pressButtonTimer;
+            _characterMovement.PressButtonTimer = _characterMovement.PressBeforeGroundTime;
 
             if (_characterMovement.AfterGoundTouchTimer > 0f)
             {
@@ -54,9 +51,7 @@ public class FallingState : BaseState
             _stateMachine.TransitionToState(_characterMovement.Landing);
         }
 
-        float afterGoundTouchTimer = _characterMovement.AfterGoundTouchTimer;
-        TimerController.DecrementByDeltaTime(ref afterGoundTouchTimer);
-        _characterMovement.AfterGoundTouchTimer = afterGoundTouchTimer;
+        _characterMovement.AfterGoundTouchTimer -= Time.deltaTime;
     }
 
 

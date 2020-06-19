@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 
-public class LadderClimdingState : BaseState
+public class ClimbingState : BaseState
 {
-    public LadderClimdingState (CharacterMovement characterMovement, StateMachine stateMachine) : base(characterMovement, stateMachine)
+    public ClimbingState (CharacterMovement characterMovement, StateMachine stateMachine) : base(characterMovement, stateMachine)
     {
     
     }
