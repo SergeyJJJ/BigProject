@@ -32,6 +32,7 @@ public class RunningState : BaseState
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
+        
         bool isStartFalling = _characterMovement.RigidBody.velocity.y < -1f;
         bool isStopRunning = (_characterMovement.RigidBody.velocity.x < 1f) &&
                              (_characterMovement.RigidBody.velocity.x > -1);

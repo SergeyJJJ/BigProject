@@ -3,8 +3,8 @@
 public class SurfaceCheck : MonoBehaviour
 {
     [Header("Is on ground controll")]
-    [SerializeField] private Transform _groundCheckPoint = null;           // A position marking where to check if the character is grounded.
-    [SerializeField] private float _grounCheckRadius = 0f;                 // Radius of the overlap circle to determine if character is grounded.
+    [SerializeField] private Transform _groundCheckPoint = null;            // A position marking where to check if the character is grounded.
+    [SerializeField] private float _grounCheckRadius = 0f;                  // Radius of the overlap circle to determine if character is grounded.
     [SerializeField] private LayerMask _whatIsGround = Physics2D.AllLayers; // A mask determine what is the ground for the character.
 
 

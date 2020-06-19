@@ -6,14 +6,15 @@ public class PlatformMovement : MonoBehaviour
     [SerializeField] private List<Transform> _trajectoryPoints = null;         // Сontains path points along which the platform moves.
     [SerializeField] private float _movementSpeed = 0f;                        // Contains Platform movement speed.
     private Vector2 _currentTargetPoint = Vector2.zero;                        // Current target point.
-    private int _currentPointIndex = 0;    
-
-    private Rigidbody2D _playerRigidbody = null;
-    private Vector3 moveDelta = Vector3.zero;
+    private int _currentPointIndex = 0;                                        // Current target point index.
+     private Vector3 moveDelta = Vector3.zero;                                 // Change in position of platform.
+    private Rigidbody2D _characterRigidbody = null;                               // Plyer`s Rigidbody2D component.                               
 
     private void Start()
     {
-        if (_trajectoryPoints != null)
+        // If list is containing at least one point
+        // set that first point to current target point.
+        if (IsPointsExist())
         {
             _currentTargetPoint = _trajectoryPoints[0].transform.position;
         }
@@ -21,11 +22,16 @@ public class PlatformMovement : MonoBehaviour
 
     private void Update()
     {
+        // If list is containing at least one point.
         if (IsPointsExist())
         {
+            // Move platform to the taget point.
             Move();
+
+            // If platform reached the target point.
             if (IsReachedPoint())
             {
+                // Change current target point.
                 ChangeTargetPoint();
             }
         }
@@ -34,10 +40,11 @@ public class PlatformMovement : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (_playerRigidbody != null)
+        // If character Rigidbody2D component is exist
+        if (IsRigidbodyExist())
         {
-            Vector2 playerBody = _playerRigidbody.position;
-            _playerRigidbody.transform.position = new Vector3(playerBody.x, playerBody.y) + moveDelta;
+            Vector2 characterBody = _characterRigidbody.position;
+            _characterRigidbody.transform.position = new Vector3(characterBody.x, characterBody.y) + moveDelta;
         }
     }
 
@@ -47,10 +54,11 @@ public class PlatformMovement : MonoBehaviour
     {
         float step = _movementSpeed * Time.deltaTime;
         Vector2 desiredPosition = Vector2.MoveTowards(transform.position, _currentTargetPoint, step);
-        Debug.Log(step + " " + desiredPosition);
 
+        // Store change in position of platform.
         moveDelta = new Vector3(desiredPosition.x, desiredPosition.y, 0f) - transform.position;
 
+        // Move platform to the desired position.
         transform.position = desiredPosition;
     }
 
@@ -98,9 +106,24 @@ public class PlatformMovement : MonoBehaviour
     }
 
 
+    // Change character position to the position with
+    // the offset(change in position of platform).
+    private void ShiftCharacter()
+    {
+        Vector2 characterBody = _characterRigidbody.position;
+        _characterRigidbody.transform.position = new Vector3(characterBody.x, characterBody.y) + moveDelta;
+    }
+
+
     private bool IsPointsExist()
     {
         return _trajectoryPoints != null;
+    }
+
+
+    private bool IsRigidbodyExist()
+    {
+        return _characterRigidbody != null;
     }
 
 
@@ -108,7 +131,7 @@ public class PlatformMovement : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            _playerRigidbody = other.gameObject.GetComponent<Rigidbody2D>();
+            _characterRigidbody = other.gameObject.GetComponent<Rigidbody2D>();
         }
     }
  
@@ -116,7 +139,7 @@ public class PlatformMovement : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            _playerRigidbody = null;
+            _characterRigidbody = null;
         }
     }
 }
