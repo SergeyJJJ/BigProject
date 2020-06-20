@@ -10,7 +10,7 @@ public class FallingState : BaseState
 
     public override void Enter()
     {
-
+        CharacterEventSystem.TriggerEvent("OnFall");
     }
 
 

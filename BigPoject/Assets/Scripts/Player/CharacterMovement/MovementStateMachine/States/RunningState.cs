@@ -10,7 +10,7 @@ public class RunningState : BaseState
 
     public override void Enter()
     {
-
+        CharacterEventSystem.TriggerEvent("OnRun");
     }
 
 

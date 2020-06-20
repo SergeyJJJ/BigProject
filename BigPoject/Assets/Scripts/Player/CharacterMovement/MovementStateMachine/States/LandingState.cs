@@ -10,6 +10,8 @@ public class LandingState : BaseState
 
     public override void Enter()
     {
+        CharacterEventSystem.TriggerEvent("OnLand");
+
         if (_characterMovement.PressButtonTimer > 0)
         {
             _stateMachine.TransitionToState(_characterMovement.Jumping);

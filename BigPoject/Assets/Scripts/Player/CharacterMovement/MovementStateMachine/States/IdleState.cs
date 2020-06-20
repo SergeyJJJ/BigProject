@@ -9,7 +9,7 @@ public class IdleState : BaseState
 
     public override void Enter()
     {
-
+        CharacterEventSystem.TriggerEvent("OnStop");
     }
 
 
