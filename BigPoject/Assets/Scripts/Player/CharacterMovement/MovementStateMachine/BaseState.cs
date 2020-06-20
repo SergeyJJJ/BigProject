@@ -2,11 +2,11 @@ using UnityEngine;
 
 public abstract class BaseState
 {
-    protected CharacterMovement _characterMovement = null;
-    protected StateMachine _stateMachine = null;
+    protected CharacterMovement _characterMovement = null;                    // Reference to character movement script.
+    protected StateMachine _stateMachine = null;                              // Reference to state machine.
 
-    private Vector2 _currentVelocity = Vector2.zero;
-    private static bool _isFacingRight = true;
+    private Vector2 _currentVelocity = Vector2.zero;                          // Current speed of change in characters velocity.
+    private static bool _isFacingRight = true;                                // Check if player is facing right.
 
     protected BaseState(CharacterMovement characterMovement, StateMachine stateMachine)
     {
@@ -39,8 +39,10 @@ public abstract class BaseState
         bool isLeftButtonPressed = _characterMovement.LeftMoveButton.IsPressed;
         bool isRightButtonPressed = _characterMovement.RightMoveButton.IsPressed;
 
+        // If player press left movement button and release right movement button.
         if (isLeftButtonPressed && !isRightButtonPressed)
         {
+            // Set tarhet velocity.
             targetVelocity = new Vector2(-_characterMovement.HorizontalSpeed, _characterMovement.RigidBody.velocity.y);
 
             if(_isFacingRight)
@@ -48,8 +50,10 @@ public abstract class BaseState
                 Flip();
             }
         }
+        // If player press right movement button and release left movement button.
         else if (isRightButtonPressed && !isLeftButtonPressed)
         {
+            // Set tarhet velocity.
             targetVelocity = new Vector2(_characterMovement.HorizontalSpeed, _characterMovement.RigidBody.velocity.y);
 
             if(!_isFacingRight)
@@ -58,6 +62,7 @@ public abstract class BaseState
             }
         }
 
+        // Set smoothed velocity to the character.
         _characterMovement.RigidBody.velocity = Vector2.SmoothDamp(_characterMovement.RigidBody.velocity,
                                                                    targetVelocity, ref _currentVelocity,
                                                                    _characterMovement.MoventSmoothing);
@@ -69,6 +74,7 @@ public abstract class BaseState
 
     }
 
+    // Flip player to another side(left or right).
     private void Flip()
     {
 		_isFacingRight = !_isFacingRight;

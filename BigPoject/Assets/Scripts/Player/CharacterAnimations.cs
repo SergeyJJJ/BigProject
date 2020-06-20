@@ -3,9 +3,8 @@
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(SpriteRenderer))]
 public class CharacterAnimations : MonoBehaviour
-{/*
-    private Animator _animator = null;                  // Contains animator compnent of the character.
-
+{
+    private Animator _animator = null;                  // Contains animator compnent that controll character animations.
 
     private void Awake()
     {
@@ -22,30 +21,22 @@ public class CharacterAnimations : MonoBehaviour
     private void OnEnable()
     {
         // Subscribe to character events 
-        CharacterWalking.onRun += StartRunAnimation; 
-
-        CharacterWalking.onStop += StartIdleAnimation;
-
-        CharacterJump.onJump += StartJumpAnimation;
-
-        CharacterJump.onFalling += StartFallAnimation;
-
-        CharacterJump.onLand += StartLandingAnimation;
+        CharacterEventSystem.StartListening("OnRun", StartRunAnimation);
+        CharacterEventSystem.StartListening("OnStop", StartIdleAnimation);
+        CharacterEventSystem.StartListening("OnJump", StartJumpAnimation);
+        CharacterEventSystem.StartListening("OnFall", StartFallAnimation);
+        CharacterEventSystem.StartListening("OnLand", StartLandingAnimation);
     }
 
     
     private void OnDisable()
     {
-        // Unsubscribe to character events 
-        CharacterWalking.onRun -= StartRunAnimation; 
-
-        CharacterWalking.onStop -= StartIdleAnimation;
-
-        CharacterJump.onJump -= StartJumpAnimation;
-
-        CharacterJump.onFalling -= StartFallAnimation;
-
-        CharacterJump.onLand -= StartLandingAnimation;
+        // Unsubscribe to character events
+        CharacterEventSystem.StopListening("OnRun", StartRunAnimation);
+        CharacterEventSystem.StopListening("OnStop", StartIdleAnimation);
+        CharacterEventSystem.StopListening("OnJump", StartJumpAnimation);
+        CharacterEventSystem.StopListening("OnFall", StartFallAnimation);
+        CharacterEventSystem.StopListening("OnLand", StartLandingAnimation);
     }
 
 
@@ -88,5 +79,5 @@ public class CharacterAnimations : MonoBehaviour
     private void StartLandingAnimation()
     {
         _animator.SetBool("Fall", false);
-    }*/
+    }
 }

@@ -1,0 +1,7 @@
+Event name   | Listeners
+---------------------------------------------
+OnRun        | StartRunAnimation
+OnStop       | StartIdleAnimation
+OnJump       | StartJumpAnimation
+OnFall       | StartFallAnimation
+OnLand       | StartLandAnimation

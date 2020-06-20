@@ -42,6 +42,7 @@ public class ClimbingState : BaseState
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
+        
         bool isUpButtonPressed = _characterMovement.UpMoveButton.IsPressed;
 
         if (isUpButtonPressed)

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class PlatformMovement : MonoBehaviour
+public class MovingPlatform : MonoBehaviour
 {
     [SerializeField] private List<Transform> _trajectoryPoints = null;         // Сontains path points along which the platform moves.
     [SerializeField] private float _movementSpeed = 0f;                        // Contains Platform movement speed.

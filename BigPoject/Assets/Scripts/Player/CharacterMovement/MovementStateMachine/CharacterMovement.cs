@@ -3,26 +3,27 @@
 public class CharacterMovement : MonoBehaviour
 {
     [Header("Horizontal movement controll")]
-    [SerializeField] private float _horizontalSpeed = 0f;
-    [Range(0f, 0.4f), SerializeField] private float _movementSmothing = 0f;
-    [SerializeField] private CustomButton _leftMoveButton = null;
-    [SerializeField] private CustomButton _rightMoveButton = null;
+    [SerializeField] private float _horizontalSpeed = 0f;                     // Character`s horizontal speed.
+    [Range(0f, 0.4f), SerializeField] private float _movementSmothing = 0f;   // Coefficient of character`s horizontal movement smoothing.
+    [SerializeField] private CustomButton _leftMoveButton = null;             // Left movement button.     
+    [SerializeField] private CustomButton _rightMoveButton = null;            // Right movement  button.
 
     [Header("Jump controll")]
-    [SerializeField] private float _jumpHeight = 0f;
-    [SerializeField] private float _afterGroundTouchJumpTime = 0f;
-    [SerializeField] private float _pressBeforeGroundTime = 0f;  
-    [ Range(0f, 1f), SerializeField] private float _cutJumpHeight = 0;
-    [SerializeField] private CustomButton _upMoveButton = null;
+    [SerializeField] private float _jumpHeight = 0f;                          // Character`s jump height.
+    [SerializeField] private float _afterGroundTouchJumpTime = 0f;            // Time during which character still can jump after he touch ground last time.
+    [SerializeField] private float _pressBeforeGroundTime = 0f;               // Time furing which character can perform jump after he press jump button last time.
+    [ Range(0f, 1f), SerializeField] private float _cutJumpHeight = 0;        // Coefficient that determine how much jump will be cut, after player relesase jump button.
+    [SerializeField] private CustomButton _upMoveButton = null;               // Jump and climb button.
 
     [Header("Ladder movement controll")]
-    [SerializeField] private float  _climbUpSpeed = 0f;
-    [SerializeField] private float _climbDownSpeed = 0f;
+    [SerializeField] private float  _climbUpSpeed = 0f;                       // Climb up speed.
+    [SerializeField] private float _climbDownSpeed = 0f;                      // Climb down speed.
 
     [Header("Is on ground controll")]
-    [SerializeField] private SurfaceCheck _surfaceCheck = null;
+    [SerializeField] private SurfaceCheck _surfaceCheck = null;               // Script that check if character is on ground.
 
-    private StateMachine _stateMachine = null;
+    // Movement states.
+    private StateMachine _stateMachine = null;                                // Script that controll transition between states.
     private JumpingState _jumpingState = null;
     private IdleState _idleState = null;
     private RunningState _runningState = null;
@@ -30,11 +31,11 @@ public class CharacterMovement : MonoBehaviour
     private LandingState _landingState = null;
     private ClimbingState _climbingState = null;
 
-    private Transform _transform = null;
-    private Rigidbody2D _rigidBody = null;
+    private Transform _transform = null;                                      // Characters Transform component.
+    private Rigidbody2D _rigidBody = null;                                    // Charecters Rigidbody2D component.
 
-    private float _afterGoundTouchTimer = 0;
-    private float _pressButtonTimer = 0;
+    private float _afterGoundTouchTimer = 0;                                  // Timer that controlls time during which character still can jump after he touch ground last time.
+    private float _pressButtonTimer = 0;                                      // Timer that controlls time furing which character can perform jump after he press jump button last time.
 
     #region Properties
     public float HorizontalSpeed
@@ -234,9 +235,11 @@ public class CharacterMovement : MonoBehaviour
 
     private void Start()
     {
+        // Initialize character`s components.
         _transform = transform;
         _rigidBody = gameObject.GetComponent<Rigidbody2D>();
 
+        // Initialize state machine and states.
         _stateMachine = new StateMachine();
         _jumpingState = new JumpingState(this, _stateMachine);
         _idleState = new IdleState(this, _stateMachine);    
@@ -245,6 +248,7 @@ public class CharacterMovement : MonoBehaviour
         _landingState = new LandingState(this, _stateMachine);
         _climbingState = new ClimbingState(this, _stateMachine);
 
+        // Set first state.
         _stateMachine.Initialization(Idle); 
     }
 
