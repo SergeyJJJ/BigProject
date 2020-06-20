@@ -26,6 +26,9 @@ TextureImporter:
   - first:
       213: -4692400270175149111
     second: transport gateway p2_7
+  - first:
+      213: 6227177144147659654
+    second: transport gateway p2_1
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -135,7 +138,7 @@ TextureImporter:
         width: 10
         height: 10
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -143,153 +146,6 @@ TextureImporter:
       bones: []
       spriteID: 411cb7848def5eec0800000000000000
       internalID: -3538141727347195628
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: transport gateway p2_1
-      rect:
-        serializedVersion: 2
-        x: 11
-        y: 22
-        width: 10
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9c32191989349cc50800000000000000
-      internalID: 6685949444364510153
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: transport gateway p2_2
-      rect:
-        serializedVersion: 2
-        x: 22
-        y: 22
-        width: 10
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9fadb545d9880a250800000000000000
-      internalID: 5953908916690344697
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: transport gateway p2_3
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 11
-        width: 10
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3000c4fd4c2bf1450800000000000000
-      internalID: 6061760182093611011
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: transport gateway p2_4
-      rect:
-        serializedVersion: 2
-        x: 11
-        y: 11
-        width: 10
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 423f6b334c4397760800000000000000
-      internalID: 7456048675374428964
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: transport gateway p2_5
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 10
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8563085c7b44e0830800000000000000
-      internalID: 4039241471881131608
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: transport gateway p2_6
-      rect:
-        serializedVersion: 2
-        x: 11
-        y: 0
-        width: 10
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c6db0e5fed5504ec0800000000000000
-      internalID: -3584770887290667668
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: transport gateway p2_7
-      rect:
-        serializedVersion: 2
-        x: 22
-        y: 0
-        width: 10
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9c36340d0de31eeb0800000000000000
-      internalID: -4692400270175149111
       vertices: []
       indices: 
       edges: []

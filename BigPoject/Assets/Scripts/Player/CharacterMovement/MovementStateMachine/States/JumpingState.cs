@@ -35,17 +35,22 @@ public class JumpingState : BaseState
     {
         base.PhysicsUpdate();
         bool isUpButtonPressed = _characterMovement.UpMoveButton.IsPressed;
+        bool isStartFalling = _characterMovement.RigidBody.velocity.y < 1f;
 
         if (!isUpButtonPressed)
         {
             _characterMovement.RigidBody.velocity = new Vector2(_characterMovement.RigidBody.velocity.x,
                                                                 _characterMovement.RigidBody.velocity.y *
                                                                 _characterMovement.CutJumpHeight);
-            _stateMachine.TransitionToState(_characterMovement.Falling);
         }
         else if (isUpButtonPressed)
         {
             _characterMovement.PressButtonTimer = _characterMovement.PressBeforeGroundTime;
+        }
+
+        if(isStartFalling)
+        {
+            _stateMachine.TransitionToState(_characterMovement.Falling);
         }
 
         _characterMovement.AfterGoundTouchTimer -= Time.deltaTime;
