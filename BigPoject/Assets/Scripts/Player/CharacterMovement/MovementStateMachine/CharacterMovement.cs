@@ -256,6 +256,7 @@ public class CharacterMovement : MonoBehaviour
     private void FixedUpdate()
     {
         _stateMachine.CurrentState.PhysicsUpdate();
+        Debug.Log(_stateMachine.CurrentState);
     }
 
 

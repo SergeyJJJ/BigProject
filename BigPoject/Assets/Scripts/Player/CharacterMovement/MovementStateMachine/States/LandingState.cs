@@ -37,16 +37,16 @@ public class LandingState : BaseState
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
-        bool isStopRunning = _characterMovement.RigidBody.velocity.x < 1f;
+        bool isRunning = (_characterMovement.RigidBody.velocity.x < -1f) || (_characterMovement.RigidBody.velocity.x > 1f);
         bool isUpButtonPressed = _characterMovement.UpMoveButton.IsPressed;
 
-        if (isStopRunning)
+        if (isRunning)
         {
-            _stateMachine.TransitionToState(_characterMovement.Idle);
+            _stateMachine.TransitionToState(_characterMovement.Running);
         }
         else 
         {
-            _stateMachine.TransitionToState(_characterMovement.Running);
+            _stateMachine.TransitionToState(_characterMovement.Idle);   
         }
 
         if (isUpButtonPressed)
