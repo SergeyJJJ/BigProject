@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f25041c427e50e54283054da33d3c903, type: 3}
   m_Name: SpeedFireRifle
   m_EditorClassIdentifier: 
-  _name: 
-  _description: 
-  _inGameSprite: {fileID: 0}
+  _name: Rifle
+  _description: Classic Assault Rifle
+  _inGameSprite: {fileID: 21300000, guid: c054926c548fd67428bfdd3929799e78, type: 3}
+  _bulletType: {fileID: 0}
+  _maxBulletsAmount: 200
+  _fireRate: 20

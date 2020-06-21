@@ -5,28 +5,21 @@ namespace Assets.Scripts.Player.CharacterMovement
 {
     public class CustomButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPointerExitHandler
     {
-        private bool _isPressed = false;
-        public bool IsPressed
-        {
-            get
-            {
-                return _isPressed;
-            }
-        }
+        public bool IsPressed { get; private set; } = false;
 
         public void OnPointerDown(PointerEventData eventData)
         {
-            _isPressed = true;
+            IsPressed = true;
         }
 
         public void OnPointerUp(PointerEventData eventData)
         {
-            _isPressed = false;
+            IsPressed = false;
         }
 
         public void OnPointerExit(PointerEventData eventData)
         {
-            _isPressed = false;
+            IsPressed = false;
         }
     }
 }

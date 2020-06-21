@@ -23,18 +23,7 @@ namespace Assets.Scripts.Player
             CharacterEventSystem.StartListening("OnFall", StartFallAnimation);
             CharacterEventSystem.StartListening("OnLand", StartLandingAnimation);
         }
-
-    
-        private void OnDisable()
-        {
-            // Unsubscribe to character events
-            CharacterEventSystem.StopListening("OnRun", StartRunAnimation);
-            CharacterEventSystem.StopListening("OnStop", StartIdleAnimation);
-            CharacterEventSystem.StopListening("OnJump", StartJumpAnimation);
-            CharacterEventSystem.StopListening("OnFall", StartFallAnimation);
-            CharacterEventSystem.StopListening("OnLand", StartLandingAnimation);
-        }
-
+        
 
         private void EnableAnimations()
         {
@@ -75,6 +64,17 @@ namespace Assets.Scripts.Player
         private void StartLandingAnimation()
         {
             _animator.SetBool("Fall", false);
+        }
+        
+        
+        private void OnDisable()
+        {
+            // Unsubscribe to character events
+            CharacterEventSystem.StopListening("OnRun", StartRunAnimation);
+            CharacterEventSystem.StopListening("OnStop", StartIdleAnimation);
+            CharacterEventSystem.StopListening("OnJump", StartJumpAnimation);
+            CharacterEventSystem.StopListening("OnFall", StartFallAnimation);
+            CharacterEventSystem.StopListening("OnLand", StartLandingAnimation);
         }
     }
 }

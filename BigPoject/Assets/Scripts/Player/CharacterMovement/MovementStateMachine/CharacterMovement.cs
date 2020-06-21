@@ -41,198 +41,60 @@ namespace Assets.Scripts.Player.CharacterMovement.MovementStateMachine
         private float _pressButtonTimer = 0;                                      // Timer that controlls time furing which character can perform jump after he press jump button last time.
 
         #region Properties
-        public float HorizontalSpeed
-        {
-            get
-            {
-                return _horizontalSpeed;
-            }
-        }
+        public float HorizontalSpeed => _horizontalSpeed;
 
-        public float MoventSmoothing
-        {
-            get
-            {
-                return _movementSmoothing;
-            }
-        }
+        public float MoventSmoothing => _movementSmoothing;
 
-        public CustomButton LeftMoveButton
-        {
-            get
-            {
-                return _leftMoveButton;
-            }
-        }
+        public CustomButton LeftMoveButton => _leftMoveButton;
 
-        public CustomButton RightMoveButton
-        {
-            get
-            {
-                return _rightMoveButton;
-            }
-        }
+        public CustomButton RightMoveButton => _rightMoveButton;
 
-        public float JumpHeight
-        {
-            get
-            {
-                return _jumpHeight;
-            }
-        }
+        public float JumpHeight => _jumpHeight;
 
-        public float AfterGroundTouchJumpTime
-        {
-            get
-            {
-                return _afterGroundTouchJumpTime;
-            }
-        }
+        public float AfterGroundTouchJumpTime => _afterGroundTouchJumpTime;
 
-        public float PressBeforeGroundTime
-        {
-            get
-            {
-                return _pressBeforeGroundTime;
-            }
-        }
+        public float PressBeforeGroundTime => _pressBeforeGroundTime;
 
-        public float CutJumpHeight
-        {
-            get
-            {
-                return _cutJumpHeight;
-            }
-        }
+        public float CutJumpHeight => _cutJumpHeight;
 
-        public CustomButton UpMoveButton
-        {
-            get
-            {
-                return _upMoveButton;
-            }
-        }
+        public CustomButton UpMoveButton => _upMoveButton;
 
-        public float  ClimbUpSpeed
-        {
-            get
-            {
-                return _climbUpSpeed;
-            }
-        }
+        public float  ClimbUpSpeed => _climbUpSpeed;
 
-        public float ClimbDownSpeed
-        {
-            get
-            {
-                return _climbDownSpeed;
-            }
-        }
+        public float ClimbDownSpeed => _climbDownSpeed;
 
-        public SurfaceCheck SurfaceCheck
-        {
-            get
-            {
-                return _surfaceCheck;
-            }
-        }
+        public SurfaceCheck SurfaceCheck => _surfaceCheck;
 
-        public StateMachine StateMachine
-        {
-            get
-            {
-                return _stateMachine;
-            }
-        }
+        public StateMachine StateMachine => _stateMachine;
 
-        public JumpingState Jumping
-        {
-            get
-            {
-                return _jumpingState;
-            }
-        }
+        public JumpingState Jumping => _jumpingState;
 
-        public IdleState Idle
-        {
-            get
-            {
-                return _idleState;
-            }
-        }
+        public IdleState Idle => _idleState;
 
-        public RunningState Running
-        {
-            get
-            {
-                return _runningState;
-            }
-        }
+        public RunningState Running => _runningState;
 
-        public FallingState Falling
-        {
-            get
-            {
-                return _fallingState;
-            }
-        }
+        public FallingState Falling => _fallingState;
 
-        public LandingState Landing
-        {
-            get
-            {
-                return _landingState;
-            }
-        }
+        public LandingState Landing => _landingState;
 
-        public ClimbingState Climbing
-        {
-            get
-            {
-                return _climbingState;
-            }
-        }
+        public ClimbingState Climbing => _climbingState;
 
-        public Transform Transform
-        {
-            get
-            {
-                return _transform;
-            }
-        }
+        public Transform Transform => _transform;
 
-        public Rigidbody2D RigidBody
-        {
-            get
-            {
-                return _rigidBody;
-            }
-        }
+        public Rigidbody2D RigidBody => _rigidBody;
 
         public float AfterGroundTouchTimer
         {
-            get
-            {
-                return _afterGroundTouchTimer;
-            }
+            get => _afterGroundTouchTimer;
 
-            set
-            {
-                _afterGroundTouchTimer = value;
-            }
+            set => _afterGroundTouchTimer = value;
         }
 
         public float PressButtonTimer
         {
-            get
-            {
-                return _pressButtonTimer;
-            }
+            get => _pressButtonTimer;
 
-            set
-            {
-                _pressButtonTimer = value;
-            }    
+            set => _pressButtonTimer = value;
         }
         #endregion Properties
 

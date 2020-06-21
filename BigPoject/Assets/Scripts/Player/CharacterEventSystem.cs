@@ -9,7 +9,7 @@ namespace Assets.Scripts.Player
         private Dictionary<string, UnityEvent> _eventDictionary;
         private static CharacterEventSystem _eventSystem = null;
     
-        // Getter to get event sytem. If there is no event system, create new one.
+        // Getter to use event system. If there is no event system, create new one.
         public static CharacterEventSystem SharedInstance
         {
             get

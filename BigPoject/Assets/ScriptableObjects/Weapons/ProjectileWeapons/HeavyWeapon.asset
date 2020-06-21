@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f25041c427e50e54283054da33d3c903, type: 3}
   m_Name: HeavyWeapon
   m_EditorClassIdentifier: 
-  _name: 
-  _description: 
-  _inGameSprite: {fileID: 0}
+  _name: Heavy
+  _description: Heavy weapon
+  _inGameSprite: {fileID: -4648540809063787225, guid: 93b47fc39bc9f6a4ca6005c8e10d5fbc, type: 3}
+  _bulletType: {fileID: 0}
+  _maxBulletsAmount: 100
+  _fireRate: 10

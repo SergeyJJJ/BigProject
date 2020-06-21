@@ -1071,6 +1071,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 536803572, guid: db841216772e4844187962a048cfddbb, type: 3}
+      propertyPath: m_Name
+      value: ActiveWeapon
+      objectReference: {fileID: 0}
+    - target: {fileID: 536803574, guid: db841216772e4844187962a048cfddbb, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 536803574, guid: db841216772e4844187962a048cfddbb, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2824605566533303579, guid: db841216772e4844187962a048cfddbb, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.892
@@ -1506,7 +1518,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 536803572, guid: db841216772e4844187962a048cfddbb, type: 3}
   m_PrefabInstance: {fileID: 559604546}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &979211920
+--- !u!114 &979211922
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1515,7 +1527,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 979211919}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b87cdb025b974374fba57606e5af6a93, type: 3}
+  m_Script: {fileID: 11500000, guid: 538e818456d555b40a9f7a7d0268fa32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _currentWeapon: {fileID: 0}
