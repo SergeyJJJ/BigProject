@@ -15,6 +15,6 @@ MonoBehaviour:
   _name: Rifle
   _description: Classic Assault Rifle
   _inGameSprite: {fileID: 21300000, guid: c054926c548fd67428bfdd3929799e78, type: 3}
-  _bulletType: {fileID: 0}
+  _bulletType: {fileID: 11400000, guid: 428acf49139f91545b825dbfdd4a07fe, type: 2}
   _maxBulletsAmount: 200
   _fireRate: 20

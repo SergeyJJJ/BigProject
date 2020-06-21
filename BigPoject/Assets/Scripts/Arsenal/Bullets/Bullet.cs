@@ -3,7 +3,7 @@
 namespace Assets.Scripts.Arsenal.Bullets
 {
     [CreateAssetMenu(menuName = "Arsenal/Bullet", fileName = "Bullet")]
-    public abstract class Bullet : ScriptableObject
+    public class Bullet : ScriptableObject
     {
         [SerializeField] private float _damage = 0f;
         [SerializeField] private float _flightRange = 0f;
