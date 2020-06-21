@@ -1,21 +1,22 @@
-﻿using UnityEngine;
-
-public class StateMachine
+﻿namespace Assets.Scripts.Player.CharacterMovement.MovementStateMachine
 {
-    public BaseState CurrentState{ get; private set; }
-
-    public void Initialization(BaseState startingState)
+    public class StateMachine
     {
-        CurrentState = startingState;
-        startingState.Enter();
-    }
+        public BaseState CurrentState{ get; private set; }
+
+        public void Initialization(BaseState startingState)
+        {
+            CurrentState = startingState;
+            startingState.Enter();
+        }
 
 
-    public void TransitionToState(BaseState state)
-    {
-        CurrentState.Exit();
+        public void TransitionToState(BaseState state)
+        {
+            CurrentState.Exit();
 
-        CurrentState = state;
-        state.Enter();
+            CurrentState = state;
+            state.Enter();
+        }
     }
 }

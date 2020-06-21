@@ -1,29 +1,32 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class CustomButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPointerExitHandler
+namespace Assets.Scripts.Player.CharacterMovement
 {
-    private bool _isPressed = false;
-    public bool IsPressed
+    public class CustomButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPointerExitHandler
     {
-        get
+        private bool _isPressed = false;
+        public bool IsPressed
         {
-            return _isPressed;
+            get
+            {
+                return _isPressed;
+            }
         }
-    }
 
-    public void OnPointerDown(PointerEventData eventData)
-    {
-        _isPressed = true;
-    }
+        public void OnPointerDown(PointerEventData eventData)
+        {
+            _isPressed = true;
+        }
 
-    public void OnPointerUp(PointerEventData eventData)
-    {
-        _isPressed = false;
-    }
+        public void OnPointerUp(PointerEventData eventData)
+        {
+            _isPressed = false;
+        }
 
-    public void OnPointerExit(PointerEventData eventData)
-    {
-        _isPressed = false;
+        public void OnPointerExit(PointerEventData eventData)
+        {
+            _isPressed = false;
+        }
     }
 }

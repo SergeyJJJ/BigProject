@@ -1,63 +1,66 @@
 ﻿using UnityEngine;
 
-public class LandingState : BaseState
+namespace Assets.Scripts.Player.CharacterMovement.MovementStateMachine.States
 {
-    public LandingState (CharacterMovement characterMovement, StateMachine stateMachine) : base (characterMovement, stateMachine)
+    public class LandingState : BaseState
     {
+        public LandingState (CharacterMovement characterMovement, StateMachine stateMachine) : base (characterMovement, stateMachine)
+        {
         
-    }
-
-
-    public override void Enter()
-    {
-        CharacterEventSystem.TriggerEvent("OnLand");
-
-        if (_characterMovement.PressButtonTimer > 0)
-        {
-            _stateMachine.TransitionToState(_characterMovement.Jumping);
         }
-    }
 
 
-    public override void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Ladder"))
+        public override void Enter()
         {
-            _stateMachine.TransitionToState(_characterMovement.Climbing);
+            CharacterEventSystem.TriggerEvent("OnLand");
+
+            if (_characterMovement.PressButtonTimer > 0)
+            {
+                _stateMachine.TransitionToState(_characterMovement.Jumping);
+            }
         }
-    }
 
 
-    public override void OnTriggerExit2D(Collider2D other)
-    {
+        public override void OnTriggerEnter2D(Collider2D other)
+        {
+            if (other.CompareTag("Ladder"))
+            {
+                _stateMachine.TransitionToState(_characterMovement.Climbing);
+            }
+        }
+
+
+        public override void OnTriggerExit2D(Collider2D other)
+        {
         
-    }
-
-
-    public override void PhysicsUpdate()
-    {
-        base.PhysicsUpdate();
-        bool isRunning = (_characterMovement.RigidBody.velocity.x < -1f) || (_characterMovement.RigidBody.velocity.x > 1f);
-        bool isUpButtonPressed = _characterMovement.UpMoveButton.IsPressed;
-
-        if (isRunning)
-        {
-            _stateMachine.TransitionToState(_characterMovement.Running);
-        }
-        else 
-        {
-            _stateMachine.TransitionToState(_characterMovement.Idle);   
         }
 
-        if (isUpButtonPressed)
+
+        public override void PhysicsUpdate()
         {
-            _stateMachine.TransitionToState(_characterMovement.Jumping);
+            base.PhysicsUpdate();
+            bool isRunning = (_characterMovement.RigidBody.velocity.x < -1f) || (_characterMovement.RigidBody.velocity.x > 1f);
+            bool isUpButtonPressed = _characterMovement.UpMoveButton.IsPressed;
+
+            if (isRunning)
+            {
+                _stateMachine.TransitionToState(_characterMovement.Running);
+            }
+            else 
+            {
+                _stateMachine.TransitionToState(_characterMovement.Idle);   
+            }
+
+            if (isUpButtonPressed)
+            {
+                _stateMachine.TransitionToState(_characterMovement.Jumping);
+            }
         }
-    }
 
 
-    public override void Exit()
-    {
-        _characterMovement.AfterGoundTouchTimer = _characterMovement.AfterGroundTouchJumpTime;
+        public override void Exit()
+        {
+            _characterMovement.AfterGroundTouchTimer = _characterMovement.AfterGroundTouchJumpTime;
+        }
     }
 }
