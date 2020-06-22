@@ -11,7 +11,7 @@ namespace Assets.Scripts.Player.CharacterMovement.MovementStateMachine.States
 
         public override void Enter()
         {
-         
+            
         }
 
 

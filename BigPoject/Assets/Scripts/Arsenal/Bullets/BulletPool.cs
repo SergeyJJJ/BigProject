@@ -31,7 +31,7 @@ namespace Assets.Scripts.Arsenal.Bullets
 
     
         // Get bullet if it is available.
-        public GameObject GetPooledObject()
+        public GameObject GetBullet()
         {
             for (int i = 0; i < _bulletsPool.Count; i++)
             {

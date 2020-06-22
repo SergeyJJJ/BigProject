@@ -11,23 +11,56 @@ namespace Assets.Scripts.Arsenal.Weapons
         [SerializeField] private Bullet _bulletType = null;         // Contains information about bullet that current weapon will use.
         [SerializeField] private int _maxBulletsAmount = 0;         // Maximum bullets amount.
         [SerializeField] private float _fireRate = 0f;              // Weapon fire rate. 
-
+        [SerializeField] private Transform _firePoint = null;              // Position in which bullet will appear.
+        private int _currentBulletCount = 0;                        // Bullet capacity now.
+        
         #region Protperties
         
-        public string Name => _name;
+        public string Name
+        {
+            get { return _name; }
+        }
 
-        public string Description => _description;
+        public string Description
+        {
+            get { return _description; }
+        }
 
-        public Sprite InGameSprite => _inGameSprite;
+        protected Sprite InGameSprite
+        {
+            get { return _inGameSprite; }
+        }
 
-        public Bullet BulletType => _bulletType;
+        protected Bullet BulletType
+        {
+            get { return _bulletType; }
+        }
+
+        public int BulletsAmount
+        {
+            get { return _maxBulletsAmount; }
+        }
+
+        public float FireRate
+        {
+            get { return _fireRate; }
+        }
+
+        public int CurrentBulletCount
+        {
+            get { return _currentBulletCount; }
+            set { _currentBulletCount = value; }
+        }
         
-        public int BulletsAmount => _maxBulletsAmount;
+        protected Transform FirePoint => _firePoint;
 
-        public float FireRate => _fireRate;
-        
         #endregion Properties
         
         public abstract void Shoot();
+
+        protected void DecrementBulletsCount()
+        {
+            _currentBulletCount--;
+        }
     }
 }
