@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4931594260bea604ea88e66401a02c20, type: 3}
-  m_Name: HeavyBullet
+  m_Name: AutoRifleBullet
   m_EditorClassIdentifier: 
-  _damage: 25
-  _flightRange: 10
-  _flightSpeed: 10
+  _damage: 0
+  _flightRange: 0
+  _flightSpeed: 0
   _flightSprite: {fileID: 0}
