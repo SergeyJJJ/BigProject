@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.Arsenal.Weapons
 {
-    public abstract class Weapon : ScriptableObject
+    public abstract class Weapon : MonoBehaviour
     {
         [SerializeField] private string _name = "";                 // Name of the weapon.
         [SerializeField] private string _description = "";          // Description of the weapon.
