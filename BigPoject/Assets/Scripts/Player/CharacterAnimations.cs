@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Assets.Scripts.Player
 {
@@ -6,7 +7,7 @@ namespace Assets.Scripts.Player
     [RequireComponent(typeof(SpriteRenderer))]
     public class CharacterAnimations : MonoBehaviour
     {
-        private Animator _animator = null;                  // Contains animator compnent that controll character animations.
+        private Animator _animator = null;                  // Contains animator component that control character animations.
 
         private void Awake()
         {  
@@ -25,17 +26,24 @@ namespace Assets.Scripts.Player
         }
         
 
-        private void EnableAnimations()
+        private void EnableAnimator()
         {
             _animator.enabled = true;
         }
 
 
-        private void DisableAnimations()
+        private void DisableAnimator()
         {
             _animator.enabled = false;
         }
 
+
+        private void StopAnimations()
+        {
+            _animator.SetBool("Run", false);
+            _animator.SetBool("Fall", false);
+        }
+        
 
         private void StartRunAnimation()
         {
@@ -64,6 +72,12 @@ namespace Assets.Scripts.Player
         private void StartLandingAnimation()
         {
             _animator.SetBool("Fall", false);
+        }
+
+
+        private void StartClimbingAnimation()
+        {
+            throw new NotImplementedException();
         }
         
         
