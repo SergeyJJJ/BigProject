@@ -1,31 +1,31 @@
 fileFormatVersion: 2
-guid: a9d7a5c73844eec4f826f3f5ad0b22da
+guid: f2f99b7b726dd13469aa6ba557b94571
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8475523149585718380
-    second: assault_idle_g1_0
+      213: -1096332383446489688
+    second: assault_idle(4 gun)_0
   - first:
-      213: -4599040730256906515
-    second: assault_idle_g1_1
+      213: 3386689322847977547
+    second: assault_idle(4 gun)_1
   - first:
-      213: 9110398704032759466
-    second: assault_idle_g1_2
+      213: 8029606867334169552
+    second: assault_idle(4 gun)_2
   - first:
-      213: 3050588777159716571
-    second: assault_idle_g1_3
+      213: 1531385152446336504
+    second: assault_idle(4 gun)_3
   - first:
-      213: -5874713365937828086
-    second: assault_idle_g1_4
+      213: 3614253996718971234
+    second: assault_idle(4 gun)_4
   - first:
-      213: 9045724162265911402
-    second: assault_idle_g1_5
+      213: 1310617030814128082
+    second: assault_idle(4 gun)_5
   - first:
-      213: 4060228543372981873
-    second: assault_idle_g1_6
+      213: 689770165221133545
+    second: assault_idle(4 gun)_6
   - first:
-      213: 2932922977869012071
-    second: assault_idle_g1_7
+      213: 4736502141692047671
+    second: assault_idle(4 gun)_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -127,13 +127,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: assault_idle_g1_0
+      name: assault_idle(4 gun)_0
       rect:
         serializedVersion: 2
         x: 9
-        y: 75
-        width: 13
-        height: 14
+        y: 74
+        width: 11
+        height: 17
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,20 +141,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c6c18a8366b1f9570800000000000000
-      internalID: 8475523149585718380
+      spriteID: 8a52ae0818b09c0f0800000000000000
+      internalID: -1096332383446489688
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: assault_idle_g1_1
+      name: assault_idle(4 gun)_1
       rect:
         serializedVersion: 2
         x: 41
-        y: 75
-        width: 13
-        height: 14
+        y: 74
+        width: 11
+        height: 17
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -162,20 +162,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: de6eb7592dcec20c0800000000000000
-      internalID: -4599040730256906515
+      spriteID: b4046f4eeffeffe20800000000000000
+      internalID: 3386689322847977547
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: assault_idle_g1_2
+      name: assault_idle(4 gun)_2
       rect:
         serializedVersion: 2
         x: 73
-        y: 75
-        width: 13
-        height: 14
+        y: 74
+        width: 11
+        height: 17
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -183,20 +183,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aae3d043a53ae6e70800000000000000
-      internalID: 9110398704032759466
+      spriteID: 0d38d7537e4ee6f60800000000000000
+      internalID: 8029606867334169552
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: assault_idle_g1_3
+      name: assault_idle(4 gun)_3
       rect:
         serializedVersion: 2
         x: 9
-        y: 43
-        width: 13
-        height: 14
+        y: 42
+        width: 11
+        height: 17
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -204,20 +204,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bdee562845ed55a20800000000000000
-      internalID: 3050588777159716571
+      spriteID: 8fd0fd9bea2904510800000000000000
+      internalID: 1531385152446336504
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: assault_idle_g1_4
+      name: assault_idle(4 gun)_4
       rect:
         serializedVersion: 2
         x: 41
-        y: 43
-        width: 13
-        height: 14
+        y: 42
+        width: 11
+        height: 17
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -225,20 +225,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a0f490ab153d87ea0800000000000000
-      internalID: -5874713365937828086
+      spriteID: 26958726cd8682230800000000000000
+      internalID: 3614253996718971234
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: assault_idle_g1_5
+      name: assault_idle(4 gun)_5
       rect:
         serializedVersion: 2
         x: 73
-        y: 43
-        width: 13
-        height: 14
+        y: 42
+        width: 11
+        height: 17
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -246,20 +246,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a601704033ed88d70800000000000000
-      internalID: 9045724162265911402
+      spriteID: 2d7d04ede3f303210800000000000000
+      internalID: 1310617030814128082
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: assault_idle_g1_6
+      name: assault_idle(4 gun)_6
       rect:
         serializedVersion: 2
         x: 9
-        y: 11
-        width: 13
-        height: 14
+        y: 10
+        width: 11
+        height: 17
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -267,20 +267,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 176f5a22954d85830800000000000000
-      internalID: 4060228543372981873
+      spriteID: 9ec0baa8f4e829900800000000000000
+      internalID: 689770165221133545
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: assault_idle_g1_7
+      name: assault_idle(4 gun)_7
       rect:
         serializedVersion: 2
         x: 41
-        y: 11
-        width: 13
-        height: 14
+        y: 10
+        width: 11
+        height: 17
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -288,8 +288,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 76c9679b8e5d3b820800000000000000
-      internalID: 2932922977869012071
+      spriteID: 7317e615a9f6bb140800000000000000
+      internalID: 4736502141692047671
       vertices: []
       indices: 
       edges: []

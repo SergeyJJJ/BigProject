@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 6ddba6e177de5d843b52e266dfb0804d
+guid: 72f853ed25dbce3458008490635d59e4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5679530864074511297
-    second: fall clone_0
-  - first:
-      213: -7391711743601082699
-    second: fall clone_1
+      213: -7310062343559005836
+    second: jmp (4 gun)_0
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -109,13 +106,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: fall clone_0
+      name: jmp (4 gun)_0
       rect:
         serializedVersion: 2
         x: 9
-        y: 42
-        width: 13
-        height: 15
+        y: 11
+        width: 11
+        height: 17
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -123,29 +120,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1c3570cba3fb1de40800000000000000
-      internalID: 5679530864074511297
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: fall clone_1
-      rect:
-        serializedVersion: 2
-        x: 9
-        y: 9
-        width: 13
-        height: 15
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5bef298055d5b6990800000000000000
-      internalID: -7391711743601082699
+      spriteID: 479b43667017d8a90800000000000000
+      internalID: -7310062343559005836
       vertices: []
       indices: 
       edges: []

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 9f6949733868acb49b66b9f2ab78b42e
+guid: cf999a8e81f51e34199618b7712bf8bf
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7460046300004610927
-    second: Jump_0
+      213: -8223839876408460788
+    second: assault_climb(4 gun)_0
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -106,13 +106,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Jump_0
+      name: assault_climb(4 gun)_0
       rect:
         serializedVersion: 2
         x: 9
-        y: 13
-        width: 10
-        height: 12
+        y: 10
+        width: 11
+        height: 17
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -120,8 +120,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f63fdb7b598678760800000000000000
-      internalID: 7460046300004610927
+      spriteID: c0a3bf4443d0fdd80800000000000000
+      internalID: -8223839876408460788
       vertices: []
       indices: 
       edges: []
