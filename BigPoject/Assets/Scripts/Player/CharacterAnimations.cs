@@ -23,6 +23,9 @@ namespace Assets.Scripts.Player
             CharacterEventSystem.StartListening("OnJump", StartJumpAnimation);
             CharacterEventSystem.StartListening("OnFall", StartFallAnimation);
             CharacterEventSystem.StartListening("OnLand", StartLandingAnimation);
+            CharacterEventSystem.StartListening("OnStartClimb", StopAnimations);
+            CharacterEventSystem.StartListening("OnStartClimb", StartClimbingAnimation);
+            CharacterEventSystem.StartListening("OnStopClimb", StopClimbingAnimation);
         }
         
 
@@ -55,7 +58,7 @@ namespace Assets.Scripts.Player
         {
             _animator.SetBool("Run", false);
         }
-
+            
 
         private void StartJumpAnimation()
         {
@@ -77,7 +80,13 @@ namespace Assets.Scripts.Player
 
         private void StartClimbingAnimation()
         {
-            throw new NotImplementedException();
+            _animator.SetBool("Climb", true);
+        }
+
+
+        private void StopClimbingAnimation()
+        {
+            _animator.SetBool("Climb", false);
         }
         
         
@@ -89,6 +98,9 @@ namespace Assets.Scripts.Player
             CharacterEventSystem.StopListening("OnJump", StartJumpAnimation);
             CharacterEventSystem.StopListening("OnFall", StartFallAnimation);
             CharacterEventSystem.StopListening("OnLand", StartLandingAnimation);
+            CharacterEventSystem.StopListening("OnClimb", StopAnimations);
+            CharacterEventSystem.StopListening("OnClimb", StartClimbingAnimation);
+            CharacterEventSystem.StopListening("OnStopClimb", StopClimbingAnimation);
         }
     }
 }

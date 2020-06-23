@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Assets.Scripts.Player.CharacterMovement.MovementStateMachine.States
 {
@@ -11,7 +12,7 @@ namespace Assets.Scripts.Player.CharacterMovement.MovementStateMachine.States
 
         public override void Enter()
         {
-            
+            CharacterEventSystem.TriggerEvent("OnStartClimb");
         }
 
 
@@ -62,7 +63,7 @@ namespace Assets.Scripts.Player.CharacterMovement.MovementStateMachine.States
 
         public override void Exit()
         {
-
+            CharacterEventSystem.TriggerEvent("OnStopClimb");
         }
     }
 }
