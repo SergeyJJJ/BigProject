@@ -44,7 +44,7 @@ namespace Assets.Scripts.Arsenal.Bullets
         
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (!other.CompareTag("Ladder") && !other.CompareTag("Player"))
+            if (!other.CompareTag("Ladder") && !other.CompareTag("Player") && !other.CompareTag("Bullet"))
             {
                 DisableBullet();
             }

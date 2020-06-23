@@ -363,7 +363,7 @@ MonoBehaviour:
   _inGameSprite: {fileID: -8951780388439148649, guid: 0be82e7df2d7aaa42a6eae46e72480eb, type: 3}
   _bulletType: {fileID: 11400000, guid: 7dd5f3963c978754a912a79f8194ff8a, type: 2}
   _maxBulletsAmount: 200
-  _fireRate: 20
+  _fireRate: 360
   _firePoint: {fileID: 7126284408169392318}
 --- !u!212 &559604559
 SpriteRenderer:
@@ -559,7 +559,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8587872123050158918}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.016, y: 0.02, z: 0}
+  m_LocalPosition: {x: 1.144, y: 0.001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 211434828534544742}
@@ -855,11 +855,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 889919698736914788, guid: 552966005c72f7140b2927a61b16a444, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.515
+      value: -0.063
       objectReference: {fileID: 0}
     - target: {fileID: 889919698736914788, guid: 552966005c72f7140b2927a61b16a444, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.027
+      value: 0.014
       objectReference: {fileID: 0}
     - target: {fileID: 889919698736914788, guid: 552966005c72f7140b2927a61b16a444, type: 3}
       propertyPath: m_LocalPosition.z

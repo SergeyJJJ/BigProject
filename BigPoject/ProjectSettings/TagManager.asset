@@ -7,6 +7,7 @@ TagManager:
   - Ladder
   - MovingPlatform
   - DynamicCamera
+  - Bullet
   layers:
   - Default
   - TransparentFX

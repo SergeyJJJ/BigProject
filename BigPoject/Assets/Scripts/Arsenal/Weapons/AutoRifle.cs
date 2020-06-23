@@ -8,18 +8,23 @@ namespace Assets.Scripts.Arsenal.Weapons
     public class AutoRifle : Weapon
     {
         private SpriteRenderer _spriteRenderer = null;
+        private float _nextShootTimer = 0f;
+        private float _timeBetweenShoots = 0f;
+        private bool _isShotTriggered = false;
 
-        public override void Shoot()
+        #region Properties
+
+        private float NextShootTimer
         {
-            GameObject bullet = GetBullet();
+            get => _nextShootTimer;
+            set => _nextShootTimer = value > -1 ? value : -1;
+        }
 
-            Vector2 launchDirection = GetLaunchDirection();
-
-            InitializeBullet(bullet, launchDirection);
-            
-            LaunchBullet(bullet);
-
-            DecrementBulletsCount();
+        #endregion
+        
+        public override void AllowShoot(bool canShoot)
+        {
+            _isShotTriggered = canShoot;
         }
 
         
@@ -32,6 +37,28 @@ namespace Assets.Scripts.Arsenal.Weapons
         private void Start()
         {
             _spriteRenderer.sprite = InGameSprite;
+            _timeBetweenShoots = GetTimeBetweenShoot();
+            Debug.Log(_timeBetweenShoots);
+        }
+
+
+        private void Update()
+        {
+            if (_isShotTriggered)
+            {
+                if (IsTimeForShootCome())
+                {
+                    NextShootTimer = _timeBetweenShoots;
+                     
+                    GameObject bullet = GetBullet();
+                    Vector2 launchDirection = GetLaunchDirection();
+                    InitializeBullet(bullet, launchDirection);
+                    LaunchBullet(bullet);
+                    DecrementBulletsCount();
+                }
+            }
+
+            NextShootTimer -= Time.deltaTime;
         }
         
 
@@ -41,7 +68,7 @@ namespace Assets.Scripts.Arsenal.Weapons
             bullet = BulletPool.SharedInstance.GetBullet();
             return bullet;
         }
-
+        
 
         private void InitializeBullet(GameObject bullet, Vector2 launchDirection)
         {
@@ -60,6 +87,19 @@ namespace Assets.Scripts.Arsenal.Weapons
         private Vector2 GetLaunchDirection()
         {
             return Vector2.right;
+        }
+
+
+        private float GetTimeBetweenShoot()
+        {
+            float secondsPerMinute = 60;
+            return secondsPerMinute / FireRate;
+        }
+
+
+        private bool IsTimeForShootCome()
+        {
+            return NextShootTimer <= 0f;
         }
     }
 }
