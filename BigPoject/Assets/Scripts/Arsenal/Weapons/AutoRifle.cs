@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Arsenal.Bullets;
+﻿using System.Runtime.InteropServices.WindowsRuntime;
+using Assets.Scripts.Arsenal.Bullets;
 using UnityEngine;
 
 namespace Assets.Scripts.Arsenal.Weapons
@@ -8,6 +9,20 @@ namespace Assets.Scripts.Arsenal.Weapons
     {
         private SpriteRenderer _spriteRenderer = null;
 
+        public override void Shoot()
+        {
+            GameObject bullet = GetBullet();
+
+            Vector2 launchDirection = GetLaunchDirection();
+
+            InitializeBullet(bullet, launchDirection);
+            
+            LaunchBullet(bullet);
+
+            DecrementBulletsCount();
+        }
+
+        
         private void Awake()
         {
             _spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
@@ -19,19 +34,6 @@ namespace Assets.Scripts.Arsenal.Weapons
             _spriteRenderer.sprite = InGameSprite;
         }
         
-        
-        public override void Shoot()
-        {
-            GameObject bullet = null;
-            bullet = GetBullet();
-            
-            InitializeBullet(bullet);
-            
-            LaunchBullet(bullet);
-
-            DecrementBulletsCount();
-        }
-
 
         private GameObject GetBullet()
         {
@@ -41,10 +43,10 @@ namespace Assets.Scripts.Arsenal.Weapons
         }
 
 
-        private void InitializeBullet(GameObject bullet)
+        private void InitializeBullet(GameObject bullet, Vector2 launchDirection)
         {
             ActiveBullet activeBullet = bullet.GetComponent<ActiveBullet>();
-            activeBullet.CurrentBullet = BulletType;
+            activeBullet.Initialize(BulletType, launchDirection);
         }
 
 
@@ -52,6 +54,12 @@ namespace Assets.Scripts.Arsenal.Weapons
         {
             bullet.transform.position = FirePoint.position;
             bullet.SetActive(true);
+        }
+
+
+        private Vector2 GetLaunchDirection()
+        {
+            return Vector2.right;
         }
     }
 }
