@@ -17,7 +17,7 @@ namespace Assets.Scripts.Arsenal.Weapons
         private float NextShootTimer
         {
             get => _nextShootTimer;
-            set => _nextShootTimer = value > -1 ? value : -1;
+            set => _nextShootTimer = value > -1 ? value : _nextShootTimer;
         }
 
         #endregion
@@ -38,7 +38,7 @@ namespace Assets.Scripts.Arsenal.Weapons
         {
             _spriteRenderer.sprite = InGameSprite;
             _timeBetweenShoots = GetTimeBetweenShoot();
-            Debug.Log(_timeBetweenShoots);
+            CurrentBulletCount = BulletsAmount;
         }
 
 
@@ -46,18 +46,23 @@ namespace Assets.Scripts.Arsenal.Weapons
         {
             if (_isShotTriggered)
             {
-                if (IsTimeForShootCome())
+                if (IsEnoughBullets())
                 {
-                    NextShootTimer = _timeBetweenShoots;
-                     
-                    GameObject bullet = GetBullet();
-                    Vector2 launchDirection = GetLaunchDirection();
-                    InitializeBullet(bullet, launchDirection);
-                    LaunchBullet(bullet);
-                    DecrementBulletsCount();
-                }
-            }
+                    if (IsTimeForShootCome())
+                    {
+                        NextShootTimer = _timeBetweenShoots;
 
+                        GameObject bullet = GetBullet();
+                        Vector2 launchDirection = GetLaunchDirection();
+                        InitializeBullet(bullet, launchDirection);
+                        LaunchBullet(bullet);
+                        DecrementBulletsCount();
+                    }
+                }
+                
+                Debug.Log(CurrentBulletCount);
+            }
+            
             NextShootTimer -= Time.deltaTime;
         }
         
@@ -86,7 +91,7 @@ namespace Assets.Scripts.Arsenal.Weapons
 
         private Vector2 GetLaunchDirection()
         {
-            return Vector2.right;
+            return transform.right;
         }
 
 
@@ -100,6 +105,12 @@ namespace Assets.Scripts.Arsenal.Weapons
         private bool IsTimeForShootCome()
         {
             return NextShootTimer <= 0f;
+        }
+
+
+        private bool IsEnoughBullets()
+        {
+            return CurrentBulletCount > 0;
         }
     }
 }

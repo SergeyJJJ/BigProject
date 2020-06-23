@@ -363,7 +363,7 @@ MonoBehaviour:
   _inGameSprite: {fileID: -8951780388439148649, guid: 0be82e7df2d7aaa42a6eae46e72480eb, type: 3}
   _bulletType: {fileID: 11400000, guid: 7dd5f3963c978754a912a79f8194ff8a, type: 2}
   _maxBulletsAmount: 200
-  _fireRate: 360
+  _fireRate: 420
   _firePoint: {fileID: 7126284408169392318}
 --- !u!212 &559604559
 SpriteRenderer:

@@ -31,7 +31,7 @@ namespace Assets.Scripts.Arsenal.Weapons
         public int CurrentBulletCount
         {
             get => _currentBulletCount;
-            set => _currentBulletCount = _currentBulletCount >= 0 ? value : _currentBulletCount;
+            set => _currentBulletCount = value >= 0 ? value : _currentBulletCount;
         }
         
         protected Transform FirePoint => _firePoint;
