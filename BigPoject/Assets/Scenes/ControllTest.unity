@@ -1177,7 +1177,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4779799537669754934, guid: db841216772e4844187962a048cfddbb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.137
+      value: 0.48
       objectReference: {fileID: 0}
     - target: {fileID: 6700315359917075697, guid: db841216772e4844187962a048cfddbb, type: 3}
       propertyPath: _leftMoveButton
@@ -1191,6 +1191,18 @@ PrefabInstance:
       propertyPath: _upMoveButton
       value: 
       objectReference: {fileID: 1424362287}
+    - target: {fileID: 7452835413203550249, guid: db841216772e4844187962a048cfddbb, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7452835413203550249, guid: db841216772e4844187962a048cfddbb, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.7962599
+      objectReference: {fileID: 0}
+    - target: {fileID: 7452835413203550249, guid: db841216772e4844187962a048cfddbb, type: 3}
+      propertyPath: m_Size.y
+      value: 1.3840561
+      objectReference: {fileID: 0}
     - target: {fileID: 8702310545741433508, guid: db841216772e4844187962a048cfddbb, type: 3}
       propertyPath: m_Name
       value: BlueSuit
