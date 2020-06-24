@@ -4,13 +4,15 @@ using UnityEngine;
 
 namespace Arsenal.Weapons
 {
-    [RequireComponent((typeof(SpriteRenderer)))]
+    [RequireComponent(typeof(SpriteRenderer))]
     public class Shotgun : Weapon
     {
-        private SpriteRenderer _spriteRenderer = null;               // Sprite of the weapon that will be used in game view.
-        private float _nextShootTimer = 0f;                          // Timer that control when player can shoot again.
-        private float _timeBetweenShoots = 0f;                       // Time that must pass between each shoot.
-        private bool _isShotTriggered = false;                       // Check if player trigger shoot button.
+        [SerializeField] private float _heightBetweenOneShotBullets = 0; // Height between each bullet in one shot.
+        private SpriteRenderer _spriteRenderer = null;                   // Sprite of the weapon that will be used in game view.
+        private float _nextShootTimer = 0f;                              // Timer that control when player can shoot again.
+        private float _timeBetweenShoots = 0f;                           // Time that must pass between each shoot.
+        private bool _isShotTriggered = false;                           // Check if player trigger shoot button.
+        private const int _bulletPerShot = 3;                            // Bullets amount that will be launched per one shot.
         
         #region Properties
 
@@ -50,14 +52,15 @@ namespace Arsenal.Weapons
                 {
                     if (IsTimeForShootCome())
                     {
-                        Debug.Log("fire");
                         NextShootTimer = _timeBetweenShoots;
-                        
-                        GameObject bullet = GetBullet();
-                        Vector2 launchDirection = GetLaunchDirection();
-                        InitializeBullet(bullet, launchDirection);
-                        LaunchBullet(bullet);
-                        DecrementBulletsCount();
+                        for (var bulletNumber = 0; bulletNumber < _bulletPerShot; bulletNumber++)
+                        {
+                            GameObject bullet = GetBullet();
+                            Vector2 launchDirection = GetLaunchDirection();
+                            InitializeBullet(bullet, launchDirection);
+                            LaunchBullet(bullet, bulletNumber);
+                            DecrementBulletsCount();
+                        }
                     }
                 }
             }
@@ -81,9 +84,23 @@ namespace Arsenal.Weapons
         }
 
 
-        private void LaunchBullet(GameObject bullet)
+        private void LaunchBullet(GameObject bullet, int bulletNumber)
         {
-            bullet.transform.position = FirePoint.position;
+            Vector2 firePoint = FirePoint.position;
+            
+            switch (bulletNumber)
+            {
+                case 0:
+                    bullet.transform.position = new Vector2(firePoint.x, firePoint.y + _heightBetweenOneShotBullets);
+                    break;
+                case 1:
+                    bullet.transform.position = firePoint;
+                    break;
+                case 2:
+                    bullet.transform.position = new Vector2(firePoint.x, firePoint.y - _heightBetweenOneShotBullets);
+                    break;
+            }
+            
             bullet.SetActive(true);
         }
 
