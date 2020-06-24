@@ -1128,38 +1128,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 536803573, guid: db841216772e4844187962a048cfddbb, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.518
-      objectReference: {fileID: 0}
-    - target: {fileID: 559604561, guid: db841216772e4844187962a048cfddbb, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -8951780388439148649, guid: 0be82e7df2d7aaa42a6eae46e72480eb, type: 3}
-    - target: {fileID: 559604561, guid: db841216772e4844187962a048cfddbb, type: 3}
-      propertyPath: m_Size.x
-      value: 1.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 559604561, guid: db841216772e4844187962a048cfddbb, type: 3}
-      propertyPath: m_Size.y
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 559604561, guid: db841216772e4844187962a048cfddbb, type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
+    - target: {fileID: -1767523105098985399, guid: db841216772e4844187962a048cfddbb, type: 3}
+      propertyPath: m_GravityScale
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 979211922, guid: db841216772e4844187962a048cfddbb, type: 3}
       propertyPath: _fireButton
       value: 
       objectReference: {fileID: 1808298728}
-    - target: {fileID: 211434828534544742, guid: db841216772e4844187962a048cfddbb, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.249
-      objectReference: {fileID: 0}
-    - target: {fileID: 211434828534544742, guid: db841216772e4844187962a048cfddbb, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.094
-      objectReference: {fileID: 0}
     - target: {fileID: 2824605566533303579, guid: db841216772e4844187962a048cfddbb, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.892
@@ -1216,26 +1192,6 @@ PrefabInstance:
       propertyPath: _upMoveButton
       value: 
       objectReference: {fileID: 1424362287}
-    - target: {fileID: 7126284408169392318, guid: db841216772e4844187962a048cfddbb, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1.231
-      objectReference: {fileID: 0}
-    - target: {fileID: 7126284408169392318, guid: db841216772e4844187962a048cfddbb, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.031
-      objectReference: {fileID: 0}
-    - target: {fileID: 7164076900808176447, guid: db841216772e4844187962a048cfddbb, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.506
-      objectReference: {fileID: 0}
-    - target: {fileID: 7452835413203550249, guid: db841216772e4844187962a048cfddbb, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.74274933
-      objectReference: {fileID: 0}
-    - target: {fileID: 7452835413203550249, guid: db841216772e4844187962a048cfddbb, type: 3}
-      propertyPath: m_Size.y
-      value: 1.4666021
-      objectReference: {fileID: 0}
     - target: {fileID: 8702310545741433508, guid: db841216772e4844187962a048cfddbb, type: 3}
       propertyPath: m_Name
       value: BlueSuit

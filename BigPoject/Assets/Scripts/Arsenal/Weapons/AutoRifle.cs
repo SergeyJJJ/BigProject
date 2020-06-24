@@ -7,10 +7,10 @@ namespace Assets.Scripts.Arsenal.Weapons
     [RequireComponent((typeof(SpriteRenderer)))]
     public class AutoRifle : Weapon
     {
-        private SpriteRenderer _spriteRenderer = null;
-        private float _nextShootTimer = 0f;
-        private float _timeBetweenShoots = 0f;
-        private bool _isShotTriggered = false;
+        private SpriteRenderer _spriteRenderer = null;               // Sprite of the weapon that will be used in game view.
+        private float _nextShootTimer = 0f;                          // Timer that control when player can shoot again.
+        private float _timeBetweenShoots = 0f;                       // Time that must pass between each shoot.
+        private bool _isShotTriggered = false;                       // Check if player trigger shoot button.
 
         #region Properties
 
