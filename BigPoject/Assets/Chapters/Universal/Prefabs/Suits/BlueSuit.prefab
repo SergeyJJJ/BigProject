@@ -54,7 +54,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1800741618338260212}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.73, y: 0.002, z: 0}
+  m_LocalPosition: {x: 0.73, y: 0.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6892103237803652957}
@@ -435,6 +435,7 @@ MonoBehaviour:
   _maxBulletsAmount: 150
   _fireRate: 120
   _firePoint: {fileID: 4779799537669754934}
+  _heightBetweenOneShotBullets: 0.5
 --- !u!212 &559604553
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -743,18 +744,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.048475504, y: 0.7488681}
+  m_Offset: {x: 0.048475504, y: 0.7962599}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
-    oldSize: {x: 1.1, y: 1.7}
+    oldSize: {x: 1.1, y: 1.8}
     newSize: {x: 1.1, y: 1.7}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 1
   serializedVersion: 2
-  m_Size: {x: 0.60075426, y: 1.4788396}
+  m_Size: {x: 0.60075426, y: 1.3840561}
   m_EdgeRadius: 0
 --- !u!95 &1891532594
 Animator:

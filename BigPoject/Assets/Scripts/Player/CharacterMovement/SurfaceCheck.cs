@@ -54,15 +54,11 @@ namespace Player.CharacterMovement
         private Collider2D[] GetEncouteredColliders()
         {
             Collider2D[] allColliders = null;
+            
+            // Get all colliders with which we overlap around point with certain radius.
+            allColliders = Physics2D.OverlapCircleAll(_groundCheckPoint.position, _grounCheckRadius, _whatIsGround);
 
-            // If point around which we check colliders is exist.
-            if (_groundCheckPoint != null)
-            {
-                // Get all colliders with wich we overlap around point with certain radius.
-                allColliders = Physics2D.OverlapCircleAll(_groundCheckPoint.position, _grounCheckRadius, _whatIsGround);
-            }
-
-            // If player is not stay on something, return null.
+                // If player is not stay on something, return null.
             if (allColliders.Length == 0)
             {
                 return null;
