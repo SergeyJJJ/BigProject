@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace Assets.Scripts.Arsenal.Bullets
+namespace Arsenal.Bullets
 {
     public class BulletPool : MonoBehaviour
     {

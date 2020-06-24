@@ -1,7 +1,7 @@
-﻿using Assets.Scripts.Player.CharacterMovement;
+﻿using Player;
 using UnityEngine;
 
-namespace Assets.Scripts.Arsenal.Weapons
+namespace Arsenal.Weapons
 {
     public class ActiveWeapon : MonoBehaviour
     {

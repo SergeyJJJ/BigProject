@@ -1,4 +1,4 @@
-﻿namespace Assets.Scripts.Player.CharacterMovement.MovementStateMachine
+﻿namespace Player.CharacterMovement.MovementStateMachine
 {
     public class StateMachine
     {

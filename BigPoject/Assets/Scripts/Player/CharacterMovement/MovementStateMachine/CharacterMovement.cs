@@ -1,7 +1,7 @@
-﻿using Assets.Scripts.Player.CharacterMovement.MovementStateMachine.States;
+﻿using Player.CharacterMovement.MovementStateMachine.States;
 using UnityEngine;
 
-namespace Assets.Scripts.Player.CharacterMovement.MovementStateMachine
+namespace Player.CharacterMovement.MovementStateMachine
 {
     public class CharacterMovement : MonoBehaviour
     {

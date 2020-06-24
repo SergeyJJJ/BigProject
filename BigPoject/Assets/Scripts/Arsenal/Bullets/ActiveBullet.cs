@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Assets.Scripts.Arsenal.Bullets
+namespace Arsenal.Bullets
 {
     public class ActiveBullet : MonoBehaviour
     {

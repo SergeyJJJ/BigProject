@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Assets.Scripts.Player.CharacterMovement.MovementStateMachine.States
+namespace Player.CharacterMovement.MovementStateMachine.States
 {
     public class IdleState : BaseState
     {

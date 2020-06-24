@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Assets.Scripts.Arsenal.Bullets
+namespace Arsenal.Bullets
 {
     [CreateAssetMenu(menuName = "Bullet", fileName = "Bullet")]
     public class Bullet : ScriptableObject

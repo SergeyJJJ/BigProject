@@ -1,8 +1,7 @@
-﻿using System.Runtime.InteropServices.WindowsRuntime;
-using Assets.Scripts.Arsenal.Bullets;
+﻿using Arsenal.Bullets;
 using UnityEngine;
 
-namespace Assets.Scripts.Arsenal.Weapons
+namespace Arsenal.Weapons
 {
     [RequireComponent((typeof(SpriteRenderer)))]
     public class AutoRifle : Weapon
@@ -40,7 +39,7 @@ namespace Assets.Scripts.Arsenal.Weapons
             _timeBetweenShoots = GetTimeBetweenShoot();
             CurrentBulletCount = BulletsAmount;
         }
-
+        
 
         private void Update()
         {
@@ -59,8 +58,6 @@ namespace Assets.Scripts.Arsenal.Weapons
                         DecrementBulletsCount();
                     }
                 }
-                
-                Debug.Log(CurrentBulletCount);
             }
             
             NextShootTimer -= Time.deltaTime;

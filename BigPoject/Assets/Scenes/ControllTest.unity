@@ -3347,6 +3347,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4482145938317728504, guid: f27300c7d8e5c9740aa7627ef280d8fe, type: 3}
+      propertyPath: m_BiasY
+      value: -0.089999996
+      objectReference: {fileID: 0}
     - target: {fileID: 4482145938753907301, guid: f27300c7d8e5c9740aa7627ef280d8fe, type: 3}
       propertyPath: m_Name
       value: CM vcam1

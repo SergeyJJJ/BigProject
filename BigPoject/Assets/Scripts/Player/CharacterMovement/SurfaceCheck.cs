@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Assets.Scripts.Player.CharacterMovement
+namespace Player.CharacterMovement
 {
     public class SurfaceCheck : MonoBehaviour
     {

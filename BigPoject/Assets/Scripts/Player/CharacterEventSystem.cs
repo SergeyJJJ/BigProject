@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Assets.Scripts.Player
+namespace Player
 {
     public class CharacterEventSystem : MonoBehaviour
     {

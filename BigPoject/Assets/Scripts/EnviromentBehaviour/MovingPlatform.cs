@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace Assets.Scripts.EnviromentBehaviour
+namespace EnviromentBehaviour
 {
     public class MovingPlatform : MonoBehaviour
     {

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Assets.Scripts.Arsenal.Weapons
+namespace Arsenal.Weapons
 {
     [RequireComponent((typeof(SpriteRenderer)))]
     public class Icegun : Weapon

@@ -1,7 +1,7 @@
-﻿using Assets.Scripts.Arsenal.Bullets;
+﻿using Arsenal.Bullets;
 using UnityEngine;
 
-namespace Assets.Scripts.Arsenal.Weapons
+namespace Arsenal.Weapons
 {
     public abstract class Weapon : MonoBehaviour
     {

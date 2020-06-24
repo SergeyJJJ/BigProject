@@ -1,7 +1,6 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace Assets.Scripts.Player.CharacterMovement.MovementStateMachine.States
+namespace Player.CharacterMovement.MovementStateMachine.States
 {
     public class ClimbingState : BaseState
     {
