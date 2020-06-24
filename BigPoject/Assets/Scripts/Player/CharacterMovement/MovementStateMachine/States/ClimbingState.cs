@@ -24,19 +24,24 @@ namespace Assets.Scripts.Player.CharacterMovement.MovementStateMachine.States
 
         public override void OnTriggerExit2D(Collider2D other)
         {
+            bool isStartFalling = _characterMovement.RigidBody.velocity.y < -1;
+            bool isStartJumping = _characterMovement.RigidBody.velocity.y > 1;
+            bool isStartRunning = (_characterMovement.RigidBody.velocity.x > 1) ||
+                                       (_characterMovement.RigidBody.velocity.x < -1);
+            
             if (other.CompareTag("Ladder"))
             {
-                if (_characterMovement.RigidBody.velocity.y < 0)
+                if (isStartFalling)
                 {
                     _stateMachine.TransitionToState(_characterMovement.Falling);
                 }
-                else if (_characterMovement.RigidBody.velocity.y > 0)
+                else if (isStartJumping)
                 {
                     _stateMachine.TransitionToState(_characterMovement.Jumping);
                 }
-                else
+                else if (isStartRunning)
                 {
-                    _stateMachine.TransitionToState(_characterMovement.Idle);
+                    _stateMachine.TransitionToState(_characterMovement.Running);
                 }
             }
         }
