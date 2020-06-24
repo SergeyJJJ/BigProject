@@ -6,20 +6,20 @@ namespace Player.CharacterMovement
     {
         [Header("Is on ground controll")]
         [SerializeField] private Transform _groundCheckPoint = null;            // A position marking where to check if the character is grounded.
-        [SerializeField] private float _grounCheckRadius = 0f;                  // Radius of the overlap circle to determine if character is grounded.
+        [SerializeField] private Vector2 _groundCheckBoxSize = Vector2.zero;    // Shape of the overlap box, that used to determine if character is grounded.
         [SerializeField] private LayerMask _whatIsGround = Physics2D.AllLayers; // A mask determine what is the ground for the character.
-
+        private const float _groundCheckBoxRotation = 0f;                       // Rotation the overlap box, that used to determine if character is grounded.
 
         public bool IsCharecterIsOnSurface()
         {
             bool isGrounded = false;
-            Collider2D[] _colliders = null;
+            Collider2D[] colliders = null;
 
-            _colliders = GetEncouteredColliders();
+            colliders = GetEncouteredColliders();
 
             // If colliders list contain some colliders,
             // set that player is grounded to true.
-            if (_colliders != null)
+            if (colliders != null)
             {
                 isGrounded = true;
             }
@@ -34,15 +34,15 @@ namespace Player.CharacterMovement
         public Collider2D GetSurfaceOnWhichPlayerStanding()
         {
             Collider2D surfaceCollider = null;
-            Collider2D[] _colliders = null;
+            Collider2D[] colliders = null;
 
-            _colliders = GetEncouteredColliders();
+            colliders = GetEncouteredColliders();
 
             // If colliders list contain some colliders,
             // set surface collider as a last collider from the list.
-            if (_colliders != null)
+            if (colliders != null)
             {
-                surfaceCollider = _colliders[_colliders.Length-1];
+                surfaceCollider = colliders[colliders.Length-1];
             }
 
             return surfaceCollider;
@@ -54,11 +54,16 @@ namespace Player.CharacterMovement
         private Collider2D[] GetEncouteredColliders()
         {
             Collider2D[] allColliders = null;
-            
-            // Get all colliders with which we overlap around point with certain radius.
-            allColliders = Physics2D.OverlapCircleAll(_groundCheckPoint.position, _grounCheckRadius, _whatIsGround);
 
-                // If player is not stay on something, return null.
+            // If point around which we check colliders is exist.
+            if (_groundCheckPoint != null)
+            {
+                // Get all colliders with wich we overlap around point with certain radius.
+                //allColliders = Physics2D.OverlapCircleAll(_groundCheckPoint.position, _grounCheckRadius, _whatIsGround);
+                allColliders = Physics2D.OverlapBoxAll(_groundCheckPoint.position, _groundCheckBoxSize, _groundCheckBoxRotation, _whatIsGround);
+            }
+
+            // If player is not stay on something, return null.
             if (allColliders.Length == 0)
             {
                 return null;
