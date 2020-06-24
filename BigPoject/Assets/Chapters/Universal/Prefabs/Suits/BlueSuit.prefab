@@ -693,7 +693,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _groundCheckPoint: {fileID: 1118506233617382984}
-  _grounCheckRadius: 0.39
+  _grounCheckRadius: 0.36
   _whatIsGround:
     serializedVersion: 2
     m_Bits: 512
