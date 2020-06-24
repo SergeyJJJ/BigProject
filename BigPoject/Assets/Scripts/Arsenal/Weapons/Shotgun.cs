@@ -52,14 +52,16 @@ namespace Arsenal.Weapons
                 {
                     if (IsTimeForShootCome())
                     {
+                        Vector2 startLaunchPosition = FirePoint.position;
                         NextShootTimer = _timeBetweenShoots;
                         for (var bulletNumber = 0; bulletNumber < _bulletPerShot; bulletNumber++)
                         {
                             GameObject bullet = GetBullet();
                             Vector2 launchDirection = GetLaunchDirection();
-                            InitializeBullet(bullet, launchDirection);
+                            InitializeBullet(bullet, launchDirection, startLaunchPosition);
                             LaunchBullet(bullet, bulletNumber);
                             DecrementBulletsCount();
+                            startLaunchPosition = new Vector2(startLaunchPosition.x, startLaunchPosition.y - _heightBetweenOneShotBullets);
                         }
                     }
                 }
@@ -77,30 +79,15 @@ namespace Arsenal.Weapons
         }
         
 
-        private void InitializeBullet(GameObject bullet, Vector2 launchDirection)
+        private void InitializeBullet(GameObject bullet, Vector2 launchDirection, Vector2 startLaunchPosition)
         {
             ActiveBullet activeBullet = bullet.GetComponent<ActiveBullet>();
-            activeBullet.Initialize(BulletType, launchDirection);
+            activeBullet.Initialize(BulletType, launchDirection, startLaunchPosition);
         }
 
 
         private void LaunchBullet(GameObject bullet, int bulletNumber)
         {
-            Vector2 firePoint = FirePoint.position;
-            
-            switch (bulletNumber)
-            {
-                case 0:
-                    bullet.transform.position = new Vector2(firePoint.x, firePoint.y + _heightBetweenOneShotBullets);
-                    break;
-                case 1:
-                    bullet.transform.position = firePoint;
-                    break;
-                case 2:
-                    bullet.transform.position = new Vector2(firePoint.x, firePoint.y - _heightBetweenOneShotBullets);
-                    break;
-            }
-            
             bullet.SetActive(true);
         }
 

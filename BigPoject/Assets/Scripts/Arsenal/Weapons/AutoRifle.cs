@@ -75,13 +75,12 @@ namespace Arsenal.Weapons
         private void InitializeBullet(GameObject bullet, Vector2 launchDirection)
         {
             ActiveBullet activeBullet = bullet.GetComponent<ActiveBullet>();
-            activeBullet.Initialize(BulletType, launchDirection);
+            activeBullet.Initialize(BulletType, launchDirection, FirePoint.position);
         }
 
 
         private void LaunchBullet(GameObject bullet)
         {
-            bullet.transform.position = FirePoint.position;
             bullet.SetActive(true);
         }
 

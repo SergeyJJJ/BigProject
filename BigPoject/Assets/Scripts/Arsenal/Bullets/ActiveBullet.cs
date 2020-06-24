@@ -10,10 +10,11 @@ namespace Arsenal.Bullets
         private Rigidbody2D _rigidbody2D = null;
         private SpriteRenderer _spriteRenderer = null;
         
-        public void Initialize(Bullet bullet, Vector2 launchDirection)
+        public void Initialize(Bullet bullet, Vector2 launchDirection, Vector2 startLaunchPosition)
         {
             _currentBullet = bullet;
             _launchDirection = new Vector2(launchDirection.x * _currentBullet.FlightSpeed, launchDirection.y);
+            transform.position = startLaunchPosition;
             _spriteRenderer.sprite = _currentBullet.FlightSprite;
         }
         
