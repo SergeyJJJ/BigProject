@@ -11,7 +11,7 @@ namespace Player.CharacterMovement.MovementStateMachine.States
 
         public override void Enter()
         {
-            CharacterEventSystem.TriggerEvent("OnJump");
+            EventSystem.TriggerEvent("OnJump");
 
             _characterMovement.RigidBody.velocity = new Vector2(_characterMovement.RigidBody.velocity.x,
                 _characterMovement.JumpHeight);

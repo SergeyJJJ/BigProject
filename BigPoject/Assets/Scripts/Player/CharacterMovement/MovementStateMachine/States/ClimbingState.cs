@@ -11,7 +11,7 @@ namespace Player.CharacterMovement.MovementStateMachine.States
 
         public override void Enter()
         {
-            CharacterEventSystem.TriggerEvent("OnStartClimb");
+            EventSystem.TriggerEvent("OnStartClimb");
         }
 
 
@@ -67,7 +67,7 @@ namespace Player.CharacterMovement.MovementStateMachine.States
 
         public override void Exit()
         {
-            CharacterEventSystem.TriggerEvent("OnStopClimb");
+            EventSystem.TriggerEvent("OnStopClimb");
         }
     }
 }

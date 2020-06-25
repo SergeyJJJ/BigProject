@@ -12,7 +12,7 @@ namespace Player.CharacterMovement.MovementStateMachine.States
 
         public override void Enter()
         {
-            CharacterEventSystem.TriggerEvent("OnRun");
+            EventSystem.TriggerEvent("OnRun");
         }
 
 

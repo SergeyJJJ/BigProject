@@ -1,4 +1,5 @@
 ﻿using Arsenal.Bullets;
+using Player;
 using UnityEngine;
 
 namespace Arsenal.Weapons
@@ -55,6 +56,7 @@ namespace Arsenal.Weapons
                         Vector2 launchDirection = GetLaunchDirection();
                         InitializeBullet(bullet, launchDirection);
                         LaunchBullet(bullet);
+                        PerformRecoil();
                         DecrementBulletsCount();
                     }
                 }
@@ -82,6 +84,12 @@ namespace Arsenal.Weapons
         private void LaunchBullet(GameObject bullet)
         {
             bullet.SetActive(true);
+        }
+        
+        
+        private void PerformRecoil()
+        {
+            EventSystem.TriggerEvent("OnRifleShot");
         }
 
 

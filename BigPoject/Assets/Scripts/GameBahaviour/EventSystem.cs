@@ -2,21 +2,19 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Player
+public class EventSystem : MonoBehaviour
 {
-    public class CharacterEventSystem : MonoBehaviour
-    {
-        private Dictionary<string, UnityEvent> _eventDictionary;
-        private static CharacterEventSystem _eventSystem = null;
+    private Dictionary<string, UnityEvent> _eventDictionary;
+        private static EventSystem _eventSystem = null;
     
         // Getter to use event system. If there is no event system, create new one.
-        public static CharacterEventSystem SharedInstance
+        public static EventSystem SharedInstance
         {
             get
             {
                 if (!_eventSystem)
                 {
-                    _eventSystem = FindObjectOfType(typeof(CharacterEventSystem)) as CharacterEventSystem;
+                    _eventSystem = FindObjectOfType(typeof(EventSystem)) as EventSystem;
 
                     if (!_eventSystem)
                     {
@@ -90,5 +88,4 @@ namespace Player
                 thisEvent.Invoke ();
             }
         }
-    }
 }

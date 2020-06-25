@@ -11,7 +11,7 @@ namespace Player.CharacterMovement.MovementStateMachine.States
 
         public override void Enter()
         {
-            CharacterEventSystem.TriggerEvent("OnStop");
+            EventSystem.TriggerEvent("OnStop");
         }
 
 
