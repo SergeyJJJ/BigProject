@@ -1126,22 +1126,22 @@ PrefabInstance:
     - target: {fileID: 559604561, guid: db841216772e4844187962a048cfddbb, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 2198154504376206951, guid: 542c79b3b62702b4fb5f979e3503097d, type: 3}
+      objectReference: {fileID: 4806463276367451825, guid: 0be82e7df2d7aaa42a6eae46e72480eb, type: 3}
     - target: {fileID: 979211922, guid: db841216772e4844187962a048cfddbb, type: 3}
       propertyPath: _fireButton
       value: 
       objectReference: {fileID: 1808298728}
     - target: {fileID: 1891532594, guid: db841216772e4844187962a048cfddbb, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 211434828534544742, guid: db841216772e4844187962a048cfddbb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.049
+      value: 0.249
       objectReference: {fileID: 0}
     - target: {fileID: 211434828534544742, guid: db841216772e4844187962a048cfddbb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.494
+      value: 0.194
       objectReference: {fileID: 0}
     - target: {fileID: 2824605566533303579, guid: db841216772e4844187962a048cfddbb, type: 3}
       propertyPath: m_LocalPosition.x
