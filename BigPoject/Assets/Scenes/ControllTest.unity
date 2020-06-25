@@ -1187,6 +1187,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4746452946232570811, guid: db841216772e4844187962a048cfddbb, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 4723107735738678597, guid: b1b84933e8c823e4aa91e8395973a557, type: 3}
     - target: {fileID: 6700315359917075697, guid: db841216772e4844187962a048cfddbb, type: 3}
       propertyPath: _leftMoveButton
       value: 
@@ -1199,6 +1203,18 @@ PrefabInstance:
       propertyPath: _upMoveButton
       value: 
       objectReference: {fileID: 1424362287}
+    - target: {fileID: 7164076900808176447, guid: db841216772e4844187962a048cfddbb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.506
+      objectReference: {fileID: 0}
+    - target: {fileID: 7164076900808176447, guid: db841216772e4844187962a048cfddbb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.151
+      objectReference: {fileID: 0}
+    - target: {fileID: 7452835413203550249, guid: db841216772e4844187962a048cfddbb, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.7
+      objectReference: {fileID: 0}
     - target: {fileID: 8702310545741433508, guid: db841216772e4844187962a048cfddbb, type: 3}
       propertyPath: m_Name
       value: BlueSuit
@@ -3423,6 +3439,18 @@ PrefabInstance:
     - target: {fileID: 4482145938317728504, guid: f27300c7d8e5c9740aa7627ef280d8fe, type: 3}
       propertyPath: m_BiasY
       value: -0.089999996
+      objectReference: {fileID: 0}
+    - target: {fileID: 4482145938317728504, guid: f27300c7d8e5c9740aa7627ef280d8fe, type: 3}
+      propertyPath: m_XDamping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4482145938317728504, guid: f27300c7d8e5c9740aa7627ef280d8fe, type: 3}
+      propertyPath: m_YDamping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4482145938317728504, guid: f27300c7d8e5c9740aa7627ef280d8fe, type: 3}
+      propertyPath: m_ZDamping
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4482145938753907301, guid: f27300c7d8e5c9740aa7627ef280d8fe, type: 3}
       propertyPath: m_Name
