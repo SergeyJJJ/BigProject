@@ -34,6 +34,7 @@ namespace Player.CharacterMovement.MovementStateMachine.States
         public override void PhysicsUpdate()
         {
             base.PhysicsUpdate();
+            
             bool isUpButtonPressed = _characterMovement.UpMoveButton.IsPressed;
 
             _characterMovement.PressButtonTimer -= Time.deltaTime;

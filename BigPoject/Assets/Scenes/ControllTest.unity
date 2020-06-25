@@ -1183,6 +1183,10 @@ PrefabInstance:
       propertyPath: _upMoveButton
       value: 
       objectReference: {fileID: 1424362287}
+    - target: {fileID: 7452835413203550249, guid: db841216772e4844187962a048cfddbb, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.7
+      objectReference: {fileID: 0}
     - target: {fileID: 8702310545741433508, guid: db841216772e4844187962a048cfddbb, type: 3}
       propertyPath: m_Name
       value: BlueSuit

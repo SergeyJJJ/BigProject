@@ -1,37 +1,37 @@
 fileFormatVersion: 2
-guid: f9937d62873820a4490ddebc02c774ee
+guid: 63ec88ec5aa7c174f990a2872f398d06
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1222141221825744644
-    second: assault_run(4 gun)_0
+      213: 4944230376442633554
+    second: Run_0
   - first:
-      213: -1610700500306808052
-    second: assault_run(4 gun)_1
+      213: -2274363484027164459
+    second: Run_1
   - first:
-      213: -2704385128241269718
-    second: assault_run(4 gun)_2
+      213: 8284087734974297348
+    second: Run_2
   - first:
-      213: 4845109959057807307
-    second: assault_run(4 gun)_3
+      213: 5304202850863732263
+    second: Run_3
   - first:
-      213: 4245198080935901832
-    second: assault_run(4 gun)_4
+      213: 2833043080597125133
+    second: Run_4
   - first:
-      213: 2936366234749143650
-    second: assault_run(4 gun)_5
+      213: -2217414122262695004
+    second: Run_5
   - first:
-      213: -1914998223477999685
-    second: assault_run(4 gun)_6
+      213: -4440497016933152808
+    second: Run_6
   - first:
-      213: 2599685860584554416
-    second: assault_run(4 gun)_7
+      213: 8676454946275842879
+    second: Run_7
   - first:
-      213: 6621124087219350752
-    second: assault_run(4 gun)_8
+      213: -6351944509545543589
+    second: Run_8
   - first:
-      213: 3894114669163507899
-    second: assault_run(4 gun)_9
+      213: 2158891789428380870
+    second: Run_9
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -133,7 +133,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: assault_run(4 gun)_0
+      name: Run_0
       rect:
         serializedVersion: 2
         x: 9
@@ -147,14 +147,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 40f094057fae5f010800000000000000
-      internalID: 1222141221825744644
+      spriteID: 25d1f8be45f6d9440800000000000000
+      internalID: 4944230376442633554
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: assault_run(4 gun)_1
+      name: Run_1
       rect:
         serializedVersion: 2
         x: 41
@@ -168,14 +168,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c033ba7cd64a5a9e0800000000000000
-      internalID: -1610700500306808052
+      spriteID: 5d8e07c1676df60e0800000000000000
+      internalID: -2274363484027164459
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: assault_run(4 gun)_2
+      name: Run_2
       rect:
         serializedVersion: 2
         x: 73
@@ -189,14 +189,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a247457ed08187ad0800000000000000
-      internalID: -2704385128241269718
+      spriteID: 405305b67edf6f270800000000000000
+      internalID: 8284087734974297348
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: assault_run(4 gun)_3
+      name: Run_3
       rect:
         serializedVersion: 2
         x: 9
@@ -210,14 +210,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bc7195756d94d3340800000000000000
-      internalID: 4845109959057807307
+      spriteID: 726d856d3605c9940800000000000000
+      internalID: 5304202850863732263
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: assault_run(4 gun)_4
+      name: Run_4
       rect:
         serializedVersion: 2
         x: 41
@@ -231,14 +231,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 88aba5f9929f9ea30800000000000000
-      internalID: 4245198080935901832
+      spriteID: d08be54fbadf05720800000000000000
+      internalID: 2833043080597125133
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: assault_run(4 gun)_5
+      name: Run_5
       rect:
         serializedVersion: 2
         x: 73
@@ -252,14 +252,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 26a8ca0788110c820800000000000000
-      internalID: 2936366234749143650
+      spriteID: 4a3f89aaa992a31e0800000000000000
+      internalID: -2217414122262695004
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: assault_run(4 gun)_6
+      name: Run_6
       rect:
         serializedVersion: 2
         x: 9
@@ -273,14 +273,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bb7f618034f8c65e0800000000000000
-      internalID: -1914998223477999685
+      spriteID: 8d784876d7f2062c0800000000000000
+      internalID: -4440497016933152808
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: assault_run(4 gun)_7
+      name: Run_7
       rect:
         serializedVersion: 2
         x: 41
@@ -294,8 +294,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0bf7fb73480f31420800000000000000
-      internalID: 2599685860584554416
+      spriteID: f3bd376cdc5f86870800000000000000
+      internalID: 8676454946275842879
       vertices: []
       indices: 
       edges: []

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 72f853ed25dbce3458008490635d59e4
+guid: 25e818c7f216cfb41b8e38e5412c89c6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7310062343559005836
-    second: jmp (4 gun)_0
+      213: 7460046300004610927
+    second: Jump_0
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -106,7 +106,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: jmp (4 gun)_0
+      name: Jump_0
       rect:
         serializedVersion: 2
         x: 9
@@ -120,8 +120,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 479b43667017d8a90800000000000000
-      internalID: -7310062343559005836
+      spriteID: f63fdb7b598678760800000000000000
+      internalID: 7460046300004610927
       vertices: []
       indices: 
       edges: []
