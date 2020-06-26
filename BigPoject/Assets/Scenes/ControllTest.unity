@@ -1126,7 +1126,7 @@ PrefabInstance:
     - target: {fileID: 559604561, guid: db841216772e4844187962a048cfddbb, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 4806463276367451825, guid: 0be82e7df2d7aaa42a6eae46e72480eb, type: 3}
+      objectReference: {fileID: 5426527370633736735, guid: def8c56ebebd2c64895fddd45db60b96, type: 3}
     - target: {fileID: 979211922, guid: db841216772e4844187962a048cfddbb, type: 3}
       propertyPath: _fireButton
       value: 
@@ -1191,6 +1191,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 4723107735738678597, guid: b1b84933e8c823e4aa91e8395973a557, type: 3}
+    - target: {fileID: 4746452946232570811, guid: db841216772e4844187962a048cfddbb, type: 3}
+      propertyPath: m_Size.y
+      value: 1.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4746452946232570811, guid: db841216772e4844187962a048cfddbb, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6700315359917075697, guid: db841216772e4844187962a048cfddbb, type: 3}
       propertyPath: _leftMoveButton
       value: 
@@ -1213,6 +1221,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7452835413203550249, guid: db841216772e4844187962a048cfddbb, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7452835413203550249, guid: db841216772e4844187962a048cfddbb, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
       value: 1.7
       objectReference: {fileID: 0}
     - target: {fileID: 8702310545741433508, guid: db841216772e4844187962a048cfddbb, type: 3}
