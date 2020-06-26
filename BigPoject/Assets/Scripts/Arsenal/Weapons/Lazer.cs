@@ -5,20 +5,21 @@ namespace Arsenal.Weapons
     [RequireComponent((typeof(SpriteRenderer)))]
     public class Lazer : Weapon
     {
-        [SerializeField] private GameObject _lazerStart = null;      // Start lazer gameObject that contains start lazer sprite.
-        [SerializeField] private GameObject _lazerMiddle = null;     // Middle lazer gameObject that contains middle lazer sprit.
-        [SerializeField] private GameObject _lazerEnd = null;        // End lazer gameObject that contains end lazer sprite.
-        [SerializeField] private float _maxLazerLength = 1f;         // Length of the lazer.
+        [SerializeField] private GameObject _lazerStart = null;                          // Start lazer gameObject that contains start lazer sprite.
+        [SerializeField] private GameObject _lazerMiddle = null;                         // Middle lazer gameObject that contains middle lazer sprit.
+        [SerializeField] private GameObject _lazerEnd = null;                            // End lazer gameObject that contains end lazer sprite.
+        [SerializeField] private float _maxLazerLength = 1f;                             // Length of the lazer.
+        [SerializeField] private LayerMask _damageableByLazer = Physics2D.AllLayers;     // Determine what can be damaged by lazer.
         
-        private float _currentLazerLength = 1f;                      // Current length of the lazer.
+        private float _currentLazerLength = 1f;                                          // Current length of the lazer.
         
-        private float _startSpriteWidth = 0f;                        // Start lazer sprite length.
-        private float _endSpriteWidth = 0f;                          // End lazer sprite length.
+        private float _startSpriteWidth = 0f;                                            // Start lazer sprite length.
+        private float _endSpriteWidth = 0f;                                              // End lazer sprite length.
         
-        private SpriteRenderer _startSpriteRenderer = null;          // SpriteRenderer component of the start lazer sparite.
-        private SpriteRenderer _endSpriteRenderer = null;            // SpriteRenderer component of the end lazer sparite.
+        private SpriteRenderer _startSpriteRenderer = null;                              // SpriteRenderer component of the start lazer sparite.
+        private SpriteRenderer _endSpriteRenderer = null;                                // SpriteRenderer component of the end lazer sparite.
         
-        private bool _isShotTriggered = false;                       // Check if player trigger shoot button.
+        private bool _isShotTriggered = false;                                           // Check if player trigger shoot button.
         
         public override void AllowShoot(bool canShoot)
         {
@@ -39,7 +40,7 @@ namespace Arsenal.Weapons
             Debug.DrawLine(FirePoint.transform.position, new Vector3(FirePoint.transform.position.x + _currentLazerLength, FirePoint.transform.position.y, FirePoint.transform.position.z), Color.red, 0f);
             if (_isShotTriggered)
             {
-                if (!IsLazerPartActiated(_lazerStart))
+                if (!IsLazerPartActivated(_lazerStart))
                 {
                     InitializeStartLazerPart();
                     ActivateLazerPart(_lazerStart);
@@ -53,8 +54,10 @@ namespace Arsenal.Weapons
                 {
                     OnRayCollision(ray);
                     
-                    if (!IsLazerPartActiated(_lazerEnd))
+                    if (!IsLazerPartActivated(_lazerEnd))
                     {
+                        Debug.Log(IsLazerPartActivated(_lazerEnd));
+                        Debug.Log(_currentLazerLength);
                         InitializeEndPart();
                         ActivateLazerPart(_lazerEnd);
                     }
@@ -76,17 +79,16 @@ namespace Arsenal.Weapons
         private void InitializeStartLazerPart()
         {
             _startSpriteWidth = _startSpriteRenderer.bounds.size.x;
-            _lazerStart.transform.position = FirePoint.transform.position;
+            _lazerStart.transform.localPosition = Vector2.zero; //FirePoint.transform.position;
         }
 
 
         private void InitializeMiddlePart()
         {
             Vector3 midleLocalScale = _lazerMiddle.transform.localScale;
-            _lazerMiddle.transform.localScale = new Vector3(2 * (_currentLazerLength - _startSpriteWidth),
+            _lazerMiddle.transform.localScale = new Vector3((_currentLazerLength - _startSpriteWidth),
                                                             midleLocalScale.y,
                                                             midleLocalScale.z);
-            Debug.Log(_currentLazerLength);
             _lazerMiddle.transform.localPosition = new Vector2((_currentLazerLength/2), 0f);
         }
 
@@ -94,7 +96,7 @@ namespace Arsenal.Weapons
         private void InitializeEndPart()
         {
             _endSpriteWidth = _endSpriteRenderer.bounds.size.x;
-            _lazerEnd.transform.position = new Vector2(_currentLazerLength, 0f);
+            _lazerEnd.transform.localPosition = new Vector2(_currentLazerLength, 0f);
         }
 
 
@@ -112,19 +114,18 @@ namespace Arsenal.Weapons
 
         private RaycastHit2D ThrowRaycast()
         {
-            return Physics2D.Raycast(FirePoint.transform.position, transform.right, _maxLazerLength);
+            return Physics2D.Raycast(FirePoint.transform.position, transform.right, _maxLazerLength, _damageableByLazer);
         }
 
 
         private void OnRayCollision(RaycastHit2D ray)
         { 
             // -- Get the laser length
-            _currentLazerLength = Vector2.Distance(ray.point, FirePoint.transform.position);
-            ActivateLazerPart(_lazerEnd);
+            _currentLazerLength = Vector2.Distance(ray.point, FirePoint.transform.position) - 0.5f;
         }
         
 
-        private bool IsLazerPartActiated(GameObject lazerPart)
+        private bool IsLazerPartActivated(GameObject lazerPart)
         {
             return lazerPart.activeInHierarchy;
         }

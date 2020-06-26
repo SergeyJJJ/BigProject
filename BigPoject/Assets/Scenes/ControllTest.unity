@@ -771,12 +771,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1817665136156394149, guid: 2b3eb14dd59265849b6843c3df90d085, type: 3}
+  m_Sprite: {fileID: 5661207880530150719, guid: 7a25ace28f7a60446863549deebd72e3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.47619048, y: 0.54761904}
+  m_Size: {x: 1, y: 0.7}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1183,6 +1183,10 @@ PrefabInstance:
       propertyPath: _maxLazerLength
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 559604557, guid: db841216772e4844187962a048cfddbb, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 7834802711767081893, guid: 0be82e7df2d7aaa42a6eae46e72480eb, type: 3}
     - target: {fileID: 979211922, guid: db841216772e4844187962a048cfddbb, type: 3}
       propertyPath: _fireButton
       value: 
@@ -1191,6 +1195,18 @@ PrefabInstance:
       propertyPath: _currentWeapon
       value: 
       objectReference: {fileID: 741924207}
+    - target: {fileID: 1175195929221174081, guid: db841216772e4844187962a048cfddbb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1175195929221174081, guid: db841216772e4844187962a048cfddbb, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 1364560204610487445, guid: db841216772e4844187962a048cfddbb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.83
+      objectReference: {fileID: 0}
     - target: {fileID: 2824605566533303579, guid: db841216772e4844187962a048cfddbb, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.892
@@ -1239,13 +1255,21 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2996600426496162446, guid: db841216772e4844187962a048cfddbb, type: 3}
+      propertyPath: m_TagString
+      value: LazerRay
+      objectReference: {fileID: 0}
     - target: {fileID: 3356860382606742256, guid: db841216772e4844187962a048cfddbb, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3356860382606742256, guid: db841216772e4844187962a048cfddbb, type: 3}
+      propertyPath: m_TagString
+      value: LazerRay
+      objectReference: {fileID: 0}
     - target: {fileID: 4803969184183771166, guid: db841216772e4844187962a048cfddbb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.73
+      value: 0.83
       objectReference: {fileID: 0}
     - target: {fileID: 4803969184183771166, guid: db841216772e4844187962a048cfddbb, type: 3}
       propertyPath: m_LocalScale.x
@@ -1253,7 +1277,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6141164751495081202, guid: db841216772e4844187962a048cfddbb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.839
+      value: 0.73
+      objectReference: {fileID: 0}
+    - target: {fileID: 6275946460944800497, guid: db841216772e4844187962a048cfddbb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.0492
+      objectReference: {fileID: 0}
+    - target: {fileID: 6275946460944800497, guid: db841216772e4844187962a048cfddbb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.094
       objectReference: {fileID: 0}
     - target: {fileID: 6700315359917075697, guid: db841216772e4844187962a048cfddbb, type: 3}
       propertyPath: _leftMoveButton
@@ -1269,7 +1301,11 @@ PrefabInstance:
       objectReference: {fileID: 1424362287}
     - target: {fileID: 8545955634901928922, guid: db841216772e4844187962a048cfddbb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.956
+      value: 0.812
+      objectReference: {fileID: 0}
+    - target: {fileID: 8545955634901928922, guid: db841216772e4844187962a048cfddbb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.038
       objectReference: {fileID: 0}
     - target: {fileID: 8702310545741433508, guid: db841216772e4844187962a048cfddbb, type: 3}
       propertyPath: m_Name
@@ -1277,7 +1313,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8758664980039975121, guid: db841216772e4844187962a048cfddbb, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8758664980039975121, guid: db841216772e4844187962a048cfddbb, type: 3}
+      propertyPath: m_TagString
+      value: LazerRay
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db841216772e4844187962a048cfddbb, type: 3}
@@ -1522,12 +1562,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2385533106008403660, guid: 2b3eb14dd59265849b6843c3df90d085, type: 3}
+  m_Sprite: {fileID: -1074737093646169138, guid: 7a25ace28f7a60446863549deebd72e3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.23809524, y: 0.54761904}
+  m_Size: {x: 1, y: 0.7}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -3338,15 +3378,15 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -4391821111963381377, guid: 7a25ace28f7a60446863549deebd72e3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 1.1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1992644991
