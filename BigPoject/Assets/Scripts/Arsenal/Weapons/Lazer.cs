@@ -37,30 +37,22 @@ namespace Arsenal.Weapons
 
         private void Update()
         {
-            Debug.DrawLine(FirePoint.transform.position, new Vector3(FirePoint.transform.position.x + _currentLazerLength, FirePoint.transform.position.y, FirePoint.transform.position.z), Color.red, 0f);
             if (_isShotTriggered)
             {
-                if (!IsLazerPartActivated(_lazerStart))
-                {
-                    InitializeStartLazerPart();
-                    ActivateLazerPart(_lazerStart);
-                }
+                RaycastHit2D ray = ThrowRaycast();
+                CalculateLazerLength(ray);
+                
+                InitializeStartLazerPart(); 
+                ActivateLazerPart(_lazerStart);
                 
                 InitializeMiddlePart();
                 ActivateLazerPart(_lazerMiddle);
                     
-                RaycastHit2D ray = ThrowRaycast();
                 if (IsRayCollideSomething(ray))
                 {
-                    OnRayCollision(ray);
-                    
-                    if (!IsLazerPartActivated(_lazerEnd))
-                    {
-                        Debug.Log(IsLazerPartActivated(_lazerEnd));
-                        Debug.Log(_currentLazerLength);
-                        InitializeEndPart();
-                        ActivateLazerPart(_lazerEnd);
-                    }
+                    InitializeEndPart();
+                    ActivateLazerPart(_lazerEnd);
+                
                 }
                 else
                 {
@@ -79,7 +71,7 @@ namespace Arsenal.Weapons
         private void InitializeStartLazerPart()
         {
             _startSpriteWidth = _startSpriteRenderer.bounds.size.x;
-            _lazerStart.transform.localPosition = Vector2.zero; //FirePoint.transform.position;
+            _lazerStart.transform.localPosition = Vector2.zero;
         }
 
 
@@ -118,9 +110,8 @@ namespace Arsenal.Weapons
         }
 
 
-        private void OnRayCollision(RaycastHit2D ray)
-        { 
-            // -- Get the laser length
+        private void CalculateLazerLength(RaycastHit2D ray)
+        {
             _currentLazerLength = Vector2.Distance(ray.point, FirePoint.transform.position) - 0.5f;
         }
         
