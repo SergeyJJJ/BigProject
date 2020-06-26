@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Arsenal.Weapons
 {
-    public class WeaponAnimations : MonoBehaviour
+    public class WeaponsAnimations : MonoBehaviour
     {
         private Animator _animator = null;                                               // Contains animator component that control weapon animations.
         private static readonly int Recoil = Animator.StringToHash("Recoil");      // Hashed name of trigger that allow transition to recoil state. 
@@ -17,19 +17,19 @@ namespace Arsenal.Weapons
 
         private void OnEnable()
         {
-            EventSystem.StartListening("OnRifleShot", StartRecoilAnimation);
+            EventSystem.StartListening("OnRifleShot", StartRifleRecoilAnimation);
         }
 
 
-        private void StartRecoilAnimation()
+        private void StartRifleRecoilAnimation()
         {
             _animator.SetTrigger(Recoil);
         }
-        
+
 
         private void OnDisable()
         {
-            EventSystem.StopListening("OnRifleShot", StartRecoilAnimation);
+            EventSystem.StopListening("OnRifleShot", StartRifleRecoilAnimation);
         }
     }
 }
