@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: def8c56ebebd2c64895fddd45db60b96
+guid: cae6c5d5c664ff441849491050a11349
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5426527370633736735
-    second: assault_Rifle_0
+      213: -8016019795661391861
+    second: assaultRifleShoot_0
+  - first:
+      213: 7271897875919829417
+    second: assaultRifleShoot_1
+  - first:
+      213: 7211506176011937496
+    second: assaultRifleShoot_2
+  - first:
+      213: 8726693355329561310
+    second: assaultRifleShoot_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -106,22 +115,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: assault_Rifle_0
+      name: assaultRifleShoot_0
       rect:
         serializedVersion: 2
-        x: 11
-        y: 16
-        width: 11
-        height: 4
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 9
+        y: 42
+        width: 15
+        height: 16
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f12fe8284e5ee4b40800000000000000
-      internalID: 5426527370633736735
+      spriteID: b087a1f677061c090800000000000000
+      internalID: -8016019795661391861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: assaultRifleShoot_1
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 37
+        width: 14
+        height: 4
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a97e190798fae460800000000000000
+      internalID: 7271897875919829417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: assaultRifleShoot_2
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 10
+        width: 14
+        height: 16
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d62abca8aa641460800000000000000
+      internalID: 7211506176011937496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: assaultRifleShoot_3
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 5
+        width: 14
+        height: 4
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed22e24ee517b1970800000000000000
+      internalID: 8726693355329561310
       vertices: []
       indices: 
       edges: []

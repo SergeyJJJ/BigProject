@@ -1,37 +1,31 @@
 fileFormatVersion: 2
-guid: 63ec88ec5aa7c174f990a2872f398d06
+guid: fd74ce9999ecce34589c090fb2979733
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4944230376442633554
-    second: Run_0
+      213: -9196213728706533075
+    second: AssaultRun_0
   - first:
-      213: -2274363484027164459
-    second: Run_1
+      213: 947634193426212345
+    second: AssaultRun_1
   - first:
-      213: 8284087734974297348
-    second: Run_2
+      213: -7046180591477335119
+    second: AssaultRun_2
   - first:
-      213: 5304202850863732263
-    second: Run_3
+      213: 8947246606538015837
+    second: AssaultRun_3
   - first:
-      213: 2833043080597125133
-    second: Run_4
+      213: -7352526623536841959
+    second: AssaultRun_4
   - first:
-      213: -2217414122262695004
-    second: Run_5
+      213: -1783137373019670066
+    second: AssaultRun_5
   - first:
-      213: -4440497016933152808
-    second: Run_6
+      213: 4165464026329357107
+    second: AssaultRun_6
   - first:
-      213: 8676454946275842879
-    second: Run_7
-  - first:
-      213: -6351944509545543589
-    second: Run_8
-  - first:
-      213: 2158891789428380870
-    second: Run_9
+      213: 5069409655221585469
+    second: AssaultRun_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -100,7 +94,7 @@ TextureImporter:
     textureFormat: -1
     textureCompression: 0
     compressionQuality: 50
-    crunchedCompression: 0
+    crunchedCompression: 1
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
@@ -112,7 +106,7 @@ TextureImporter:
     textureFormat: -1
     textureCompression: 0
     compressionQuality: 50
-    crunchedCompression: 0
+    crunchedCompression: 1
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
@@ -124,7 +118,7 @@ TextureImporter:
     textureFormat: -1
     textureCompression: 0
     compressionQuality: 50
-    crunchedCompression: 0
+    crunchedCompression: 1
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
@@ -133,7 +127,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Run_0
+      name: AssaultRun_0
       rect:
         serializedVersion: 2
         x: 9
@@ -147,14 +141,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 25d1f8be45f6d9440800000000000000
-      internalID: 4944230376442633554
+      spriteID: d2960ed565c706080800000000000000
+      internalID: -9196213728706533075
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Run_1
+      name: AssaultRun_1
       rect:
         serializedVersion: 2
         x: 41
@@ -168,14 +162,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5d8e07c1676df60e0800000000000000
-      internalID: -2274363484027164459
+      spriteID: 9f5ee24374ca62d00800000000000000
+      internalID: 947634193426212345
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Run_2
+      name: AssaultRun_2
       rect:
         serializedVersion: 2
         x: 73
@@ -189,14 +183,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 405305b67edf6f270800000000000000
-      internalID: 8284087734974297348
+      spriteID: 1bbddb59510f63e90800000000000000
+      internalID: -7046180591477335119
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Run_3
+      name: AssaultRun_3
       rect:
         serializedVersion: 2
         x: 9
@@ -210,14 +204,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 726d856d3605c9940800000000000000
-      internalID: 5304202850863732263
+      spriteID: d54848452610b2c70800000000000000
+      internalID: 8947246606538015837
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Run_4
+      name: AssaultRun_4
       rect:
         serializedVersion: 2
         x: 41
@@ -231,14 +225,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d08be54fbadf05720800000000000000
-      internalID: 2833043080597125133
+      spriteID: 91bfb72cdf396f990800000000000000
+      internalID: -7352526623536841959
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Run_5
+      name: AssaultRun_5
       rect:
         serializedVersion: 2
         x: 73
@@ -252,14 +246,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4a3f89aaa992a31e0800000000000000
-      internalID: -2217414122262695004
+      spriteID: ec97077b1060147e0800000000000000
+      internalID: -1783137373019670066
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Run_6
+      name: AssaultRun_6
       rect:
         serializedVersion: 2
         x: 9
@@ -273,14 +267,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8d784876d7f2062c0800000000000000
-      internalID: -4440497016933152808
+      spriteID: 33b970e5673bec930800000000000000
+      internalID: 4165464026329357107
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Run_7
+      name: AssaultRun_7
       rect:
         serializedVersion: 2
         x: 41
@@ -294,8 +288,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f3bd376cdc5f86870800000000000000
-      internalID: 8676454946275842879
+      spriteID: d360b68f8392a5640800000000000000
+      internalID: 5069409655221585469
       vertices: []
       indices: 
       edges: []

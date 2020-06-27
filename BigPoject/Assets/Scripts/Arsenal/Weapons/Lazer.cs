@@ -41,13 +41,17 @@ namespace Arsenal.Weapons
             {
                 RaycastHit2D ray = ThrowRaycast();
                 CalculateLazerLength(ray);
+                Debug.Log(_currentLazerLength);
                 
                 InitializeStartLazerPart(); 
                 ActivateLazerPart(_lazerStart);
-                
-                InitializeMiddlePart();
-                ActivateLazerPart(_lazerMiddle);
-                    
+
+                if (IsFarEnoughToObject())
+                {
+                    InitializeMiddlePart();
+                    ActivateLazerPart(_lazerMiddle);
+                }
+
                 if (IsRayCollideSomething(ray))
                 {
                     InitializeEndPart();
@@ -112,19 +116,28 @@ namespace Arsenal.Weapons
 
         private void CalculateLazerLength(RaycastHit2D ray)
         {
-            _currentLazerLength = Vector2.Distance(ray.point, FirePoint.transform.position) - 0.5f;
-        }
-        
-
-        private bool IsLazerPartActivated(GameObject lazerPart)
-        {
-            return lazerPart.activeInHierarchy;
+            if (IsRayCollideSomething(ray))
+            {
+                float offset = 0.5f; // This offset is needed because of the size of the sprite. Within this offset end sprite doesn`t go inside other objects. 
+                _currentLazerLength = Vector2.Distance(ray.point, FirePoint.transform.position) - offset;
+            }
+            else
+            {
+                _currentLazerLength = _maxLazerLength;
+            }
         }
 
 
         private bool IsRayCollideSomething(RaycastHit2D ray)
         {
             return ray.collider != null;
+        }
+
+
+        private bool IsFarEnoughToObject()
+        {
+            float minimumDistance = 1f;   // This is the minimum distance that must be between character and another object for that the lazer doesn`t go inside itself. 
+            return _currentLazerLength >= minimumDistance;
         }
     }
 }
