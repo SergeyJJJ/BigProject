@@ -56,7 +56,7 @@ namespace Arsenal.Weapons
                         Vector2 launchDirection = GetLaunchDirection();
                         InitializeBullet(bullet, launchDirection);
                         LaunchBullet(bullet);
-                        PerformRecoil();
+                        CallShotEvent();
                         DecrementBulletsCount();
                     }
                 }
@@ -87,7 +87,7 @@ namespace Arsenal.Weapons
         }
         
         
-        private void PerformRecoil()
+        private void CallShotEvent()
         {
             EventSystem.TriggerEvent("OnRifleShot");
         }

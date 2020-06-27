@@ -1127,18 +1127,6 @@ PrefabInstance:
       propertyPath: _fireButton
       value: 
       objectReference: {fileID: 1808298728}
-    - target: {fileID: 979211922, guid: db841216772e4844187962a048cfddbb, type: 3}
-      propertyPath: _currentWeapon
-      value: 
-      objectReference: {fileID: 584883178}
-    - target: {fileID: 211434828534544742, guid: db841216772e4844187962a048cfddbb, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.106
-      objectReference: {fileID: 0}
-    - target: {fileID: 1938440850994330488, guid: db841216772e4844187962a048cfddbb, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2824605566533303579, guid: db841216772e4844187962a048cfddbb, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.892
@@ -1183,18 +1171,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3759837705574259073, guid: db841216772e4844187962a048cfddbb, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4746452946232570811, guid: db841216772e4844187962a048cfddbb, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 4723107735738678597, guid: b1b84933e8c823e4aa91e8395973a557, type: 3}
-    - target: {fileID: 6275946460944800497, guid: db841216772e4844187962a048cfddbb, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.006
-      objectReference: {fileID: 0}
     - target: {fileID: 6700315359917075697, guid: db841216772e4844187962a048cfddbb, type: 3}
       propertyPath: _leftMoveButton
       value: 
@@ -1207,14 +1183,6 @@ PrefabInstance:
       propertyPath: _upMoveButton
       value: 
       objectReference: {fileID: 1424362287}
-    - target: {fileID: 7126284408169392318, guid: db841216772e4844187962a048cfddbb, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.318
-      objectReference: {fileID: 0}
-    - target: {fileID: 7126284408169392318, guid: db841216772e4844187962a048cfddbb, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1.476
-      objectReference: {fileID: 0}
     - target: {fileID: 8702310545741433508, guid: db841216772e4844187962a048cfddbb, type: 3}
       propertyPath: m_Name
       value: BlueSuit
@@ -1303,17 +1271,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &584883178 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 559604556, guid: db841216772e4844187962a048cfddbb, type: 3}
-  m_PrefabInstance: {fileID: 559604546}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 803f75c70ca542648b0fd4a0d428e762, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &596879265
 GameObject:
   m_ObjectHideFlags: 0

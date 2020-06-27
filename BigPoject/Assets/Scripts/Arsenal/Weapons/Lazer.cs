@@ -21,6 +21,14 @@ namespace Arsenal.Weapons
         
         private bool _isShotTriggered = false;                                           // Check if player trigger shoot button.
         
+        /* This is the minimum distance that must be
+         between character and another object for that
+         the lazer doesn`t go inside itself. 
+         When that distances is already reached we turn off particular
+         lazer object.*/
+        float _middleMinDistance = 0.75f;                                                // When that distance is reached we turn off middle lazer.
+        float _startMinDistance = 0f;                                                    // When that distance is reached we turn off start lazer.
+        
         public override void AllowShoot(bool canShoot)
         {
             _isShotTriggered = canShoot;
@@ -39,14 +47,18 @@ namespace Arsenal.Weapons
         {
             if (_isShotTriggered)
             {
+                CallShotEvent();
+                
                 RaycastHit2D ray = ThrowRaycast();
                 CalculateLazerLength(ray);
-                Debug.Log(_currentLazerLength);
-                
-                InitializeStartLazerPart(); 
-                ActivateLazerPart(_lazerStart);
 
-                if (IsFarEnoughToObject())
+                if (IsFarEnoughToObject(_startMinDistance))
+                {
+                    InitializeStartLazerPart();
+                    ActivateLazerPart(_lazerStart);
+                }
+
+                if (IsFarEnoughToObject(_middleMinDistance))
                 {
                     InitializeMiddlePart();
                     ActivateLazerPart(_lazerMiddle);
@@ -68,6 +80,7 @@ namespace Arsenal.Weapons
                 DeactivateLazerPart(_lazerStart);
                 DeactivateLazerPart(_lazerMiddle);
                 DeactivateLazerPart(_lazerEnd);
+                CallStopShotEvent();
             }
         }
         
@@ -118,13 +131,25 @@ namespace Arsenal.Weapons
         {
             if (IsRayCollideSomething(ray))
             {
-                float offset = 0.5f; // This offset is needed because of the size of the sprite. Within this offset end sprite doesn`t go inside other objects. 
+                float offset = 0.25f; // This offset is needed because of the size of the sprite. Within this offset end sprite doesn`t go inside other objects. 
                 _currentLazerLength = Vector2.Distance(ray.point, FirePoint.transform.position) - offset;
             }
             else
             {
                 _currentLazerLength = _maxLazerLength;
             }
+        }
+        
+        
+        private void CallShotEvent()
+        {
+            EventSystem.TriggerEvent("OnLazerShot");
+        }
+
+
+        private void CallStopShotEvent()
+        {
+            EventSystem.TriggerEvent("OnStopLazerShop");
         }
 
 
@@ -134,9 +159,9 @@ namespace Arsenal.Weapons
         }
 
 
-        private bool IsFarEnoughToObject()
+        private bool IsFarEnoughToObject(float distance)
         {
-            float minimumDistance = 1f;   // This is the minimum distance that must be between character and another object for that the lazer doesn`t go inside itself. 
+            float minimumDistance = 0.75f;   // This is the minimum distance that must be between character and another object for that the lazer doesn`t go inside itself. 
             return _currentLazerLength >= minimumDistance;
         }
     }
