@@ -1123,10 +1123,54 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 387197210, guid: db841216772e4844187962a048cfddbb, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -4712098685948649577, guid: 9d74084662ec98944a0a89b255fc3adc, type: 3}
+    - target: {fileID: 387197210, guid: db841216772e4844187962a048cfddbb, type: 3}
+      propertyPath: m_Size.y
+      value: 0.625
+      objectReference: {fileID: 0}
+    - target: {fileID: 387197210, guid: db841216772e4844187962a048cfddbb, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 645296670, guid: db841216772e4844187962a048cfddbb, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -8744092322997223655, guid: 9d74084662ec98944a0a89b255fc3adc, type: 3}
+    - target: {fileID: 645296670, guid: db841216772e4844187962a048cfddbb, type: 3}
+      propertyPath: m_Size.x
+      value: 0.3125
+      objectReference: {fileID: 0}
+    - target: {fileID: 645296670, guid: db841216772e4844187962a048cfddbb, type: 3}
+      propertyPath: m_Size.y
+      value: 0.625
+      objectReference: {fileID: 0}
+    - target: {fileID: 645296670, guid: db841216772e4844187962a048cfddbb, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 979211922, guid: db841216772e4844187962a048cfddbb, type: 3}
       propertyPath: _fireButton
       value: 
       objectReference: {fileID: 1808298728}
+    - target: {fileID: 1942560978, guid: db841216772e4844187962a048cfddbb, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -7101324198051145284, guid: 9d74084662ec98944a0a89b255fc3adc, type: 3}
+    - target: {fileID: 1942560978, guid: db841216772e4844187962a048cfddbb, type: 3}
+      propertyPath: m_Size.x
+      value: 0.40625
+      objectReference: {fileID: 0}
+    - target: {fileID: 1942560978, guid: db841216772e4844187962a048cfddbb, type: 3}
+      propertyPath: m_Size.y
+      value: 0.6875
+      objectReference: {fileID: 0}
+    - target: {fileID: 1942560978, guid: db841216772e4844187962a048cfddbb, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2824605566533303579, guid: db841216772e4844187962a048cfddbb, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.892
@@ -1492,7 +1536,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 863647891}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 731c83146168fc24d8700d28a6f95ce6, type: 2}
   m_CullingMode: 0
@@ -3210,7 +3254,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2073207831}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 8774767fc2b4cca478ad673ea7bb1ea8, type: 2}
   m_CullingMode: 0
