@@ -1,43 +1,43 @@
 fileFormatVersion: 2
-guid: 42d914e6d6f21244a8d5b6c2b26d3034
+guid: 9d74084662ec98944a0a89b255fc3adc
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8599535740345155841
-    second: HiResLazer_0
+      213: -8744092322997223655
+    second: FlickeringLazer_0
   - first:
-      213: -5904557022059006839
-    second: HiResLazer_1
+      213: -4712098685948649577
+    second: FlickeringLazer_1
   - first:
-      213: -3680293691035733846
-    second: HiResLazer_2
+      213: -7101324198051145284
+    second: FlickeringLazer_2
   - first:
-      213: 4235017745710264133
-    second: HiResLazer_3
+      213: -8044197609702894334
+    second: FlickeringLazer_3
   - first:
-      213: -515623578716982849
-    second: HiResLazer_4
+      213: 6454900864340520391
+    second: FlickeringLazer_4
   - first:
-      213: 4011093434966514763
-    second: HiResLazer_5
+      213: 7525870830280059086
+    second: FlickeringLazer_5
   - first:
-      213: 6239687173523069202
-    second: HiResLazer_6
+      213: 7293205667320337289
+    second: FlickeringLazer_6
   - first:
-      213: 7402058053928357839
-    second: HiResLazer_7
+      213: -3569210276658122371
+    second: FlickeringLazer_7
   - first:
-      213: 4862908434467569044
-    second: HiResLazer_8
+      213: -5545117976887563149
+    second: FlickeringLazer_8
   - first:
-      213: -4123253055230333354
-    second: HiResLazer_9
+      213: 6270432147209776347
+    second: FlickeringLazer_9
   - first:
-      213: 572713593968404069
-    second: HiResLazer_10
+      213: 3414506292186291739
+    second: FlickeringLazer_10
   - first:
-      213: -4623267179213562386
-    second: HiResLazer_11
+      213: 2209151153451283088
+    second: FlickeringLazer_11
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -82,7 +82,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -139,13 +139,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: HiResLazer_0
+      name: FlickeringLazer_0
       rect:
         serializedVersion: 2
         x: 32
-        y: 1488
-        width: 16
-        height: 11
+        y: 413
+        width: 8
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,20 +153,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1018c8c8130b75770800000000000000
-      internalID: 8599535740345155841
+      spriteID: 91fb7844c5eb6a680800000000000000
+      internalID: -8744092322997223655
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HiResLazer_1
+      name: FlickeringLazer_1
       rect:
         serializedVersion: 2
-        x: 32
-        y: 1360
-        width: 16
-        height: 11
+        x: 46
+        y: 413
+        width: 32
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -174,20 +174,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 98472201cacce0ea0800000000000000
-      internalID: -5904557022059006839
+      spriteID: 79f127df5334b9eb0800000000000000
+      internalID: -4712098685948649577
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HiResLazer_2
+      name: FlickeringLazer_2
       rect:
         serializedVersion: 2
-        x: 32
-        y: 1232
-        width: 16
-        height: 11
+        x: 83
+        y: 413
+        width: 13
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -195,20 +195,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aa034b41368fcecc0800000000000000
-      internalID: -3680293691035733846
+      spriteID: cb9964c2447037d90800000000000000
+      internalID: -7101324198051145284
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HiResLazer_3
+      name: FlickeringLazer_3
       rect:
         serializedVersion: 2
         x: 32
-        y: 1104
-        width: 16
-        height: 11
+        y: 285
+        width: 8
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -216,20 +216,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 54f298e933ec5ca30800000000000000
-      internalID: 4235017745710264133
+      spriteID: 205dc9ad4e44d5090800000000000000
+      internalID: -8044197609702894334
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HiResLazer_4
+      name: FlickeringLazer_4
       rect:
         serializedVersion: 2
-        x: 32
-        y: 976
-        width: 16
-        height: 11
+        x: 45
+        y: 285
+        width: 32
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -237,20 +237,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fb132c8461328d8f0800000000000000
-      internalID: -515623578716982849
+      spriteID: 7cde067f22a649950800000000000000
+      internalID: 6454900864340520391
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HiResLazer_5
+      name: FlickeringLazer_5
       rect:
         serializedVersion: 2
-        x: 32
-        y: 848
-        width: 16
-        height: 11
+        x: 83
+        y: 284
+        width: 13
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -258,20 +258,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b4c94183a344aa730800000000000000
-      internalID: 4011093434966514763
+      spriteID: ec8215875a3417860800000000000000
+      internalID: 7525870830280059086
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HiResLazer_6
+      name: FlickeringLazer_6
       rect:
         serializedVersion: 2
         x: 32
-        y: 720
-        width: 16
-        height: 11
+        y: 157
+        width: 8
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -279,20 +279,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 219576fcc62d79650800000000000000
-      internalID: 6239687173523069202
+      spriteID: 9839e72d9eba63560800000000000000
+      internalID: 7293205667320337289
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HiResLazer_7
+      name: FlickeringLazer_7
       rect:
         serializedVersion: 2
-        x: 32
-        y: 592
-        width: 16
-        height: 11
+        x: 45
+        y: 157
+        width: 32
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -300,20 +300,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fcf083f059469b660800000000000000
-      internalID: 7402058053928357839
+      spriteID: d717e13f92e977ec0800000000000000
+      internalID: -3569210276658122371
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HiResLazer_8
+      name: FlickeringLazer_8
       rect:
         serializedVersion: 2
-        x: 32
-        y: 464
-        width: 16
-        height: 11
+        x: 82
+        y: 157
+        width: 14
+        height: 21
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -321,20 +321,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 49db0b3d4758c7340800000000000000
-      internalID: 4862908434467569044
+      spriteID: 37cebfd4498cb03b0800000000000000
+      internalID: -5545117976887563149
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HiResLazer_9
+      name: FlickeringLazer_9
       rect:
         serializedVersion: 2
         x: 32
-        y: 336
-        width: 16
-        height: 11
+        y: 29
+        width: 8
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -342,20 +342,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 65ea3f3313347c6c0800000000000000
-      internalID: -4123253055230333354
+      spriteID: bdce0a2d0dc050750800000000000000
+      internalID: 6270432147209776347
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HiResLazer_10
+      name: FlickeringLazer_10
       rect:
         serializedVersion: 2
-        x: 32
-        y: 208
-        width: 16
-        height: 11
+        x: 46
+        y: 29
+        width: 32
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -363,20 +363,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5662686baffa2f700800000000000000
-      internalID: 572713593968404069
+      spriteID: b1e9915c163c26f20800000000000000
+      internalID: 3414506292186291739
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HiResLazer_11
+      name: FlickeringLazer_11
       rect:
         serializedVersion: 2
-        x: 32
-        y: 80
-        width: 16
-        height: 11
+        x: 82
+        y: 29
+        width: 14
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -384,8 +384,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eedd041eefad6dfb0800000000000000
-      internalID: -4623267179213562386
+      spriteID: 092bb9cf44b78ae10800000000000000
+      internalID: 2209151153451283088
       vertices: []
       indices: 
       edges: []
