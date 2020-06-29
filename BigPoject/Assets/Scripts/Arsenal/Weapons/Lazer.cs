@@ -26,8 +26,8 @@ namespace Arsenal.Weapons
          the lazer doesn`t go inside itself. 
          When that distances is already reached we turn off particular
          lazer object.*/
-        float _middleMinDistance = 0.75f;                                                // When that distance is reached we turn off middle lazer.
-        float _startMinDistance = 0f;                                                    // When that distance is reached we turn off start lazer.
+        float _middleMinDistance = 0.85f;                                                // When that distance is reached we turn off middle lazer.
+        float _startMinDistance = 0.3f;                                                  // When that distance is reached we turn off start lazer.
         
         public override void AllowShoot(bool canShoot)
         {
@@ -105,7 +105,7 @@ namespace Arsenal.Weapons
         private void InitializeEndPart()
         {
             _endSpriteWidth = _endSpriteRenderer.bounds.size.x;
-            _lazerEnd.transform.localPosition = new Vector2(_currentLazerLength, 0f);
+            _lazerEnd.transform.localPosition = new Vector2(_currentLazerLength - 0.5f, 0f);
         }
 
 
@@ -131,8 +131,7 @@ namespace Arsenal.Weapons
         {
             if (IsRayCollideSomething(ray))
             {
-                float offset = 0.25f; // This offset is needed because of the size of the sprite. Within this offset end sprite doesn`t go inside other objects. 
-                _currentLazerLength = Vector2.Distance(ray.point, FirePoint.transform.position) - offset;
+                _currentLazerLength = Vector2.Distance(ray.point, FirePoint.transform.position);
             }
             else
             {
@@ -161,8 +160,7 @@ namespace Arsenal.Weapons
 
         private bool IsFarEnoughToObject(float distance)
         {
-            float minimumDistance = 0.75f;   // This is the minimum distance that must be between character and another object for that the lazer doesn`t go inside itself. 
-            return _currentLazerLength >= minimumDistance;
+            return _currentLazerLength >= distance;
         }
     }
 }
