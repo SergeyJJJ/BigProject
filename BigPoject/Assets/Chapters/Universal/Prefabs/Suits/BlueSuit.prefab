@@ -149,13 +149,13 @@ MonoBehaviour:
   _description: Super-powerfull Lazer
   _inGameSprite: {fileID: 5066663443394370621, guid: 0be82e7df2d7aaa42a6eae46e72480eb, type: 3}
   _bulletType: {fileID: 0}
-  _maxBulletsAmount: 200
+  _maxBulletsAmount: 120
   _fireRate: 0
   _firePoint: {fileID: 8545955634901928922}
   _lazerStart: {fileID: 2996600426496162446}
   _lazerMiddle: {fileID: 8758664980039975121}
   _lazerEnd: {fileID: 3356860382606742256}
-  _maxLazerLength: 15
+  _maxLazerLength: 60
   _damageableByLazer:
     serializedVersion: 2
     m_Bits: 784

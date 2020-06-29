@@ -13,13 +13,9 @@ namespace Arsenal.Weapons
         [SerializeField] private LayerMask _damageableByLazer = Physics2D.AllLayers;     // Determine what can be damaged by lazer.
         
         private float _currentLazerLength = 1f;                                          // Current length of the lazer.
-        
         private float _startSpriteWidth = 0f;                                            // Start lazer sprite length.
-        private float _endSpriteWidth = 0f;                                              // End lazer sprite length.
-        
+        private SpriteRenderer _weaponSpriteRenderer = null;                             // Sprite of the weapon that will be used in game view.
         private SpriteRenderer _startSpriteRenderer = null;                              // SpriteRenderer component of the start lazer sparite.
-        private SpriteRenderer _endSpriteRenderer = null;                                // SpriteRenderer component of the end lazer sparite.
-        
         private bool _isShotTriggered = false;                                           // Check if player trigger shoot button.
         
         /*
@@ -30,7 +26,7 @@ namespace Arsenal.Weapons
            lazer object.
         */
         private float _middleMinDistance = 0.85f;                                        // When that distance is reached we turn off middle lazer.
-        private float _startMinDistance = 0.4f;                                          // When that distance is reached we turn off start lazer.
+        private float _startMinDistance = 0.45f;                                          // When that distance is reached we turn off start lazer.
         
         private float _spendEnergyTimer = 1;                                             // Timer that control how fast lazer energy will be decremented.
         private float _decrementEnergeyTime = 1;                                         // Time after which energy will be decremented.
@@ -42,12 +38,18 @@ namespace Arsenal.Weapons
             _isShotTriggered = canShoot;
         }
 
+        
+        private void Awake()
+        {
+            _weaponSpriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        }
+        
 
         private void Start()
         {
             _characterRigidbody = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>();
             _startSpriteRenderer = _lazerStart.gameObject.GetComponent<SpriteRenderer>();
-            _endSpriteRenderer = _lazerEnd.gameObject.GetComponent<SpriteRenderer>();
+            _weaponSpriteRenderer.sprite = InGameSprite;
             _currentLazerLength = _maxLazerLength;
             CurrentBulletCount = BulletsAmount;
         }
@@ -134,8 +136,8 @@ namespace Arsenal.Weapons
 
         private void InitializeEndPart()
         {
-            _endSpriteWidth = _endSpriteRenderer.bounds.size.x;
-            _lazerEnd.transform.localPosition = new Vector2(_currentLazerLength - 0.5f, 0f);
+            float offset = 0.5f;           // This offset is needed for the end sprite is placed in properly position.
+            _lazerEnd.transform.localPosition = new Vector2(_currentLazerLength - offset, 0f);
         }
 
 
@@ -198,7 +200,8 @@ namespace Arsenal.Weapons
         // Move character to the opposite side from lazer beam direction.
         private void MoveCharacterWhenShooting()
         {
-            _characterRigidbody.AddForce(-transform.right * 10);
+            float movementForce = 13;
+            _characterRigidbody.AddForce(-transform.right * movementForce);
         }
         
 

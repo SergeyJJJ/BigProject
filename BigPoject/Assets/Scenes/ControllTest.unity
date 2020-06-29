@@ -1123,14 +1123,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 559604556, guid: db841216772e4844187962a048cfddbb, type: 3}
-      propertyPath: _maxBulletsAmount
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 559604556, guid: db841216772e4844187962a048cfddbb, type: 3}
-      propertyPath: _maxLazerLength
-      value: 60
-      objectReference: {fileID: 0}
     - target: {fileID: 979211922, guid: db841216772e4844187962a048cfddbb, type: 3}
       propertyPath: _fireButton
       value: 

@@ -8,7 +8,7 @@ namespace Arsenal.Weapons
     public class Shotgun : Weapon
     {
         [SerializeField] private float _heightBetweenOneShotBullets = 0; // Height between each bullet in one shot.
-        private SpriteRenderer _spriteRenderer = null;                   // Sprite of the weapon that will be used in game view.
+        private SpriteRenderer _weaponSpriteRenderer = null;                   // Sprite of the weapon that will be used in game view.
         private float _nextShootTimer = 0f;                              // Timer that control when player can shoot again.
         private float _timeBetweenShoots = 0f;                           // Time that must pass between each shoot.
         private bool _isShotTriggered = false;                           // Check if player trigger shoot button.
@@ -32,13 +32,13 @@ namespace Arsenal.Weapons
         
         private void Awake()
         {
-            _spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+            _weaponSpriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         }
 
 
         private void Start()
         {
-            _spriteRenderer.sprite = InGameSprite;
+            _weaponSpriteRenderer.sprite = InGameSprite;
             _timeBetweenShoots = GetTimeBetweenShoot();
             CurrentBulletCount = BulletsAmount;
         }
@@ -59,7 +59,7 @@ namespace Arsenal.Weapons
                             GameObject bullet = GetBullet();
                             Vector2 launchDirection = GetLaunchDirection();
                             InitializeBullet(bullet, launchDirection, startLaunchPosition);
-                            LaunchBullet(bullet, bulletNumber);
+                            LaunchBullet(bullet);
                             DecrementBulletsCount();
                             startLaunchPosition = new Vector2(startLaunchPosition.x, startLaunchPosition.y - _heightBetweenOneShotBullets);
                         }
@@ -86,7 +86,7 @@ namespace Arsenal.Weapons
         }
 
 
-        private void LaunchBullet(GameObject bullet, int bulletNumber)
+        private void LaunchBullet(GameObject bullet)
         {
             bullet.SetActive(true);
         }
