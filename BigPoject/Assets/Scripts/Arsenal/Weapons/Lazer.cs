@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 namespace Arsenal.Weapons
 {
@@ -21,13 +22,20 @@ namespace Arsenal.Weapons
         
         private bool _isShotTriggered = false;                                           // Check if player trigger shoot button.
         
-        /* This is the minimum distance that must be
-         between character and another object for that
-         the lazer doesn`t go inside itself. 
-         When that distances is already reached we turn off particular
-         lazer object.*/
-        float _middleMinDistance = 0.85f;                                                // When that distance is reached we turn off middle lazer.
-        float _startMinDistance = 0.4f;                                                  // When that distance is reached we turn off start lazer.
+        /*
+           This is the minimum distance that must be
+           between character and another object for that
+           the lazer doesn`t go inside itself. 
+           When that distances is already reached we turn off particular
+           lazer object.
+        */
+        private float _middleMinDistance = 0.85f;                                        // When that distance is reached we turn off middle lazer.
+        private float _startMinDistance = 0.4f;                                          // When that distance is reached we turn off start lazer.
+        
+        private float _spendEnergyTimer = 1;                                             // Timer that control how fast lazer energy will be decremented.
+        private float _decrementEnergeyTime = 1;                                         // Time after which energy will be decremented.
+
+        private Rigidbody2D _characterRigidbody = null;                                  // Characters rigidbody component
         
         public override void AllowShoot(bool canShoot)
         {
@@ -37,50 +45,64 @@ namespace Arsenal.Weapons
 
         private void Start()
         {
+            _characterRigidbody = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>();
             _startSpriteRenderer = _lazerStart.gameObject.GetComponent<SpriteRenderer>();
             _endSpriteRenderer = _lazerEnd.gameObject.GetComponent<SpriteRenderer>();
             _currentLazerLength = _maxLazerLength;
+            CurrentBulletCount = BulletsAmount;
         }
-        
+
 
         private void Update()
         {
             if (_isShotTriggered)
             {
-                CallShotEvent();
-                
-                RaycastHit2D ray = ThrowRaycast();
-                CalculateLazerLength(ray);
-
-                if (IsFarEnoughToObject(_startMinDistance))
+                if (IsEnoughBullets())
                 {
-                    InitializeStartLazerPart();
-                    ActivateLazerPart(_lazerStart);
+                    SpendEnergy();
+                    CallShotEvent();
+                    MoveCharacterWhenShooting();
+
+                    RaycastHit2D ray = ThrowRaycast();
+                    CalculateLazerLength(ray);
+
+                    if (IsFarEnoughToObject(_startMinDistance))
+                    {
+                        InitializeStartLazerPart();
+                        ActivateLazerPart(_lazerStart);
+                    }
+                    else
+                    {
+                        DeactivateLazerPart(_lazerStart);
+                    }
+
+                    if (IsFarEnoughToObject(_middleMinDistance))
+                    {
+                        InitializeMiddlePart();
+                        ActivateLazerPart(_lazerMiddle);
+                    }
+                    else
+                    {
+                        DeactivateLazerPart(_lazerMiddle);
+                    }
+
+                    if (IsRayCollideSomething(ray))
+                    {
+                        InitializeEndPart();
+                        ActivateLazerPart(_lazerEnd);
+
+                    }
+                    else
+                    {
+                        DeactivateLazerPart(_lazerEnd);
+                    }
                 }
                 else
                 {
-                    DeactivateLazerPart(_lazerStart);   
-                }
-
-                if (IsFarEnoughToObject(_middleMinDistance))
-                {
-                    InitializeMiddlePart();
-                    ActivateLazerPart(_lazerMiddle);
-                }
-                else
-                {
-                    DeactivateLazerPart(_lazerMiddle);   
-                }
-
-                if (IsRayCollideSomething(ray))
-                {
-                    InitializeEndPart();
-                    ActivateLazerPart(_lazerEnd);
-                
-                }
-                else
-                {
+                    DeactivateLazerPart(_lazerStart);
+                    DeactivateLazerPart(_lazerMiddle);
                     DeactivateLazerPart(_lazerEnd);
+                    CallStopShotEvent();
                 }
             }
             else
@@ -146,8 +168,21 @@ namespace Arsenal.Weapons
                 _currentLazerLength = _maxLazerLength;
             }
         }
-        
-        
+
+
+        private void SpendEnergy()
+        {
+            _spendEnergyTimer -= Time.deltaTime;
+                
+            if (_spendEnergyTimer <= 0)
+            {
+                DecrementBulletsCount();
+                _spendEnergyTimer = _decrementEnergeyTime;
+                DecrementBulletsCount();
+            }
+        }
+
+
         private void CallShotEvent()
         {
             EventSystem.TriggerEvent("OnLazerShot");
@@ -160,6 +195,13 @@ namespace Arsenal.Weapons
         }
 
 
+        // Move character to the opposite side from lazer beam direction.
+        private void MoveCharacterWhenShooting()
+        {
+            _characterRigidbody.AddForce(-transform.right * 10);
+        }
+        
+
         private bool IsRayCollideSomething(RaycastHit2D ray)
         {
             return ray.collider != null;
@@ -169,6 +211,11 @@ namespace Arsenal.Weapons
         private bool IsFarEnoughToObject(float distance)
         {
             return _currentLazerLength >= distance;
+        }
+        
+        private bool IsEnoughBullets()
+        {
+            return CurrentBulletCount > 0;
         }
     }
 }
