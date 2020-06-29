@@ -27,7 +27,7 @@ namespace Arsenal.Weapons
          When that distances is already reached we turn off particular
          lazer object.*/
         float _middleMinDistance = 0.85f;                                                // When that distance is reached we turn off middle lazer.
-        float _startMinDistance = 0.3f;                                                  // When that distance is reached we turn off start lazer.
+        float _startMinDistance = 0.4f;                                                  // When that distance is reached we turn off start lazer.
         
         public override void AllowShoot(bool canShoot)
         {
@@ -57,11 +57,19 @@ namespace Arsenal.Weapons
                     InitializeStartLazerPart();
                     ActivateLazerPart(_lazerStart);
                 }
+                else
+                {
+                    DeactivateLazerPart(_lazerStart);   
+                }
 
                 if (IsFarEnoughToObject(_middleMinDistance))
                 {
                     InitializeMiddlePart();
                     ActivateLazerPart(_lazerMiddle);
+                }
+                else
+                {
+                    DeactivateLazerPart(_lazerMiddle);   
                 }
 
                 if (IsRayCollideSomething(ray))
