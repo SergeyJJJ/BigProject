@@ -8,11 +8,11 @@ namespace Arsenal.Weapons
         [SerializeField] private string _name = "";                 // Name of the weapon.
         [SerializeField] private string _description = "";          // Description of the weapon.
         [SerializeField] private Sprite _inGameSprite = null;       // Sprite that will be used for displaying in character`s hand.
-        [SerializeField] private Bullet _bulletType = null;         // Contains information about bullet that current weapon will use.
         [SerializeField] private int _maxBulletsAmount = 0;         // Maximum bullets amount: from 0.
-        [SerializeField] private float _fireRate = 0f;              // Weapon fire rate. Shots per minute: from 0. 
         [SerializeField] private Transform _firePoint = null;       // Position in which bullet will appear.
+        private SpriteRenderer _weaponSpriteRenderer = null;        // Sprite of the weapon that will be used in game view.
         private int _currentBulletCount = 0;                        // Bullet capacity now.
+        private bool _isShotTriggered = false;                      // Check if player trigger shoot button.
         
         #region Protperties
         
@@ -21,12 +21,8 @@ namespace Arsenal.Weapons
         public string Description => _description;
 
         protected Sprite InGameSprite => _inGameSprite;
-
-        protected Bullet BulletType => _bulletType;
-
+        
         public int BulletsAmount => _maxBulletsAmount;
-
-        public float FireRate => _fireRate;
 
         public int CurrentBulletCount
         {
@@ -35,14 +31,48 @@ namespace Arsenal.Weapons
         }
         
         protected Transform FirePoint => _firePoint;
+        
+        public SpriteRenderer WeaponSpriteRenderer
+        {
+            get => _weaponSpriteRenderer;
+            set => _weaponSpriteRenderer = value;
+        }
+
+        public bool IsShotTriggered
+        {
+            get => _isShotTriggered;
+            set => _isShotTriggered = value;
+        }
 
         #endregion Properties
-        
-        public abstract void AllowShoot(bool canShoot);
 
+        public void AllowShoot(bool canShoot)
+        {
+            _isShotTriggered = canShoot;
+        }
+
+        
+        protected bool IsEnoughBullets()
+        {
+            return CurrentBulletCount > 0;
+        }
+        
+        
         protected void DecrementBulletsCount()
         {
             _currentBulletCount--;
+        }
+
+        
+        protected virtual void CallShotEvent()
+        {
+            //
+        }
+        
+        
+        protected virtual void CallStopShotEvent()
+        {
+            //
         }
     }
 }

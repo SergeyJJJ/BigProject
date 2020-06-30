@@ -57,7 +57,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1800741618338260212}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.73, y: 0.8, z: 0}
+  m_LocalPosition: {x: 0.73, y: 0.69, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6892103237803652957}
@@ -148,9 +148,7 @@ MonoBehaviour:
   _name: Lazer
   _description: Super-powerfull Lazer
   _inGameSprite: {fileID: 5066663443394370621, guid: 0be82e7df2d7aaa42a6eae46e72480eb, type: 3}
-  _bulletType: {fileID: 0}
   _maxBulletsAmount: 120
-  _fireRate: 0
   _firePoint: {fileID: 8545955634901928922}
   _lazerStart: {fileID: 2996600426496162446}
   _lazerMiddle: {fileID: 8758664980039975121}
@@ -244,9 +242,7 @@ MonoBehaviour:
   _name: 
   _description: 
   _inGameSprite: {fileID: 0}
-  _bulletType: {fileID: 0}
   _maxBulletsAmount: 0
-  _fireRate: 0
   _firePoint: {fileID: 0}
 --- !u!1 &2202325272581120373
 GameObject:
@@ -632,10 +628,10 @@ MonoBehaviour:
   _name: AutoRifle
   _description: Classic Assault Rifle
   _inGameSprite: {fileID: 7271897875919829417, guid: cae6c5d5c664ff441849491050a11349, type: 3}
-  _bulletType: {fileID: 11400000, guid: 7dd5f3963c978754a912a79f8194ff8a, type: 2}
   _maxBulletsAmount: 200
-  _fireRate: 420
   _firePoint: {fileID: 7126284408169392318}
+  _bulletType: {fileID: 11400000, guid: 7dd5f3963c978754a912a79f8194ff8a, type: 2}
+  _fireRate: 420
 --- !u!212 &559604559
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -721,10 +717,10 @@ MonoBehaviour:
   _name: Shotgun
   _description: Hi-tech shotgun
   _inGameSprite: {fileID: 5711273657361161810, guid: 0be82e7df2d7aaa42a6eae46e72480eb, type: 3}
-  _bulletType: {fileID: 11400000, guid: f70586650c9138e4c924228a4db7eec3, type: 2}
   _maxBulletsAmount: 150
-  _fireRate: 120
   _firePoint: {fileID: 4779799537669754934}
+  _bulletType: {fileID: 11400000, guid: f70586650c9138e4c924228a4db7eec3, type: 2}
+  _fireRate: 120
   _heightBetweenOneShotBullets: 0.5
 --- !u!212 &559604553
 SpriteRenderer:
@@ -811,9 +807,7 @@ MonoBehaviour:
   _name: 
   _description: 
   _inGameSprite: {fileID: 0}
-  _bulletType: {fileID: 0}
   _maxBulletsAmount: 0
-  _fireRate: 0
   _firePoint: {fileID: 0}
 --- !u!1 &8477593994491121596
 GameObject:
@@ -978,7 +972,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f93697c01421c164a88d4b529cfc970f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _horizontalSpeed: 8.5
+  _horizontalSpeed: 8
   _movementSmoothing: 0
   _leftMoveButton: {fileID: 0}
   _rightMoveButton: {fileID: 0}

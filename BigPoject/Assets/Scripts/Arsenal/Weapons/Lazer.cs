@@ -14,10 +14,8 @@ namespace Arsenal.Weapons
         
         private float _currentLazerLength = 1f;                                          // Current length of the lazer.
         private float _startSpriteWidth = 0f;                                            // Start lazer sprite length.
-        private SpriteRenderer _weaponSpriteRenderer = null;                             // Sprite of the weapon that will be used in game view.
         private SpriteRenderer _startSpriteRenderer = null;                              // SpriteRenderer component of the start lazer sparite.
-        private bool _isShotTriggered = false;                                           // Check if player trigger shoot button.
-        
+
         /*
            This is the minimum distance that must be
            between character and another object for that
@@ -32,16 +30,11 @@ namespace Arsenal.Weapons
         private float _decrementEnergeyTime = 1;                                         // Time after which energy will be decremented.
 
         private Rigidbody2D _characterRigidbody = null;                                  // Characters rigidbody component
-        
-        public override void AllowShoot(bool canShoot)
-        {
-            _isShotTriggered = canShoot;
-        }
 
-        
+
         private void Awake()
         {
-            _weaponSpriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+            WeaponSpriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         }
         
 
@@ -49,7 +42,7 @@ namespace Arsenal.Weapons
         {
             _characterRigidbody = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>();
             _startSpriteRenderer = _lazerStart.gameObject.GetComponent<SpriteRenderer>();
-            _weaponSpriteRenderer.sprite = InGameSprite;
+            WeaponSpriteRenderer.sprite = InGameSprite;
             _currentLazerLength = _maxLazerLength;
             CurrentBulletCount = BulletsAmount;
         }
@@ -57,7 +50,7 @@ namespace Arsenal.Weapons
 
         private void Update()
         {
-            if (_isShotTriggered)
+            if (IsShotTriggered)
             {
                 if (IsEnoughBullets())
                 {
@@ -185,13 +178,13 @@ namespace Arsenal.Weapons
         }
 
 
-        private void CallShotEvent()
+        protected override void CallShotEvent()
         {
             EventSystem.TriggerEvent("OnLazerShot");
         }
 
 
-        private void CallStopShotEvent()
+        protected override void CallStopShotEvent()
         {
             EventSystem.TriggerEvent("OnStopLazerShop");
         }
@@ -200,7 +193,7 @@ namespace Arsenal.Weapons
         // Move character to the opposite side from lazer beam direction.
         private void MoveCharacterWhenShooting()
         {
-            float movementForce = 13;
+            float movementForce = 16;
             _characterRigidbody.AddForce(-transform.right * movementForce);
         }
         

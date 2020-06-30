@@ -5,10 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/ControllTest.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 0
     path: Assets/Scenes/TesetChamber/ControllTest 1.unity
     guid: c06100bb13083364e9156816193d9401
+  - enabled: 1
+    path: Assets/Scenes/TesetChamber/ControllTest 3.unity
+    guid: 1d9ccbc310ef9e042a6f5b80b9c89318
   m_configObjects: {}
