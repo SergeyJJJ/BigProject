@@ -98,6 +98,19 @@ namespace Player.CharacterMovement.MovementStateMachine
         }
         #endregion Properties
 
+
+        public void TranslateTo(Vector2 position)
+        {
+            transform.position = position;
+        }
+
+
+        public void AddForceInDirection(Vector2 direction)
+        {
+            _rigidBody.AddForce(direction);
+        }
+        
+        
         private void Awake()
         {
             // Initialize character`s components.

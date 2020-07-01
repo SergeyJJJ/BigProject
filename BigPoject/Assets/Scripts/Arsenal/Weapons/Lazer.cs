@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using Player.CharacterMovement.MovementStateMachine;
 using UnityEngine;
 
 namespace Arsenal.Weapons
@@ -29,7 +30,7 @@ namespace Arsenal.Weapons
         private float _spendEnergyTimer = 1;                                             // Timer that control how fast lazer energy will be decremented.
         private float _decrementEnergeyTime = 1;                                         // Time after which energy will be decremented.
 
-        private Rigidbody2D _characterRigidbody = null;                                  // Characters rigidbody component
+        private CharacterMovement _characterMovement = null;                             // Characters movement control script.
 
 
         private void Awake()
@@ -40,7 +41,7 @@ namespace Arsenal.Weapons
 
         private void Start()
         {
-            _characterRigidbody = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>();
+            _characterMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterMovement>();
             _startSpriteRenderer = _lazerStart.gameObject.GetComponent<SpriteRenderer>();
             WeaponSpriteRenderer.sprite = InGameSprite;
             _currentLazerLength = _maxLazerLength;
@@ -194,7 +195,7 @@ namespace Arsenal.Weapons
         private void MoveCharacterWhenShooting()
         {
             float movementForce = 16;
-            _characterRigidbody.AddForce(-transform.right * movementForce);
+            _characterMovement.AddForceInDirection(-transform.right * movementForce);
         }
         
 
@@ -207,11 +208,6 @@ namespace Arsenal.Weapons
         private bool IsFarEnoughToObject(float distance)
         {
             return _currentLazerLength >= distance;
-        }
-        
-        private bool IsEnoughBullets()
-        {
-            return CurrentBulletCount > 0;
         }
     }
 }
