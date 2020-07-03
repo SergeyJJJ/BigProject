@@ -1,31 +1,19 @@
 fileFormatVersion: 2
-guid: 7cd5f761fecb6b34e8968950865c9938
+guid: fde5f93506f20be4b92becaade5a24ee
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8893363893581077598
-    second: assaultRifle_0
+      213: -5776887722702420639
+    second: AssaulRifle_0
   - first:
-      213: 4563250080486587171
-    second: assaultRifle_1
+      213: 6796426268488552591
+    second: AssaulRifle_1
   - first:
-      213: 2171445393958539784
-    second: assaultRifle_2
+      213: -5282384125683165423
+    second: AssaulRifle_2
   - first:
-      213: 1299971555770726495
-    second: assaultRifle_3
-  - first:
-      213: 4179592573558336989
-    second: assaultRifle_0
-  - first:
-      213: 4553907704399113390
-    second: assaultRifle_1
-  - first:
-      213: 4942915709674471923
-    second: assaultRifle_2
-  - first:
-      213: -3346696868137683168
-    second: assaultRifle_3
+      213: -2972486791799721879
+    second: AssaulRifle_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -127,7 +115,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: assaultRifle_0
+      name: AssaulRifle_0
       rect:
         serializedVersion: 2
         x: 9
@@ -135,41 +123,41 @@ TextureImporter:
         width: 14
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ddd2ecc1d45e00a30800000000000000
-      internalID: 4179592573558336989
+      spriteID: 165c105393f54dfa0800000000000000
+      internalID: -5776887722702420639
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: assaultRifle_1
+      name: AssaulRifle_1
       rect:
         serializedVersion: 2
         x: 9
-        y: 35
+        y: 34
         width: 13
-        height: 4
+        height: 5
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eacaf94fdeab23f30800000000000000
-      internalID: 4553907704399113390
+      spriteID: f80d463aea1c15e50800000000000000
+      internalID: 6796426268488552591
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: assaultRifle_2
+      name: AssaulRifle_2
       rect:
         serializedVersion: 2
         x: 9
@@ -177,35 +165,35 @@ TextureImporter:
         width: 13
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3f148d536a3c89440800000000000000
-      internalID: 4942915709674471923
+      spriteID: 1171e7dff9331b6b0800000000000000
+      internalID: -5282384125683165423
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: assaultRifle_3
+      name: AssaulRifle_3
       rect:
         serializedVersion: 2
         x: 9
-        y: 3
+        y: 2
         width: 13
-        height: 4
+        height: 5
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 027bdb31ee42e81d0800000000000000
-      internalID: -3346696868137683168
+      spriteID: 960bc33030b9fb6d0800000000000000
+      internalID: -2972486791799721879
       vertices: []
       indices: 
       edges: []
