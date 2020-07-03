@@ -10,6 +10,7 @@ TagManager:
   - Bullet
   - LazerRay
   - FrameConfiner
+  - FirePoint
   layers:
   - Default
   - TransparentFX

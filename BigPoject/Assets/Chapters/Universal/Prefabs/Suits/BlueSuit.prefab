@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1164325988}
   m_Layer: 2
   m_Name: FirePoint
-  m_TagString: Untagged
+  m_TagString: FirePoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -72,7 +72,7 @@ GameObject:
   - component: {fileID: 1124424781}
   m_Layer: 0
   m_Name: FirePoint
-  m_TagString: Untagged
+  m_TagString: FirePoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -201,7 +201,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Lazer
   _description: Super-powerfull Lazer
-  _inGameSprite: {fileID: 5066663443394370621, guid: 0be82e7df2d7aaa42a6eae46e72480eb, type: 3}
+  _inGameSprite: {fileID: 1626831934363955557, guid: f85ce1d08c30e2e43b24b8204a9f8969, type: 3}
   _maxBulletsAmount: 120
   _firePoint: {fileID: 1175195929221174081}
   _lazerStart: {fileID: 2996600426496162446}
@@ -345,7 +345,7 @@ GameObject:
   - component: {fileID: 2090891498}
   m_Layer: 0
   m_Name: FirePoint
-  m_TagString: Untagged
+  m_TagString: FirePoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -664,7 +664,7 @@ SpriteRenderer:
   m_SortingLayerID: 582098943
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7271897875919829417, guid: cae6c5d5c664ff441849491050a11349, type: 3}
+  m_Sprite: {fileID: 4563250080486587171, guid: 7cd5f761fecb6b34e8968950865c9938, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -708,7 +708,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: AutoRifle
   _description: Classic Assault Rifle
-  _inGameSprite: {fileID: 7271897875919829417, guid: cae6c5d5c664ff441849491050a11349, type: 3}
+  _inGameSprite: {fileID: 4563250080486587171, guid: 7cd5f761fecb6b34e8968950865c9938, type: 3}
   _maxBulletsAmount: 200
   _firePoint: {fileID: 8587872123050158918}
   _bulletType: {fileID: 11400000, guid: 7dd5f3963c978754a912a79f8194ff8a, type: 2}
@@ -902,7 +902,7 @@ GameObject:
   - component: {fileID: 2120103259}
   m_Layer: 0
   m_Name: FirePoint
-  m_TagString: Untagged
+  m_TagString: FirePoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -959,7 +959,7 @@ GameObject:
   - component: {fileID: 994789156}
   m_Layer: 0
   m_Name: FirePoint
-  m_TagString: Untagged
+  m_TagString: FirePoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -972,7 +972,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8587872123050158918}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.476, y: 0.318, z: 0}
+  m_LocalPosition: {x: 1.334, y: 0.071, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 211434828534544742}
@@ -1107,11 +1107,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f93697c01421c164a88d4b529cfc970f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _horizontalSpeed: 7.2
+  _horizontalSpeed: 6.4
   _movementSmoothing: 0
   _leftMoveButton: {fileID: 0}
   _rightMoveButton: {fileID: 0}
-  _jumpHeight: 14.04
+  _jumpHeight: 12.75
   _afterGroundTouchJumpTime: 0.1
   _pressBeforeGroundTime: 0.1
   _cutJumpHeight: 0.27
@@ -1396,11 +1396,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 889919698736914788, guid: 552966005c72f7140b2927a61b16a444, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.099
+      value: 0.049
       objectReference: {fileID: 0}
     - target: {fileID: 889919698736914788, guid: 552966005c72f7140b2927a61b16a444, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.106
+      value: 0.094
       objectReference: {fileID: 0}
     - target: {fileID: 889919698736914788, guid: 552966005c72f7140b2927a61b16a444, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1444,7 +1444,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4223017327198454147, guid: 552966005c72f7140b2927a61b16a444, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 552966005c72f7140b2927a61b16a444, type: 3}
@@ -1658,7 +1658,7 @@ PrefabInstance:
     - target: {fileID: 5433480261800985400, guid: dbf7edadc67d6ee4d89b1cad4f5acf97, type: 3}
       propertyPath: _currentWeapon
       value: 
-      objectReference: {fileID: 559604556}
+      objectReference: {fileID: 559604560}
     m_RemovedComponents:
     - {fileID: 5433480261337476444, guid: dbf7edadc67d6ee4d89b1cad4f5acf97, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: dbf7edadc67d6ee4d89b1cad4f5acf97, type: 3}
@@ -1724,7 +1724,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8234616761355245010, guid: 3bb8dabd3dde3fc4ab9c603c003c23a7, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3bb8dabd3dde3fc4ab9c603c003c23a7, type: 3}

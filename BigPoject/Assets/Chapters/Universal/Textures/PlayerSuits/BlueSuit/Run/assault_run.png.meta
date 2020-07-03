@@ -1,19 +1,55 @@
 fileFormatVersion: 2
-guid: cae6c5d5c664ff441849491050a11349
+guid: 1d10196e3e9f5a64bac16eeb3bc1e1f2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8016019795661391861
-    second: assaultRifleShoot_0
+      213: 6823435919275903651
+    second: assault_run_0
   - first:
-      213: 7271897875919829417
-    second: assaultRifleShoot_1
+      213: -8822401641612626363
+    second: assault_run_1
   - first:
-      213: 7211506176011937496
-    second: assaultRifleShoot_2
+      213: -1641280726470438190
+    second: assault_run_2
   - first:
-      213: 8726693355329561310
-    second: assaultRifleShoot_3
+      213: -4663839495028505010
+    second: assault_run_3
+  - first:
+      213: -5419636122443556483
+    second: assault_run_4
+  - first:
+      213: 119369647604256007
+    second: assault_run_5
+  - first:
+      213: 7440562172347970025
+    second: assault_run_6
+  - first:
+      213: -2868402155394191619
+    second: assault_run_7
+  - first:
+      213: -2368756528795900874
+    second: assault_run_0
+  - first:
+      213: 8739701907661767436
+    second: assault_run_1
+  - first:
+      213: 6775260575193046412
+    second: assault_run_2
+  - first:
+      213: -9014082951004460831
+    second: assault_run_3
+  - first:
+      213: -5620217697790249164
+    second: assault_run_4
+  - first:
+      213: 1605635799205458208
+    second: assault_run_5
+  - first:
+      213: 2667423167984304893
+    second: assault_run_6
+  - first:
+      213: 8338256067281853894
+    second: assault_run_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -115,12 +151,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: assaultRifleShoot_0
+      name: assault_run_0
       rect:
         serializedVersion: 2
         x: 9
-        y: 42
-        width: 15
+        y: 72
+        width: 11
         height: 16
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -129,40 +165,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b087a1f677061c090800000000000000
-      internalID: -8016019795661391861
+      spriteID: 634abbdbc7c702fd0800000000000000
+      internalID: -2368756528795900874
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: assaultRifleShoot_1
+      name: assault_run_1
       rect:
         serializedVersion: 2
-        x: 10
-        y: 37
-        width: 14
-        height: 4
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9a97e190798fae460800000000000000
-      internalID: 7271897875919829417
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: assaultRifleShoot_2
-      rect:
-        serializedVersion: 2
-        x: 9
-        y: 10
-        width: 14
+        x: 41
+        y: 72
+        width: 11
         height: 16
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -171,20 +186,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8d62abca8aa641460800000000000000
-      internalID: 7211506176011937496
+      spriteID: c03cbf08498a94970800000000000000
+      internalID: 8739701907661767436
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: assaultRifleShoot_3
+      name: assault_run_2
       rect:
         serializedVersion: 2
-        x: 10
-        y: 5
-        width: 14
-        height: 4
+        x: 73
+        y: 72
+        width: 11
+        height: 17
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -192,8 +207,113 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ed22e24ee517b1970800000000000000
-      internalID: 8726693355329561310
+      spriteID: c8d1715a89f860e50800000000000000
+      internalID: 6775260575193046412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: assault_run_3
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 40
+        width: 11
+        height: 17
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e86971905b87e280800000000000000
+      internalID: -9014082951004460831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: assault_run_4
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 40
+        width: 11
+        height: 17
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43739d2f7c9f002b0800000000000000
+      internalID: -5620217697790249164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: assault_run_5
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 40
+        width: 11
+        height: 17
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 021ba4a904d584610800000000000000
+      internalID: 1605635799205458208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: assault_run_6
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 8
+        width: 11
+        height: 17
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df20a591d37940520800000000000000
+      internalID: 2667423167984304893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: assault_run_7
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 8
+        width: 11
+        height: 17
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cd949817bf67b370800000000000000
+      internalID: 8338256067281853894
       vertices: []
       indices: 
       edges: []
