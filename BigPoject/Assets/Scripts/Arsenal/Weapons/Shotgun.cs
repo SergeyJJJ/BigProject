@@ -33,7 +33,7 @@ namespace Arsenal.Weapons
                 {
                     if (IsTimeForShootCome())
                     {
-                        Vector2 startLaunchPosition = FirePoint.position;
+                        Vector2 startLaunchPosition = FirePoint.transform.position;
                         NextShootTimer = TimeBetweenShoots;
                         for (var bulletNumber = 0; bulletNumber < _bulletPerShot; bulletNumber++)
                         {

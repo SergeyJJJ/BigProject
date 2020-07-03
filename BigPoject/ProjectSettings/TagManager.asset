@@ -9,6 +9,7 @@ TagManager:
   - DynamicCamera
   - Bullet
   - LazerRay
+  - FrameConfiner
   layers:
   - Default
   - TransparentFX

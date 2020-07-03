@@ -21,23 +21,34 @@ namespace Arsenal.Weapons
            This is the minimum distance that must be
            between character and another object for that
            the lazer doesn`t go inside itself. 
-           When that distances is already reached we turn off particular
-           lazer object.
+           When that distances is already reached we
+           turn off particular lazer object.
         */
         private float _middleMinDistance = 0.85f;                                        // When that distance is reached we turn off middle lazer.
-        private float _startMinDistance = 0.45f;                                          // When that distance is reached we turn off start lazer.
+        private float _startMinDistance = 0.55f;                                          // When that distance is reached we turn off start lazer.
         
         private float _spendEnergyTimer = 1;                                             // Timer that control how fast lazer energy will be decremented.
         private float _decrementEnergeyTime = 1;                                         // Time after which energy will be decremented.
 
         private CharacterMovement _characterMovement = null;                             // Characters movement control script.
 
+        protected override void CallShotEvent()
+        {
+            EventSystem.TriggerEvent("OnLazerShot");
+        }
+
+
+        protected override void CallStopShotEvent()
+        {
+            EventSystem.TriggerEvent("OnStopLazerShop");
+        }
+
 
         private void Awake()
         {
             WeaponSpriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         }
-        
+
 
         private void Start()
         {
@@ -109,7 +120,7 @@ namespace Arsenal.Weapons
                 CallStopShotEvent();
             }
         }
-        
+
 
         private void InitializeStartLazerPart()
         {
@@ -179,25 +190,13 @@ namespace Arsenal.Weapons
         }
 
 
-        protected override void CallShotEvent()
-        {
-            EventSystem.TriggerEvent("OnLazerShot");
-        }
-
-
-        protected override void CallStopShotEvent()
-        {
-            EventSystem.TriggerEvent("OnStopLazerShop");
-        }
-
-
         // Move character to the opposite side from lazer beam direction.
         private void MoveCharacterWhenShooting()
         {
             float movementForce = 16;
             _characterMovement.AddForceInDirection(-transform.right * movementForce);
         }
-        
+
 
         private bool IsRayCollideSomething(RaycastHit2D ray)
         {

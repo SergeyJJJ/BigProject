@@ -267,9 +267,9 @@ GameObject:
   m_Component:
   - component: {fileID: 110827293}
   - component: {fileID: 110827292}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: FrameConfinerFour
-  m_TagString: Untagged
+  m_TagString: FrameConfiner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -391,9 +391,9 @@ GameObject:
   m_Component:
   - component: {fileID: 213305214}
   - component: {fileID: 213305213}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: FrameConfinerSeven
-  m_TagString: Untagged
+  m_TagString: FrameConfiner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -462,9 +462,9 @@ GameObject:
   m_Component:
   - component: {fileID: 290272745}
   - component: {fileID: 290272744}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: FrameConfinerFive
-  m_TagString: Untagged
+  m_TagString: FrameConfiner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1005,9 +1005,9 @@ GameObject:
   m_Component:
   - component: {fileID: 906893136}
   - component: {fileID: 906893135}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: FrameConfinerOne
-  m_TagString: Untagged
+  m_TagString: FrameConfiner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1168,9 +1168,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1067284317}
   - component: {fileID: 1067284316}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: FrameConfinerTwo
-  m_TagString: Untagged
+  m_TagString: FrameConfiner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1449,8 +1449,8 @@ TilemapRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -2047914163
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -21495,7 +21495,7 @@ CompositeCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_GeometryType: 0
+  m_GeometryType: 1
   m_GenerationType: 0
   m_EdgeRadius: 0
   m_ColliderPaths:
@@ -22721,9 +22721,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1237936159}
   - component: {fileID: 1237936158}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: FrameConfinerSix
-  m_TagString: Untagged
+  m_TagString: FrameConfiner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23939,9 +23939,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1767160347}
   - component: {fileID: 1767160346}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: FrameConfinerThree
-  m_TagString: Untagged
+  m_TagString: FrameConfiner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

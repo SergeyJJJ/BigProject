@@ -1,4 +1,5 @@
-﻿using Arsenal.Bullets;
+﻿using System;
+using Arsenal.Bullets;
 using UnityEngine;
 
 namespace Arsenal.Weapons
@@ -9,7 +10,7 @@ namespace Arsenal.Weapons
         [SerializeField] private string _description = "";          // Description of the weapon.
         [SerializeField] private Sprite _inGameSprite = null;       // Sprite that will be used for displaying in character`s hand.
         [SerializeField] private int _maxBulletsAmount = 0;         // Maximum bullets amount: from 0.
-        [SerializeField] private Transform _firePoint = null;       // Position in which bullet will appear.
+        [SerializeField] private GameObject _firePoint = null;      // Position in which bullet will appear.
         private SpriteRenderer _weaponSpriteRenderer = null;        // Sprite of the weapon that will be used in game view.
         private int _currentBulletCount = 0;                        // Bullet capacity now.
         private bool _isShotTriggered = false;                      // Check if player trigger shoot button.
@@ -30,8 +31,8 @@ namespace Arsenal.Weapons
             set => _currentBulletCount = value >= 0 ? value : _currentBulletCount;
         }
         
-        protected Transform FirePoint => _firePoint;
-        
+        protected GameObject FirePoint => _firePoint;
+
         public SpriteRenderer WeaponSpriteRenderer
         {
             get => _weaponSpriteRenderer;

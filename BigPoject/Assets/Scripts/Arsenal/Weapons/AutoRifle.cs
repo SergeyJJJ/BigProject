@@ -33,7 +33,7 @@ namespace Arsenal.Weapons
 
                         GameObject bullet = GetBullet();
                         Vector2 launchDirection = GetLaunchDirection();
-                        InitializeBullet(bullet, launchDirection, FirePoint.position);
+                        InitializeBullet(bullet, launchDirection, FirePoint.transform.position);
                         LaunchBullet(bullet);
                         CallShotEvent();
                         DecrementBulletsCount();

@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8545955634901928922}
+  - component: {fileID: 1164325988}
   m_Layer: 2
   m_Name: FirePoint
   m_TagString: Untagged
@@ -33,6 +34,32 @@ Transform:
   m_Father: {fileID: 6275946460944800497}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1164325988
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1175195929221174081}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.01, y: 0.01}
+  m_EdgeRadius: 0
 --- !u!1 &1800741618338260212
 GameObject:
   m_ObjectHideFlags: 0
@@ -42,6 +69,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4779799537669754934}
+  - component: {fileID: 1124424781}
   m_Layer: 0
   m_Name: FirePoint
   m_TagString: Untagged
@@ -63,6 +91,32 @@ Transform:
   m_Father: {fileID: 6892103237803652957}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1124424781
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1800741618338260212}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.01, y: 0.01}
+  m_EdgeRadius: 0
 --- !u!212 &559604557
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -149,7 +203,7 @@ MonoBehaviour:
   _description: Super-powerfull Lazer
   _inGameSprite: {fileID: 5066663443394370621, guid: 0be82e7df2d7aaa42a6eae46e72480eb, type: 3}
   _maxBulletsAmount: 120
-  _firePoint: {fileID: 8545955634901928922}
+  _firePoint: {fileID: 1175195929221174081}
   _lazerStart: {fileID: 2996600426496162446}
   _lazerMiddle: {fileID: 8758664980039975121}
   _lazerEnd: {fileID: 3356860382606742256}
@@ -288,6 +342,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7444841150660505473}
+  - component: {fileID: 2090891498}
   m_Layer: 0
   m_Name: FirePoint
   m_TagString: Untagged
@@ -309,6 +364,32 @@ Transform:
   m_Father: {fileID: 3389466500240136963}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &2090891498
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2861591191507602531}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.01, y: 0.01}
+  m_EdgeRadius: 0
 --- !u!1 &2996600426496162446
 GameObject:
   m_ObjectHideFlags: 0
@@ -322,7 +403,7 @@ GameObject:
   - component: {fileID: 2073207834}
   m_Layer: 2
   m_Name: StartLazer
-  m_TagString: Untagged
+  m_TagString: LazerRay
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -454,7 +535,7 @@ GameObject:
   - component: {fileID: 863647894}
   m_Layer: 2
   m_Name: EndLazer
-  m_TagString: Untagged
+  m_TagString: LazerRay
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -629,7 +710,7 @@ MonoBehaviour:
   _description: Classic Assault Rifle
   _inGameSprite: {fileID: 7271897875919829417, guid: cae6c5d5c664ff441849491050a11349, type: 3}
   _maxBulletsAmount: 200
-  _firePoint: {fileID: 7126284408169392318}
+  _firePoint: {fileID: 8587872123050158918}
   _bulletType: {fileID: 11400000, guid: 7dd5f3963c978754a912a79f8194ff8a, type: 2}
   _fireRate: 420
 --- !u!212 &559604559
@@ -718,7 +799,7 @@ MonoBehaviour:
   _description: Hi-tech shotgun
   _inGameSprite: {fileID: 5711273657361161810, guid: 0be82e7df2d7aaa42a6eae46e72480eb, type: 3}
   _maxBulletsAmount: 150
-  _firePoint: {fileID: 4779799537669754934}
+  _firePoint: {fileID: 1800741618338260212}
   _bulletType: {fileID: 11400000, guid: f70586650c9138e4c924228a4db7eec3, type: 2}
   _fireRate: 120
   _heightBetweenOneShotBullets: 0.5
@@ -818,6 +899,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7183059689379233806}
+  - component: {fileID: 2120103259}
   m_Layer: 0
   m_Name: FirePoint
   m_TagString: Untagged
@@ -839,6 +921,32 @@ Transform:
   m_Father: {fileID: 545610471850088215}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &2120103259
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8477593994491121596}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.01, y: 0.01}
+  m_EdgeRadius: 0
 --- !u!1 &8587872123050158918
 GameObject:
   m_ObjectHideFlags: 0
@@ -848,6 +956,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7126284408169392318}
+  - component: {fileID: 994789156}
   m_Layer: 0
   m_Name: FirePoint
   m_TagString: Untagged
@@ -869,6 +978,32 @@ Transform:
   m_Father: {fileID: 211434828534544742}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &994789156
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8587872123050158918}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.01, y: 0.01}
+  m_EdgeRadius: 0
 --- !u!1 &8702310545741433508
 GameObject:
   m_ObjectHideFlags: 0
@@ -972,11 +1107,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f93697c01421c164a88d4b529cfc970f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _horizontalSpeed: 8
+  _horizontalSpeed: 7.2
   _movementSmoothing: 0
   _leftMoveButton: {fileID: 0}
   _rightMoveButton: {fileID: 0}
-  _jumpHeight: 15.6
+  _jumpHeight: 14.04
   _afterGroundTouchJumpTime: 0.1
   _pressBeforeGroundTime: 0.1
   _cutJumpHeight: 0.27
@@ -1092,7 +1227,7 @@ GameObject:
   - component: {fileID: 2012117330}
   m_Layer: 2
   m_Name: MiddleLazer
-  m_TagString: Untagged
+  m_TagString: LazerRay
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1242,14 +1377,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e8a534ad19e4774abd13f304eace223, type: 3}
---- !u!4 &6892103237803652957 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6822267117504960753, guid: 6e8a534ad19e4774abd13f304eace223, type: 3}
-  m_PrefabInstance: {fileID: 74349718648205228}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &5385716406343090940 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5455490985939168592, guid: 6e8a534ad19e4774abd13f304eace223, type: 3}
+  m_PrefabInstance: {fileID: 74349718648205228}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &6892103237803652957 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6822267117504960753, guid: 6e8a534ad19e4774abd13f304eace223, type: 3}
   m_PrefabInstance: {fileID: 74349718648205228}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1060188262110615554
@@ -1313,14 +1448,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 552966005c72f7140b2927a61b16a444, type: 3}
---- !u!1 &3759837705574259073 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4223017327198454147, guid: 552966005c72f7140b2927a61b16a444, type: 3}
-  m_PrefabInstance: {fileID: 1060188262110615554}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &211434828534544742 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 889919698736914788, guid: 552966005c72f7140b2927a61b16a444, type: 3}
+  m_PrefabInstance: {fileID: 1060188262110615554}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3759837705574259073 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4223017327198454147, guid: 552966005c72f7140b2927a61b16a444, type: 3}
   m_PrefabInstance: {fileID: 1060188262110615554}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4053345844441599882
@@ -1593,13 +1728,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3bb8dabd3dde3fc4ab9c603c003c23a7, type: 3}
---- !u!4 &6275946460944800497 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4591738617380861019, guid: 3bb8dabd3dde3fc4ab9c603c003c23a7, type: 3}
-  m_PrefabInstance: {fileID: 7539454584940523178}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1938440850994330488 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8234616761355245010, guid: 3bb8dabd3dde3fc4ab9c603c003c23a7, type: 3}
+  m_PrefabInstance: {fileID: 7539454584940523178}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &6275946460944800497 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4591738617380861019, guid: 3bb8dabd3dde3fc4ab9c603c003c23a7, type: 3}
   m_PrefabInstance: {fileID: 7539454584940523178}
   m_PrefabAsset: {fileID: 0}
