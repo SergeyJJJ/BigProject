@@ -8,19 +8,19 @@
         }
         
         
-        public virtual void Enter()
+        public override void Enter()
         {
 
         }
 
 
-        public virtual void PhysicsUpdate()
+        public override void PhysicsUpdate()
         {
             
         }
 
 
-        public virtual void Exit()
+        public override void Exit()
         {
 
         }

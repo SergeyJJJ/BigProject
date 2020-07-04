@@ -70,9 +70,8 @@ namespace EnviromentBehaviour
         {
             _currentTargetPoint = GetNextPoint();
         }
-
-
-        // Method that returns next point from list to be followed.
+        
+        
         private Vector2 GetNextPoint()
         {
             // Here will be stored point to be returned.

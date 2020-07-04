@@ -11,6 +11,8 @@ namespace Enemies.AIStateMachine
         [SerializeField] private List<Transform> _wanderTrajectoryPoints = null; // Contains path points along which the enemy moves.
         [SerializeField] private float _wanderingSpeed = 0f;                     // Enemy`s speed when wandering.
         [SerializeField] private float _standingDuration = 0f;                   // How long enemy will stay before moving to the next point.
+
+        private Transform _transform = null;                                     // Enemy`s transform component.
         
         // States
 
@@ -31,6 +33,8 @@ namespace Enemies.AIStateMachine
 
         public float StandingDuration => _standingDuration;
 
+        public Transform TransformComponent => transform;
+        
         public EnemyStateMachine EnemyStateMachine => _enemyStateMachine;
 
         public AttackingState Attacking => _attackingState;
@@ -46,11 +50,20 @@ namespace Enemies.AIStateMachine
         
         private void Awake()
         {
+            _transform = gameObject.transform;
+            
             _enemyStateMachine = new EnemyStateMachine();
             _attackingState = new AttackingState(this, _enemyStateMachine);
             _chasingState = new ChasingState(this, _enemyStateMachine);
             _wanderingState = new WanderingState(this, _enemyStateMachine);
             _standingState = new StandingState(this, _enemyStateMachine);
+        }
+        
+        
+        private void Start()
+        {
+            // Set first state.
+            _enemyStateMachine.Initialization(_standingState); 
         }
 
 
