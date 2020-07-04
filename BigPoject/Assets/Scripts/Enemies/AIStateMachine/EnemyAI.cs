@@ -63,7 +63,14 @@ namespace Enemies.AIStateMachine
         private void Start()
         {
             // Set first state.
-            _enemyStateMachine.Initialization(_standingState); 
+            if (_isAlwaysStanding)
+            {
+                _enemyStateMachine.Initialization(_standingState);
+            }
+            else
+            {
+                _enemyStateMachine.Initialization(_wanderingState);
+            }
         }
 
 

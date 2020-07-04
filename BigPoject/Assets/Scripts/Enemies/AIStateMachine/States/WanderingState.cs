@@ -33,6 +33,7 @@ namespace Enemies.AIStateMachine.States
                 {
                     // Change current target point.
                     ChangeTargetPoint();
+                    _enemyStateMachine.TransitionToState(_enemyAI.Standing);
                 }
             }
         }
