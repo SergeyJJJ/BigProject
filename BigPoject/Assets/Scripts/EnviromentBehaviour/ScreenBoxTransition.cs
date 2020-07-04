@@ -1,7 +1,7 @@
 ﻿using Player.CharacterMovement.MovementStateMachine;
 using UnityEngine;
 
-namespace GameBahaviour
+namespace EnviromentBehaviour
 {
     public class ScreenBoxTransition : MonoBehaviour
     {

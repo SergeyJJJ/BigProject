@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using GameBahaviour;
 using Player.CharacterMovement.MovementStateMachine;
 using UnityEngine;
 

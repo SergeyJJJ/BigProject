@@ -2,9 +2,11 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-public class EventSystem : MonoBehaviour
+namespace GameBahaviour
 {
-    private Dictionary<string, UnityEvent> _eventDictionary;
+    public class EventSystem : MonoBehaviour
+    {
+        private Dictionary<string, UnityEvent> _eventDictionary;
         private static EventSystem _eventSystem = null;
     
         // Getter to use event system. If there is no event system, create new one.
@@ -88,4 +90,5 @@ public class EventSystem : MonoBehaviour
                 thisEvent.Invoke ();
             }
         }
+    }
 }

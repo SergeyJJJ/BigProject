@@ -1,3 +1,4 @@
+using GameBahaviour;
 using UnityEngine;
 
 namespace Player.CharacterMovement.MovementStateMachine.States

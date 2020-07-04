@@ -14,7 +14,6 @@
         public void TransitionToState(BaseState state)
         {
             CurrentState.Exit();
-
             CurrentState = state;
             state.Enter();
         }
