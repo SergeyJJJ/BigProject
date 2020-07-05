@@ -2,9 +2,9 @@
 
 namespace Enemies.AIStateMachine.States
 {
-    public class ChasingState : EnemyBaseState
+    public class StandingPatrolState : PatrollingState
     {
-        public ChasingState(EnemyAI enemyAI, EnemyStateMachine enemyStateMachine) : base(enemyAI, enemyStateMachine)
+        public StandingPatrolState(EnemyAI enemyAI, EnemyStateMachine enemyStateMachine) : base(enemyAI, enemyStateMachine)
         {
 
         }
@@ -25,12 +25,6 @@ namespace Enemies.AIStateMachine.States
         public override void Exit()
         {
 
-        }
-        
-        
-        private bool IsPlayerDetected()
-        {
-            return _enemyAI.Detector.IsPlayerDetected;
         }
     }
 }

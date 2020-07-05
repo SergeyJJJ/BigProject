@@ -19,7 +19,8 @@ namespace Enemies.AIStateMachine
 
         private AttackingState _attackingState = null;
         private ChasingState _chasingState = null;
-        private WanderingState _wanderingState = null;
+        private WanderingPatrolState _wanderingPatrolState = null;
+        private StandingPatrolState _standingPatrolState = null;
 
         #region Properties
 
@@ -43,8 +44,6 @@ namespace Enemies.AIStateMachine
 
         public ChasingState Chasing => _chasingState;
 
-        public WanderingState Wandering => _wanderingState;
-
         #endregion
         
         
@@ -55,13 +54,21 @@ namespace Enemies.AIStateMachine
             _enemyStateMachine = new EnemyStateMachine();
             _attackingState = new AttackingState(this, _enemyStateMachine);
             _chasingState = new ChasingState(this, _enemyStateMachine);
-            _wanderingState = new WanderingState(this, _enemyStateMachine);
+            _standingPatrolState = new StandingPatrolState(this, _enemyStateMachine);
+            _wanderingPatrolState = new WanderingPatrolState(this, _enemyStateMachine);
         }
         
         
         private void Start()
         {
-            _enemyStateMachine.Initialization(_wanderingState);
+            if (_isAlwaysStanding)
+            {
+                _enemyStateMachine.Initialization(_standingPatrolState);
+            }
+            else
+            {
+                _enemyStateMachine.Initialization(_wanderingPatrolState);
+            }
         }
 
 

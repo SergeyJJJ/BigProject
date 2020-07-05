@@ -27,7 +27,7 @@ namespace EnviromentBehaviour
             // If list is containing at least one point.
             if (IsPointsExist())
             {
-                // Move platform to the taget point.
+                // Move platform to the target point.
                 Move();
 
                 // If platform reached the target point.

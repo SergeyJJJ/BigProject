@@ -1,28 +1,30 @@
-﻿using System.Runtime.InteropServices;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Enemies.AIStateMachine.States
 {
-    public class WanderingState : EnemyBaseState
+    public class WanderingPatrolState : PatrollingState
     {
         private Vector2 _currentTargetPoint = Vector2.zero;                  // Current target point.
         private int _currentPointIndex = 0;                                  // Target point index.
         
-        public WanderingState(EnemyAI enemyAI, EnemyStateMachine enemyStateMachine) : base(enemyAI, enemyStateMachine)
+        public WanderingPatrolState(EnemyAI enemyAI, EnemyStateMachine enemyStateMachine) : base(enemyAI, enemyStateMachine)
         {
             _currentTargetPoint = _enemyAI.PatrolTrajectoryPoints[0].position;
         }
         
+        
         public override void Enter()
         {
-            base.Enter();
+
         }
 
 
         public override void PhysicsUpdate()
         {
             base.PhysicsUpdate();
-
+            
+            base.PhysicsUpdate();
+            
             if (IsPlayerDetected())
             {
                 _enemyStateMachine.TransitionToState(_enemyAI.Chasing);
@@ -31,7 +33,7 @@ namespace Enemies.AIStateMachine.States
             // If list is containing at least one point.
             if (IsPointsExist())
             {
-                // Move enemy to the taget point.
+                // Move enemy to the target point.
                 Move();
 
                 // If platform reached the target point.
@@ -46,7 +48,7 @@ namespace Enemies.AIStateMachine.States
 
         public override void Exit()
         {
-            base.Exit();
+
         }
         
         
