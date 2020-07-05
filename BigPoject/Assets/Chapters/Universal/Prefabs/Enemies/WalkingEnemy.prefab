@@ -1,5 +1,52 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3562886918904166202
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2599400843237472816}
+  - component: {fileID: 875850247085346709}
+  m_Layer: 0
+  m_Name: PlatformEndDetector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2599400843237472816
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3562886918904166202}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.53, y: -0.05, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6479117650325892611}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &875850247085346709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3562886918904166202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40e2613d095e80649b587054c4611966, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _whatIsGround:
+    serializedVersion: 2
+    m_Bits: 512
+  _platformCheckDistance: 1.5
 --- !u!1 &3697435025799275267
 GameObject:
   m_ObjectHideFlags: 0
@@ -45,7 +92,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.4221635}
+  m_Offset: {x: -0.0000019073486, y: 0.4221635}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -56,7 +103,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.893366, y: 1.94662}
+  m_Size: {x: 15.125561, y: 1.94662}
   m_EdgeRadius: 0
 --- !u!114 &5528647971354876380
 MonoBehaviour:
@@ -83,6 +130,7 @@ GameObject:
   - component: {fileID: 1583767623}
   - component: {fileID: 1583767624}
   - component: {fileID: 1583767622}
+  - component: {fileID: 1793712726968814187}
   m_Layer: 0
   m_Name: WalkingEnemy
   m_TagString: Untagged
@@ -102,6 +150,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6354915048256051739}
+  - {fileID: 2599400843237472816}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -216,9 +265,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isAlwaysStanding: 0
+  _wanderingSpeed: 1.75
+  _standingDuration: 1
   _wanderTrajectoryPoints:
   - {fileID: 0}
   - {fileID: 0}
-  _wanderingSpeed: 1.75
-  _standingDuration: 1
+  _chaseAction: {fileID: 1793712726968814187}
+  _chasingSpeed: 5
   _playerDetector: {fileID: 5528647971354876380}
+  _platformEndDetector: {fileID: 875850247085346709}
+  _player: {fileID: 0}
+--- !u!114 &1793712726968814187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4345433882347290740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21ae2a59385a2b1479d613930f6e59e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -2333,11 +2333,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2824605566533303579, guid: db841216772e4844187962a048cfddbb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.59
+      value: -39.52
       objectReference: {fileID: 0}
     - target: {fileID: 2824605566533303579, guid: db841216772e4844187962a048cfddbb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.49
+      value: 2.38
       objectReference: {fileID: 0}
     - target: {fileID: 2824605566533303579, guid: db841216772e4844187962a048cfddbb, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2970,7 +2970,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 784498860}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.75, y: -0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1583767621}
@@ -3967,7 +3967,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1211628144}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 37.1, y: 4.69, z: 0}
+  m_LocalPosition: {x: 43.13, y: 4.69, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 784498861}
@@ -4682,28 +4682,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 9004649171288624030, guid: 95e99f9ab9e88d44ebc72051c375eb85, type: 3}
   m_PrefabInstance: {fileID: 9004649170335139673}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1583767620 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4345433882347290740, guid: 687ad3921ab373341b7f212d512b075c, type: 3}
-  m_PrefabInstance: {fileID: 1356511731876947025}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1583767621 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6479117650325892611, guid: 687ad3921ab373341b7f212d512b075c, type: 3}
   m_PrefabInstance: {fileID: 1356511731876947025}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1583767622
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1583767620}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21ae2a59385a2b1479d613930f6e59e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1587805684
 GameObject:
   m_ObjectHideFlags: 0
@@ -4975,7 +4958,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1658143207}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.59, y: 2.49, z: -10}
+  m_LocalPosition: {x: -39.52, y: 2.38, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -5997,7 +5980,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1995283552}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 29.45, y: 4.7, z: 0}
+  m_LocalPosition: {x: 27.08, y: 4.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 784498861}
@@ -6172,7 +6155,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2085375453}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.59, y: 2.49, z: -10}
+  m_LocalPosition: {x: -39.52, y: 2.38, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 29000179}
@@ -6304,17 +6287,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1211628145}
     - target: {fileID: 1583767622, guid: 687ad3921ab373341b7f212d512b075c, type: 3}
-      propertyPath: _chaseAction
-      value: 
-      objectReference: {fileID: 1583767622}
-    - target: {fileID: 1583767622, guid: 687ad3921ab373341b7f212d512b075c, type: 3}
-      propertyPath: _chasingSpeed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583767622, guid: 687ad3921ab373341b7f212d512b075c, type: 3}
       propertyPath: _player
       value: 
       objectReference: {fileID: 1331357060}
+    - target: {fileID: 875850247085346709, guid: 687ad3921ab373341b7f212d512b075c, type: 3}
+      propertyPath: _platformCheckDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2599400843237472816, guid: 687ad3921ab373341b7f212d512b075c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.53
+      objectReference: {fileID: 0}
     - target: {fileID: 4345433882347290740, guid: 687ad3921ab373341b7f212d512b075c, type: 3}
       propertyPath: m_Name
       value: WalkingEnemy

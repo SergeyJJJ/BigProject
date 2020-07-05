@@ -6,6 +6,7 @@ namespace Enemies.AIStateMachine.States
     {
         private Vector2 _currentTargetPoint = Vector2.zero;                  // Current target point.
         private int _currentPointIndex = 0;                                  // Target point index.
+        private static bool _isFacingRight = true;                           // Check if player is facing right.
         
         public WanderingPatrolState(EnemyAI enemyAI, EnemyStateMachine enemyStateMachine) : base(enemyAI, enemyStateMachine)
         {
@@ -16,6 +17,7 @@ namespace Enemies.AIStateMachine.States
         public override void Enter()
         {
             base.Enter();
+            Flip();
         }
 
 
@@ -35,7 +37,7 @@ namespace Enemies.AIStateMachine.States
                 Move();
 
                 // If platform reached the target point.
-                if (IsReachedPoint())
+                if (IsReachedPoint() || IsPlatformEndReached())
                 {
                     // Change current target point.
                     ChangeTargetPoint();
@@ -91,6 +93,14 @@ namespace Enemies.AIStateMachine.States
         }
         
         
+        // Flip enemy to another side(left or right).
+        private void Flip()
+        {
+            _isFacingRight = !_isFacingRight;
+            _enemyAI.TransformComponent.Rotate(0f, 180f, 0f);
+        }
+        
+        
         private bool IsPointsExist()
         {
             return _enemyAI.PatrolTrajectoryPoints != null;
@@ -104,6 +114,12 @@ namespace Enemies.AIStateMachine.States
             // If distance between platform and target point is less than allowable threshold
             // than return that the platform reached the goal.
             return Vector2.Distance(_enemyAI.TransformComponent.position, _currentTargetPoint) < threshold;
+        }
+
+
+        private bool IsPlatformEndReached()
+        {
+            return _enemyAI.PlaformEndCheck.IsPlatformEndReached;
         }
     }
 }

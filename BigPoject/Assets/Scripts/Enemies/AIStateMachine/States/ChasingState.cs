@@ -32,7 +32,7 @@ namespace Enemies.AIStateMachine.States
         
         private bool IsPlayerDetected()
         {
-            return _enemyAI.Detector.IsPlayerDetected;
+            return _enemyAI.PlayerCheck.IsPlayerDetected;
         }
     }
 }

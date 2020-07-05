@@ -9,22 +9,23 @@ namespace Enemies.AIStateMachine
     public class EnemyAI : MonoBehaviour
     {
         [Header("Patrolling state")]
-        [SerializeField] private bool _isAlwaysStanding = false;                 // Defines if enemy is always standing at one place.
-        [SerializeField] private float _wanderingSpeed = 0f;                     // Enemy`s speed when wandering.
-        [SerializeField] private float _standingDuration = 0f;                   // How long enemy will stay before moving to the next point.
-        [SerializeField] private List<Transform> _wanderTrajectoryPoints = null; // Contains path points along which the enemy moves.
+        [SerializeField] private bool _isAlwaysStanding = false;                  // Defines if enemy is always standing at one place.
+        [SerializeField] private float _wanderingSpeed = 0f;                      // Enemy`s speed when wandering.
+        [SerializeField] private float _standingDuration = 0f;                    // How long enemy will stay before moving to the next point.
+        [SerializeField] private List<Transform> _wanderTrajectoryPoints = null;  // Contains path points along which the enemy moves.
         
         [Space]
         [Header("Chasing state")]
-        [SerializeField] private Chase _chaseAction = null;                 // Type of chasing that use current enemy.
-        [SerializeField] private float _chasingSpeed = 0f;                       // Chasing speed.
+        [SerializeField] private Chase _chaseAction = null;                       // Type of chasing that use current enemy.
+        [SerializeField] private float _chasingSpeed = 0f;                        // Chasing speed.
         
         [Space]
         [Header("Help components")]
-        [SerializeField] private PlayerDetector _playerDetector = null;          // Component that detect if player is near the enemy. 
-        [SerializeField] private GameObject _player = null;                      // Reference to the player.
+        [SerializeField] private PlayerDetector _playerDetector = null;           // Component that detect if player is near the enemy.
+        [SerializeField] private PlatformEndDetector _platformEndDetector = null; // Component that detect end of platform.
+        [SerializeField] private GameObject _player = null;                       // Reference to the player.
         
-        private Transform _transform = null;                                     // Enemy`s transform component.
+        private Transform _transform = null;                                      // Enemy`s transform component.
         
         // States
         private AttackingState _attackingState = null;
@@ -48,7 +49,9 @@ namespace Enemies.AIStateMachine
 
         public float ChasingSpeed => _chasingSpeed;
 
-        public PlayerDetector Detector => _playerDetector;
+        public PlayerDetector PlayerCheck => _playerDetector;
+
+        public PlatformEndDetector PlaformEndCheck => _platformEndDetector;
 
         public Transform TransformComponent => transform;
         

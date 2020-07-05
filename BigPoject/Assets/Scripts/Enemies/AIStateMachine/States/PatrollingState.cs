@@ -28,7 +28,7 @@
         
         protected bool IsPlayerDetected()
         {
-            return _enemyAI.Detector.IsPlayerDetected;
+            return _enemyAI.PlayerCheck.IsPlayerDetected;
         }
     }
 }
