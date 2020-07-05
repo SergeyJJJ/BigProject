@@ -18,13 +18,24 @@ namespace Enemies.AIStateMachine.States
 
         public override void PhysicsUpdate()
         {
-            
+            base.PhysicsUpdate();
+
+            if (!IsPlayerDetected())
+            {
+                _enemyStateMachine.TransitionToState(_enemyAI.Wandering);
+            }
         }
 
 
         public override void Exit()
         {
 
+        }
+        
+        
+        private bool IsPlayerDetected()
+        {
+            return _enemyAI.Detector.IsPlayerDetected;
         }
     }
 }
