@@ -15,16 +15,14 @@ namespace Enemies.AIStateMachine.States
         
         public override void Enter()
         {
-
+            base.Enter();
         }
 
 
         public override void PhysicsUpdate()
         {
             base.PhysicsUpdate();
-            
-            base.PhysicsUpdate();
-            
+
             if (IsPlayerDetected())
             {
                 _enemyStateMachine.TransitionToState(_enemyAI.Chasing);
@@ -41,6 +39,7 @@ namespace Enemies.AIStateMachine.States
                 {
                     // Change current target point.
                     ChangeTargetPoint();
+                    _enemyStateMachine.TransitionToState(_enemyAI.Standing);
                 }
             }
         }
@@ -48,7 +47,7 @@ namespace Enemies.AIStateMachine.States
 
         public override void Exit()
         {
-
+            base.Exit();
         }
         
         
@@ -105,12 +104,6 @@ namespace Enemies.AIStateMachine.States
             // If distance between platform and target point is less than allowable threshold
             // than return that the platform reached the goal.
             return Vector2.Distance(_enemyAI.TransformComponent.position, _currentTargetPoint) < threshold;
-        }
-
-
-        private bool IsPlayerDetected()
-        {
-            return _enemyAI.Detector.IsPlayerDetected;
         }
     }
 }

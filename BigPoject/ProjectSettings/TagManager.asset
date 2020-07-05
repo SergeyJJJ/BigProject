@@ -54,6 +54,9 @@ TagManager:
   - name: Pipes
     uniqueID: 2982145627
     locked: 0
+  - name: Enemy
+    uniqueID: 817707015
+    locked: 0
   - name: Player
     uniqueID: 765987315
     locked: 0

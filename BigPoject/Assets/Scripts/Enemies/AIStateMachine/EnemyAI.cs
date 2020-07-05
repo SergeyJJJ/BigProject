@@ -11,8 +11,11 @@ namespace Enemies.AIStateMachine
         [SerializeField] private List<Transform> _wanderTrajectoryPoints = null; // Contains path points along which the enemy moves.
         [SerializeField] private float _wanderingSpeed = 0f;                     // Enemy`s speed when wandering.
         [SerializeField] private float _standingDuration = 0f;                   // How long enemy will stay before moving to the next point.
+        
+        [Space]
+        [Header("Help components")]
         [SerializeField] private PlayerDetector _playerDetector = null;          // Component that detect if player is near the enemy. 
-            
+        
         private Transform _transform = null;                                     // Enemy`s transform component.
         
         // States
@@ -43,6 +46,10 @@ namespace Enemies.AIStateMachine
         public AttackingState Attacking => _attackingState;
 
         public ChasingState Chasing => _chasingState;
+
+        public StandingPatrolState Standing => _standingPatrolState;
+
+        public WanderingPatrolState Wandering => _wanderingPatrolState;
 
         #endregion
         

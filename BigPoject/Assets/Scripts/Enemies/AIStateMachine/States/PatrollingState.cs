@@ -24,5 +24,11 @@
         {
 
         }
+        
+        
+        protected bool IsPlayerDetected()
+        {
+            return _enemyAI.Detector.IsPlayerDetected;
+        }
     }
 }
