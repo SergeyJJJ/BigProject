@@ -12,7 +12,7 @@ namespace Enemies.AIStateMachine.States
         
         public override void Enter()
         {
-
+            Debug.Log("Chase state");
         }
 
 

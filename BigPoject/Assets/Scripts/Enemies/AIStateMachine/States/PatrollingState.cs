@@ -1,4 +1,6 @@
-﻿namespace Enemies.AIStateMachine.States
+﻿using UnityEngine;
+
+namespace Enemies.AIStateMachine.States
 {
     public class PatrollingState : EnemyBaseState
     {
@@ -10,7 +12,7 @@
         
         public override void Enter()
         {
-
+            Debug.Log("Patrol state");
         }
 
 
@@ -19,6 +21,19 @@
             base.PhysicsUpdate();
             
             EnemyAi.EnemyPatrol.PatrolArea();
+
+            
+            if (EnemyAi.PlayerCheck.IsPlayerDetected)
+            {
+                if (EnemyAi.IsAlwaysStanding)
+                {
+                    
+                }
+                else
+                {
+                    StateMachine.TransitionToState(EnemyAi.Chasing);   
+                }
+            }
         }
 
 

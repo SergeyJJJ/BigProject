@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using Enemies.AIStateMachine.States;
+﻿using Enemies.AIStateMachine.States;
 using Enemies.ChaseTypes;
 using Enemies.PatrolTypes;
 using UnityEngine;
@@ -9,7 +7,9 @@ namespace Enemies.AIStateMachine
 {
     public class EnemyAI : MonoBehaviour
     {
-        [SerializeField] private Patrol _patrolType = null;
+        [SerializeField] private bool _isAlwaysStanding = false;                  // Check if enemy is always standing.
+        
+        [SerializeField] private Patrol _patrolType = null;                       // Type of patrolling that use current enemy.
         
         [Space]
         [Header("Chasing state")]
@@ -31,6 +31,8 @@ namespace Enemies.AIStateMachine
         private EnemyStateMachine _enemyStateMachine = null;
         
         #region Properties
+
+        public bool IsAlwaysStanding => _isAlwaysStanding;
 
         public Patrol EnemyPatrol => _patrolType;
         
