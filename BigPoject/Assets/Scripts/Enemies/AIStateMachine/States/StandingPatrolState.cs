@@ -27,11 +27,6 @@ namespace Enemies.AIStateMachine.States
         {
             base.PhysicsUpdate();
 
-            if (IsPlayerDetected())
-            {
-                _enemyStateMachine.TransitionToState(_enemyAI.Attacking);
-            }
-
             if (!_enemyAI.IsAlwaysStanding)
             {
                 _standingTimer -= Time.deltaTime;

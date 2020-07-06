@@ -19,8 +19,16 @@ namespace Enemies.AIStateMachine.States
         public override void PhysicsUpdate()
         {
             base.PhysicsUpdate();
-            
-            _enemyAI.ChaseAction.ChasePlayer(_enemyAI.Player.transform, _enemyAI.TransformComponent, _enemyAI.ChasingSpeed);
+
+            if (!IsPlayerDetected())
+            {
+                _enemyStateMachine.TransitionToState(_enemyAI.Wandering);
+            }
+            else
+            {
+                _enemyAI.ChaseAction.ChasePlayer(_enemyAI.Player.transform, _enemyAI.TransformComponent,
+                    _enemyAI.ChasingSpeed);
+            }
         }
 
 
