@@ -30,8 +30,7 @@ namespace Enemies.AIStateMachine
         // States
         private AttackingState _attackingState = null;
         private ChasingState _chasingState = null;
-        private WanderingPatrolState _wanderingPatrolState = null;
-        private StandingPatrolState _standingPatrolState = null;
+        private PatrollingState _patrollingState = null;
 
         #region Properties
 
@@ -61,9 +60,7 @@ namespace Enemies.AIStateMachine
 
         public ChasingState Chasing => _chasingState;
 
-        public StandingPatrolState Standing => _standingPatrolState;
-
-        public WanderingPatrolState Wandering => _wanderingPatrolState;
+        public PatrollingState Patrol => _patrollingState;
 
         public GameObject Player => _player;
 
@@ -77,21 +74,13 @@ namespace Enemies.AIStateMachine
             _enemyStateMachine = new EnemyStateMachine();
             _attackingState = new AttackingState(this, _enemyStateMachine);
             _chasingState = new ChasingState(this, _enemyStateMachine);
-            _standingPatrolState = new StandingPatrolState(this, _enemyStateMachine);
-            _wanderingPatrolState = new WanderingPatrolState(this, _enemyStateMachine);
+            _patrollingState = new PatrollingState(this, _enemyStateMachine);
         }
         
         
         private void Start()
         {
-            if (_isAlwaysStanding)
-            {
-                _enemyStateMachine.Initialization(_standingPatrolState);
-            }
-            else
-            {
-                _enemyStateMachine.Initialization(_wanderingPatrolState);
-            }
+            _enemyStateMachine.Initialization(_patrollingState);
         }
 
 

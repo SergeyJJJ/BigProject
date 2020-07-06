@@ -1,6 +1,6 @@
 ﻿namespace Enemies.AIStateMachine.States
 {
-    public abstract class PatrollingState : EnemyBaseState
+    public class PatrollingState : EnemyBaseState
     {
         public PatrollingState(EnemyAI enemyAI, EnemyStateMachine enemyStateMachine) : base(enemyAI, enemyStateMachine)
         {
