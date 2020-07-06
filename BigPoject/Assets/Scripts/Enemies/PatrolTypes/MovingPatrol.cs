@@ -5,14 +5,42 @@ namespace Enemies.PatrolTypes
 {
     public abstract class MovingPatrol : Patrol
     {
-        [SerializeField] protected float _patrolSpeed = 0f;                       // Enemy patrolling speed.
-        [SerializeField] private List<Transform> _patrolTrajectoryPoints = null;  // Contains path points along which the enemy moves.
-        protected Vector2 _currentTargetPoint = Vector2.zero;                     // Current target point.
-        private int _currentPointIndex = 0;                                       // Target point index.
-        private Rigidbody2D _rigidbody2D = null;                                  // Enemy Rigidbody2D component.                   
+        [SerializeField] private float _patrolSpeed = 0f;                        // Enemy patrolling speed.
+        [SerializeField] private float _timeToStayOnPoint = 0f;                  // Define how long enemy will stay on the point before he will move to next point. 
+        [SerializeField] private List<Transform> _patrolTrajectoryPoints = null; // Contains path points along which the enemy moves.
+        private Vector2 _currentTargetPoint = Vector2.zero;                      // Current target point.
+        private int _currentPointIndex = 0;                                      // Target point index.
+        private float _stayOnPointTimer = 0f;                                    // Timer that control how long enemy will stand.
+        private bool _isWaitingOnPoint = false;                                  // Check if enemy is now waiting.
         
-        protected abstract void Move();
+        #region Properties
+        
+        protected float PatrolSpeed => _patrolSpeed;
 
+        protected float TimeToStayOnPoint => _timeToStayOnPoint;
+
+        protected Vector2 CurrentTargetPoint
+        {
+            get => _currentTargetPoint;
+            set => _currentTargetPoint = value;
+        }
+
+        protected float StayOnPointTimer
+        {
+            get => _stayOnPointTimer;
+            set => _stayOnPointTimer = value;
+        }
+
+        protected bool IsWaitingOnPoint
+        {
+            get => _isWaitingOnPoint;
+            set => _isWaitingOnPoint = value;
+        }
+
+        #endregion Properties
+
+        protected abstract void Move();
+        protected abstract bool IsPointReached();
 
         protected void ChangeTargetPoint()
         {
@@ -48,24 +76,15 @@ namespace Enemies.PatrolTypes
         {
             return _patrolTrajectoryPoints != null;
         }
+        
 
-
-        protected bool IsReachedPoint()
-        {
-            float threshold = 0.1f;
-
-            // If distance between platform and target point is less than allowable threshold
-            // than return that the platform reached the goal.
-            return Vector2.Distance(transform.position, _currentTargetPoint) < threshold;
-        }
-
-        protected bool IsMovingRight()
+        protected bool IsTargetPointToTheRight()
         {
             return transform.position.x < _currentTargetPoint.x;
         }
 
 
-        protected bool IsMovingLeft()
+        protected bool IsTargetPointToTheLeft()
         {
             return transform.position.x > _currentTargetPoint.x;
         }
@@ -78,7 +97,7 @@ namespace Enemies.PatrolTypes
                 _currentTargetPoint = _patrolTrajectoryPoints[0].position;
             }
 
-            _rigidbody2D = gameObject.GetComponent<Rigidbody2D>();
+            _stayOnPointTimer = _timeToStayOnPoint;
         }
     }
 }

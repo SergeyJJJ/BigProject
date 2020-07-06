@@ -8,33 +8,53 @@ namespace Enemies.PatrolTypes
         
         public override void PatrolArea()
         {
-            // Move enemy to the target point.
-            Move();
-
-            /*
-            if (IsMovingLeft() && _isFacingRight)
+            if (IsWaitingOnPoint)
             {
-                Flip();
+                StayOnPointTimer -= Time.deltaTime;
+
+                // When time for staying is out
+                if (StayOnPointTimer < 0)
+                {    
+                    // Set that is time to go further.
+                    IsWaitingOnPoint = false;
+
+                    // Change facing direction if needed.
+                    if (IsTargetPointToTheRight() && !IsFacingRight)
+                    {
+                        Flip();
+                    }
+                    else if (IsTargetPointToTheLeft() && IsFacingRight)
+                    {
+                        Flip();
+                    }
+                }
             }
-            else if (IsMovingRight() && !_isFacingRight)
-            {
-                Flip();   
-            }*/
+            else
+            { 
+                // Move enemy to the target point.
+                Move();
+            
+                // If platform reached the target point.
+                if (IsPointReached() || IsPlatformEndReached())
+                {
+                    // Change current target point.
+                    ChangeTargetPoint();
 
-            // If platform reached the target point.
-            if (IsReachedPoint() || IsPlatformEndReached())
-            {
-                // Change current target point.
-                ChangeTargetPoint();
+                    // Set that is time for waiting.
+                    IsWaitingOnPoint = true;
+                    
+                    // Set how long enemy will stay.
+                    StayOnPointTimer = TimeToStayOnPoint;
+                }
             }
         }
         
         
         protected override void Move()
         {
-            float step = _patrolSpeed * Time.deltaTime;
+            float step = PatrolSpeed * Time.deltaTime;
             Vector2 currentPosition = transform.position;
-            Vector2 moveToPositon = new Vector2(_currentTargetPoint.x, currentPosition.y);
+            Vector2 moveToPositon = new Vector2(CurrentTargetPoint.x, currentPosition.y);
             Vector2 desiredPosition = Vector2.MoveTowards(currentPosition, moveToPositon, step);
 
             // Move platform to the desired position.
@@ -45,6 +65,14 @@ namespace Enemies.PatrolTypes
         private bool IsPlatformEndReached()
         {
             return _platformEndDetector.IsPlatformEndReached;
+        }
+        
+        
+        // Check if target point is reached by comparing x coordinate
+        // of the enemy and the target point.
+        protected override bool IsPointReached()
+        {
+            return Mathf.Approximately(transform.position.x, CurrentTargetPoint.x);
         }
     }
 }

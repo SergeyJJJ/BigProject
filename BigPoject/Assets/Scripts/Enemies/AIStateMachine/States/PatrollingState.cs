@@ -18,7 +18,7 @@
         {
             base.PhysicsUpdate();
             
-            _enemyAI.EnemyPatrol.PatrolArea();
+            EnemyAi.EnemyPatrol.PatrolArea();
         }
 
 

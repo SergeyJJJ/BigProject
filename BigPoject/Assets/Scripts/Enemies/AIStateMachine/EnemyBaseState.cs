@@ -4,9 +4,17 @@ namespace Enemies.AIStateMachine
 {
     public abstract class EnemyBaseState
     {
-        protected EnemyAI _enemyAI = null;                       // Reference to enemy`s AI script.
-        protected EnemyStateMachine _enemyStateMachine = null;   // Reference to enemy`s state machine.
+        private EnemyAI _enemyAI = null;                       // Reference to enemy`s AI script.
+        private EnemyStateMachine _enemyStateMachine = null;   // Reference to enemy`s state machine.
 
+        #region Properies
+
+        protected EnemyAI EnemyAi => _enemyAI;
+
+        public EnemyStateMachine StateMachine => _enemyStateMachine;
+        
+        #endregion
+        
 
         protected EnemyBaseState(EnemyAI enemyAI, EnemyStateMachine enemyStateMachine)
         {

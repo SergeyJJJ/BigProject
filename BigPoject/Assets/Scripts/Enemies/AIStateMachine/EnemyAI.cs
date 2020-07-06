@@ -77,7 +77,6 @@ namespace Enemies.AIStateMachine
         private void FixedUpdate()
         {
             _enemyStateMachine.CurrentState.PhysicsUpdate();
-            Debug.Log(_enemyStateMachine.CurrentState);
         }
     }
 }
