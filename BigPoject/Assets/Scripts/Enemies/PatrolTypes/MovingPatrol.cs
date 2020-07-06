@@ -5,12 +5,12 @@ namespace Enemies.PatrolTypes
 {
     public abstract class MovingPatrol : Patrol
     {
-        [SerializeField] protected float _patrolSpeed = 0f;                                          // Enemy patrolling speed.
+        [SerializeField] protected float _patrolSpeed = 0f;                       // Enemy patrolling speed.
         [SerializeField] private List<Transform> _patrolTrajectoryPoints = null;  // Contains path points along which the enemy moves.
         protected Vector2 _currentTargetPoint = Vector2.zero;                     // Current target point.
         private int _currentPointIndex = 0;                                       // Target point index.
-
-
+        private Rigidbody2D _rigidbody2D = null;                                  // Enemy Rigidbody2D component.                   
+        
         protected abstract void Move();
 
 
@@ -59,6 +59,17 @@ namespace Enemies.PatrolTypes
             return Vector2.Distance(transform.position, _currentTargetPoint) < threshold;
         }
 
+        protected bool IsMovingRight()
+        {
+            return transform.position.x < _currentTargetPoint.x;
+        }
+
+
+        protected bool IsMovingLeft()
+        {
+            return transform.position.x > _currentTargetPoint.x;
+        }
+
 
         private void Awake()
         {
@@ -66,6 +77,8 @@ namespace Enemies.PatrolTypes
             {
                 _currentTargetPoint = _patrolTrajectoryPoints[0].position;
             }
+
+            _rigidbody2D = gameObject.GetComponent<Rigidbody2D>();
         }
     }
 }

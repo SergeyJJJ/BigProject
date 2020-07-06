@@ -2,17 +2,14 @@
 using System.Collections.Generic;
 using Enemies.AIStateMachine.States;
 using Enemies.ChaseTypes;
+using Enemies.PatrolTypes;
 using UnityEngine;
 
 namespace Enemies.AIStateMachine
 {
     public class EnemyAI : MonoBehaviour
     {
-        [Header("Patrolling state")]
-        [SerializeField] private bool _isAlwaysStanding = false;                  // Defines if enemy is always standing at one place.
-        [SerializeField] private float _wanderingSpeed = 0f;                      // Enemy`s speed when wandering.
-        [SerializeField] private float _standingDuration = 0f;                    // How long enemy will stay before moving to the next point.
-        [SerializeField] private List<Transform> _wanderTrajectoryPoints = null;  // Contains path points along which the enemy moves.
+        [SerializeField] private Patrol _patrolType = null;
         
         [Space]
         [Header("Chasing state")]
@@ -31,19 +28,12 @@ namespace Enemies.AIStateMachine
         private AttackingState _attackingState = null;
         private ChasingState _chasingState = null;
         private PatrollingState _patrollingState = null;
-
+        private EnemyStateMachine _enemyStateMachine = null;
+        
         #region Properties
 
-        private EnemyStateMachine _enemyStateMachine = null;
-
-        public bool IsAlwaysStanding => _isAlwaysStanding;
-
-        public List<Transform> PatrolTrajectoryPoints => _wanderTrajectoryPoints;
-
-        public float WanderingSpeed => _wanderingSpeed;
-
-        public float StandingDuration => _standingDuration;
-
+        public Patrol EnemyPatrol => _patrolType;
+        
         public Chase ChaseAction => _chaseAction;
 
         public float ChasingSpeed => _chasingSpeed;
@@ -60,7 +50,7 @@ namespace Enemies.AIStateMachine
 
         public ChasingState Chasing => _chasingState;
 
-        public PatrollingState Patrol => _patrollingState;
+        public PatrollingState Patrolling => _patrollingState;
 
         public GameObject Player => _player;
 

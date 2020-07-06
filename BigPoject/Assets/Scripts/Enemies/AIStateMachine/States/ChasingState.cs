@@ -22,7 +22,7 @@ namespace Enemies.AIStateMachine.States
 
             if (!IsPlayerDetected())
             {
-                _enemyStateMachine.TransitionToState(_enemyAI.Patrol);
+                _enemyStateMachine.TransitionToState(_enemyAI.Patrolling);
             }
             else
             {

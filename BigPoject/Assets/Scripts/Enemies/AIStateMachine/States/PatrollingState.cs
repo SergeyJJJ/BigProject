@@ -17,18 +17,14 @@
         public override void PhysicsUpdate()
         {
             base.PhysicsUpdate();
+            
+            _enemyAI.EnemyPatrol.PatrolArea();
         }
 
 
         public override void Exit()
         {
 
-        }
-        
-        
-        protected bool IsPlayerDetected()
-        {
-            return _enemyAI.PlayerCheck.IsPlayerDetected;
         }
     }
 }

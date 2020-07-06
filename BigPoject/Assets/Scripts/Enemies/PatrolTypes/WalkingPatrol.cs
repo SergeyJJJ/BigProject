@@ -6,10 +6,20 @@ namespace Enemies.PatrolTypes
     {
         [SerializeField] private PlatformEndDetector _platformEndDetector = null;   // Components that allow to detect if enemy is near platform edge.
         
-        public override void PatrolArea(Transform enemy)
+        public override void PatrolArea()
         {
             // Move enemy to the target point.
             Move();
+
+            /*
+            if (IsMovingLeft() && _isFacingRight)
+            {
+                Flip();
+            }
+            else if (IsMovingRight() && !_isFacingRight)
+            {
+                Flip();   
+            }*/
 
             // If platform reached the target point.
             if (IsReachedPoint() || IsPlatformEndReached())
@@ -23,7 +33,9 @@ namespace Enemies.PatrolTypes
         protected override void Move()
         {
             float step = _patrolSpeed * Time.deltaTime;
-            Vector2 desiredPosition = Vector2.MoveTowards(transform.position, _currentTargetPoint, step);
+            Vector2 currentPosition = transform.position;
+            Vector2 moveToPositon = new Vector2(_currentTargetPoint.x, currentPosition.y);
+            Vector2 desiredPosition = Vector2.MoveTowards(currentPosition, moveToPositon, step);
 
             // Move platform to the desired position.
             transform.position = desiredPosition;
