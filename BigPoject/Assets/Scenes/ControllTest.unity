@@ -2244,50 +2244,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 559604556, guid: db841216772e4844187962a048cfddbb, type: 3}
-      propertyPath: _damageableByLazer.m_Bits
-      value: 4880
-      objectReference: {fileID: 0}
-    - target: {fileID: 559604560, guid: db841216772e4844187962a048cfddbb, type: 3}
-      propertyPath: _inGameSprite
-      value: 
-      objectReference: {fileID: 6796426268488552591, guid: fde5f93506f20be4b92becaade5a24ee, type: 3}
-    - target: {fileID: 559604561, guid: db841216772e4844187962a048cfddbb, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 6796426268488552591, guid: fde5f93506f20be4b92becaade5a24ee, type: 3}
-    - target: {fileID: 559604561, guid: db841216772e4844187962a048cfddbb, type: 3}
-      propertyPath: m_Size.x
-      value: 1.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 559604561, guid: db841216772e4844187962a048cfddbb, type: 3}
-      propertyPath: m_Size.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 559604561, guid: db841216772e4844187962a048cfddbb, type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 979211922, guid: db841216772e4844187962a048cfddbb, type: 3}
       propertyPath: _fireButton
       value: 
       objectReference: {fileID: 1808298728}
-    - target: {fileID: 979211922, guid: db841216772e4844187962a048cfddbb, type: 3}
-      propertyPath: _currentWeapon
-      value: 
-      objectReference: {fileID: 2111454072}
-    - target: {fileID: 211434828534544742, guid: db841216772e4844187962a048cfddbb, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.049
-      objectReference: {fileID: 0}
-    - target: {fileID: 211434828534544742, guid: db841216772e4844187962a048cfddbb, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.044
-      objectReference: {fileID: 0}
-    - target: {fileID: 1938440850994330488, guid: db841216772e4844187962a048cfddbb, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2824605566533303579, guid: db841216772e4844187962a048cfddbb, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.39
@@ -2330,14 +2290,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2824605566533303579, guid: db841216772e4844187962a048cfddbb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3759837705574259073, guid: db841216772e4844187962a048cfddbb, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5385716406343090940, guid: db841216772e4844187962a048cfddbb, type: 3}
-      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6700315359917075697, guid: db841216772e4844187962a048cfddbb, type: 3}
@@ -5943,17 +5895,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2111454072 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 559604560, guid: db841216772e4844187962a048cfddbb, type: 3}
-  m_PrefabInstance: {fileID: 559604546}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d66b4cdb06737b9479a537b9ec29c2ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2146559797
 GameObject:
   m_ObjectHideFlags: 0
