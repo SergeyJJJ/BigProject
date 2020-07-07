@@ -8,18 +8,24 @@ namespace Enemies.ChaseTypes
     {
         [SerializeField] private PlatformEndDetector _platformEndDetector = null; // Component that detect end of platform.
         
-        public override void ChasePlayer(Transform player, Transform enemy, float chasingSpeed)
+        public override void ChasePlayer(Transform player)
         {
-            if (!_platformEndDetector.IsPlatformEndReached)
+            if (!IsPlatformEndReached())
             {
-                float step = chasingSpeed * Time.deltaTime;
-                Vector2 enemyPosition = enemy.position;
+                float step = ChasingSpeed * Time.deltaTime;
+                Vector2 enemyPosition = transform.position;
                 Vector2 target = new Vector2(player.position.x, enemyPosition.y);
                 Vector2 desiredPosition = Vector2.MoveTowards(enemyPosition, target, step);
 
                 // Move enemy to the desired position.
-                enemy.position = desiredPosition;
+                transform.position = desiredPosition;
             }
+        }
+        
+        
+        private bool IsPlatformEndReached()
+        {
+            return _platformEndDetector.IsPlatformEndReached;
         }
     }
 }

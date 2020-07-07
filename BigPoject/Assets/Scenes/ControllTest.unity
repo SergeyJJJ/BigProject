@@ -6047,22 +6047,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: WalkingEnemy
       objectReference: {fileID: 0}
-    - target: {fileID: 4717895837316080659, guid: 687ad3921ab373341b7f212d512b075c, type: 3}
-      propertyPath: m_Offset.x
-      value: 1.5250378
-      objectReference: {fileID: 0}
-    - target: {fileID: 4717895837316080659, guid: 687ad3921ab373341b7f212d512b075c, type: 3}
-      propertyPath: m_Size.x
-      value: 4.0195465
-      objectReference: {fileID: 0}
-    - target: {fileID: 4717895837316080659, guid: 687ad3921ab373341b7f212d512b075c, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.026351452
-      objectReference: {fileID: 0}
-    - target: {fileID: 4717895837316080659, guid: 687ad3921ab373341b7f212d512b075c, type: 3}
-      propertyPath: m_Size.y
-      value: 2.738244
-      objectReference: {fileID: 0}
     - target: {fileID: 5474759861306163337, guid: 687ad3921ab373341b7f212d512b075c, type: 3}
       propertyPath: _patrolTrajectoryPoints.Array.data[0]
       value: 

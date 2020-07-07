@@ -1,9 +1,8 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Enemies
 {
-    public class PlayerDetector : MonoBehaviour
+    public class ChaseZoneDetector : MonoBehaviour
     {
         private bool _isPlayerDetected = false;
 

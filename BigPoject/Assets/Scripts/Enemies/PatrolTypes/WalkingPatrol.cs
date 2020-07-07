@@ -30,10 +30,7 @@ namespace Enemies.PatrolTypes
                 }
             }
             else
-            { 
-                // Move enemy to the target point.
-                Move();
-            
+            {
                 // If platform reached the target point.
                 if (IsPointReached() || IsPlatformEndReached())
                 {
@@ -45,6 +42,11 @@ namespace Enemies.PatrolTypes
                     
                     // Set how long enemy will stay.
                     StayOnPointTimer = TimeToStayOnPoint;
+                }
+                else
+                {
+                    // Move enemy to the target point.
+                    Move();
                 }
             }
         }

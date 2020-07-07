@@ -20,15 +20,14 @@ namespace Enemies.AIStateMachine.States
         {
             base.PhysicsUpdate();
 
-            /*if (!IsPlayerDetected())
+            if (!IsPlayerInChaseZone())
             {
-                _enemyStateMachine.TransitionToState(_enemyAI.Patrolling);
+                StateMachine.TransitionToState(EnemyAi.Patrolling);
             }
             else
             {
-                _enemyAI.ChaseAction.ChasePlayer(_enemyAI.Player.transform, _enemyAI.TransformComponent,
-                    _enemyAI.ChasingSpeed);
-            }*/
+                EnemyAi.EnemyChase.ChasePlayer(EnemyAi.Player.transform);
+            }
         }
 
 
@@ -38,9 +37,9 @@ namespace Enemies.AIStateMachine.States
         }
         
         
-       /* private bool IsPlayerDetected()
+        private bool IsPlayerInChaseZone()
         {
-            //return _enemyAI.PlayerCheck.IsPlayerDetected;
-        }*/
+            return EnemyAi.ChaseDetector.IsPlayerDetected;
+        }
     }
 }

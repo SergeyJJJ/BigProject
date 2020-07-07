@@ -23,7 +23,7 @@ namespace Enemies.AIStateMachine.States
             EnemyAi.EnemyPatrol.PatrolArea();
 
             
-            if (EnemyAi.PlayerCheck.IsPlayerDetected)
+            if (EnemyAi.ChaseDetector.IsPlayerDetected)
             {
                 if (EnemyAi.IsAlwaysStanding)
                 {
