@@ -4,6 +4,7 @@ namespace Arsenal.Bullets
 {
     public class ActiveBullet : MonoBehaviour
     {
+        [SerializeField] private LayerMask _hittableByBullet = Physics2D.AllLayers;     // Determine what can be damaged by bullet.
         private Bullet _currentBullet = null;
         private Vector2 _launchDirection = Vector2.zero;
         private Vector2 _startFlightPosition = Vector2.zero;
@@ -45,10 +46,10 @@ namespace Arsenal.Bullets
         
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (!other.CompareTag("Ladder") && !other.CompareTag("Player") && !other.CompareTag("Bullet") &&
-                !other.CompareTag("FirePoint"))
+            bool isObjectHittableByBullet = ((1 << other.gameObject.layer) & _hittableByBullet) != 0;
+            
+            if (isObjectHittableByBullet)
             {
-                Debug.Log(other.name);
                 DisableBullet();
             }
         }

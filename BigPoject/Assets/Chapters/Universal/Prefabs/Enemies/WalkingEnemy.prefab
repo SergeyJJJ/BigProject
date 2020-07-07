@@ -214,7 +214,7 @@ GameObject:
   - component: {fileID: 1583767622}
   - component: {fileID: 1793712726968814187}
   - component: {fileID: 5474759861306163337}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: WalkingEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
