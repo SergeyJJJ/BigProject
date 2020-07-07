@@ -29,7 +29,7 @@ Transform:
   m_LocalScale: {x: 0.7256556, y: 0.17696702, z: 1}
   m_Children: []
   m_Father: {fileID: 6479117650325892611}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1254625959712717652
 SpriteRenderer:
@@ -111,7 +111,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6479117650325892611}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &875850247085346709
 MonoBehaviour:
@@ -159,7 +159,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6479117650325892611}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &4717895837316080659
 BoxCollider2D:
@@ -214,6 +214,7 @@ GameObject:
   - component: {fileID: 1583767622}
   - component: {fileID: 1793712726968814187}
   - component: {fileID: 5474759861306163337}
+  - component: {fileID: 465863927924870231}
   m_Layer: 12
   m_Name: WalkingEnemy
   m_TagString: Untagged
@@ -232,6 +233,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1509280841117741759}
   - {fileID: 6354915048256051739}
   - {fileID: 2599400843237472816}
   - {fileID: 560899619620581679}
@@ -351,8 +353,9 @@ MonoBehaviour:
   _isAlwaysStanding: 0
   _patrolType: {fileID: 5474759861306163337}
   _chaseType: {fileID: 1793712726968814187}
+  _attackType: {fileID: 465863927924870231}
   _chaseZoneDetector: {fileID: 8331426253740783731}
-  _platformEndDetector: {fileID: 875850247085346709}
+  _attackZoneDetector: {fileID: 4732364277201927778}
   _player: {fileID: 0}
 --- !u!114 &1793712726968814187
 MonoBehaviour:
@@ -387,3 +390,76 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   _platformEndDetector: {fileID: 875850247085346709}
+--- !u!114 &465863927924870231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4345433882347290740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c26559f303c74554aae608722a87a07b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _attackFrequency: 20
+--- !u!1 &8453590501607311639
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1509280841117741759}
+  - component: {fileID: 4732431724493643119}
+  - component: {fileID: 4732364277201927778}
+  m_Layer: 12
+  m_Name: AttackZoneDetector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1509280841117741759
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8453590501607311639}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.5, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6479117650325892611}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &4732431724493643119
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8453590501607311639}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
+--- !u!114 &4732364277201927778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8453590501607311639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 092c070df2483a3479d6ee1e0bc055d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

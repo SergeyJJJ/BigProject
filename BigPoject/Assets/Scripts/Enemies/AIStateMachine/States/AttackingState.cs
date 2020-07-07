@@ -12,19 +12,42 @@ namespace Enemies.AIStateMachine.States
         
         public override void Enter()
         {
+            base.Enter();
             Debug.Log("Attack state");
         }
 
 
         public override void PhysicsUpdate()
         {
-            
+            base.PhysicsUpdate();
+
+            if (IsPlayerInAttackZone())
+            {
+                EnemyAi.EnemyAttack.AttackPlayer();
+            }
+            else
+            {
+                if (EnemyAi.IsAlwaysStanding)
+                {
+                    StateMachine.TransitionToState(EnemyAi.Patrolling);
+                }
+                else
+                {
+                    StateMachine.TransitionToState(EnemyAi.Chasing);
+                }
+            }
         }
 
 
         public override void Exit()
         {
-
+            base.Exit();
+        }
+        
+        
+        private bool IsPlayerInAttackZone()
+        {
+            return EnemyAi.AttackDetector.IsPlayerInAttackZone;
         }
     }
 }

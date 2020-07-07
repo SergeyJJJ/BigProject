@@ -20,13 +20,18 @@ namespace Enemies.AIStateMachine.States
         {
             base.PhysicsUpdate();
 
-            if (!IsPlayerInChaseZone())
+            if (IsPlayerInAttackZone())
             {
-                StateMachine.TransitionToState(EnemyAi.Patrolling);
+                StateMachine.TransitionToState((EnemyAi.Attacking));
+            }
+            
+            if (IsPlayerInChaseZone())
+            {
+                EnemyAi.EnemyChase.ChasePlayer(EnemyAi.Player.transform);
             }
             else
             {
-                EnemyAi.EnemyChase.ChasePlayer(EnemyAi.Player.transform);
+                StateMachine.TransitionToState(EnemyAi.Patrolling);
             }
         }
 
@@ -39,7 +44,13 @@ namespace Enemies.AIStateMachine.States
         
         private bool IsPlayerInChaseZone()
         {
-            return EnemyAi.ChaseDetector.IsPlayerDetected;
+            return EnemyAi.ChaseDetector.IsPlayerInDangerZone;
+        }
+
+
+        private bool IsPlayerInAttackZone()
+        {
+            return EnemyAi.AttackDetector.IsPlayerInAttackZone;
         }
     }
 }

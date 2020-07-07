@@ -2,13 +2,13 @@
 
 namespace Enemies
 {
-    public class ChaseZoneDetector : MonoBehaviour
+    public class AttackZoneDetector : MonoBehaviour
     {
-        private bool _isPlayerInDangerZone = false;
+        private bool _isPlayerInAttackZone = false;
 
-        #region Properties
+        #region Properies
 
-        public bool IsPlayerInDangerZone=> _isPlayerInDangerZone;
+        public bool IsPlayerInAttackZone=> _isPlayerInAttackZone;
 
         #endregion Properties
 
@@ -16,7 +16,7 @@ namespace Enemies
         {
             if (other.CompareTag("Player"))
             {
-                _isPlayerInDangerZone = true;
+                _isPlayerInAttackZone = true;
             }
         }
 
@@ -25,7 +25,7 @@ namespace Enemies
         {
             if (other.CompareTag("Player"))
             {
-                _isPlayerInDangerZone = false;
+                _isPlayerInAttackZone = false;
             }
         }
     }

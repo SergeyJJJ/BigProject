@@ -23,11 +23,11 @@ namespace Enemies.AIStateMachine.States
             EnemyAi.EnemyPatrol.PatrolArea();
 
             
-            if (EnemyAi.ChaseDetector.IsPlayerDetected)
+            if (EnemyAi.ChaseDetector.IsPlayerInDangerZone)
             {
                 if (EnemyAi.IsAlwaysStanding)
                 {
-                    
+                    StateMachine.TransitionToState(EnemyAi.Attacking);
                 }
                 else
                 {

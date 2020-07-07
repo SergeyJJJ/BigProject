@@ -2244,6 +2244,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 559604556, guid: db841216772e4844187962a048cfddbb, type: 3}
+      propertyPath: _damageableByLazer.m_Bits
+      value: 4880
+      objectReference: {fileID: 0}
     - target: {fileID: 559604560, guid: db841216772e4844187962a048cfddbb, type: 3}
       propertyPath: _inGameSprite
       value: 
@@ -2268,6 +2272,10 @@ PrefabInstance:
       propertyPath: _fireButton
       value: 
       objectReference: {fileID: 1808298728}
+    - target: {fileID: 979211922, guid: db841216772e4844187962a048cfddbb, type: 3}
+      propertyPath: _currentWeapon
+      value: 
+      objectReference: {fileID: 2111454072}
     - target: {fileID: 211434828534544742, guid: db841216772e4844187962a048cfddbb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.049
@@ -2275,6 +2283,10 @@ PrefabInstance:
     - target: {fileID: 211434828534544742, guid: db841216772e4844187962a048cfddbb, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.044
+      objectReference: {fileID: 0}
+    - target: {fileID: 1938440850994330488, guid: db841216772e4844187962a048cfddbb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2824605566533303579, guid: db841216772e4844187962a048cfddbb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2318,6 +2330,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2824605566533303579, guid: db841216772e4844187962a048cfddbb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3759837705574259073, guid: db841216772e4844187962a048cfddbb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5385716406343090940, guid: db841216772e4844187962a048cfddbb, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6700315359917075697, guid: db841216772e4844187962a048cfddbb, type: 3}
@@ -5923,6 +5943,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2111454072 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 559604560, guid: db841216772e4844187962a048cfddbb, type: 3}
+  m_PrefabInstance: {fileID: 559604546}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d66b4cdb06737b9479a537b9ec29c2ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2146559797
 GameObject:
   m_ObjectHideFlags: 0
@@ -6043,9 +6074,17 @@ PrefabInstance:
       propertyPath: _player
       value: 
       objectReference: {fileID: 1331357060}
+    - target: {fileID: 465863927924870231, guid: 687ad3921ab373341b7f212d512b075c, type: 3}
+      propertyPath: _attackFrequency
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 4345433882347290740, guid: 687ad3921ab373341b7f212d512b075c, type: 3}
       propertyPath: m_Name
       value: WalkingEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4732431724493643119, guid: 687ad3921ab373341b7f212d512b075c, type: 3}
+      propertyPath: m_Radius
+      value: 0.62
       objectReference: {fileID: 0}
     - target: {fileID: 5474759861306163337, guid: 687ad3921ab373341b7f212d512b075c, type: 3}
       propertyPath: _patrolTrajectoryPoints.Array.data[0]

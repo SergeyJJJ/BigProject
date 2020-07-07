@@ -1,4 +1,5 @@
 ﻿using Enemies.AIStateMachine.States;
+using Enemies.AttackTypes;
 using Enemies.ChaseTypes;
 using Enemies.PatrolTypes;
 using UnityEngine;
@@ -10,17 +11,21 @@ namespace Enemies.AIStateMachine
         [SerializeField] private bool _isAlwaysStanding = false;                  // Check if enemy is always standing.
         
         [Space]
-        [Header("Patrolling state controll")]
+        [Header("Patrolling state control")]
         [SerializeField] private Patrol _patrolType = null;                       // Type of patrolling that use current enemy.
         
         [Space]
-        [Header("Chasing state controll")]
-        [SerializeField] private Chase _chaseType = null;                       // Type of chasing that use current enemy.
+        [Header("Chasing state control")]
+        [SerializeField] private Chase _chaseType = null;                        // Type of chasing that use current enemy.
+
+        [Space]
+        [Header("Attacking state control")] [SerializeField]
+        private Attack _attackType = null;                                       // Type of attack that use current enemy.
 
         [Space]
         [Header("Help components")]
         [SerializeField] private ChaseZoneDetector _chaseZoneDetector = null;     // Component that detect if player is near the enemy.
-        [SerializeField] private PlatformEndDetector _platformEndDetector = null; // Component that detect end of platform.
+        [SerializeField] private AttackZoneDetector _attackZoneDetector = null;   // Component that detect if player is in attack zone.
         [SerializeField] private GameObject _player = null;                       // Reference to the player.
         
         private Transform _transform = null;                                      // Enemy`s transform component.
@@ -39,9 +44,11 @@ namespace Enemies.AIStateMachine
         
         public Chase EnemyChase => _chaseType;
 
+        public Attack EnemyAttack => _attackType;
+        
         public ChaseZoneDetector ChaseDetector => _chaseZoneDetector;
 
-        public PlatformEndDetector PlaformEndCheck => _platformEndDetector;
+        public AttackZoneDetector AttackDetector => _attackZoneDetector;
 
         public Transform TransformComponent => transform;
         
