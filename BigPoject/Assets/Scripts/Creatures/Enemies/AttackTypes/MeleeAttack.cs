@@ -10,8 +10,7 @@ namespace Enemies.AttackTypes
 
             if (NextAttackTimer < 0)
             {
-                // Attack code
-                Debug.Log("Attack");
+                PlayerHealth.TakeDamage(DamagePerAttack);
                 NextAttackTimer = TimeBetweenAttacks;
             }
         }

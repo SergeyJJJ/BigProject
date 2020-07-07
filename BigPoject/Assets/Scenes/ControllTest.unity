@@ -6074,17 +6074,9 @@ PrefabInstance:
       propertyPath: _player
       value: 
       objectReference: {fileID: 1331357060}
-    - target: {fileID: 465863927924870231, guid: 687ad3921ab373341b7f212d512b075c, type: 3}
-      propertyPath: _attackFrequency
-      value: 40
-      objectReference: {fileID: 0}
     - target: {fileID: 4345433882347290740, guid: 687ad3921ab373341b7f212d512b075c, type: 3}
       propertyPath: m_Name
       value: WalkingEnemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 4732431724493643119, guid: 687ad3921ab373341b7f212d512b075c, type: 3}
-      propertyPath: m_Radius
-      value: 0.62
       objectReference: {fileID: 0}
     - target: {fileID: 5474759861306163337, guid: 687ad3921ab373341b7f212d512b075c, type: 3}
       propertyPath: _patrolTrajectoryPoints.Array.data[0]

@@ -1,12 +1,16 @@
-﻿using UnityEngine;
+﻿using Creatures;
+using UnityEngine;
 
 namespace Enemies.AttackTypes
 {
     public abstract class Attack : MonoBehaviour
     {
-        [SerializeField] private float _attackFrequency = 0;         // How often will the enemy attack;
+        [SerializeField] private float _damagePerAttack = 0;
+        [SerializeField] private float _attackPerMinute = 0;         // How often will the enemy attack;
         private float _nextAttackTimer = 0f;                         // Timer that control when enemy can shoot again.
         private float _timeBetweenAttacks = 0f;                      // Time that must pass between each attack.
+
+        private Health _playerHealth = null;                         // Player health component needed to apply damage to the player.
         
         #region ForDevelopment
 
@@ -16,7 +20,7 @@ namespace Enemies.AttackTypes
         
         #region Properties
 
-        protected float AttackFrequency => _attackFrequency;
+        protected float DamagePerAttack => _damagePerAttack;
 
         protected float NextAttackTimer
         {
@@ -26,6 +30,8 @@ namespace Enemies.AttackTypes
 
         protected float TimeBetweenAttacks => _timeBetweenAttacks;
 
+        protected Health PlayerHealth => _playerHealth;
+
         #endregion Properties
         
         public abstract void AttackPlayer();
@@ -33,7 +39,7 @@ namespace Enemies.AttackTypes
         private float GetTimeBetweenEachAttack()
         {
             float secondsPerMinute = 60;
-            return secondsPerMinute / _attackFrequency;
+            return secondsPerMinute / _attackPerMinute;
         }
         
         
@@ -42,6 +48,7 @@ namespace Enemies.AttackTypes
             _spriteRenderer = GetComponent<SpriteRenderer>();
             _timeBetweenAttacks = GetTimeBetweenEachAttack();
             _nextAttackTimer = _timeBetweenAttacks;
+            _playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<Health>();
         }
     }
 }
