@@ -19,10 +19,12 @@ namespace Enemies.PatrolTypes
         
         public abstract void PatrolArea();
         
+        
         public void SetFacingDirection()
         {
             _isFacingRight = transform.forward == Vector3.forward ? true : false;
         }
+        
         
         protected void Flip()
         {

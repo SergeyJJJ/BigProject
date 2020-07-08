@@ -40,6 +40,7 @@ namespace Enemies.PatrolTypes
         #endregion Properties
 
         protected abstract void Move();
+        
         protected abstract bool IsPointReached();
 
         protected void ChangeTargetPoint()
