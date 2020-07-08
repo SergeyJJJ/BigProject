@@ -1,7 +1,7 @@
 ﻿using GameBahaviour;
 using UnityEngine;
 
-namespace Player
+namespace Creatures.Player
 {
     [RequireComponent(typeof(Animator))]
     [RequireComponent(typeof(SpriteRenderer))]

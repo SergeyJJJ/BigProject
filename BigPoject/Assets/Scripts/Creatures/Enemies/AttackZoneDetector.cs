@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Enemies
+namespace Creatures.Enemies
 {
     public class AttackZoneDetector : MonoBehaviour
     {

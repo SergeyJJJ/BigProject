@@ -1,7 +1,7 @@
 ﻿using GameBahaviour;
 using UnityEngine;
 
-namespace Player.CharacterMovement.MovementStateMachine.States
+namespace Creatures.Player.CharacterMovement.MovementStateMachine.States
 {
     public class LandingState : BaseState
     {

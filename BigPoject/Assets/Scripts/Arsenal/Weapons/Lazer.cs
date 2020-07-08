@@ -1,6 +1,6 @@
 ﻿using System.Collections;
+using Creatures.Player.CharacterMovement.MovementStateMachine;
 using GameBahaviour;
-using Player.CharacterMovement.MovementStateMachine;
 using UnityEngine;
 
 namespace Arsenal.Weapons

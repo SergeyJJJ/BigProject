@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Player.CharacterMovement.MovementStateMachine
+namespace Creatures.Player.CharacterMovement.MovementStateMachine
 {
     public abstract class BaseState
     {

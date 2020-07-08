@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Enemies.AIStateMachine.States
+namespace Creatures.Enemies.AIStateMachine.States
 {
     public class ChasingState : EnemyBaseState
     {
@@ -40,7 +40,7 @@ namespace Enemies.AIStateMachine.States
 
         public override void Exit()
         {
-
+            EnemyAi.EnemyChase.StopChase(EnemyAi.RigidbodyComponent);
         }
         
         

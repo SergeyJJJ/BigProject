@@ -1,4 +1,4 @@
-﻿using Player;
+﻿using Creatures.Player;
 using UnityEngine;
 
 namespace Arsenal.Weapons

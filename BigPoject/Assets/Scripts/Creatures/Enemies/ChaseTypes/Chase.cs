@@ -1,7 +1,6 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace Enemies.ChaseTypes
+namespace Creatures.Enemies.ChaseTypes
 {
     public abstract class Chase : MonoBehaviour
     {
@@ -17,6 +16,13 @@ namespace Enemies.ChaseTypes
         #endregion
         
         public abstract void ChasePlayer(Transform playerTransform, Rigidbody2D enemyRigidbody);
+        
+        
+        public void StopChase(Rigidbody2D enemyRigidbody)
+        {
+            enemyRigidbody.velocity = Vector2.zero;  
+        }
+        
 
         public void SetFacingDirection()
         {

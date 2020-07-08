@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Enemies.PatrolTypes
+namespace Creatures.Enemies.PatrolTypes
 {
     public class WalkingPatrol : MovingPatrol
     {

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace Enemies.PatrolTypes
+namespace Creatures.Enemies.PatrolTypes
 {
     public abstract class MovingPatrol : Patrol
     {
@@ -11,8 +11,7 @@ namespace Enemies.PatrolTypes
         private Vector2 _currentTargetPoint = Vector2.zero;                      // Current target point.
         private int _currentPointIndex = 0;                                      // Target point index.
         private float _stayOnPointTimer = 0f;                                    // Timer that control how long enemy will stand.
-        private bool _isWaitingOnPoint = false;                                  // Check if enemy is now waiting.
-        
+
         #region Properties
         
         protected float PatrolSpeed => _patrolSpeed;
@@ -30,12 +29,7 @@ namespace Enemies.PatrolTypes
             get => _stayOnPointTimer;
             set => _stayOnPointTimer = value;
         }
-
-        protected bool IsWaitingOnPoint
-        {
-            get => _isWaitingOnPoint;
-            set => _isWaitingOnPoint = value;
-        }
+        
 
         #endregion Properties
 

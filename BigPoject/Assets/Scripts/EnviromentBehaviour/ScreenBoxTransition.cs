@@ -1,4 +1,4 @@
-﻿using Player.CharacterMovement.MovementStateMachine;
+﻿using Creatures.Player.CharacterMovement.MovementStateMachine;
 using UnityEngine;
 
 namespace EnviromentBehaviour

@@ -1,6 +1,4 @@
-﻿using UnityEngine;
-
-namespace Enemies.AIStateMachine
+﻿namespace Creatures.Enemies.AIStateMachine
 {
     public abstract class EnemyBaseState
     {

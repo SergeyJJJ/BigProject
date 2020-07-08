@@ -1,7 +1,7 @@
-﻿using Player.CharacterMovement.MovementStateMachine.States;
+﻿using Creatures.Player.CharacterMovement.MovementStateMachine.States;
 using UnityEngine;
 
-namespace Player.CharacterMovement.MovementStateMachine
+namespace Creatures.Player.CharacterMovement.MovementStateMachine
 {
     public class CharacterMovement : MonoBehaviour
     {

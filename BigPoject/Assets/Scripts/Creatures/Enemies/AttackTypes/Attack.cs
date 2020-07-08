@@ -1,7 +1,6 @@
-﻿using Creatures;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace Enemies.AttackTypes
+namespace Creatures.Enemies.AttackTypes
 {
     public abstract class Attack : MonoBehaviour
     {

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Enemies.AIStateMachine.States
+namespace Creatures.Enemies.AIStateMachine.States
 {
     public class AttackingState : EnemyBaseState
     {

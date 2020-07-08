@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Enemies.AIStateMachine.States
+namespace Creatures.Enemies.AIStateMachine.States
 {
     public class PatrollingState : EnemyBaseState
     {
@@ -14,6 +14,7 @@ namespace Enemies.AIStateMachine.States
         {
             base.Enter();
             EnemyAi.EnemyPatrol.SetFacingDirection();
+            EnemyAi.EnemyPatrol.StayOnPoint();
             Debug.Log("Patrol state");
         }
 

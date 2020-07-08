@@ -1,10 +1,10 @@
-﻿using Enemies.AIStateMachine.States;
-using Enemies.AttackTypes;
-using Enemies.ChaseTypes;
-using Enemies.PatrolTypes;
+﻿using Creatures.Enemies.AIStateMachine.States;
+using Creatures.Enemies.AttackTypes;
+using Creatures.Enemies.ChaseTypes;
+using Creatures.Enemies.PatrolTypes;
 using UnityEngine;
 
-namespace Enemies.AIStateMachine
+namespace Creatures.Enemies.AIStateMachine
 {
     public class EnemyAI : MonoBehaviour
     {

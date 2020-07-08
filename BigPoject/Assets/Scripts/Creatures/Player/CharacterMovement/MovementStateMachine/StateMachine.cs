@@ -1,4 +1,4 @@
-﻿namespace Player.CharacterMovement.MovementStateMachine
+﻿namespace Creatures.Player.CharacterMovement.MovementStateMachine
 {
     public class StateMachine
     {

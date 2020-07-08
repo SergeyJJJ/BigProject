@@ -1,6 +1,5 @@
 ﻿using System;
 using GameBahaviour;
-using Player;
 using UnityEngine;
 
 namespace Arsenal.Weapons

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Enemies.AttackTypes
+namespace Creatures.Enemies.AttackTypes
 {
     public class MeleeAttack : Attack
     {

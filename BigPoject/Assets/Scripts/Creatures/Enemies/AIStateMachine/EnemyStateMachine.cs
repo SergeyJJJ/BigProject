@@ -1,4 +1,4 @@
-﻿namespace Enemies.AIStateMachine
+﻿namespace Creatures.Enemies.AIStateMachine
 {
     public class EnemyStateMachine
     {
