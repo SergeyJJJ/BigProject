@@ -2118,6 +2118,10 @@ PrefabInstance:
       propertyPath: _upMoveButton
       value: 
       objectReference: {fileID: 1424362287}
+    - target: {fileID: 8042811545743306057, guid: db841216772e4844187962a048cfddbb, type: 3}
+      propertyPath: _whatIsGround.m_Bits
+      value: 4608
+      objectReference: {fileID: 0}
     - target: {fileID: 8702310545741433508, guid: db841216772e4844187962a048cfddbb, type: 3}
       propertyPath: m_Name
       value: BlueSuit
@@ -5579,9 +5583,21 @@ PrefabInstance:
       propertyPath: _player
       value: 
       objectReference: {fileID: 1331357060}
+    - target: {fileID: 1793712726968814187, guid: 687ad3921ab373341b7f212d512b075c, type: 3}
+      propertyPath: _chasingSpeed
+      value: 150
+      objectReference: {fileID: 0}
     - target: {fileID: 4345433882347290740, guid: 687ad3921ab373341b7f212d512b075c, type: 3}
       propertyPath: m_Name
       value: WalkingEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4717895837316080659, guid: 687ad3921ab373341b7f212d512b075c, type: 3}
+      propertyPath: m_Offset.x
+      value: 2.4857788
+      objectReference: {fileID: 0}
+    - target: {fileID: 4717895837316080659, guid: 687ad3921ab373341b7f212d512b075c, type: 3}
+      propertyPath: m_Size.x
+      value: 14.3386
       objectReference: {fileID: 0}
     - target: {fileID: 5474759861306163337, guid: 687ad3921ab373341b7f212d512b075c, type: 3}
       propertyPath: _patrolTrajectoryPoints.Array.data[0]

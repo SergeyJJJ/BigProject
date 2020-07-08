@@ -29,7 +29,7 @@ namespace Enemies.AIStateMachine.States
             
             if (IsPlayerInChaseZone())
             {
-                EnemyAi.EnemyChase.ChasePlayer(EnemyAi.Player.transform);
+                EnemyAi.EnemyChase.ChasePlayer(EnemyAi.Player.transform, EnemyAi.RigidbodyComponent);
             }
             else
             {

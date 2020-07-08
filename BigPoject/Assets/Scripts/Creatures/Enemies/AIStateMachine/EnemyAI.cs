@@ -27,7 +27,8 @@ namespace Enemies.AIStateMachine
         [SerializeField] private ChaseZoneDetector _chaseZoneDetector = null;     // Component that detect if player is near the enemy.
         [SerializeField] private AttackZoneDetector _attackZoneDetector = null;   // Component that detect if player is in attack zone.
         [SerializeField] private GameObject _player = null;                       // Reference to the player.
-        
+
+        private Rigidbody2D _rigidbody = null;                              // Player`s rigidbody2D component.
         private Transform _transform = null;                                      // Enemy`s transform component.
         
         // States
@@ -50,7 +51,9 @@ namespace Enemies.AIStateMachine
 
         public AttackZoneDetector AttackDetector => _attackZoneDetector;
 
-        public Transform TransformComponent => transform;
+        public Rigidbody2D RigidbodyComponent => _rigidbody;
+
+        public Transform TransformComponent => _transform;
         
         public EnemyStateMachine EnemyStateMachine => _enemyStateMachine;
 
@@ -68,6 +71,8 @@ namespace Enemies.AIStateMachine
         private void Awake()
         {
             _transform = gameObject.transform;
+
+            _rigidbody = gameObject.GetComponent<Rigidbody2D>();
             
             _enemyStateMachine = new EnemyStateMachine();
             _attackingState = new AttackingState(this, _enemyStateMachine);

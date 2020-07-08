@@ -16,7 +16,7 @@ namespace Enemies.ChaseTypes
         
         #endregion
         
-        public abstract void ChasePlayer(Transform player);
+        public abstract void ChasePlayer(Transform playerTransform, Rigidbody2D enemyRigidbody);
 
         public void SetFacingDirection()
         {
