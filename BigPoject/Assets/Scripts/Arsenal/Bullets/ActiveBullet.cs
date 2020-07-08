@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Creatures;
+using UnityEngine;
 
 namespace Arsenal.Bullets
 {
@@ -50,6 +51,8 @@ namespace Arsenal.Bullets
             
             if (isObjectHittableByBullet)
             {
+                Debug.Log(other.name);
+                ApplyDamageTo(other.gameObject);
                 DisableBullet();
             }
         }
@@ -61,5 +64,15 @@ namespace Arsenal.Bullets
         }
         
         
+        private void ApplyDamageTo(GameObject damageable)
+        {
+            bool isComponentExist = false;
+            isComponentExist = damageable.TryGetComponent<Health>(out var health);
+            
+            if (isComponentExist)
+            {
+                health.TakeDamage(_currentBullet.Damage);
+            }
+        }
     }
 }
