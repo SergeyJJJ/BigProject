@@ -5,11 +5,11 @@ namespace Enemies.PatrolTypes
 {
     public abstract class Patrol : MonoBehaviour
     {
-        private static bool _isFacingRight = true;                           // Check if player is facing right.
+        private bool _isFacingRight = true;                           // Check if player is facing right.
 
         #region Properties
         
-        protected static bool IsFacingRight
+        protected bool IsFacingRight
         {
             get => _isFacingRight;
             set => _isFacingRight = value;
@@ -19,6 +19,10 @@ namespace Enemies.PatrolTypes
         
         public abstract void PatrolArea();
         
+        public void SetFacingDirection()
+        {
+            _isFacingRight = transform.forward == Vector3.forward ? true : false;
+        }
         
         protected void Flip()
         {

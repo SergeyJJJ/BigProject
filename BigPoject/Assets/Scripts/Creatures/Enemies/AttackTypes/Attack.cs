@@ -36,6 +36,11 @@ namespace Enemies.AttackTypes
         
         public abstract void AttackPlayer();
 
+        public void SetTimeBeforeAttackEqualZero()
+        {
+            _nextAttackTimer = 0;
+        }
+
         private float GetTimeBetweenEachAttack()
         {
             float secondsPerMinute = 60;
@@ -47,7 +52,6 @@ namespace Enemies.AttackTypes
         {
             _spriteRenderer = GetComponent<SpriteRenderer>();
             _timeBetweenAttacks = GetTimeBetweenEachAttack();
-            _nextAttackTimer = _timeBetweenAttacks;
             _playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<Health>();
         }
     }

@@ -12,6 +12,8 @@ namespace Enemies.AIStateMachine.States
         
         public override void Enter()
         {
+            base.Enter();
+            EnemyAi.EnemyPatrol.SetFacingDirection();
             Debug.Log("Patrol state");
         }
 

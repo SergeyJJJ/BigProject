@@ -20,6 +20,16 @@ namespace Enemies.ChaseTypes
                 // Move enemy to the desired position.
                 transform.position = desiredPosition;
             }
+            
+            // Change facing direction if needed.
+            if (IsPlayerToTheRight(player) && !IsFacingRight)
+            {
+                Flip();
+            }
+            else if (IsPlayerToTheLeft(player) && IsFacingRight)
+            {
+                Flip();
+            }
         }
         
         

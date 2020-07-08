@@ -51,7 +51,6 @@ namespace Arsenal.Bullets
             
             if (isObjectHittableByBullet)
             {
-                Debug.Log(other.name);
                 ApplyDamageTo(other.gameObject);
                 DisableBullet();
             }

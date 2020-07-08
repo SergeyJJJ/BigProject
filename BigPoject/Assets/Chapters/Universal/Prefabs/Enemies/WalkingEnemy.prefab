@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 560899619620581679}
   - component: {fileID: 1254625959712717652}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: '[For development]DirectionArrow'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -177,7 +177,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 817707015
-  m_SortingLayer: 6
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 005780f24dbb23f4dadff69aa217673a, type: 3}
   m_Color: {r: 0.8862745, g: 0.011764685, b: 0.41206017, a: 1}
@@ -207,7 +207,7 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
@@ -235,7 +235,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.8459167, y: 1}
+  m_Size: {x: 1.0727566, y: 1.4229183}
   m_EdgeRadius: 0
 --- !u!114 &3563370507889294170
 MonoBehaviour:
@@ -281,7 +281,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21ae2a59385a2b1479d613930f6e59e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _chasingSpeed: 5
+  _chasingSpeed: 4
   _platformEndDetector: {fileID: 875850247085346709}
 --- !u!114 &5474759861306163337
 MonoBehaviour:
@@ -314,7 +314,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c26559f303c74554aae608722a87a07b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damagePerAttack: 40
+  _damagePerAttack: 30
   _attackPerMinute: 40
 --- !u!1001 &427666616723492073
 PrefabInstance:
@@ -325,7 +325,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1233258868234583638, guid: d91d2d1e6da83e84e87fd47a645e3bce, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.37
+      value: 0.64
       objectReference: {fileID: 0}
     - target: {fileID: 1233258868234583638, guid: d91d2d1e6da83e84e87fd47a645e3bce, type: 3}
       propertyPath: m_LocalPosition.y
@@ -370,6 +370,10 @@ PrefabInstance:
     - target: {fileID: 8124017914269615614, guid: d91d2d1e6da83e84e87fd47a645e3bce, type: 3}
       propertyPath: m_Name
       value: AttackZoneDetector
+      objectReference: {fileID: 0}
+    - target: {fileID: 8124017914269615614, guid: d91d2d1e6da83e84e87fd47a645e3bce, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d91d2d1e6da83e84e87fd47a645e3bce, type: 3}
@@ -479,6 +483,10 @@ PrefabInstance:
     - target: {fileID: 1192232249581172362, guid: 024ef822790d22f4989a6fb5408377b2, type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3697975863594297031, guid: 024ef822790d22f4989a6fb5408377b2, type: 3}
+      propertyPath: m_text
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6232963724064757653, guid: 024ef822790d22f4989a6fb5408377b2, type: 3}
       propertyPath: m_Name
@@ -631,6 +639,14 @@ PrefabInstance:
     - target: {fileID: 2780854535128617703, guid: c173796d796095e4ca3ba65d185323e4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4602661923340872943, guid: c173796d796095e4ca3ba65d185323e4, type: 3}
+      propertyPath: m_Offset.x
+      value: 2.556944
+      objectReference: {fileID: 0}
+    - target: {fileID: 4602661923340872943, guid: c173796d796095e4ca3ba65d185323e4, type: 3}
+      propertyPath: m_Size.x
+      value: 9.783985
       objectReference: {fileID: 0}
     - target: {fileID: 5614098085151796223, guid: c173796d796095e4ca3ba65d185323e4, type: 3}
       propertyPath: m_Name

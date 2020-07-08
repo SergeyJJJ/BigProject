@@ -6,12 +6,14 @@ namespace Enemies.AIStateMachine.States
     {
         public ChasingState(EnemyAI enemyAI, EnemyStateMachine enemyStateMachine) : base(enemyAI, enemyStateMachine)
         {
-
+            
         }
         
         
         public override void Enter()
-        {
+        {    
+            base.Enter();
+            EnemyAi.EnemyChase.SetFacingDirection();
             Debug.Log("Chase state");
         }
 

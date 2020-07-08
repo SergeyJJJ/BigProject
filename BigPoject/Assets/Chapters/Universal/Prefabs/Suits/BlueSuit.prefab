@@ -80,7 +80,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 765987315
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 4723107735738678597, guid: b1b84933e8c823e4aa91e8395973a557, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -294,6 +294,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2824605566533303579}
     m_Modifications:
+    - target: {fileID: 3358275394272234754, guid: 501e8a6b81416644e9d9b1e1c6a13c34, type: 3}
+      propertyPath: _fireRate
+      value: 500
+      objectReference: {fileID: 0}
     - target: {fileID: 3461797548803673895, guid: 501e8a6b81416644e9d9b1e1c6a13c34, type: 3}
       propertyPath: m_Name
       value: Arsenal
