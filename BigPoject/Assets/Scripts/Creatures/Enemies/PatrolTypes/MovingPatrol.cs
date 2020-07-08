@@ -72,7 +72,7 @@ namespace Enemies.PatrolTypes
         }
         
         
-        protected bool IsPointsExist()
+        private bool IsPointsExist()
         {
             return _patrolTrajectoryPoints != null;
         }

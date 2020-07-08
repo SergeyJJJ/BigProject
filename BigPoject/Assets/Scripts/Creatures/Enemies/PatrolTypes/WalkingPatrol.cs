@@ -17,16 +17,6 @@ namespace Enemies.PatrolTypes
                 {    
                     // Set that is time to go further.
                     IsWaitingOnPoint = false;
-
-                    // Change facing direction if needed.
-                    if (IsTargetPointToTheRight() && !IsFacingRight)
-                    {
-                        Flip();
-                    }
-                    else if (IsTargetPointToTheLeft() && IsFacingRight)
-                    {
-                        Flip();
-                    }
                 }
             }
             else
@@ -36,7 +26,7 @@ namespace Enemies.PatrolTypes
                 {
                     // Change current target point.
                     ChangeTargetPoint();
-
+                    
                     // Set that is time for waiting.
                     IsWaitingOnPoint = true;
                     
@@ -47,6 +37,16 @@ namespace Enemies.PatrolTypes
                 {
                     // Move enemy to the target point.
                     Move();
+                    
+                    // Change facing direction if needed.
+                    if (IsTargetPointToTheRight() && !IsFacingRight)
+                    {
+                        Flip();
+                    }
+                    else if (IsTargetPointToTheLeft() && IsFacingRight)
+                    {
+                        Flip();
+                    }
                 }
             }
         }

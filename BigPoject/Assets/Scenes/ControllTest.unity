@@ -5583,6 +5583,10 @@ PrefabInstance:
       propertyPath: _player
       value: 
       objectReference: {fileID: 1331357060}
+    - target: {fileID: 1583767623, guid: 687ad3921ab373341b7f212d512b075c, type: 3}
+      propertyPath: m_Interpolate
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1509280841117741759, guid: 687ad3921ab373341b7f212d512b075c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.64
@@ -5609,7 +5613,7 @@ PrefabInstance:
       objectReference: {fileID: 470603377}
     - target: {fileID: 6479117650325892611, guid: 687ad3921ab373341b7f212d512b075c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -20.05
+      value: -9.31
       objectReference: {fileID: 0}
     - target: {fileID: 6479117650325892611, guid: 687ad3921ab373341b7f212d512b075c, type: 3}
       propertyPath: m_LocalPosition.y
