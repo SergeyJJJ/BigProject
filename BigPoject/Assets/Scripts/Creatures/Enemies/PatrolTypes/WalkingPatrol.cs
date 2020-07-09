@@ -6,8 +6,9 @@ namespace Creatures.Enemies.PatrolTypes
     {
         [SerializeField] private PlatformEndDetector _platformEndDetector = null;   // Components that allow to detect if enemy is near platform edge.
         
-        public override void PatrolArea()
+        public override void PatrolArea(Transform enemyTransform, Rigidbody2D enemyRigidbody)
         {
+            Debug.Log(IsWaitingOnPoint);
             if (IsWaitingOnPoint)
             {
                 StayOnPointTimer -= Time.deltaTime;
@@ -22,7 +23,7 @@ namespace Creatures.Enemies.PatrolTypes
             else
             {
                 // If platform reached the target point.
-                if (IsPointReached() || IsPlatformEndReached())
+                if (IsPointReached(enemyTransform) || IsPlatformEndReached())
                 {
                     // Change current target point.
                     ChangeTargetPoint();
@@ -30,13 +31,15 @@ namespace Creatures.Enemies.PatrolTypes
                     // Set that is time for waiting.
                     IsWaitingOnPoint = true;
                     
+                    StopMove(enemyRigidbody);
+                    
                     // Set how long enemy will stay.
                     StayOnPointTimer = TimeToStayOnPoint;
                 }
                 else
                 {
                     // Move enemy to the target point.
-                    Move();
+                    Move(enemyTransform, enemyRigidbody);
                     
                     // Change facing direction if needed.
                     if (IsTargetPointToTheRight() && !IsFacingRight)
@@ -52,15 +55,13 @@ namespace Creatures.Enemies.PatrolTypes
         }
         
         
-        protected override void Move()
+        protected override void Move(Transform playerTransform, Rigidbody2D enemyRigidbody)
         {
-            float step = PatrolSpeed * Time.deltaTime;
-            Vector2 currentPosition = transform.position;
-            Vector2 moveToPositon = new Vector2(CurrentTargetPoint.x, currentPosition.y);
-            Vector2 desiredPosition = Vector2.MoveTowards(currentPosition, moveToPositon, step);
+            Vector2 currentPosition = playerTransform.position;
+            Vector2 targetPosition = new Vector2(CurrentTargetPoint.x, currentPosition.y);
+            Vector2 targetDirection = (targetPosition - currentPosition).normalized;
 
-            // Move platform to the desired position.
-            transform.position = desiredPosition;
+            enemyRigidbody.velocity = targetDirection * (PatrolSpeed * Time.deltaTime);
         }
         
         
@@ -72,9 +73,17 @@ namespace Creatures.Enemies.PatrolTypes
         
         // Check if target point is reached by comparing x coordinate
         // of the enemy and the target point.
-        protected override bool IsPointReached()
+        protected override bool IsPointReached(Transform playerTransform)
         {
-            return Mathf.Approximately(transform.position.x, CurrentTargetPoint.x);
+            float threshold = 0.1f;
+            
+            // Lead Y-positions of both points to common value.
+            Vector2 playerPositionForComparison = new Vector2(playerTransform.position.x, 0f);
+            Vector2 targetPositionForComparison = new Vector2(CurrentTargetPoint.x, 0f);
+     
+            // If distance between enemy and target point is less than allowable threshold
+            // than return that the enemy has reached the goal.
+            return Vector2.Distance(playerPositionForComparison, targetPositionForComparison) < threshold;
         }
     }
 }

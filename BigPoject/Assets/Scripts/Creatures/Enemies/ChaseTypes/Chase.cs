@@ -18,7 +18,7 @@ namespace Creatures.Enemies.ChaseTypes
         public abstract void ChasePlayer(Transform playerTransform, Rigidbody2D enemyRigidbody);
         
         
-        public void StopChase(Rigidbody2D enemyRigidbody)
+        public void StopMove(Rigidbody2D enemyRigidbody)
         {
             enemyRigidbody.velocity = Vector2.zero;  
         }

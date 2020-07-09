@@ -32,10 +32,18 @@ namespace Creatures.Enemies.PatrolTypes
         
 
         #endregion Properties
-
-        protected abstract void Move();
         
-        protected abstract bool IsPointReached();
+        
+        protected abstract void Move(Transform enemyTransform, Rigidbody2D enemyRigidbody);
+        
+        protected abstract bool IsPointReached(Transform enemyTransform);
+
+        public override void StaySomeTime()
+        { 
+            IsWaitingOnPoint = true; 
+            StayOnPointTimer = TimeToStayOnPoint;
+        }
+        
 
         protected void ChangeTargetPoint()
         {

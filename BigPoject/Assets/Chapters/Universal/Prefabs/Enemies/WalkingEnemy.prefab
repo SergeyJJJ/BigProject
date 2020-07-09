@@ -281,7 +281,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21ae2a59385a2b1479d613930f6e59e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _chasingSpeed: 150
+  _chasingSpeed: 180
   _platformEndDetector: {fileID: 875850247085346709}
 --- !u!114 &5474759861306163337
 MonoBehaviour:
@@ -295,7 +295,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26f821ba69b8e394ea880658d0c3b86e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _patrolSpeed: 2
+  _patrolSpeed: 140
   _timeToStayOnPoint: 2
   _patrolTrajectoryPoints:
   - {fileID: 0}

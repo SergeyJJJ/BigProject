@@ -13,6 +13,7 @@ namespace Creatures.Enemies.AIStateMachine.States
         public override void Enter()
         {    
             base.Enter();
+            
             EnemyAi.EnemyChase.SetFacingDirection();
             Debug.Log("Chase state");
         }
@@ -40,7 +41,9 @@ namespace Creatures.Enemies.AIStateMachine.States
 
         public override void Exit()
         {
-            EnemyAi.EnemyChase.StopChase(EnemyAi.RigidbodyComponent);
+            base.Exit();
+            
+            EnemyAi.EnemyChase.StopMove(EnemyAi.RigidbodyComponent);
         }
         
         

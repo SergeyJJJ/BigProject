@@ -13,12 +13,8 @@ namespace Creatures.Enemies.ChaseTypes
                 Vector2 enemyPosition = transform.position;
                 Vector2 targetPosition = new Vector2(playerTransform.position.x, enemyPosition.y);
                 Vector2 chaseDirection = (targetPosition - enemyPosition).normalized;
-                //Vector2 desiredPosition = Vector2.MoveTowards(enemyPosition, target, step);
                 
                 enemyRigidbody.velocity = chaseDirection * (ChasingSpeed * Time.deltaTime);
-
-                // Move enemy to the desired position.
-                //transform.position = desiredPosition;
             }
             
             // Change facing direction if needed.

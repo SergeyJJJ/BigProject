@@ -23,7 +23,14 @@ namespace Creatures.Enemies.PatrolTypes
 
         #endregion Properties
         
-        public abstract void PatrolArea();
+        public abstract void PatrolArea(Transform enemyTransform, Rigidbody2D enemyRigidbody);
+
+        public abstract void StaySomeTime();
+
+        public void StopMove(Rigidbody2D enemyRigidbody)
+        {
+            enemyRigidbody.velocity = Vector2.zero;
+        }
         
         
         public void SetFacingDirection()
@@ -32,12 +39,6 @@ namespace Creatures.Enemies.PatrolTypes
         }
 
 
-        public void StayOnPoint()
-        {
-            _isWaitingOnPoint = true;
-        }
-        
-        
         protected void Flip()
         {
             _isFacingRight = !_isFacingRight;

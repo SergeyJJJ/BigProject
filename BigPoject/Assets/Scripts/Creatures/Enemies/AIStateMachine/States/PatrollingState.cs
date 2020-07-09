@@ -13,8 +13,9 @@ namespace Creatures.Enemies.AIStateMachine.States
         public override void Enter()
         {
             base.Enter();
+            
             EnemyAi.EnemyPatrol.SetFacingDirection();
-            EnemyAi.EnemyPatrol.StayOnPoint();
+            EnemyAi.EnemyPatrol.StaySomeTime();
             Debug.Log("Patrol state");
         }
 
@@ -23,8 +24,7 @@ namespace Creatures.Enemies.AIStateMachine.States
         {
             base.PhysicsUpdate();
             
-            EnemyAi.EnemyPatrol.PatrolArea();
-
+            EnemyAi.EnemyPatrol.PatrolArea(EnemyAi.TransformComponent, EnemyAi.RigidbodyComponent);
             
             if (EnemyAi.ChaseDetector.IsPlayerInDangerZone)
             {
@@ -42,7 +42,9 @@ namespace Creatures.Enemies.AIStateMachine.States
 
         public override void Exit()
         {
-
+            base.Exit();
+            
+            EnemyAi.EnemyPatrol.StopMove(EnemyAi.RigidbodyComponent);
         }
     }
 }

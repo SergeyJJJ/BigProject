@@ -13,6 +13,7 @@ namespace Creatures.Enemies.AIStateMachine.States
         public override void Enter()
         {
             base.Enter();
+            
             EnemyAi.EnemyAttack.SetTimeBeforeAttackEqualZero();
             Debug.Log("Attack state");
             
