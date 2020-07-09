@@ -48,7 +48,7 @@ namespace Destructables.Enemies.ChaseTypes
         // It`s important to prevent enemy from endless flipping.
         private bool IsEnoughDistance(Transform playerTransform)
         {
-            float threshold = 1.9f;
+            float threshold = 1.8f;
 
             return Vector2.Distance(playerTransform.position, transform.position) > threshold;
         }

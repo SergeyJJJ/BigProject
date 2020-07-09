@@ -26,8 +26,7 @@ namespace Destructables.Enemies.AIStateMachine.States
             {
                 StateMachine.TransitionToState((EnemyAi.Attacking));
             }
-            
-            if (IsPlayerInChaseZone())
+            else if (IsPlayerInChaseZone())
             {
                 EnemyAi.EnemyChase.ChasePlayer(EnemyAi.Player.transform, EnemyAi.RigidbodyComponent);
             }
