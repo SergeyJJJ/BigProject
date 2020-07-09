@@ -1,5 +1,5 @@
 ﻿using System.Collections;
-using Creatures.Player.CharacterMovement.MovementStateMachine;
+using Destructables.Player.CharacterMovement.MovementStateMachine;
 using GameBahaviour;
 using UnityEngine;
 

@@ -25,7 +25,7 @@ TagManager:
   - Weapon
   - Bullets
   - Enemy
-  - 
+  - BulletIgnoreWalkableSurface
   - 
   - 
   - 
@@ -56,6 +56,9 @@ TagManager:
     locked: 0
   - name: Pipes
     uniqueID: 2982145627
+    locked: 0
+  - name: Midleground
+    uniqueID: 3556952703
     locked: 0
   - name: Enemy
     uniqueID: 817707015
