@@ -8,7 +8,6 @@ namespace Creatures.Enemies.PatrolTypes
         
         public override void PatrolArea(Transform enemyTransform, Rigidbody2D enemyRigidbody)
         {
-            Debug.Log(IsWaitingOnPoint);
             if (IsWaitingOnPoint)
             {
                 StayOnPointTimer -= Time.deltaTime;
@@ -18,6 +17,16 @@ namespace Creatures.Enemies.PatrolTypes
                 {    
                     // Set that is time to go further.
                     IsWaitingOnPoint = false;
+                    
+                    // Change facing direction if needed.
+                    if (IsTargetPointToTheRight() && !IsFacingRight)
+                    {
+                        Flip();
+                    }
+                    else if (IsTargetPointToTheLeft() && IsFacingRight)
+                    {
+                        Flip();
+                    }
                 }
             }
             else
@@ -40,16 +49,6 @@ namespace Creatures.Enemies.PatrolTypes
                 {
                     // Move enemy to the target point.
                     Move(enemyTransform, enemyRigidbody);
-                    
-                    // Change facing direction if needed.
-                    if (IsTargetPointToTheRight() && !IsFacingRight)
-                    {
-                        Flip();
-                    }
-                    else if (IsTargetPointToTheLeft() && IsFacingRight)
-                    {
-                        Flip();
-                    }
                 }
             }
         }
