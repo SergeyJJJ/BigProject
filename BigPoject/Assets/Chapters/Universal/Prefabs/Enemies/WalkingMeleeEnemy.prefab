@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 560899619620581679}
   - component: {fileID: 1254625959712717652}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: '[For development]DirectionArrow'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -302,7 +302,6 @@ MonoBehaviour:
   _patrolTrajectoryPoints:
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
   _platformEndDetector: {fileID: 875850247085346709}
   _wallDetector: {fileID: 805503885747296115}
 --- !u!114 &465863927924870231
@@ -317,8 +316,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c26559f303c74554aae608722a87a07b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damagePerAttack: 30
   _attackPerMinute: 40
+  _damagePerAttack: 30
 --- !u!1001 &427666616723492073
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -328,11 +327,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1233258868234583638, guid: d91d2d1e6da83e84e87fd47a645e3bce, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.64
+      value: 0.55
       objectReference: {fileID: 0}
     - target: {fileID: 1233258868234583638, guid: d91d2d1e6da83e84e87fd47a645e3bce, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.06
       objectReference: {fileID: 0}
     - target: {fileID: 1233258868234583638, guid: d91d2d1e6da83e84e87fd47a645e3bce, type: 3}
       propertyPath: m_LocalPosition.z
@@ -369,6 +368,10 @@ PrefabInstance:
     - target: {fileID: 1233258868234583638, guid: d91d2d1e6da83e84e87fd47a645e3bce, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4918943519837737350, guid: d91d2d1e6da83e84e87fd47a645e3bce, type: 3}
+      propertyPath: m_Radius
+      value: 0.63416773
       objectReference: {fileID: 0}
     - target: {fileID: 8124017914269615614, guid: d91d2d1e6da83e84e87fd47a645e3bce, type: 3}
       propertyPath: m_Name
@@ -450,6 +453,10 @@ PrefabInstance:
     - target: {fileID: 3098725590263228861, guid: a93bb29dd1bc54444b49727f8491dce0, type: 3}
       propertyPath: m_Name
       value: WallDetector
+      objectReference: {fileID: 0}
+    - target: {fileID: 3098725590263228861, guid: a93bb29dd1bc54444b49727f8491dce0, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4422153858967893534, guid: a93bb29dd1bc54444b49727f8491dce0, type: 3}
       propertyPath: _whatIsGround.m_Bits
@@ -578,7 +585,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6232963724064757653, guid: 024ef822790d22f4989a6fb5408377b2, type: 3}
       propertyPath: m_Layer
-      value: 12
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1633281129427364315, guid: 024ef822790d22f4989a6fb5408377b2, type: 3}
@@ -734,7 +741,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4602661923340872943, guid: c173796d796095e4ca3ba65d185323e4, type: 3}
       propertyPath: m_Size.x
-      value: 14.3386
+      value: 12.437765
       objectReference: {fileID: 0}
     - target: {fileID: 5614098085151796223, guid: c173796d796095e4ca3ba65d185323e4, type: 3}
       propertyPath: m_Name
