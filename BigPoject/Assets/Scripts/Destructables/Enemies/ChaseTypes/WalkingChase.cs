@@ -7,7 +7,7 @@ namespace Destructables.Enemies.ChaseTypes
         [SerializeField] private PlatformEndDetector _platformEndDetector = null; // Component that detect end of platform.
         [SerializeField] private WallDetector _wallDetector = null;               // Component that detect if wall is in front of player.
         
-        public override void ChasePlayer(Transform playerTransform, Rigidbody2D enemyRigidbody)
+        public override void ChasePlayer(Transform enemyTransform, Transform playerTransform, Rigidbody2D enemyRigidbody)
         {
             if (IsPlatformEndReached() || IsWallInFrontOfEnemy())
             {
@@ -17,7 +17,7 @@ namespace Destructables.Enemies.ChaseTypes
             {
                 if (IsEnoughDistance(playerTransform))
                 {
-                    Vector2 enemyPosition = transform.position;
+                    Vector2 enemyPosition = enemyTransform.position;
                     Vector2 targetPosition = new Vector2(playerTransform.position.x, enemyPosition.y);
                     Vector2 chaseDirection = (targetPosition - enemyPosition).normalized;
 

@@ -13,6 +13,7 @@ namespace Destructables.Enemies.AIStateMachine.States
         public override void Enter()
         {    
             base.Enter();
+            
             EnemyAi.EnemyChase.SetFacingDirection();
             Debug.Log("Chase state");
         }
@@ -28,7 +29,8 @@ namespace Destructables.Enemies.AIStateMachine.States
             }
             else if (IsPlayerInChaseZone())
             {
-                EnemyAi.EnemyChase.ChasePlayer(EnemyAi.Player.transform, EnemyAi.RigidbodyComponent);
+                EnemyAi.EnemyChase.ChasePlayer(EnemyAi.TransformComponent, EnemyAi.Player.transform,  
+                                               EnemyAi.RigidbodyComponent);
             }
             else
             {

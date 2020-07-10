@@ -15,7 +15,7 @@ namespace Destructables.Enemies.ChaseTypes
         
         #endregion
         
-        public abstract void ChasePlayer(Transform playerTransform, Rigidbody2D enemyRigidbody);
+        public abstract void ChasePlayer(Transform enemyTransform, Transform playerTransform, Rigidbody2D enemyRigidbody);
         
         
         public void StopMove(Rigidbody2D enemyRigidbody)
