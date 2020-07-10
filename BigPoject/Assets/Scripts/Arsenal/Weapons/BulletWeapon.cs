@@ -12,8 +12,6 @@ namespace Arsenal.Weapons
     
         #region Properties
 
-        protected Bullet BulletType => _bulletType;
-
         public float FireRate => _fireRate;
 
         protected float NextShootTimer
@@ -41,7 +39,7 @@ namespace Arsenal.Weapons
         protected void InitializeBullet(GameObject bullet, Vector2 launchDirection, Vector2 startLaunchPosition)
         {
             ActiveBullet activeBullet = bullet.GetComponent<ActiveBullet>();
-            activeBullet.Initialize(BulletType, launchDirection, startLaunchPosition);
+            activeBullet.Initialize(_bulletType, launchDirection, startLaunchPosition);
         }
     
     

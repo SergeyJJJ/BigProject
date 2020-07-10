@@ -1,18 +1,59 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using Arsenal.Bullets;
 using UnityEngine;
 
-public class ShootAttack : MonoBehaviour
+namespace Destructables.Enemies.AttackTypes
 {
-    // Start is called before the first frame update
-    void Start()
+    public class ShootAttack : Attack
     {
+        [SerializeField] private Bullet _bulletType = null;         // Contains information about bullet that current weapon will use.
+        [SerializeField] private GameObject _firePoint = null;      // Position in which bullet will appear.
         
-    }
+        public override void AttackPlayer()
+        {
+            if (IsTimeForShootCome())
+            {
+                NextAttackTimer = TimeBetweenAttacks;
 
-    // Update is called once per frame
-    void Update()
-    {
+                GameObject bullet = GetBullet();
+                Vector2 launchDirection = GetLaunchDirection();
+                InitializeBullet(bullet, launchDirection, _firePoint.transform.position);
+                LaunchBullet(bullet);
+            }
+
+            NextAttackTimer -= Time.deltaTime;
+        }
         
+        
+        private GameObject GetBullet()
+        {
+            GameObject bullet = null;
+            bullet = BulletPool.SharedInstance.GetBullet();
+            return bullet;
+        }
+        
+        
+        private void InitializeBullet(GameObject bullet, Vector2 launchDirection, Vector2 startLaunchPosition)
+        {
+            ActiveBullet activeBullet = bullet.GetComponent<ActiveBullet>();
+            activeBullet.Initialize(_bulletType, launchDirection, startLaunchPosition);
+        }
+        
+        
+        protected void LaunchBullet(GameObject bullet)
+        {
+            bullet.SetActive(true);
+        }
+    
+    
+        protected Vector2 GetLaunchDirection()
+        {
+            return transform.right;
+        }
+        
+
+        protected bool IsTimeForShootCome()
+        {
+            return NextAttackTimer <= 0f;
+        }
     }
 }
