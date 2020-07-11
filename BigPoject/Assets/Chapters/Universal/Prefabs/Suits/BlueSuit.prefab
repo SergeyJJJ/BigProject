@@ -459,6 +459,10 @@ PrefabInstance:
       propertyPath: _healthComponent
       value: 
       objectReference: {fileID: 8101327244554082809}
+    - target: {fileID: 3697975863594297031, guid: 024ef822790d22f4989a6fb5408377b2, type: 3}
+      propertyPath: m_text
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 6232963724064757653, guid: 024ef822790d22f4989a6fb5408377b2, type: 3}
       propertyPath: m_Name
       value: '[For development] HealthText'
