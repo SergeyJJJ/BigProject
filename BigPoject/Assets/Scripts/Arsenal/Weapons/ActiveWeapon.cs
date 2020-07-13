@@ -1,4 +1,4 @@
-﻿using Destructables.Player;
+﻿using EntitiesWithHealth.Player;
 using UnityEngine;
 
 namespace Arsenal.Weapons

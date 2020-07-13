@@ -1,4 +1,4 @@
-﻿using Destructables;
+﻿using EntitiesWithHealth;
 using UnityEngine;
 
 namespace Arsenal.Bullets

@@ -1,4 +1,4 @@
-﻿using Destructables.Player.CharacterMovement.MovementStateMachine;
+﻿using EntitiesWithHealth.Player.CharacterMovement.MovementStateMachine;
 using UnityEngine;
 
 namespace EnviromentBehaviour
