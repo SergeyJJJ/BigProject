@@ -6283,6 +6283,10 @@ PrefabInstance:
       propertyPath: _nodeRadius
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1357232743136618252, guid: 25cdf59f7064db54d98df941859d569a, type: 3}
+      propertyPath: _player
+      value: 
+      objectReference: {fileID: 1891532599}
     - target: {fileID: 2755629548281095242, guid: 25cdf59f7064db54d98df941859d569a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
