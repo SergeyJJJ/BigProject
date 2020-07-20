@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2755629548281095242}
   - component: {fileID: 1357232743136618252}
+  - component: {fileID: 4197528158592841090}
   m_Layer: 0
   m_Name: AStar
   m_TagString: Untagged
@@ -43,8 +44,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcea9b24379fc814faf14de8ae7afbb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _whatIsPassable:
+  _whatIsUnpassable:
     serializedVersion: 2
-    m_Bits: 15671
+    m_Bits: 4294967295
   _gridSizeInWorld: {x: 180, y: 20}
   _nodeRadius: 0.5
+  _player: {fileID: 0}
+--- !u!114 &4197528158592841090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5626170537795467793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a29e54254943a7948bcfc44ee1c45002, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
