@@ -4,13 +4,23 @@ namespace Environment
 {
     public class LazerObstacle : MonoBehaviour
     {
+        [SerializeField] private bool _isLazerPersistent = false;                        // Determine if lazer works without stops.
+        [SerializeField] private float _delayBeforeFirstShot = 0f;                       // How much time must pass before first shot.
+        [SerializeField] private float _shootingTime = 0f;                               // How long lazer can shoot per one time.
+        [SerializeField] private float _restingTime = 0f;                                // How long lazer rest after each shoot.
+        [Space]
         [SerializeField] private GameObject _firePoint = null;                           // Point from which lazer is shooting.
         [SerializeField] private GameObject _lazerStart = null;                          // Start lazer gameObject that contains start lazer sprite.
         [SerializeField] private GameObject _lazerMiddle = null;                         // Middle lazer gameObject that contains middle lazer sprit.
         [SerializeField] private GameObject _lazerEnd = null;                            // End lazer gameObject that contains end lazer sprite.
+        [Space]
         [SerializeField] private float _maxLazerLength = 1f;                             // Length of the lazer.
         [SerializeField] private LayerMask _damageableByLazer = Physics2D.AllLayers;     // Determine what can be damaged by lazer.
-        
+
+        private bool _isLazerActive = false;                                             // Check if lazer is active now.
+        private float _shootTimer = 0f;                                                  // Timer that control how long lazer will shot.
+        private float _restTimer = 0f;                                                   // Timer that control how long lazer will rest after each shoot.
+        private float _firstShotDelayTimer = 0;                                          // Timer that control how long lazer will wait before performing shot for the first time.
         private float _currentLazerLength = 1f;                                          // Current length of the lazer.
         private float _startSpriteWidth = 0f;                                            // Start lazer sprite length.
         private SpriteRenderer _startSpriteRenderer = null;                              // SpriteRenderer component of the start lazer sparite.
@@ -30,43 +40,88 @@ namespace Environment
         {
             _startSpriteRenderer = _lazerStart.gameObject.GetComponent<SpriteRenderer>();
             _currentLazerLength = _maxLazerLength;
+            
+            // Initialize timers.
+            _firstShotDelayTimer = _delayBeforeFirstShot;
+            _shootTimer = _shootingTime;
         }
 
 
         private void Update()
         {
-            RaycastHit2D ray = ThrowRaycast();
-            CalculateLazerLength(ray);
-
-            if (IsFarEnoughToObject(_startMinDistance))
+            // If time before first shoot has passed.
+            if (_firstShotDelayTimer <= 0)
             {
-                InitializeStartLazerPart();
-                ActivateLazerPart(_lazerStart);
+                // If rest time has passed, now we can shoot.
+                if (_restTimer <= 0)
+                {
+                    // If shoot time hasn`t passed we still shooting.
+                    if (_shootTimer >= 0)
+                    {
+                        _shootTimer -= Time.deltaTime;
+
+                        _isLazerActive = true;
+                        
+                        RaycastHit2D ray = ThrowRaycast();
+                        CalculateLazerLength(ray);
+
+                        if (IsFarEnoughToObject(_startMinDistance))
+                        {
+                            InitializeStartLazerPart();
+                            ActivateLazerPart(_lazerStart);
+                        }
+                        else
+                        {
+                            DeactivateLazerPart(_lazerStart);
+                        }
+
+                        if (IsFarEnoughToObject(_middleMinDistance))
+                        {
+                            InitializeMiddlePart();
+                            ActivateLazerPart(_lazerMiddle);
+                        }
+                        else
+                        {
+                            DeactivateLazerPart(_lazerMiddle);
+                        }
+
+                        if (IsRayCollideSomething(ray))
+                        {
+                            InitializeEndPart();
+                            ActivateLazerPart(_lazerEnd);
+
+                        }
+                        else
+                        {
+                            DeactivateLazerPart(_lazerEnd);
+                        }
+                    }
+                    // If shoot time has passed reset shoot timer and rest timer.
+                    else
+                    {
+                        _restTimer = _restingTime;       
+                    }
+                }
+                // If lazer still have a rest decrease rest timer.
+                else
+                {
+                    if (_isLazerActive)
+                    {
+                        _isLazerActive = false;
+                        _shootTimer = _shootingTime;
+                        
+                        DeactivateLazerPart(_lazerStart);
+                        DeactivateLazerPart(_lazerMiddle);
+                        DeactivateLazerPart(_lazerEnd);
+                    }
+                    
+                    _restTimer -= Time.deltaTime;
+                }
             }
+            // If lazer didn`t perform it`s first shoot decrease delay timer.
             else
             {
-                DeactivateLazerPart(_lazerStart);
-            }
-
-            if (IsFarEnoughToObject(_middleMinDistance))
-            {
-                InitializeMiddlePart();
-                ActivateLazerPart(_lazerMiddle);
-            }
-            else
-            {
-                DeactivateLazerPart(_lazerMiddle);
-            }
-
-            if (IsRayCollideSomething(ray))
-            {
-                InitializeEndPart();
-                ActivateLazerPart(_lazerEnd);
-
-            }
-            else
-            {
-                DeactivateLazerPart(_lazerEnd);
+                _firstShotDelayTimer -= Time.deltaTime;
             }
         }
 
