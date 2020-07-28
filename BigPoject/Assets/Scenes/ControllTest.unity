@@ -310,6 +310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c508acf65d965b48b9fad11b4091ab0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _damage: 0.1
   _isLazerPersistent: 0
   _delayBeforeFirstShot: 2
   _shootingTime: 2
@@ -319,9 +320,12 @@ MonoBehaviour:
   _lazerMiddle: {fileID: 837011944}
   _lazerEnd: {fileID: 988595468}
   _maxLazerLength: 35
-  _damageableByLazer:
+  _interactabelWithLazer:
     serializedVersion: 2
     m_Bits: 4864
+  _hittableByLazer:
+    serializedVersion: 2
+    m_Bits: 4352
 --- !u!1 &60526569
 GameObject:
   m_ObjectHideFlags: 0
@@ -649,6 +653,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &165126870 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 559604560, guid: db841216772e4844187962a048cfddbb, type: 3}
+  m_PrefabInstance: {fileID: 559604546}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d66b4cdb06737b9479a537b9ec29c2ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &166380491
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2215,10 +2230,10 @@ PrefabInstance:
     - target: {fileID: 979211922, guid: db841216772e4844187962a048cfddbb, type: 3}
       propertyPath: _currentWeapon
       value: 
-      objectReference: {fileID: 2017507574}
+      objectReference: {fileID: 165126870}
     - target: {fileID: 1938440850994330488, guid: db841216772e4844187962a048cfddbb, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2824605566533303579, guid: db841216772e4844187962a048cfddbb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2266,7 +2281,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3759837705574259073, guid: db841216772e4844187962a048cfddbb, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6700315359917075697, guid: db841216772e4844187962a048cfddbb, type: 3}
       propertyPath: _leftMoveButton
@@ -6570,17 +6585,6 @@ Transform:
   m_Father: {fileID: 1631107782}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2017507574 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 559604556, guid: db841216772e4844187962a048cfddbb, type: 3}
-  m_PrefabInstance: {fileID: 559604546}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 803f75c70ca542648b0fd4a0d428e762, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2031540315
 GameObject:
   m_ObjectHideFlags: 0

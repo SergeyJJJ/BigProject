@@ -1,9 +1,12 @@
-﻿using UnityEngine;
+﻿using EntitiesWithHealth;
+using UnityEngine;
 
 namespace Environment
 {
     public class LazerObstacle : MonoBehaviour
     {
+        [SerializeField] private float _damage = 0f;                                     // How many damage lazer will apply.
+        [Space]
         [SerializeField] private bool _isLazerPersistent = false;                        // Determine if lazer works without stops.
         [SerializeField] private float _delayBeforeFirstShot = 0f;                       // How much time must pass before first shot.
         [SerializeField] private float _shootingTime = 0f;                               // How long lazer can shoot per one time.
@@ -15,8 +18,9 @@ namespace Environment
         [SerializeField] private GameObject _lazerEnd = null;                            // End lazer gameObject that contains end lazer sprite.
         [Space]
         [SerializeField] private float _maxLazerLength = 1f;                             // Length of the lazer.
-        [SerializeField] private LayerMask _damageableByLazer = Physics2D.AllLayers;     // Determine what can be damaged by lazer.
-
+        [SerializeField] private LayerMask _interactabelWithLazer = Physics2D.AllLayers; // Determine what can be damaged by lazer.
+        [SerializeField] private LayerMask _hittableByLazer = Physics2D.AllLayers;       // Determine what can be damaged by bullet.
+        
         private bool _isLazerActive = false;                                             // Check if lazer is active now.
         private float _shootTimer = 0f;                                                  // Timer that control how long lazer will shot.
         private float _restTimer = 0f;                                                   // Timer that control how long lazer will rest after each shoot.
@@ -58,7 +62,10 @@ namespace Environment
                     // If shoot time hasn`t passed we still shooting.
                     if (_shootTimer >= 0)
                     {
-                        _shootTimer -= Time.deltaTime;
+                        if (!_isLazerPersistent)
+                        {
+                            _shootTimer -= Time.deltaTime;
+                        }
 
                         _isLazerActive = true;
                         
@@ -87,9 +94,12 @@ namespace Environment
 
                         if (IsRayCollideSomething(ray))
                         {
+                            if (IsRayCanApplyDamageTo(ray.collider.gameObject))
+                            {
+                                ApplyDamageTo(ray.collider.gameObject);
+                            }
                             InitializeEndPart();
                             ActivateLazerPart(_lazerEnd);
-
                         }
                         else
                         {
@@ -164,7 +174,7 @@ namespace Environment
 
         private RaycastHit2D ThrowRaycast()
         {
-            return Physics2D.Raycast(_firePoint.transform.position, transform.right, _maxLazerLength, _damageableByLazer);
+            return Physics2D.Raycast(_firePoint.transform.position, transform.right, _maxLazerLength, _interactabelWithLazer);
         }
 
 
@@ -180,6 +190,18 @@ namespace Environment
             }
         }
         
+        
+        private void ApplyDamageTo(GameObject collidedObject)
+        {
+            bool isComponentExist = false;
+            isComponentExist = collidedObject.TryGetComponent<Health>(out var health);
+            
+            if (isComponentExist)
+            {
+                health.TakeDamage(_damage);
+            }
+        }
+        
 
         private bool IsRayCollideSomething(RaycastHit2D ray)
         {
@@ -190,6 +212,12 @@ namespace Environment
         private bool IsFarEnoughToObject(float distance)
         {
             return _currentLazerLength >= distance;
+        }
+
+
+        private bool IsRayCanApplyDamageTo(GameObject collidedObject)
+        {
+            return ((1 << collidedObject.gameObject.layer) & _hittableByLazer) != 0;
         }
     }
 }
