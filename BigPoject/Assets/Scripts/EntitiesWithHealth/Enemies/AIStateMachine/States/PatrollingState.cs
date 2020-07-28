@@ -2,6 +2,8 @@
 
 namespace EntitiesWithHealth.Enemies.AIStateMachine.States
 {
+    // Class that processes enemy`s patrolling behaviour.
+    // Inherits from EnemyBaseState.
     public class PatrollingState : EnemyBaseState
     {
         public PatrollingState(EnemyAI enemyAI, EnemyStateMachine enemyStateMachine) : base(enemyAI, enemyStateMachine)

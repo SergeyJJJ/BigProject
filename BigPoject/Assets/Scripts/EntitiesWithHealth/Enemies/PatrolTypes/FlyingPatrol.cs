@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Cinemachine.Utility;
-using EntitiesWithHealth.Enemies.PatrolTypes;
+﻿using EntitiesWithHealth.Enemies.PatrolTypes;
 using UnityEngine;
 
 public class FlyingPatrol : MovingPatrol
@@ -53,6 +50,7 @@ public class FlyingPatrol : MovingPatrol
         }
     }
 
+    
     protected override void Move(Transform enemyTransform, Rigidbody2D enemyRigidbody)
     {
         Vector2 currentPosition = enemyTransform.position;
@@ -61,8 +59,13 @@ public class FlyingPatrol : MovingPatrol
         enemyRigidbody.velocity = targetDirection * (PatrolSpeed * Time.deltaTime);
     }
 
+
     protected override bool IsPointReached(Transform enemyTransform)
     {
-        throw new System.NotImplementedException();
+        float threshold = 0.1f;
+
+        // If distance between enemy and target point is less than allowable threshold
+        // than return that the enemy has reached the goal.
+        return Vector2.Distance(enemyTransform.position, CurrentTargetPoint) < threshold;
     }
 }

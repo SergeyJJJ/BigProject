@@ -29,7 +29,6 @@ namespace EntitiesWithHealth.Enemies.PatrolTypes
             get => _stayOnPointTimer;
             set => _stayOnPointTimer = value;
         }
-        
 
         #endregion Properties
         

@@ -79,17 +79,17 @@ namespace EntitiesWithHealth.Enemies.PatrolTypes
         
         // Check if target point is reached by comparing x coordinate
         // of the enemy and the target point.
-        protected override bool IsPointReached(Transform playerTransform)
+        protected override bool IsPointReached(Transform enemyTransform)
         {
             float threshold = 0.1f;
             
             // Lead Y-positions of both points to common value.
-            Vector2 playerPositionForComparison = new Vector2(playerTransform.position.x, 0f);
+            Vector2 enemyPositionForComparison = new Vector2(enemyTransform.position.x, 0f);
             Vector2 targetPositionForComparison = new Vector2(CurrentTargetPoint.x, 0f);
      
             // If distance between enemy and target point is less than allowable threshold
             // than return that the enemy has reached the goal.
-            return Vector2.Distance(playerPositionForComparison, targetPositionForComparison) < threshold;
+            return Vector2.Distance(enemyPositionForComparison, targetPositionForComparison) < threshold;
         }
     }
 }

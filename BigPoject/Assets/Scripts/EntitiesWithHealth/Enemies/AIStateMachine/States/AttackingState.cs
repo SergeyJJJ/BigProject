@@ -2,6 +2,8 @@
 
 namespace EntitiesWithHealth.Enemies.AIStateMachine.States
 {
+    // Class that processes enemy`s attack behaviour.
+    // Inherits from EnemyBaseState
     public class AttackingState : EnemyBaseState
     {
         public AttackingState(EnemyAI enemyAI, EnemyStateMachine enemyStateMachine) : base(enemyAI, enemyStateMachine)

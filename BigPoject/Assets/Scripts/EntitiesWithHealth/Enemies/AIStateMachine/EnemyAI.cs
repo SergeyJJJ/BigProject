@@ -6,6 +6,7 @@ using UnityEngine;
 
 namespace EntitiesWithHealth.Enemies.AIStateMachine
 {
+    // Class that processes together all enemy`s behaviours.
     public class EnemyAI : MonoBehaviour
     {
         [SerializeField] private bool _isAlwaysStanding = false;                  // Check if enemy is always standing.
