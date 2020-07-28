@@ -2,6 +2,7 @@
 
 namespace EntitiesWithHealth.Enemies.AttackTypes
 {
+    // Base class for enemy`s attack behaviour.
     public abstract class Attack : MonoBehaviour
     {
         [SerializeField] private float _attackPerMinute = 0;         // How often will the enemy attack;

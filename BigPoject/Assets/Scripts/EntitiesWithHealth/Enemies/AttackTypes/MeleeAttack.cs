@@ -2,6 +2,7 @@
 
 namespace EntitiesWithHealth.Enemies.AttackTypes
 {
+    // Class that provides functionality to perform melee attack.
     public class MeleeAttack : Attack
     {
         [SerializeField] private float _damagePerAttack = 0;

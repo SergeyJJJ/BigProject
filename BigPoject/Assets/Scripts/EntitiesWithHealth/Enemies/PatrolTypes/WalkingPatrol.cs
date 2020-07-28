@@ -2,6 +2,7 @@
 
 namespace EntitiesWithHealth.Enemies.PatrolTypes
 {
+    // Class that provides functionality to perform walking patrol.
     public class WalkingPatrol : MovingPatrol
     {
         [SerializeField] private PlatformEndDetector _platformEndDetector = null;   // Components that allow to detect if enemy is near platform edge.

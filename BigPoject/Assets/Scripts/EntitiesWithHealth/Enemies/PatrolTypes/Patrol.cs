@@ -2,6 +2,7 @@
 
 namespace EntitiesWithHealth.Enemies.PatrolTypes
 {
+    // Base class for all patrol types.
     public abstract class Patrol : MonoBehaviour
     {
         private bool _isFacingRight = true;                           // Check if player is facing right.

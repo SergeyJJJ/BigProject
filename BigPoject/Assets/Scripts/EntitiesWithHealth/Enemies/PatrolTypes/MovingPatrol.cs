@@ -3,6 +3,7 @@ using UnityEngine;
 
 namespace EntitiesWithHealth.Enemies.PatrolTypes
 {
+    // Base class for patrol types that moves when perform patrolling.
     public abstract class MovingPatrol : Patrol
     {
         [SerializeField] private float _patrolSpeed = 0f;                        // Enemy patrolling speed.

@@ -3,6 +3,7 @@ using UnityEngine;
 
 namespace EntitiesWithHealth.Enemies.AttackTypes
 {
+    // Class that provides functionality to perform shooting attack.
     public class ShootAttack : Attack
     {
         [SerializeField] private Bullet _bulletType = null;         // Contains information about bullet that current weapon will use.

@@ -41,7 +41,7 @@ namespace Arsenal.Weapons
 
         protected override void CallStopShotEvent()
         {
-            EventSystem.TriggerEvent("OnStopLazerShop");
+            EventSystem.TriggerEvent("OnStopLazerShot");
         }
 
 
@@ -194,7 +194,7 @@ namespace Arsenal.Weapons
         // Move character to the opposite side from lazer beam direction.
         private void MoveCharacterWhenShooting()
         {
-            float movementForce = 16;
+            float movementForce = 19;
             _characterMovement.AddForceInDirection(-transform.right * movementForce);
         }
 

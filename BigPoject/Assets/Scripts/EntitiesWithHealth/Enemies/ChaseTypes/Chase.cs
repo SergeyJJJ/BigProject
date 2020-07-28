@@ -2,6 +2,7 @@
 
 namespace EntitiesWithHealth.Enemies.ChaseTypes
 {
+    // Base class for enemy`s chasing behaviour.
     public abstract class Chase : MonoBehaviour
     {
         [SerializeField] private float _chasingSpeed = 0f;                  // Chasing speed.

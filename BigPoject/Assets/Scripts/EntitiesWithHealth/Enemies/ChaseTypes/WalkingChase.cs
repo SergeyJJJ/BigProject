@@ -2,6 +2,7 @@
 
 namespace EntitiesWithHealth.Enemies.ChaseTypes
 {
+    // Class that provides functionality to perform walking chase.
     public class WalkingChase : Chase
     {
         [SerializeField] private PlatformEndDetector _platformEndDetector = null; // Component that detect end of platform.

@@ -4,6 +4,7 @@ using Pathfinding;
 
 namespace EntitiesWithHealth.Enemies.ChaseTypes
 {
+    // Class that provides functionality to perform flying chase.
     public class FlyingChase : Chase
     {
         [SerializeField] private float _nextWaypointDistance = 0f;  // Distance between enemy and waypoint to be reached to go to the next waypoint.
