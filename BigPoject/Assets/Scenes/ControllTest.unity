@@ -326,6 +326,7 @@ MonoBehaviour:
   _hittableByLazer:
     serializedVersion: 2
     m_Bits: 4352
+  _middleLazerScaleFixer: 0
 --- !u!1 &60526569
 GameObject:
   m_ObjectHideFlags: 0

@@ -20,6 +20,8 @@ namespace Environment
         [SerializeField] private float _maxLazerLength = 1f;                             // Length of the lazer.
         [SerializeField] private LayerMask _interactabelWithLazer = Physics2D.AllLayers; // Determine what can be damaged by lazer.
         [SerializeField] private LayerMask _hittableByLazer = Physics2D.AllLayers;       // Determine what can be damaged by bullet.
+        [Space]
+        [SerializeField] private float _middleLazerScaleFixer = 0f;                      // Used to provide seamless connection between middle lazer and start lazer parts.            
         
         private bool _isLazerActive = false;                                             // Check if lazer is active now.
         private float _shootTimer = 0f;                                                  // Timer that control how long lazer will shot.
@@ -146,7 +148,7 @@ namespace Environment
         private void InitializeMiddlePart()
         {
             Vector3 midleLocalScale = _lazerMiddle.transform.localScale;
-            _lazerMiddle.transform.localScale = new Vector3((_currentLazerLength - _startSpriteWidth),
+            _lazerMiddle.transform.localScale = new Vector3((_currentLazerLength - _startSpriteWidth) + _middleLazerScaleFixer,
                 midleLocalScale.y,
                 midleLocalScale.z);
             _lazerMiddle.transform.localPosition = new Vector2((_currentLazerLength/2), 0f);
