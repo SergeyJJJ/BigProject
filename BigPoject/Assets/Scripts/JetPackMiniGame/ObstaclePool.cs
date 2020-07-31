@@ -40,15 +40,10 @@ namespace JetPackMiniGame
         private void Awake()
         {
             _sharedInstance = this;
-        }
-
-
-        private void Start()
-        {
             CreateObstaclePool();
         }
-
-
+        
+        
         private void CreateObstaclePool()
         {
             // Instantiate obstacles as child objects of the

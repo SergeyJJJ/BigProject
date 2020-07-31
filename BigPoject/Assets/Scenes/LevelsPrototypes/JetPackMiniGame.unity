@@ -333,6 +333,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f4c4f38eb9f28c44bc17c2be1dfa4e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _workingTime: 30
+  _timeBetweenEachObstacle: 4
+  _spawnConstraints:
+    leftBoundary: 0
+    rightBoundary: 0
+    upBoundary: 0
+    downBoundary: 0
 --- !u!4 &1375105336
 Transform:
   m_ObjectHideFlags: 0
@@ -341,7 +348,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1375105334}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.12910081, y: 1.12318, z: -19.280334}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -694,6 +701,10 @@ PrefabInstance:
     - target: {fileID: 5704681186586975891, guid: ce096d2efdb5ab947a7680bcdc2722b5, type: 3}
       propertyPath: m_Name
       value: ObstaclePool
+      objectReference: {fileID: 0}
+    - target: {fileID: 5704681186879703947, guid: ce096d2efdb5ab947a7680bcdc2722b5, type: 3}
+      propertyPath: _poolAmount
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce096d2efdb5ab947a7680bcdc2722b5, type: 3}

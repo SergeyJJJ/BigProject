@@ -1,6 +1,6 @@
 ﻿using System;
 using UnityEngine;
-using Random = UnityEngine.Random;
+using Random = System.Random;
 
 namespace JetPackMiniGame
 {
@@ -10,15 +10,20 @@ namespace JetPackMiniGame
         [SerializeField] private float _timeBetweenEachObstacle = 0f;    // Time that must pass before a new obstacle will be spawned.
         private float _newObstacleSpawnTimer = 0f;                       // Timer that controls time between obstacles spawn.
         
-        [Serializable] private struct SpawnBoundaries                    // Struct that contains obstacle spawn boundaries.
+        [Serializable] private class SpawnBoundaries                    // Struct that contains obstacle spawn boundaries.
         {
-            public float leftBoundary;
-            public float rightBoundary;
-            public float upBoundary;
-            public float downBoundary;
+            public int leftBoundary = 0;
+            public int rightBoundary = 0;
+            public int downBoundary = 0;
+            public int upBoundary = 0;
         }
-        [SerializeField] private SpawnBoundaries SpawnConstraints;
-        
+        [SerializeField] private SpawnBoundaries _spawnConstraints = null;
+
+        public void SpawnObstacles(float workingTime)
+        {
+            _workingTime = workingTime;
+        }
+
 
         private void Start()
         {
@@ -26,21 +31,22 @@ namespace JetPackMiniGame
         }
 
 
-        public void SpawnObstacles(float workingTime)
+        private void Update()
         {
             // While working time for spawning obstacle did not run out.
-            while (0 < workingTime)
+            if (0 < _workingTime)
             {
-                // Decrease working time.
-                workingTime -= Time.deltaTime;
+                _workingTime -= Time.deltaTime;
+                _newObstacleSpawnTimer -= Time.deltaTime;
 
-                // After certain amount of time
+                // After certain amount of time, spawn obstacle.
                 if (_newObstacleSpawnTimer <= 0)
                 {
-                    // Get obstacle from pool.
-                    GameObject obstacle;
-                    obstacle = ObstaclePool.SharedInstance.GetPooledObstacle();
-                    
+                    _newObstacleSpawnTimer = _timeBetweenEachObstacle;
+
+                    GameObject obstacle = ObstaclePool.SharedInstance.GetPooledObstacle();
+                    AdjacentObstaclesCheck adjacentObstaclesCheck = obstacle.GetComponent<AdjacentObstaclesCheck>();
+
                     // If obstacle was received from the pool.
                     if (obstacle != null)
                     {
@@ -66,17 +72,20 @@ namespace JetPackMiniGame
                             // DEVELOPMENT PROCESS!!!
                             break;
 
-                        } while (positionFindingAttemptsCounter <= positionSearchAttemptsLimit);
+                        } while ((adjacentObstaclesCheck.IsIntersectAnotherObstacle == true) &&
+                                 (positionFindingAttemptsCounter <= positionSearchAttemptsLimit));
                     }
                 }
             }
         }
-        
-        
+
+
         private Vector3 GetRandomSpawnPosition()
         {
-            float xRandomSpawnPosition = Random.Range(SpawnConstraints.leftBoundary, SpawnConstraints.rightBoundary);
-            float yRandomSpawnPosition = Random.Range(SpawnConstraints.downBoundary, SpawnConstraints.upBoundary);
+            Random random = new Random();
+            
+            float xRandomSpawnPosition = random.Next(_spawnConstraints.leftBoundary, _spawnConstraints.rightBoundary + 1);
+            float yRandomSpawnPosition = random.Next(_spawnConstraints.downBoundary, _spawnConstraints.upBoundary + 1);
     
             return new Vector2(xRandomSpawnPosition, yRandomSpawnPosition);
         }
