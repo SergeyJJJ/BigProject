@@ -14,40 +14,11 @@ namespace JetPackMiniGame
 
         #region Properties
 
-        public ObstaclePool SharedInstance => _sharedInstance;
+        public static ObstaclePool SharedInstance => _sharedInstance;
 
         #endregion Properties
 
-        private void Awake()
-        {
-            _sharedInstance = this;
-        }
-
-        
-        private void Start()
-        {
-            CreateObstaclePool();
-        }
-
-        
-        private void CreateObstaclePool()
-        {
-            // Instantiate obstacles as child objects of the
-            // corresponding obstacles pool gameObject,
-            // deactivate it and add to the obstacles pool list.
-            
-            for (int obstacleIndex = 0; obstacleIndex < _poolAmount; obstacleIndex++)
-            {
-                GameObject newObstacle;
-                newObstacle = Instantiate(_obstacle, Vector3.zero, Quaternion.identity);
-                newObstacle.SetActive(false);
-                newObstacle.transform.SetParent(_sharedInstance.transform);
-                _obstaclePool.Add(newObstacle);
-            }
-        }
-
-        
-        private GameObject GetPooledObstacle()
+        public GameObject GetPooledObstacle()
         {
             // Go through the pool and find nonactive obstacle.
             // Return obstacle if found, else return null.
@@ -63,6 +34,35 @@ namespace JetPackMiniGame
             }
             
             return receivedObstacle;
+        }
+    
+        
+        private void Awake()
+        {
+            _sharedInstance = this;
+        }
+
+
+        private void Start()
+        {
+            CreateObstaclePool();
+        }
+
+
+        private void CreateObstaclePool()
+        {
+            // Instantiate obstacles as child objects of the
+            // corresponding obstacles pool gameObject,
+            // deactivate it and add to the obstacles pool list.
+            
+            for (int obstacleIndex = 0; obstacleIndex < _poolAmount; obstacleIndex++)
+            {
+                GameObject newObstacle;
+                newObstacle = Instantiate(_obstacle, Vector3.zero, Quaternion.identity);
+                newObstacle.SetActive(false);
+                newObstacle.transform.SetParent(_sharedInstance.transform);
+                _obstaclePool.Add(newObstacle);
+            }
         }
     }
 }
