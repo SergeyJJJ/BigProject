@@ -4,65 +4,67 @@ using Random = System.Random;
 
 namespace JetPackMiniGame
 {
-    public class RandomPositionObstacleSpawn : MonoBehaviour
+    public class RandomPositionObstacleSpawn
     {
-        [Serializable] private class HorizontalSpawnBoundaries                                // Struct that contains obstacle spawn boundaries on X-Axis.
+        private class HorizontalSpawnBoundaries                              // Struct that contains obstacle spawn boundaries on X-Axis.
         {
-            public int leftBoundary = 0;
-            public int rightBoundary = 0;
+            public int leftBoundary = -10;
+            public int rightBoundary = 10;
         }
         
-        [SerializeField] private float _workingTime = 0f;                                     // Determine how long obstacles will be spawned.
-        [SerializeField] private float _timeBetweenEachObstacle = 0f;                         // Time that must pass before a new obstacle will be spawned.
-        private float _newObstacleSpawnTimer = 0f;                                            // Timer that controls time between obstacles spawn.
+        private HorizontalSpawnBoundaries _horizontalSpawnBoundaries = new HorizontalSpawnBoundaries(); // Instance horizontal spawn boundaries data type, used to get access to individual fields.
+        private int _verticalSpawnPosition = 25;                             // Position on Y-Axis where obstacles will be spawned.
+
+        private float _timeBetweenEachObstacle = 0f;                         // Time that must pass before a new obstacle will be spawned.
+        private float _newObstacleSpawnTimer = 0f;                           // Timer that controls time between obstacles spawn.
+
+        private ObstaclePool _obstaclePool = null;                           // Pool with obstacles to spawn.
         
-        [Space]
-        [SerializeField] private int _verticalSpawnPosition = 0;                              // Position on Y-Axis where obstacles will be spawned.
-        [SerializeField] private HorizontalSpawnBoundaries _horizontalSpawnBoundaries = null; // Instance horizontal spawn boundaries data type, used to get access to individual fields.
+        
+        #region Properties
 
-        public void SpawnObstacles(float workingTime)
+        public float TimeBetweenEachObstacle
         {
-            _workingTime = workingTime;
+            get => _timeBetweenEachObstacle;
+            set => _timeBetweenEachObstacle = value;
         }
 
-
-        private void Start()
+        #endregion Properties
+        
+        
+        public RandomPositionObstacleSpawn(float timeBetweenEachObstacle, ObstaclePool obstaclePool)
         {
-            SpawnObstacles(_workingTime);
+            _timeBetweenEachObstacle = timeBetweenEachObstacle;
+            _obstaclePool = obstaclePool;
         }
-
-
-        private void Update()
+        
+        
+        public void SpawnObstacles()
         {
-            // While working time for spawning obstacle did not run out.
-            if (0 < _workingTime)
+            _newObstacleSpawnTimer -= Time.deltaTime;
+
+            // After certain amount of time, spawn obstacle.
+            if (_newObstacleSpawnTimer <= 0)
             {
-                _workingTime -= Time.deltaTime;
-                _newObstacleSpawnTimer -= Time.deltaTime;
+                _newObstacleSpawnTimer = _timeBetweenEachObstacle;
 
-                // After certain amount of time, spawn obstacle.
-                if (_newObstacleSpawnTimer <= 0)
+                GameObject obstacle = _obstaclePool.GetPooledObstacle();
+
+                // If obstacle was received from the pool.
+                if (obstacle != null)
                 {
-                    _newObstacleSpawnTimer = _timeBetweenEachObstacle;
+                    // Get random position to place an obstacle.
+                    Vector2 spawnPosition = GetRandomSpawnPosition();
 
-                    GameObject obstacle = ObstaclePool.SharedInstance.GetPooledObstacle();
+                    // Place received obstacle on received position.
+                    obstacle.transform.position = spawnPosition;
 
-                    // If obstacle was received from the pool.
-                    if (obstacle != null)
-                    {
-                        // Get random position to place an obstacle.
-                        Vector2 spawnPosition = GetRandomSpawnPosition();
-
-                        // Place received obstacle on received position.
-                        obstacle.transform.position = spawnPosition;
-
-                        // Activate obstacle.
-                        obstacle.SetActive(true);
-                    }
+                    // Activate obstacle.
+                    obstacle.SetActive(true);
                 }
             }
         }
-
+        
 
         private Vector3 GetRandomSpawnPosition()
         {

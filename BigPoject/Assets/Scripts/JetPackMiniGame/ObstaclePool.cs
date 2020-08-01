@@ -10,13 +10,6 @@ namespace JetPackMiniGame
         [SerializeField] private int _poolAmount = 0;                         // Obstacles amount in the pool.
         [SerializeField] private GameObject _obstacle = null;                 // Obstacles with which the pool will be filled 
         
-        private static ObstaclePool _sharedInstance = null;                   // Reference to the current obstacles pool.
-
-        #region Properties
-
-        public static ObstaclePool SharedInstance => _sharedInstance;
-
-        #endregion Properties
 
         public GameObject GetPooledObstacle()
         {
@@ -39,7 +32,6 @@ namespace JetPackMiniGame
         
         private void Awake()
         {
-            _sharedInstance = this;
             CreateObstaclePool();
         }
         
@@ -52,10 +44,9 @@ namespace JetPackMiniGame
             
             for (int obstacleIndex = 0; obstacleIndex < _poolAmount; obstacleIndex++)
             {
-                GameObject newObstacle;
-                newObstacle = Instantiate(_obstacle, Vector3.zero, Quaternion.identity);
+                GameObject newObstacle = Instantiate(_obstacle, Vector3.zero, Quaternion.identity);
                 newObstacle.SetActive(false);
-                newObstacle.transform.SetParent(_sharedInstance.transform);
+                newObstacle.transform.SetParent(this.transform);
                 _obstaclePool.Add(newObstacle);
             }
         }

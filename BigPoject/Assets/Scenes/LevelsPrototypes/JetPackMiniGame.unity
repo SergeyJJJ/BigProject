@@ -247,6 +247,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db841216772e4844187962a048cfddbb, type: 3}
+--- !u!114 &585000826 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5704681186879703947, guid: ce096d2efdb5ab947a7680bcdc2722b5, type: 3}
+  m_PrefabInstance: {fileID: 5704681188507553578}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00cf983ba3ab5df4a97a27d12eac6a8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &780422969
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -304,56 +315,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6c9b793578b91d49bbc5b7d94d4aa4f, type: 3}
---- !u!1 &1375105334
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1375105336}
-  - component: {fileID: 1375105335}
-  m_Layer: 0
-  m_Name: RandomPositionObstacleSpawner
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1375105335
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1375105334}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f4c4f38eb9f28c44bc17c2be1dfa4e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _workingTime: 30
-  _timeBetweenEachObstacle: 0.2
-  _spawnConstraints:
-    leftBoundary: -10
-    rightBoundary: 10
-    downBoundary: 15
-    upBoundary: 25
---- !u!4 &1375105336
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1375105334}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1424362287 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8257950378412818842, guid: 95e99f9ab9e88d44ebc72051c375eb85, type: 3}
@@ -647,6 +608,53 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b6a4fdca1112af4f898b66b67ccd84c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1907479053
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1907479054}
+  - component: {fileID: 1907479055}
+  m_Layer: 0
+  m_Name: MiniGameScenario
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1907479054
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1907479053}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.8759305, y: -3.406526, z: -2.0385072}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1907479055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1907479053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec05fb0a1435ce44cb26d7bc35c797e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _executionPeriods:
+  - 30
+  - 60
+  _singlePlatformPool: {fileID: 585000826}
 --- !u!1001 &5704681188507553578
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -701,10 +709,6 @@ PrefabInstance:
     - target: {fileID: 5704681186586975891, guid: ce096d2efdb5ab947a7680bcdc2722b5, type: 3}
       propertyPath: m_Name
       value: ObstaclePool
-      objectReference: {fileID: 0}
-    - target: {fileID: 5704681186879703947, guid: ce096d2efdb5ab947a7680bcdc2722b5, type: 3}
-      propertyPath: _poolAmount
-      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce096d2efdb5ab947a7680bcdc2722b5, type: 3}
