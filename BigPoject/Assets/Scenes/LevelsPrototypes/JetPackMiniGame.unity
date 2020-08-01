@@ -334,12 +334,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _workingTime: 30
-  _timeBetweenEachObstacle: 4
+  _timeBetweenEachObstacle: 0.2
   _spawnConstraints:
-    leftBoundary: 0
-    rightBoundary: 0
-    upBoundary: 0
-    downBoundary: 0
+    leftBoundary: -10
+    rightBoundary: 10
+    downBoundary: 15
+    upBoundary: 25
 --- !u!4 &1375105336
 Transform:
   m_ObjectHideFlags: 0
