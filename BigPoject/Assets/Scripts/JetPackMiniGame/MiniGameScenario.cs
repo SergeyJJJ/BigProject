@@ -18,16 +18,22 @@ namespace JetPackMiniGame
         
         private float _executingTime = 0;                                                            // Time that controls what patterns will be performed at certain period of time.
 
+        private void Awake()
+        {
+            _singlePlatformSpawn = new RandomPositionObstacleSpawn(_singlePlatformPool);
+            _gatesSpawn = new RandomPositionObstacleSpawn(_gatesPool);
+        }
+        
+        
         private void Start()
         {
-            _singlePlatformSpawn = new RandomPositionObstacleSpawn(4f, _singlePlatformPool);
-            _gatesSpawn = new RandomPositionObstacleSpawn(4.5f, _gatesPool);
+            
         }
         
         
         private void Update()
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
             // Do not control spawn frequency from spawn script,
             // you must to control it from this script using coroutines.
         }

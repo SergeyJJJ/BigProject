@@ -7,7 +7,7 @@ namespace Environment
     {
         [SerializeField] private List<Transform> _trajectoryPoints = null;         // Contains path points along which the platform moves.
         [SerializeField] private float _movementSpeed = 0f;                        // Contains Platform movement speed.
-        private Vector2 _currentTargetPoint = Vector2.zero;                        // Current target point.
+        private Transform _currentTargetPoint = null;                        // Current target point.
         private int _currentPointIndex = 0;                                        // Current target point index.
         private Vector3 _moveDelta = Vector3.zero;                                 // Change in position of platform.
         private Rigidbody2D _characterRigidbody = null;                            // Player`s Rigidbody2D component.                               
@@ -18,9 +18,10 @@ namespace Environment
             // set that first point to current target point.
             if (IsPointsExist())
             {
-                _currentTargetPoint = _trajectoryPoints[0].transform.position;
+                _currentTargetPoint = _trajectoryPoints[0].transform;
             }
         }
+
 
         private void Update()
         {
@@ -45,17 +46,16 @@ namespace Environment
             // If character Rigidbody2D component is exist
             if (IsRigidbodyExist())
             {
-                Vector2 characterBody = _characterRigidbody.position;
-                _characterRigidbody.transform.position = new Vector3(characterBody.x, characterBody.y) + _moveDelta;
+                ShiftCharacter();
             }
         }
-
+        
 
         // Move the platform towards the target point.
         private void Move()
         {
             float step = _movementSpeed * Time.deltaTime;
-            Vector2 desiredPosition = Vector2.MoveTowards(transform.position, _currentTargetPoint, step);
+            Vector2 desiredPosition = Vector2.MoveTowards(transform.position, _currentTargetPoint.position, step);
 
             // Store change in position of platform.
             _moveDelta = new Vector3(desiredPosition.x, desiredPosition.y, 0f) - transform.position;
@@ -72,22 +72,22 @@ namespace Environment
         }
         
         
-        private Vector2 GetNextPoint()
+        private Transform GetNextPoint()
         {
             // Here will be stored point to be returned.
-            Vector2 nextPoint = Vector2.zero;
+            Transform nextPoint = null;
 
             // If current point index is equal to points amount,
             // reset point index to zero and set first point to return.
             if (_currentPointIndex == _trajectoryPoints.Count - 1)
             {
                 _currentPointIndex = 0;
-                nextPoint = _trajectoryPoints[_currentPointIndex].position;
+                nextPoint = _trajectoryPoints[_currentPointIndex];
             }
             // If it is not, than increment point index and set next point to return.
             else
             {
-                nextPoint = _trajectoryPoints[_currentPointIndex + 1].position;
+                nextPoint = _trajectoryPoints[_currentPointIndex + 1];
                 _currentPointIndex++;
             }
 
@@ -103,7 +103,7 @@ namespace Environment
 
             // If distance between platform and target point is less than allowable threshold
             // than return that the platform reached the goal.
-            return Vector2.Distance(gameObject.transform.position, _currentTargetPoint) < threshold;
+            return Vector2.Distance(gameObject.transform.position, _currentTargetPoint.position) < threshold;
         }
 
 
