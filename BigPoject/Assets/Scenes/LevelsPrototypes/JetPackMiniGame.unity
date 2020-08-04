@@ -139,6 +139,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b6a4fdca1112af4f898b66b67ccd84c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &363214519 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 325040035181623699, guid: ce096d2efdb5ab947a7680bcdc2722b5, type: 3}
+  m_PrefabInstance: {fileID: 5704681188507553578}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00cf983ba3ab5df4a97a27d12eac6a8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &465862806 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5802174120848063653, guid: ce096d2efdb5ab947a7680bcdc2722b5, type: 3}
+  m_PrefabInstance: {fileID: 5704681188507553578}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00cf983ba3ab5df4a97a27d12eac6a8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &468074570 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3583733886277847776, guid: ce096d2efdb5ab947a7680bcdc2722b5, type: 3}
@@ -662,11 +684,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec05fb0a1435ce44cb26d7bc35c797e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _executionPeriods:
-  - 15
-  - 30
-  _singlePlatformPool: {fileID: 585000826}
-  _gatesPool: {fileID: 468074570}
+  _singlePlatformsPool: {fileID: 585000826}
+  _movingSinglePlatformsPool: {fileID: 465862806}
+  _singleGatesPool: {fileID: 468074570}
+  _doubleGatesPool: {fileID: 363214519}
 --- !u!1001 &5704681188507553578
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -721,10 +742,6 @@ PrefabInstance:
     - target: {fileID: 5704681186586975891, guid: ce096d2efdb5ab947a7680bcdc2722b5, type: 3}
       propertyPath: m_Name
       value: ObstaclePool
-      objectReference: {fileID: 0}
-    - target: {fileID: 5802174120848063653, guid: ce096d2efdb5ab947a7680bcdc2722b5, type: 3}
-      propertyPath: _obstacle
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce096d2efdb5ab947a7680bcdc2722b5, type: 3}

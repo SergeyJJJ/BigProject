@@ -8,7 +8,7 @@ namespace JetPackMiniGame
     // different ways.
     public static class ObstacleSpawner
     {
-        private const float VerticalSpawnPosition = 25f;
+        private const float DefaultVerticalSpawnPosition = 25f;
 
         // Method that spawns obstacle on random position
         // within specific range.
@@ -51,7 +51,7 @@ namespace JetPackMiniGame
         private static Vector3 GetRandomPositionOnXAxisRange(float leftBoundary, float rightBoundary)
         {
             float xRandomSpawnPosition = Random.Range(leftBoundary, rightBoundary);
-            float ySpawnPosition = VerticalSpawnPosition;
+            float ySpawnPosition = DefaultVerticalSpawnPosition;
     
             return new Vector2(xRandomSpawnPosition, ySpawnPosition);
         }
