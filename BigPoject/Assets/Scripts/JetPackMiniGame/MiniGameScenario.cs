@@ -15,8 +15,8 @@ namespace JetPackMiniGame
         private delegate void SpawnObstacleDelegate();                                                // Delegate that can contain obstacle spawn method.
         private readonly SpawnObstacleDelegate[] _obstacleSpawnTypes = new SpawnObstacleDelegate[4];  // Array contains collection of different obstacle spawn methods.
 
-        private readonly int[][] _obstacleSpawnProbabilities = { new int[] {100, 0, 0, 0},        // Array where each sub-array contains probability distribution of obstacle spawn.
-                                                                 new int[] {80, 20, 0, 0},                 // Important: sum of elements in every sub-array must be equal to one hundred.
+        private readonly int[][] _obstacleSpawnProbabilities = { new int[] {100, 0, 0, 0},            // Array where each sub-array contains probability distribution of obstacle spawn.
+                                                                 new int[] {80, 20, 0, 0},            // Important: sum of elements in every sub-array must be equal to one hundred.
                                                                  new int[] {40, 60, 0, 0},
                                                                  new int[] {10, 90, 0, 0},
                                                                  new int[] {10, 80, 10, 0},
