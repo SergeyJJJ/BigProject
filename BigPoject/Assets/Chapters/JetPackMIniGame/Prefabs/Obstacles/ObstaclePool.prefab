@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00cf983ba3ab5df4a97a27d12eac6a8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _poolAmount: 100
+  _poolAmount: 15
   _obstacle: {fileID: 110738754070601543, guid: c81c6c8dd16f05941aa1bc6eb9d8cc60, type: 3}
 --- !u!1 &5704681186586975891
 GameObject:
@@ -121,7 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00cf983ba3ab5df4a97a27d12eac6a8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _poolAmount: 100
+  _poolAmount: 15
   _obstacle: {fileID: 1437002482359855935, guid: 8b3c518e6c99e1140906a3e2256d8f5b, type: 3}
 --- !u!1 &7786833358343684095
 GameObject:
@@ -166,5 +166,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00cf983ba3ab5df4a97a27d12eac6a8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _poolAmount: 0
+  _poolAmount: 15
   _obstacle: {fileID: 0}

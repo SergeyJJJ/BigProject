@@ -722,6 +722,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ObstaclePool
       objectReference: {fileID: 0}
+    - target: {fileID: 5802174120848063653, guid: ce096d2efdb5ab947a7680bcdc2722b5, type: 3}
+      propertyPath: _obstacle
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce096d2efdb5ab947a7680bcdc2722b5, type: 3}
 --- !u!1001 &5906080560297693665
