@@ -405,7 +405,7 @@ GameObject:
   - component: {fileID: 438960905640511704}
   m_Layer: 0
   m_Name: DoubleGates
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
