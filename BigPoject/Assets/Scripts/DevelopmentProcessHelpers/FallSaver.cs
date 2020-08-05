@@ -1,4 +1,4 @@
-﻿using EntitiesWithHealth.Player.CharacterMovement.MovementStateMachine;
+﻿using Living_beings.Player.CharacterMovement.MovementStateMachine;
 using UnityEngine;
 
 namespace DevelopmentProcessHelpers

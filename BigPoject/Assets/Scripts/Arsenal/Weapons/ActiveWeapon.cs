@@ -1,4 +1,4 @@
-﻿using EntitiesWithHealth.Player;
+﻿using Living_beings.Player;
 using UnityEngine;
 
 namespace Arsenal.Weapons

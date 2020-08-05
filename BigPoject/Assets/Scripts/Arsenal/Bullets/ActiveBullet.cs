@@ -1,4 +1,4 @@
-﻿using EntitiesWithHealth;
+﻿using Living_beings;
 using UnityEngine;
 
 namespace Arsenal.Bullets

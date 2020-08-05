@@ -1,4 +1,4 @@
-﻿using EntitiesWithHealth;
+﻿using Living_beings;
 using TMPro;
 using UnityEngine;
 
