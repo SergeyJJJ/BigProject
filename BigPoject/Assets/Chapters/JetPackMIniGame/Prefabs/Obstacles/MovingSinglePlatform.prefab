@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6760448701480339092}
   - component: {fileID: 1918283513662689696}
   - component: {fileID: 6683268459051174829}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: MovingSinglePlatform
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 3817736839453503254}
   - component: {fileID: 3808573906999712341}
   - component: {fileID: 1082394762160296295}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -231,7 +231,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8472133104034582304}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SecondTargetPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -261,7 +261,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5445246427540968250}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: FirstTargetPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}

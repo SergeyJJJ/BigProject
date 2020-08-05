@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 227612338779794756}
   - component: {fileID: -7614001177573196715}
   - component: {fileID: 355876228707727972}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SingleGates
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -85,7 +85,7 @@ GameObject:
   - component: {fileID: 543863425044463708}
   - component: {fileID: 4166002803281456884}
   - component: {fileID: 4625876041735915834}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: LeftPart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -216,7 +216,7 @@ GameObject:
   - component: {fileID: 9155612388729033445}
   - component: {fileID: 6054238800088056605}
   - component: {fileID: 3246833717605820014}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RightPart
   m_TagString: Untagged
   m_Icon: {fileID: 0}

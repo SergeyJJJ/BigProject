@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3599285512904392203}
   - component: {fileID: 3599285512904392206}
   - component: {fileID: 3599285512904392207}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpinningPlatform
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
