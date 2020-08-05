@@ -15,7 +15,7 @@ namespace JetPackMiniGame
         private delegate void SpawnObstacleDelegate();                                                // Delegate that can contain obstacle spawn method.
         private readonly SpawnObstacleDelegate[] _obstacleSpawnTypes = new SpawnObstacleDelegate[4];  // Array contains collection of different obstacle spawn methods.
 
-        private readonly int[][] _obstacleSpawnProbabilities = { new int[] {100, 0, 0, 0},            // Array where each sub-array contains probability distribution of obstacle spawn.
+        private readonly int[][] _obstacleSpawnProbabilities = { new int[] {100, 0, 0, 0},            // Array where each sub-array contains probability distribution of obstacle spawn types.
                                                                  new int[] {80, 20, 0, 0},            // Important: sum of elements in every sub-array must be equal to one hundred.
                                                                  new int[] {40, 60, 0, 0},
                                                                  new int[] {10, 90, 0, 0},
@@ -26,6 +26,8 @@ namespace JetPackMiniGame
                                                                  new int[] {10, 10, 70, 10},
                                                                  new int[] {10, 10, 50, 30},
                                                                  new int[] {10, 10, 10, 70} };
+
+        private int[] _currentProbabilityDistribution = new int[4];
 
         private void Awake()
         {
@@ -38,31 +40,64 @@ namespace JetPackMiniGame
 
         private void Start()
         {
-            StartCoroutine(MiniGameRoutine());
+            _currentProbabilityDistribution = _obstacleSpawnProbabilities[0];
+
+            StartCoroutine(ChangeProbabilityDistribution());
+            StartCoroutine(SpawnObstaclesRoutine());
         }
 
 
-        // Main coroutine that control MiniGame scenario
-        // execution sequence.
-        private IEnumerator MiniGameRoutine()
+        private void StopMiniGame()
+        {
+            StopAllCoroutines();
+        }
+        
+        
+        // Coroutine that control changing of probability distribution
+        // of obstacle spawn types.
+        private IEnumerator ChangeProbabilityDistribution()
+        {
+            float timeBeforeDistributionChange = 20f;
+
+            // Wait some time before start probability distribution changing.
+            yield return new WaitForSeconds(timeBeforeDistributionChange);
+            
+            for (int distributionIndex = 1; distributionIndex < _obstacleSpawnProbabilities.Length; distributionIndex++)
+            {
+                _currentProbabilityDistribution = _obstacleSpawnProbabilities[distributionIndex];
+                yield return new WaitForSeconds(timeBeforeDistributionChange);
+            }
+            
+            // Stop MiniGame after all probability distributions were used.
+            StopMiniGame();
+        }
+
+
+        // Coroutine that control spawning of obstacles.
+        private IEnumerator SpawnObstaclesRoutine()
         {
             // Get spawn function from array of functions.
             // Spawn function received randomly based on
             // specific probability distribution.
-            SpawnObstacleDelegate spawnFunction = GetRandomSpawnFunction(_obstacleSpawnProbabilities[0]);
+            float timeBeforeSpawnNewObstacle = 3f;
 
-            // Use current spawn function to produce an obstacle.
-            if (spawnFunction != null)
+            // Wait some time before spawning obstacles.
+            yield return new WaitForSeconds(10f);
+            
+            while (true)
             {
-                spawnFunction();
+                SpawnObstacleDelegate spawnFunction = GetRandomSpawnFunction(_currentProbabilityDistribution);
+
+                // Use current spawn function to produce an obstacle.
+                spawnFunction?.Invoke();
+
+                yield return new WaitForSeconds(timeBeforeSpawnNewObstacle);
             }
-
-            yield return new WaitForSeconds(2f);
         }
-
+        
 
         // Use to get spawn function pseudo-randomly based on
-        // certain probability distribbution.
+        // certain probability distribution.
         private SpawnObstacleDelegate GetRandomSpawnFunction(int[] probabilityDistribution)
         {
             int randomValue = (int) (Random.value * 100);
