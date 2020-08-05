@@ -697,11 +697,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 962188747985721849, guid: 7397b0ba05f896c4c858143070f17239, type: 3}
       propertyPath: m_Size.x
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 962188747985721849, guid: 7397b0ba05f896c4c858143070f17239, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 2497400699119602777, guid: 7397b0ba05f896c4c858143070f17239, type: 3}
       propertyPath: m_Name
