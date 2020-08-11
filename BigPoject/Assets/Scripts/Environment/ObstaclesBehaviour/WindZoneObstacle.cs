@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Environment.ObstaclesBehaviour
@@ -54,6 +55,7 @@ namespace Environment.ObstaclesBehaviour
                     
                     
                     //////////////////Works only once for a short time.
+                    throw new NotImplementedException();
                 }
             }
         }
