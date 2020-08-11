@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 8921463294642480550}
   - component: {fileID: 2099431260448058118}
-  - component: {fileID: 45100527023180}
   - component: {fileID: 4288582762191948020}
   - component: {fileID: 4292403266750519444}
   - component: {fileID: 6700340663309395855}
+  - component: {fileID: 8702310545226148327}
   m_Layer: 8
   m_Name: JetPackBlueSuit
   m_TagString: Player
@@ -90,30 +90,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
---- !u!114 &45100527023180
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2610034997848625689}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f93697c01421c164a88d4b529cfc970f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _horizontalSpeed: 6.4
-  _movementSmoothing: 0
-  _leftMoveButton: {fileID: 0}
-  _rightMoveButton: {fileID: 0}
-  _jumpHeight: 12.75
-  _afterGroundTouchJumpTime: 0.1
-  _pressBeforeGroundTime: 0.1
-  _cutJumpHeight: 0.27
-  _upMoveButton: {fileID: 0}
-  _climbUpSpeed: 6
-  _climbDownSpeed: 3
-  _surfaceCheck: {fileID: 0}
 --- !u!50 &4288582762191948020
 Rigidbody2D:
   serializedVersion: 4
@@ -180,6 +156,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8702310545226148327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2610034997848625689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b4e13295e67c8f4ebf9cb94b02ce05e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _horizontalSpeed: 8
+  _movementSmoothing: 0
+  _leftMoveButton: {fileID: 0}
+  _rightMoveButton: {fileID: 0}
 --- !u!114 &2489333131305337297
 MonoBehaviour:
   m_ObjectHideFlags: 0
