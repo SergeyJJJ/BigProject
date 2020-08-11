@@ -7,10 +7,11 @@ namespace Living_beings.Player.CharacterMovement.MovementStateMachine
     {
         [Header("Horizontal movement control")]
         [SerializeField] private float _horizontalSpeed = 0f;                     // Character`s horizontal speed.
-        [Range(0f, 0.4f), SerializeField] private float _movementSmoothing = 0f;   // Coefficient of character`s horizontal movement smoothing.
+        [Range(0f, 0.4f), SerializeField] private float _movementSmoothing = 0f;  // Coefficient of character`s horizontal movement smoothing.
         [SerializeField] private CustomButton _leftMoveButton = null;             // Left movement button.     
         [SerializeField] private CustomButton _rightMoveButton = null;            // Right movement  button.
-
+        private bool _isFacingRight = false;                                      // Determine to which side the character is facing now. 
+        
         [Header("Jump control")]
         [SerializeField] private float _jumpHeight = 0f;                          // Character`s jump height.
         [SerializeField] private float _afterGroundTouchJumpTime = 0f;            // Time during which character still can jump after he touch ground last time.
@@ -34,10 +35,12 @@ namespace Living_beings.Player.CharacterMovement.MovementStateMachine
         private LandingState _landingState = null;
         private ClimbingState _climbingState = null;
 
+        //Character`s components.
         private Transform _transform = null;                                      // Characters Transform component.
         private Rigidbody2D _rigidBody = null;                                    // Charecters Rigidbody2D component.
 
-        private float _afterGroundTouchTimer = 0;                                  // Timer that controlls time during which character still can jump after he touch ground last time.
+        // Timers.
+        private float _afterGroundTouchTimer = 0;                                 // Timer that controlls time during which character still can jump after he touch ground last time.
         private float _pressButtonTimer = 0;                                      // Timer that controlls time furing which character can perform jump after he press jump button last time.
 
         #region Properties
@@ -48,6 +51,13 @@ namespace Living_beings.Player.CharacterMovement.MovementStateMachine
         public CustomButton LeftMoveButton => _leftMoveButton;
 
         public CustomButton RightMoveButton => _rightMoveButton;
+
+        public bool IsFacingRight
+        {
+            get => _isFacingRight;
+            set => _isFacingRight = value;
+        }
+
 
         public float JumpHeight => _jumpHeight;
 
@@ -93,9 +103,9 @@ namespace Living_beings.Player.CharacterMovement.MovementStateMachine
         public float PressButtonTimer
         {
             get => _pressButtonTimer;
-
             set => _pressButtonTimer = value;
         }
+        
         #endregion Properties
 
 
@@ -130,8 +140,10 @@ namespace Living_beings.Player.CharacterMovement.MovementStateMachine
 
         private void Start()
         {
+            _isFacingRight = GetStartFacingDirection();
+            
             // Set first state.
-            _stateMachine.Initialization(Idle); 
+            _stateMachine.Initialization(Idle);
         }
 
     
@@ -150,6 +162,12 @@ namespace Living_beings.Player.CharacterMovement.MovementStateMachine
         private void OnTriggerExit2D(Collider2D other)
         {
             _stateMachine.CurrentState.OnTriggerExit2D(other);
+        }
+        
+        
+        private bool GetStartFacingDirection()
+        {
+            return Mathf.Approximately(transform.rotation.y, 0f) ? true : false;
         }
     }
 }

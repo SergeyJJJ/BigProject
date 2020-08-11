@@ -12,6 +12,8 @@ namespace Living_beings.Player.CharacterMovement.MovementStateMachine.States
 
         public override void Enter()
         {
+            base.Enter();
+            
             EventSystem.EventSystem.TriggerEvent("OnLand");
 
             if (_characterMovement.PressButtonTimer > 0)

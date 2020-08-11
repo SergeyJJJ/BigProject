@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Living_beings.Player.CharacterMovement.MovementStateMachine
@@ -8,7 +9,6 @@ namespace Living_beings.Player.CharacterMovement.MovementStateMachine
         protected StateMachine _stateMachine = null;                              // Reference to state machine.
 
         private Vector2 _currentVelocity = Vector2.zero;                          // Current speed of change in characters velocity.
-        private static bool _isFacingRight = true;                                // Check if player is facing right.
 
         protected BaseState(CharacterMovement characterMovement, StateMachine stateMachine)
         {
@@ -19,7 +19,7 @@ namespace Living_beings.Player.CharacterMovement.MovementStateMachine
 
         public virtual void Enter()
         {
-
+            
         }
 
 
@@ -47,7 +47,7 @@ namespace Living_beings.Player.CharacterMovement.MovementStateMachine
                 // Set tarhet velocity.
                 targetVelocity = new Vector2(-_characterMovement.HorizontalSpeed, _characterMovement.RigidBody.velocity.y);
 
-                if(_isFacingRight)
+                if(_characterMovement.IsFacingRight)
                 {
                     Flip();
                 }
@@ -58,7 +58,7 @@ namespace Living_beings.Player.CharacterMovement.MovementStateMachine
                 // Set tarhet velocity.
                 targetVelocity = new Vector2(_characterMovement.HorizontalSpeed, _characterMovement.RigidBody.velocity.y);
 
-                if(!_isFacingRight)
+                if(!_characterMovement.IsFacingRight)
                 {
                     Flip();
                 }
@@ -79,7 +79,7 @@ namespace Living_beings.Player.CharacterMovement.MovementStateMachine
         // Flip player to another side(left or right).
         private void Flip()
         {
-            _isFacingRight = !_isFacingRight;
+            _characterMovement.IsFacingRight = !_characterMovement.IsFacingRight;
 
             _characterMovement.Transform.Rotate(0f, 180f, 0f);
         }
