@@ -10,15 +10,18 @@ namespace Arsenal.Weapons
         
         private void FixedUpdate()
         {
-            bool isFireButtonPressed = _fireButton.IsPressed;
-
-            if (_fireButton.IsPressed)
+            if (_fireButton != null)
             {
-                _currentWeapon.AllowShoot(true);
-            }
-            else
-            {
-                _currentWeapon.AllowShoot(false);
+                bool isFireButtonPressed = _fireButton.IsPressed;
+                
+                if (_fireButton.IsPressed)
+                {
+                    _currentWeapon.AllowShoot(true);
+                }
+                else
+                {
+                    _currentWeapon.AllowShoot(false);
+                }
             }
         }
     }

@@ -64,7 +64,7 @@ namespace JetPackMiniGame
             float timeBeforeDistributionChange = 14f;
             
             // Wait some time before start probability distribution changing.
-            yield return new WaitForSeconds(7f);
+            yield return new WaitForSeconds(5f);
             
             for (int distributionIndex = 1; distributionIndex < _obstacleSpawnProbabilities.Length; distributionIndex++)
             {
