@@ -83,7 +83,9 @@ namespace JetPackMiniGame
             float[] facingRotations = {0, 180};
             int randomFacingIndex = Random.Range(0, facingRotations.Length);
             
-            obstacle.transform.Rotate(new Vector2(facingRotations[randomFacingIndex], 0));
+            Debug.Log(randomFacingIndex);
+            
+            obstacle.transform.Rotate(new Vector2(0, facingRotations[randomFacingIndex]));
         }
     }
 }

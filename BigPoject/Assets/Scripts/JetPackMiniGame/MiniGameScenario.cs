@@ -64,7 +64,7 @@ namespace JetPackMiniGame
         // of obstacle spawn types.
         private IEnumerator ChangeProbabilityDistribution()
         {
-            float timeBeforeDistributionChange = 14f;
+            float timeBeforeDistributionChange = 18f;
             
             // Wait some time before start probability distribution changing.
             yield return new WaitForSeconds(5f);
