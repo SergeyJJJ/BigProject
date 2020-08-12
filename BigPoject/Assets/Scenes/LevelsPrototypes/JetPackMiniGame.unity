@@ -232,7 +232,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab8d8c39fe217744881054c6fd1fcca0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _downwardMovementSpeed: 3
+  _downwardMovementSpeed: 1
 --- !u!50 &429647044
 Rigidbody2D:
   serializedVersion: 4
@@ -473,11 +473,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42e9de42e1b97984c965ec30393d6dd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _windForce: 200
+  _windForce: 1.5
   _residualForce: 1000
   _blowableByWind:
     serializedVersion: 2
     m_Bits: 4352
+--- !u!1 &1289243460 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7948952957025071852, guid: c2d31c0fbb72224469a13bbd4e969dc1, type: 3}
+  m_PrefabInstance: {fileID: 7948952956097584561}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &1289243463
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1289243460}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &1433423959
 GameObject:
   m_ObjectHideFlags: 0
@@ -755,6 +786,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2467596057901309613, guid: e6c9b793578b91d49bbc5b7d94d4aa4f, type: 3}
   m_PrefabInstance: {fileID: 780422969}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2040534393 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7948952955788365381, guid: c2d31c0fbb72224469a13bbd4e969dc1, type: 3}
+  m_PrefabInstance: {fileID: 7948952956097584561}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &2040534396
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2040534393}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1001 &985765832802160538
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1236,14 +1298,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: JetPackBlueSuit
       objectReference: {fileID: 0}
-    - target: {fileID: 4288582762191948020, guid: b6407653e7f1e524b9994ec0814d0724, type: 3}
-      propertyPath: m_Constraints
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 4288582762191948020, guid: b6407653e7f1e524b9994ec0814d0724, type: 3}
-      propertyPath: m_BodyType
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6700340662214926379, guid: b6407653e7f1e524b9994ec0814d0724, type: 3}
       propertyPath: m_Controller
       value: 
@@ -1258,11 +1312,11 @@ PrefabInstance:
       objectReference: {fileID: 1022378038}
     - target: {fileID: 8921463294642480550, guid: b6407653e7f1e524b9994ec0814d0724, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -5.4
       objectReference: {fileID: 0}
     - target: {fileID: 8921463294642480550, guid: b6407653e7f1e524b9994ec0814d0724, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.68
+      value: -6.7
       objectReference: {fileID: 0}
     - target: {fileID: 8921463294642480550, guid: b6407653e7f1e524b9994ec0814d0724, type: 3}
       propertyPath: m_LocalPosition.z

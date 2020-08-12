@@ -27,7 +27,7 @@ namespace Environment.ObstaclesBehaviour
         {
             foreach (var blowableObject in _blowableObjects)
             {
-                blowableObject.Value.AddForce(_windForceDirection, ForceMode2D.Force);
+                blowableObject.Value.AddForce(_windForceDirection, ForceMode2D.Impulse);
             }
         }
 
@@ -49,13 +49,7 @@ namespace Environment.ObstaclesBehaviour
                 
                 if (_blowableObjects.ContainsKey(exitedGameObject))
                 {
-                    Debug.Log("Blow");
-                    _blowableObjects[exitedGameObject].AddForce(_residualForceDirection, ForceMode2D.Force);
                     _blowableObjects.Remove(exitedGameObject);
-                    
-                    
-                    //////////////////Works only once for a short time.
-                    throw new NotImplementedException();
                 }
             }
         }
