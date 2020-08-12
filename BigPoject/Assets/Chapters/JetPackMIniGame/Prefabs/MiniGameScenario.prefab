@@ -48,3 +48,5 @@ MonoBehaviour:
   _singleGatesPool: {fileID: 0}
   _spinningPlatfromsPool: {fileID: 0}
   _doubleGatesPool: {fileID: 0}
+  _lazersPool: {fileID: 0}
+  _ventilatorsPool: {fileID: 0}

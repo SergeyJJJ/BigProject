@@ -10,7 +10,7 @@ namespace JetPackMiniGame
     {
         private const float DefaultVerticalSpawnPosition = 25f;
 
-        // Method that spawns obstacle on random position
+        // Method that spawns an obstacle on random position
         // within specific range.
         public static void RandomSpawnOnXAxisRange(ObstaclePool obstaclePool, float leftBoundary, float rightBoundary)
         {
@@ -31,8 +31,8 @@ namespace JetPackMiniGame
         }
         
         
-        // Method that spawns obstacle on specific position.
-        public static void SpawnObstacleOnPosition(ObstaclePool obstaclePool, Vector2 spawnPosition)
+        // Method that spawns an obstacle on specific position.
+        public static void SpawnOnPosition(ObstaclePool obstaclePool, Vector2 spawnPosition)
         {
             GameObject obstacle = obstaclePool.GetPooledObstacle();
 
@@ -48,12 +48,42 @@ namespace JetPackMiniGame
         }
         
         
+        // Method that spawns an obstacle randomly facing
+        // to the left or to the right.
+        public static void SpawnOnPositionFacingOnRandomXAxisSide(ObstaclePool obstaclePool, Vector2 spawnPosition)
+        {
+            GameObject obstacle = obstaclePool.GetPooledObstacle();
+
+            // If obstacle was received from the pool.
+            if (obstacle != null)
+            {
+                // Place received obstacle on received position.
+                obstacle.transform.position = spawnPosition;
+
+                // Turn obstacle to the random horizontal facing side.
+                TurnToRandomHorizontalFacingSide(obstacle);
+
+                // Activate obstacle.
+                obstacle.SetActive(true);
+            }
+        }
+
+
         private static Vector3 GetRandomPositionOnXAxisRange(float leftBoundary, float rightBoundary)
         {
             float xRandomSpawnPosition = Random.Range(leftBoundary, rightBoundary);
             float ySpawnPosition = DefaultVerticalSpawnPosition;
     
             return new Vector2(xRandomSpawnPosition, ySpawnPosition);
+        }
+
+
+        private static void TurnToRandomHorizontalFacingSide(GameObject obstacle)
+        {
+            float[] facingRotations = {0, 180};
+            int randomFacingIndex = Random.Range(0, facingRotations.Length);
+            
+            obstacle.transform.Rotate(new Vector2(facingRotations[randomFacingIndex], 0));
         }
     }
 }

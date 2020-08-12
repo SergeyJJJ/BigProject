@@ -168,6 +168,7 @@ Transform:
   - {fileID: 5695442371747103647}
   - {fileID: 714186442}
   - {fileID: 6481979838429228535}
+  - {fileID: 6327699222946684690}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -216,6 +217,51 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _poolAmount: 13
   _obstacle: {fileID: 1437002482359855935, guid: 8b3c518e6c99e1140906a3e2256d8f5b, type: 3}
+--- !u!1 &6435832431231294861
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6327699222946684690}
+  - component: {fileID: 8896930414156429352}
+  m_Layer: 0
+  m_Name: Ventilators
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6327699222946684690
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435832431231294861}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5704681186586975888}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8896930414156429352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435832431231294861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00cf983ba3ab5df4a97a27d12eac6a8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _poolAmount: 13
+  _obstacle: {fileID: 1669358846862014896, guid: 9806464419376504c9cd5beba3a1214b, type: 3}
 --- !u!1 &7786833358343684095
 GameObject:
   m_ObjectHideFlags: 0

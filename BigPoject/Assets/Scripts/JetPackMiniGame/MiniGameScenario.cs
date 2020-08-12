@@ -13,23 +13,25 @@ namespace JetPackMiniGame
         [SerializeField] private ObstaclePool _spinningPlatfromsPool = null;
         [SerializeField] private ObstaclePool _doubleGatesPool = null;
         [SerializeField] private ObstaclePool _lazersPool = null;
+        [SerializeField] private ObstaclePool _ventilatorsPool = null;
 
         private delegate void SpawnObstacleDelegate();                                                // Delegate that can contain obstacle spawn method.
-        private readonly SpawnObstacleDelegate[] _obstacleSpawnTypes = new SpawnObstacleDelegate[6];  // Array contains collection of different obstacle spawn methods.
+        private readonly SpawnObstacleDelegate[] _obstacleSpawnTypes = new SpawnObstacleDelegate[7];  // Array contains collection of different obstacle spawn methods.
 
-        private readonly int[][] _obstacleSpawnProbabilities = { new int[] {100, 0, 0, 0, 0, 0},            // Array where each sub-array contains probability distribution of obstacle spawn types.
-                                                                 new int[] {80, 20, 0, 0, 0, 0},            // Important: sum of elements in every sub-array must be equal to one hundred.
-                                                                 new int[] {40, 60, 0, 0, 0, 0},
-                                                                 new int[] {10, 90, 0, 0, 0, 0},
-                                                                 new int[] {10, 50, 40, 0, 0, 0},
-                                                                 new int[] {10, 10, 80, 0, 0, 0},
-                                                                 new int[] {10, 10, 60, 20, 0, 0},
-                                                                 new int[] {10, 10, 30, 50, 0, 0},
-                                                                 new int[] {10, 10, 10, 60, 10, 0},
-                                                                 new int[] {10, 10, 10, 10, 60, 0},
-                                                                 new int[] {10, 10, 10, 0, 0, 70} };
+        private readonly int[][] _obstacleSpawnProbabilities = { new int[] {100, 0, 0, 0, 0, 0, 0},   // Array where each sub-array contains probability distribution of obstacle spawn types.
+                                                                 new int[] {80, 20, 0, 0, 0, 0, 0},   // Important: sum of elements in every sub-array must be equal to one hundred.
+                                                                 new int[] {40, 60, 0, 0, 0, 0, 0},
+                                                                 new int[] {10, 90, 0, 0, 0, 0, 0},
+                                                                 new int[] {10, 50, 40, 0, 0, 0, 0},
+                                                                 new int[] {10, 10, 80, 0, 0, 0, 0},
+                                                                 new int[] {10, 10, 60, 20, 0, 0, 0},
+                                                                 new int[] {10, 10, 30, 50, 0, 0, 0},
+                                                                 new int[] {10, 10, 10, 60, 10, 0, 0},
+                                                                 new int[] {10, 10, 10, 10, 60, 0, 0},
+                                                                 new int[] {10, 10, 0, 0, 0, 80, 0},
+                                                                 new int[] {0, 0, 0, 0, 0, 0, 100} };
 
-        private int[] _currentProbabilityDistribution = new int[6];
+        private int[] _currentProbabilityDistribution = new int[7];
 
         private void Awake()
         {
@@ -39,6 +41,7 @@ namespace JetPackMiniGame
             _obstacleSpawnTypes[3] = SpawnDoubleGates;
             _obstacleSpawnTypes[4] = SpawnSpinningPlatform;
             _obstacleSpawnTypes[5] = SpawnLazer;
+            _obstacleSpawnTypes[6] = SpawnVentiator;
         }
 
 
@@ -139,7 +142,7 @@ namespace JetPackMiniGame
         private void SpawnMovingSinglePlatform()
         {
             Vector2 spawnPosition = new Vector2(0f, 25f);
-            ObstacleSpawner.SpawnObstacleOnPosition(_movingSinglePlatformsPool, spawnPosition);
+            ObstacleSpawner.SpawnOnPosition(_movingSinglePlatformsPool, spawnPosition);
         }
 
 
@@ -172,6 +175,13 @@ namespace JetPackMiniGame
             float leftBoundary = -7f;
             float rightBoundary = 7f;
             ObstacleSpawner.RandomSpawnOnXAxisRange(_lazersPool, leftBoundary, rightBoundary);
+        }
+
+
+        private void SpawnVentiator()
+        {
+            Vector2 spawnPosition = new Vector2(0f, 25f);
+            ObstacleSpawner.SpawnOnPositionFacingOnRandomXAxisSide(_ventilatorsPool, spawnPosition);
         }
     }
 }
