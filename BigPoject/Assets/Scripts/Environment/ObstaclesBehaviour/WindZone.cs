@@ -1,28 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 namespace Environment.ObstaclesBehaviour
 {
-    public class WindZoneObstacle : MonoBehaviour
+    public class WindZone : MonoBehaviour
     {
         [SerializeField] private float _windForce = 0;                                                             // Amount of force that applied to the blowable objects in the wind zone.
-        [SerializeField] private float _residualForce = 0;                                                         // Amount of force that applied to the blowable objects after they left the wind zone.
         [SerializeField] private LayerMask _blowableByWind = Physics2D.AllLayers;                                  // What can be blown away by the wind.
-        
+    
         private Dictionary<GameObject, Rigidbody2D> _blowableObjects = new Dictionary<GameObject, Rigidbody2D>();  // List contains objects to which an be applied force(wind).
-        
+    
         private Vector2 _windForceDirection = Vector2.zero;
-        private Vector2 _residualForceDirection = Vector2.zero;
-        
+
         private void Start()
         {
             Vector2 transformsLeft = -transform.right;
             _windForceDirection = transformsLeft * _windForce;
-            _residualForceDirection = transformsLeft * _residualForce;
         }
-        
-        
+    
+    
         private void FixedUpdate()
         {
             foreach (var blowableObject in _blowableObjects)
@@ -46,7 +42,7 @@ namespace Environment.ObstaclesBehaviour
             if (IsCanBeBlownByWind(other))
             {
                 GameObject exitedGameObject = other.gameObject;
-                
+            
                 if (_blowableObjects.ContainsKey(exitedGameObject))
                 {
                     _blowableObjects.Remove(exitedGameObject);
