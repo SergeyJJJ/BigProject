@@ -765,7 +765,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7084794730861829850, guid: 7bf56a9511be60e47ad23889ee5433f0, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7084794730861829850, guid: 7bf56a9511be60e47ad23889ee5433f0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1153,18 +1153,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3439487340370050173, guid: c2d31c0fbb72224469a13bbd4e969dc1, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 12.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4385963549853693774, guid: c2d31c0fbb72224469a13bbd4e969dc1, type: 3}
-      propertyPath: m_Size.y
-      value: 64
-      objectReference: {fileID: 0}
-    - target: {fileID: 4805139952136144216, guid: c2d31c0fbb72224469a13bbd4e969dc1, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 12.5
-      objectReference: {fileID: 0}
     - target: {fileID: 7948952956619541376, guid: c2d31c0fbb72224469a13bbd4e969dc1, type: 3}
       propertyPath: m_Name
       value: SideWalls
@@ -1212,10 +1200,6 @@ PrefabInstance:
     - target: {fileID: 7948952956619541379, guid: c2d31c0fbb72224469a13bbd4e969dc1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9099879108283902705, guid: c2d31c0fbb72224469a13bbd4e969dc1, type: 3}
-      propertyPath: m_Size.y
-      value: 64
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2d31c0fbb72224469a13bbd4e969dc1, type: 3}
