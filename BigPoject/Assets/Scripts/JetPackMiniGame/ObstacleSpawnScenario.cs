@@ -4,7 +4,7 @@ using Random = UnityEngine.Random;
 
 namespace JetPackMiniGame
 {
-    public class MiniGameScenario : MonoBehaviour
+    public class ObstacleSpawnScenario : MonoBehaviour
     {
         [Header("Pools of obstacles")]
         [SerializeField] private ObstaclePool _singlePlatformsPool = null;
@@ -49,12 +49,18 @@ namespace JetPackMiniGame
         {
             _currentProbabilityDistribution = _obstacleSpawnProbabilities[0];
 
-            StartCoroutine(ChangeProbabilityDistribution());
-            StartCoroutine(SpawnObstaclesRoutine());
+            StartSpawnObstacles();
         }
 
 
-        private void StopMiniGame()
+        private void StartSpawnObstacles()
+        {
+            StartCoroutine(ChangeProbabilityDistributionRoutine());
+            StartCoroutine(SpawnObstaclesRoutine());   
+        }
+
+
+        private void StopSpawnObstacles()
         {
             StopAllCoroutines();
         }
@@ -62,7 +68,7 @@ namespace JetPackMiniGame
         
         // Coroutine that control changing of probability distribution
         // of obstacle spawn types.
-        private IEnumerator ChangeProbabilityDistribution()
+        private IEnumerator ChangeProbabilityDistributionRoutine()
         {
             float timeBeforeDistributionChange = 18f;
             
@@ -75,8 +81,8 @@ namespace JetPackMiniGame
                 yield return new WaitForSeconds(timeBeforeDistributionChange);
             }
             
-            // Stop MiniGame after all probability distributions were used.
-            StopMiniGame();
+            // Stop spawn obstacles after all probability distributions were used.
+            StopSpawnObstacles();
         }
 
 
