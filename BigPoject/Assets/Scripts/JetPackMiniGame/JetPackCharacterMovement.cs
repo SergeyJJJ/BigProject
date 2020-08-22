@@ -36,8 +36,10 @@ namespace JetPackMiniGame
             // If player press left movement button and release right movement button.
             if (isLeftButtonPressed && !isRightButtonPressed)
             {
-                _rigidbody.AddForce(_horizontalSpeed * Vector2.left, ForceMode2D.Impulse);
-                
+                Vector2 leftDirectionSpeed = _horizontalSpeed * Vector2.left;
+
+                _rigidbody.AddForce(leftDirectionSpeed, ForceMode2D.Impulse);
+
                 if (_rigidbody.velocity.x < -_speedLimit)
                 {
                     // Clamp characters speed between current speed and speed limit.
@@ -52,8 +54,10 @@ namespace JetPackMiniGame
             // If player press right movement button and release left movement button.
             else if (isRightButtonPressed && !isLeftButtonPressed)
             {
-                _rigidbody.AddForce(_horizontalSpeed * Vector2.right, ForceMode2D.Impulse);
-                
+                Vector2 rightDirectionSpeed = _horizontalSpeed * Vector2.right;
+
+                _rigidbody.AddForce(rightDirectionSpeed, ForceMode2D.Impulse);
+
                 if (_rigidbody.velocity.x > _speedLimit)
                 {
                     // Clamp characters speed between current speed and speed limit.
