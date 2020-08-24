@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using GameBehaviour;
 using Living_beings.Player.CharacterMovement.MovementStateMachine;
 using UnityEngine;
 
@@ -34,13 +35,13 @@ namespace Arsenal.Weapons
 
         protected override void CallShotEvent()
         {
-            EventSystem.EventSystem.TriggerEvent("OnLazerShot");
+            EventSystem.TriggerEvent("OnLazerShot");
         }
 
 
         protected override void CallStopShotEvent()
         {
-            EventSystem.EventSystem.TriggerEvent("OnStopLazerShot");
+            EventSystem.TriggerEvent("OnStopLazerShot");
         }
 
 

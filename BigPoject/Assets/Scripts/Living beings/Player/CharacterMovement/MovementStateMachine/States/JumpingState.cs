@@ -1,3 +1,4 @@
+using GameBehaviour;
 using UnityEngine;
 
 namespace Living_beings.Player.CharacterMovement.MovementStateMachine.States
@@ -13,7 +14,7 @@ namespace Living_beings.Player.CharacterMovement.MovementStateMachine.States
         {
             base.Enter();
             
-            EventSystem.EventSystem.TriggerEvent("OnJump");
+            EventSystem.TriggerEvent("OnJump");
 
             _characterMovement.RigidBody.velocity = new Vector2(_characterMovement.RigidBody.velocity.x,
                 _characterMovement.JumpHeight);

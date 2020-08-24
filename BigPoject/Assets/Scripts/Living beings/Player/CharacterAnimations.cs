@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using GameBehaviour;
+using UnityEngine;
 
 namespace Living_beings.Player
 {
@@ -17,14 +18,14 @@ namespace Living_beings.Player
         private void OnEnable()
         {
             // Subscribe to character events 
-            EventSystem.EventSystem.StartListening("OnRun", StartRunAnimation);
-            EventSystem.EventSystem.StartListening("OnStop", StartIdleAnimation);
-            EventSystem.EventSystem.StartListening("OnJump", StartJumpAnimation);
-            EventSystem.EventSystem.StartListening("OnFall", StartFallAnimation);
-            EventSystem.EventSystem.StartListening("OnLand", StartLandingAnimation);
-            EventSystem.EventSystem.StartListening("OnStartClimb", StopAnimations);
-            EventSystem.EventSystem.StartListening("OnStartClimb", StartClimbingAnimation);
-            EventSystem.EventSystem.StartListening("OnStopClimb", StopClimbingAnimation);
+            EventSystem.StartListening("OnRun", StartRunAnimation);
+            EventSystem.StartListening("OnStop", StartIdleAnimation);
+            EventSystem.StartListening("OnJump", StartJumpAnimation);
+            EventSystem.StartListening("OnFall", StartFallAnimation);
+            EventSystem.StartListening("OnLand", StartLandingAnimation);
+            EventSystem.StartListening("OnStartClimb", StopAnimations);
+            EventSystem.StartListening("OnStartClimb", StartClimbingAnimation);
+            EventSystem.StartListening("OnStopClimb", StopClimbingAnimation);
         }
         
 
@@ -92,14 +93,14 @@ namespace Living_beings.Player
         private void OnDisable()
         {
             // Unsubscribe to character events
-            EventSystem.EventSystem.StopListening("OnRun", StartRunAnimation);
-            EventSystem.EventSystem.StopListening("OnStop", StartIdleAnimation);
-            EventSystem.EventSystem.StopListening("OnJump", StartJumpAnimation);
-            EventSystem.EventSystem.StopListening("OnFall", StartFallAnimation);
-            EventSystem.EventSystem.StopListening("OnLand", StartLandingAnimation);
-            EventSystem.EventSystem.StopListening("OnClimb", StopAnimations);
-            EventSystem.EventSystem.StopListening("OnClimb", StartClimbingAnimation);
-            EventSystem.EventSystem.StopListening("OnStopClimb", StopClimbingAnimation);
+            EventSystem.StopListening("OnRun", StartRunAnimation);
+            EventSystem.StopListening("OnStop", StartIdleAnimation);
+            EventSystem.StopListening("OnJump", StartJumpAnimation);
+            EventSystem.StopListening("OnFall", StartFallAnimation);
+            EventSystem.StopListening("OnLand", StartLandingAnimation);
+            EventSystem.StopListening("OnClimb", StopAnimations);
+            EventSystem.StopListening("OnClimb", StartClimbingAnimation);
+            EventSystem.StopListening("OnStopClimb", StopClimbingAnimation);
         }
     }
 }

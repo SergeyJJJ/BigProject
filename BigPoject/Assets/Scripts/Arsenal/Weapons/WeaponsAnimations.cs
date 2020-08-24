@@ -1,4 +1,5 @@
 ﻿using System;
+using GameBehaviour;
 using UnityEngine;
 
 namespace Arsenal.Weapons
@@ -17,9 +18,9 @@ namespace Arsenal.Weapons
 
         private void OnEnable()
         {
-            EventSystem.EventSystem.StartListening("OnRifleShot", StartRifleRecoilAnimation);
-            EventSystem.EventSystem.StartListening("OnLazerShot", StartLazerRecoilAnimation);
-            EventSystem.EventSystem.StartListening("OnStopLazerShop", StopLazerRecoilAnimation);
+            EventSystem.StartListening("OnRifleShot", StartRifleRecoilAnimation);
+            EventSystem.StartListening("OnLazerShot", StartLazerRecoilAnimation);
+            EventSystem.StartListening("OnStopLazerShop", StopLazerRecoilAnimation);
         }
 
 
@@ -43,9 +44,9 @@ namespace Arsenal.Weapons
 
         private void OnDisable()
         {
-            EventSystem.EventSystem.StopListening("OnRifleShot", StartRifleRecoilAnimation);
-            EventSystem.EventSystem.StopListening("OnLazerShot", StartLazerRecoilAnimation);
-            EventSystem.EventSystem.StopListening("OnStopLazerShop", StopLazerRecoilAnimation);
+            EventSystem.StopListening("OnRifleShot", StartRifleRecoilAnimation);
+            EventSystem.StopListening("OnLazerShot", StartLazerRecoilAnimation);
+            EventSystem.StopListening("OnStopLazerShop", StopLazerRecoilAnimation);
         }
     }
 }

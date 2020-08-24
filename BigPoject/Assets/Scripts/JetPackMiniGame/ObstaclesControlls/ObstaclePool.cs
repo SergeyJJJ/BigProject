@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace JetPackMiniGame
+namespace JetPackMiniGame.ObstaclesControlls
 {
     public class ObstaclePool : MonoBehaviour
     {

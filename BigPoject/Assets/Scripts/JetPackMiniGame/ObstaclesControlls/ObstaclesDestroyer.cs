@@ -1,7 +1,6 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace JetPackMiniGame
+namespace JetPackMiniGame.ObstaclesControlls
 {
     public class ObstaclesDestroyer : MonoBehaviour
     {

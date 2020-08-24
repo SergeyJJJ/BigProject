@@ -1,4 +1,5 @@
 ﻿using Arsenal.Bullets;
+using GameBehaviour;
 using UnityEngine;
 
 namespace Arsenal.Weapons
@@ -46,7 +47,7 @@ namespace Arsenal.Weapons
         
         protected override void CallShotEvent()
         {
-            EventSystem.EventSystem.TriggerEvent("OnRifleShot");
+            EventSystem.TriggerEvent("OnRifleShot");
         }
     }
 }

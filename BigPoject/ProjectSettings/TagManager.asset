@@ -27,7 +27,7 @@ TagManager:
   - Bullets
   - Enemy
   - BulletIgnoreWalkableSurface
-  - 
+  - Collectable
   - 
   - 
   - 
@@ -64,11 +64,17 @@ TagManager:
   - name: Enemy
     uniqueID: 817707015
     locked: 0
-  - name: Player
-    uniqueID: 765987315
+  - name: BackPlayer
+    uniqueID: 2944108609
+    locked: 0
+  - name: MiddlePlayer
+    uniqueID: 3634643317
     locked: 0
   - name: Weapon
     uniqueID: 582098943
+    locked: 0
+  - name: ForePlayer
+    uniqueID: 3061496217
     locked: 0
   - name: Foreground
     uniqueID: 1970854785

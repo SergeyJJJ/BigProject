@@ -2,7 +2,7 @@
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace JetPackMiniGame
+namespace JetPackMiniGame.ObstaclesControlls
 {
     public class ObstacleSpawnScenario : MonoBehaviour
     {

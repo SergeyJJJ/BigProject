@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using GameBehaviour;
+using UnityEngine;
 
 namespace Arsenal.Weapons
 {
@@ -10,7 +11,7 @@ namespace Arsenal.Weapons
 
         private void OnEnable()
         {
-            EventSystem.EventSystem.StartListening("OnLazerPartActive", SynchronizeLazerParts);
+            EventSystem.StartListening("OnLazerPartActive", SynchronizeLazerParts);
         }
     
     
@@ -35,7 +36,7 @@ namespace Arsenal.Weapons
 
         private void OnDisable()
         {
-            EventSystem.EventSystem.StopListening("OnLazerPartActive", SynchronizeLazerParts);
+            EventSystem.StopListening("OnLazerPartActive", SynchronizeLazerParts);
         }
     }
 }

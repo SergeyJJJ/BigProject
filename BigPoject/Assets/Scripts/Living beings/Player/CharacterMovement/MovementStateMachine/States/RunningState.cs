@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using GameBehaviour;
+using UnityEngine;
 
 namespace Living_beings.Player.CharacterMovement.MovementStateMachine.States
 {
@@ -14,7 +15,7 @@ namespace Living_beings.Player.CharacterMovement.MovementStateMachine.States
         {
             base.Enter();
             
-            EventSystem.EventSystem.TriggerEvent("OnRun");
+            EventSystem.TriggerEvent("OnRun");
         }
 
 

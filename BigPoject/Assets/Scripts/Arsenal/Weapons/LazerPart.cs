@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using GameBehaviour;
+using UnityEngine;
 
 namespace Arsenal.Weapons
 {
@@ -6,7 +7,7 @@ namespace Arsenal.Weapons
     {
         private void OnEnable()
         {
-            EventSystem.EventSystem.TriggerEvent("OnLazerPartActive");
+            EventSystem.TriggerEvent("OnLazerPartActive");
         }
     }
 }
