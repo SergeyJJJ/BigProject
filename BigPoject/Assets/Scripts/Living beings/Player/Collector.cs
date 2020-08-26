@@ -14,7 +14,7 @@ namespace Living_beings.Player
             if (IsObjectCollectable(other.gameObject))
             {
                 ICollectable collectableObject = other.gameObject.GetComponent<ICollectable>();
-                collectableObject.Collect();
+                collectableObject?.Collect();
             }
         }
 
