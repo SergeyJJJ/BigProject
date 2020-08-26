@@ -79,3 +79,6 @@ TagManager:
   - name: Foreground
     uniqueID: 1970854785
     locked: 0
+  - name: CameraEffects
+    uniqueID: 738195205
+    locked: 0
