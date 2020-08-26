@@ -26,6 +26,8 @@ namespace Environment.JetPacks
             MakeJetPackAsAChild(_doubleJumpJetPack.transform, _blueSuit.transform);
             SetJetPackPositionOnSuit(_doubleJumpJetPack.transform, jetPackPositionOnSuit);
             ActivateJetPack(_doubleJumpJetPack);
+            
+            Destroy(gameObject);
         }
 
 
