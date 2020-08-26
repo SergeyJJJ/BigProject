@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace JetPackMiniGame.ObstaclesControlls
+namespace Environment.ObstaclesBehaviour.JetPackObstacleControl
 {
     // Class that contains methods to spawn obstacles in
     // different ways.

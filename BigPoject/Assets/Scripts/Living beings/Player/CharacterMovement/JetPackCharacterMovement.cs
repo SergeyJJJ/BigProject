@@ -1,8 +1,6 @@
-﻿using System;
-using Living_beings.Player;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace JetPackMiniGame
+namespace Living_beings.Player.CharacterMovement
 {
     public class JetPackCharacterMovement : MonoBehaviour
     {

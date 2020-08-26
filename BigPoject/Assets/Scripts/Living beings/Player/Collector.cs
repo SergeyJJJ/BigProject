@@ -9,6 +9,8 @@ namespace Living_beings.Player
         
         private void OnTriggerEnter2D(Collider2D other)
         {
+            // If object is derive form ICollectable interface
+            // use its Collect() method.
             if (IsObjectCollectable(other.gameObject))
             {
                 ICollectable collectableObject = other.gameObject.GetComponent<ICollectable>();

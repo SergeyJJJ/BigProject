@@ -1,9 +1,8 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace JetPackMiniGame
+namespace Environment
 {
-    public class Walls : MonoBehaviour
+    public class DownwardWallMovement : MonoBehaviour
     {
         [SerializeField] private float _movementSpeed = 0f;           // Downward movement speed of the walls.
         private BoxCollider2D _wallLenghtCollider;                    // Collider that used for define wall length.
@@ -41,7 +40,7 @@ namespace JetPackMiniGame
                 {
                     SetWallsPositionToStart();
                 }
-                
+            
                 Move();
             }
         }
