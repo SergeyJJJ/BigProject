@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8117325220820953521}
   - component: {fileID: 6662916339389013783}
   - component: {fileID: 64602155481198226}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: DistributorJetPack
   m_TagString: Untagged
   m_Icon: {fileID: 0}

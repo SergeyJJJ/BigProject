@@ -17,10 +17,14 @@ namespace Environment.JetPacks
 
         private void DistributeJetPacks()
         {
+            Vector2 jetPackPositionOnSuit = new Vector2(0.05f, 0.9f);
+            
             MakeJetPackAsAChild(_flyingJetPack.transform, _jetPackBlueSuit.transform);
+            SetJetPackPositionOnSuit(_flyingJetPack.transform, jetPackPositionOnSuit);
             ActivateJetPack(_flyingJetPack);
             
             MakeJetPackAsAChild(_doubleJumpJetPack.transform, _blueSuit.transform);
+            SetJetPackPositionOnSuit(_doubleJumpJetPack.transform, jetPackPositionOnSuit);
             ActivateJetPack(_doubleJumpJetPack);
         }
 
@@ -34,6 +38,12 @@ namespace Environment.JetPacks
         private void ActivateJetPack(GameObject jetPack)
         {
             jetPack.SetActive(true);
+        }
+
+
+        private void SetJetPackPositionOnSuit(Transform jetPack, Vector2 positionOnSuit)
+        {
+            jetPack.localPosition = positionOnSuit;
         }
     }
 }
