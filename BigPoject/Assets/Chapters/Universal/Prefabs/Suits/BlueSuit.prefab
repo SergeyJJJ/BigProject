@@ -175,6 +175,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _runParticles: {fileID: 1135786105}
+  _landParticles: {fileID: 384038333809949150}
 --- !u!50 &-1767523105098985399
 Rigidbody2D:
   serializedVersion: 4
@@ -368,6 +369,11 @@ Transform:
 --- !u!198 &1135786105 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 1936897267551502030, guid: 333a4c43530d5a0498257a0b93552455, type: 3}
+  m_PrefabInstance: {fileID: 1936897266453726903}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &384038333809949150 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 2284834749253533545, guid: 333a4c43530d5a0498257a0b93552455, type: 3}
   m_PrefabInstance: {fileID: 1936897266453726903}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3358275394797235794
