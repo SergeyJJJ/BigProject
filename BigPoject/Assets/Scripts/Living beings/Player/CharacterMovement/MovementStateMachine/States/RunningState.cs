@@ -62,7 +62,7 @@ namespace Living_beings.Player.CharacterMovement.MovementStateMachine.States
 
         public override void Exit()
         {
-            _characterMovement.AfterGroundTouchTimer = _characterMovement.AfterGroundTouchJumpTime; 
+            _characterMovement.AfterGroundTouchTimer = _characterMovement.AfterGroundTouchJumpTime;
         }
     }
 }

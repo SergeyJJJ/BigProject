@@ -17,7 +17,7 @@ namespace Living_beings.Player
 
         private void OnEnable()
         {
-            // Subscribe to character events 
+            // Subscribe to character events.
             EventSystem.StartListening("OnRun", StartRunAnimation);
             EventSystem.StartListening("OnStop", StartIdleAnimation);
             EventSystem.StartListening("OnJump", StartJumpAnimation);
