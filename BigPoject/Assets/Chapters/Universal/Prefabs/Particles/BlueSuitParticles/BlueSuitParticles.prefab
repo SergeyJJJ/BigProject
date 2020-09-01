@@ -55,6 +55,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RunParticles
       objectReference: {fileID: 0}
+    - target: {fileID: 1374093402914118714, guid: 674b8225fa3b0f34fa390d8d8b5b74f0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1374093402914118719, guid: 674b8225fa3b0f34fa390d8d8b5b74f0, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.309
@@ -160,6 +164,18 @@ PrefabInstance:
     - target: {fileID: 3150642441654788314, guid: 4532fe566be166a4dad0326c404ad6b1, type: 3}
       propertyPath: m_Name
       value: LandParticles
+      objectReference: {fileID: 0}
+    - target: {fileID: 3150642441654788314, guid: 4532fe566be166a4dad0326c404ad6b1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7897645038397072264, guid: 4532fe566be166a4dad0326c404ad6b1, type: 3}
+      propertyPath: ShapeModule.angle
+      value: 18.687227
+      objectReference: {fileID: 0}
+    - target: {fileID: 7897645038397072264, guid: 4532fe566be166a4dad0326c404ad6b1, type: 3}
+      propertyPath: ShapeModule.radius.value
+      value: 0.2882347
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4532fe566be166a4dad0326c404ad6b1, type: 3}

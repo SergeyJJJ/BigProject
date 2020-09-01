@@ -359,22 +359,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: BlueSuitParticles
       objectReference: {fileID: 0}
-    - target: {fileID: 1936897267551502028, guid: 333a4c43530d5a0498257a0b93552455, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2284834749253533545, guid: 333a4c43530d5a0498257a0b93552455, type: 3}
-      propertyPath: ShapeModule.angle
-      value: 18.687227
-      objectReference: {fileID: 0}
-    - target: {fileID: 2284834749253533545, guid: 333a4c43530d5a0498257a0b93552455, type: 3}
-      propertyPath: ShapeModule.radius.value
-      value: 0.2882347
-      objectReference: {fileID: 0}
-    - target: {fileID: 6455377710837103675, guid: 333a4c43530d5a0498257a0b93552455, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 333a4c43530d5a0498257a0b93552455, type: 3}
 --- !u!4 &180153255 stripped
@@ -454,9 +438,9 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5616292551596334445, guid: 501e8a6b81416644e9d9b1e1c6a13c34, type: 3}
   m_PrefabInstance: {fileID: 3358275394797235794}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &559604560 stripped
+--- !u!114 &2318357886443214080 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3358275394272234754, guid: 501e8a6b81416644e9d9b1e1c6a13c34, type: 3}
+  m_CorrespondingSourceObject: {fileID: 1060188261596445522, guid: 501e8a6b81416644e9d9b1e1c6a13c34, type: 3}
   m_PrefabInstance: {fileID: 3358275394797235794}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
@@ -629,7 +613,7 @@ PrefabInstance:
     - target: {fileID: 5433480261800985400, guid: dbf7edadc67d6ee4d89b1cad4f5acf97, type: 3}
       propertyPath: _currentWeapon
       value: 
-      objectReference: {fileID: 559604560}
+      objectReference: {fileID: 2318357886443214080}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dbf7edadc67d6ee4d89b1cad4f5acf97, type: 3}
 --- !u!4 &536803573 stripped
