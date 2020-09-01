@@ -359,6 +359,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: BlueSuitParticles
       objectReference: {fileID: 0}
+    - target: {fileID: 1936897267551502028, guid: 333a4c43530d5a0498257a0b93552455, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2284834749253533545, guid: 333a4c43530d5a0498257a0b93552455, type: 3}
+      propertyPath: ShapeModule.angle
+      value: 18.687227
+      objectReference: {fileID: 0}
+    - target: {fileID: 2284834749253533545, guid: 333a4c43530d5a0498257a0b93552455, type: 3}
+      propertyPath: ShapeModule.radius.value
+      value: 0.2882347
+      objectReference: {fileID: 0}
+    - target: {fileID: 6455377710837103675, guid: 333a4c43530d5a0498257a0b93552455, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 333a4c43530d5a0498257a0b93552455, type: 3}
 --- !u!4 &180153255 stripped
