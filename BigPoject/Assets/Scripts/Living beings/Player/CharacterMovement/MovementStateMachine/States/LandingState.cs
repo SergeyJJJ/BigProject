@@ -16,7 +16,7 @@ namespace Living_beings.Player.CharacterMovement.MovementStateMachine.States
             base.Enter();
             
             EventSystem.TriggerEvent("OnLand");
-
+            
             if (_characterMovement.PressButtonTimer > 0)
             {
                 _stateMachine.TransitionToState(_characterMovement.Jumping);

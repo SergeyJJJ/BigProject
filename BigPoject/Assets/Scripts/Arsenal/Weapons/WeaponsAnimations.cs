@@ -20,7 +20,7 @@ namespace Arsenal.Weapons
         {
             EventSystem.StartListening("OnRifleShot", StartRifleRecoilAnimation);
             EventSystem.StartListening("OnLazerShot", StartLazerRecoilAnimation);
-            EventSystem.StartListening("OnStopLazerShop", StopLazerRecoilAnimation);
+            EventSystem.StartListening("OnStopLazerShot", StopLazerRecoilAnimation);
         }
 
 
@@ -46,7 +46,7 @@ namespace Arsenal.Weapons
         {
             EventSystem.StopListening("OnRifleShot", StartRifleRecoilAnimation);
             EventSystem.StopListening("OnLazerShot", StartLazerRecoilAnimation);
-            EventSystem.StopListening("OnStopLazerShop", StopLazerRecoilAnimation);
+            EventSystem.StopListening("OnStopLazerShot", StopLazerRecoilAnimation);
         }
     }
 }

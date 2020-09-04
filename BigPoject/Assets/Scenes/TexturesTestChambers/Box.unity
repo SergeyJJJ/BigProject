@@ -510,6 +510,10 @@ PrefabInstance:
       propertyPath: _fireButton
       value: 
       objectReference: {fileID: 1808298728}
+    - target: {fileID: 384038333809949150, guid: db841216772e4844187962a048cfddbb, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.13
+      objectReference: {fileID: 0}
     - target: {fileID: 2824605566533303579, guid: db841216772e4844187962a048cfddbb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.53
