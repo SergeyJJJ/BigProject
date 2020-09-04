@@ -1,0 +1,3 @@
+ICollectable
+IBreakable
+IInteracive
