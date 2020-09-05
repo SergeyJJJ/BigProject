@@ -49,14 +49,14 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 4198272759
+    locked: 0
   - name: BackWall
     uniqueID: 2406586553
     locked: 0
   - name: Platforms
     uniqueID: 2247053133
-    locked: 0
-  - name: Pipes
-    uniqueID: 2982145627
     locked: 0
   - name: Midleground
     uniqueID: 3556952703

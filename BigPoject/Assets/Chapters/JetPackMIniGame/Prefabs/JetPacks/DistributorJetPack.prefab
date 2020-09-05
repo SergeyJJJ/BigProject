@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5124311389392661032}
   - component: {fileID: 8117325220820953521}
   - component: {fileID: 6662916339389013783}
-  - component: {fileID: 64602155481198226}
+  - component: {fileID: 945865937199633192}
   m_Layer: 0
   m_Name: DistributorJetPack
   m_TagString: Untagged
@@ -100,8 +100,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &64602155481198226
-BoxCollider2D:
+--- !u!58 &945865937199633192
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -110,19 +110,9 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.001644969, y: -0.053097427}
-  m_SpriteTilingProperty:
-    border: {x: 2.3, y: 1.9, z: 0.1, w: 0.2}
-    pivot: {x: 0.845, y: 0.765}
-    oldSize: {x: 3.2, y: 3.2}
-    newSize: {x: 3.2, y: 3.2}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 0.6008109, y: 1.0048026}
-  m_EdgeRadius: 0
+  m_Radius: 0.7927022
