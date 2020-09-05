@@ -1,4 +1,5 @@
-﻿using Living_beings;
+﻿using Environment.InterfacesOfUsing;
+using Living_beings;
 using UnityEngine;
 
 namespace Arsenal.Bullets
@@ -47,11 +48,22 @@ namespace Arsenal.Bullets
         
         private void OnTriggerEnter2D(Collider2D other)
         {
-            bool isObjectHittableByBullet = ((1 << other.gameObject.layer) & _hittableByBullet) != 0;
-            
-            if (isObjectHittableByBullet)
+            if (IsObjectHittableByBullet(other.gameObject))
             {
-                ApplyDamageTo(other.gameObject);
+                //ApplyDamageTo(other.gameObject)
+
+                IBreakable breakable = other.gameObject.GetComponent<IBreakable>();
+                if (breakable != null)
+                {
+                    breakable.Break();
+                }
+
+                Health health = other.gameObject.GetComponent<Health>();
+                if (health != null)
+                {
+                    health.TakeDamage(_currentBullet.Damage);
+                }
+
                 DisableBullet();
             }
         }
@@ -73,5 +85,11 @@ namespace Arsenal.Bullets
                 health.TakeDamage(_currentBullet.Damage);
             }
         }
-    }
+
+
+        private bool IsObjectHittableByBullet(GameObject hitObject)
+        {
+            return ((1 << hitObject.layer) & _hittableByBullet) != 0;
+        }
+    } 
 }
