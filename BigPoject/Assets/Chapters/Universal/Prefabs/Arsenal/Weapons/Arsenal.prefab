@@ -180,6 +180,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5616292551596334445}
     m_Modifications:
+    - target: {fileID: 555501737349482767, guid: 552966005c72f7140b2927a61b16a444, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 555501737349482767, guid: 552966005c72f7140b2927a61b16a444, type: 3}
+      propertyPath: InitialModule.startLifetime.minScalar
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 555501737349482767, guid: 552966005c72f7140b2927a61b16a444, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 6.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 555501737349482767, guid: 552966005c72f7140b2927a61b16a444, type: 3}
+      propertyPath: InitialModule.startRotationX.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 555501737349482767, guid: 552966005c72f7140b2927a61b16a444, type: 3}
+      propertyPath: InitialModule.startRotationY.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 555501737349482767, guid: 552966005c72f7140b2927a61b16a444, type: 3}
+      propertyPath: InitialModule.startRotation.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 555501737349482767, guid: 552966005c72f7140b2927a61b16a444, type: 3}
+      propertyPath: InitialModule.startRotation.scalar
+      value: 1.5707963
+      objectReference: {fileID: 0}
+    - target: {fileID: 555501737349482767, guid: 552966005c72f7140b2927a61b16a444, type: 3}
+      propertyPath: InitialModule.startRotation.minScalar
+      value: -1.5707963
+      objectReference: {fileID: 0}
+    - target: {fileID: 555501737349482767, guid: 552966005c72f7140b2927a61b16a444, type: 3}
+      propertyPath: InitialModule.gravityModifier.scalar
+      value: 2.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 555501737349482767, guid: 552966005c72f7140b2927a61b16a444, type: 3}
+      propertyPath: RotationModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 889919698736914788, guid: 552966005c72f7140b2927a61b16a444, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.049

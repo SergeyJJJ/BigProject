@@ -307,14 +307,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2824605566533303579}
     m_Modifications:
-    - target: {fileID: 2853593132499648351, guid: 501e8a6b81416644e9d9b1e1c6a13c34, type: 3}
-      propertyPath: InitialModule.startSpeed.scalar
-      value: 6.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2853593132499648351, guid: 501e8a6b81416644e9d9b1e1c6a13c34, type: 3}
-      propertyPath: InitialModule.gravityModifier.scalar
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 3461797548803673895, guid: 501e8a6b81416644e9d9b1e1c6a13c34, type: 3}
       propertyPath: m_Name
       value: Arsenal

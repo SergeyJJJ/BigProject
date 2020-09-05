@@ -2,9 +2,9 @@ using System.Collections;
 using Environment.InterfacesOfUsing;
 using UnityEngine;
 
-namespace Environment
+namespace Environment.ThingsDestruction
 {
-    public class Crystal : MonoBehaviour, IBreakable
+    public class MiddleWeightDestruction : MonoBehaviour, IBreakable
     {
         [SerializeField] private int _strength = 0;                            // How many times crystal can be hit before it will be broken. 
         [SerializeField] private Sprite _defaultSprite = null;                 // Default sprite of crystal.

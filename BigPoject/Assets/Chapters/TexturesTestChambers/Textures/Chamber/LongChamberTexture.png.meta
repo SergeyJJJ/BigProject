@@ -1,0 +1,471 @@
+fileFormatVersion: 2
+guid: 231c1b2dead6156459af1c5200b3d75b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3847888486663865176
+    second: LongChamberTexture_0
+  - first:
+      213: 235493268348489014
+    second: LongChamberTexture_1
+  - first:
+      213: 2549680760924602888
+    second: LongChamberTexture_2
+  - first:
+      213: 9195136584499199796
+    second: LongChamberTexture_3
+  - first:
+      213: -8495120880998765410
+    second: LongChamberTexture_4
+  - first:
+      213: -5422093517359689572
+    second: LongChamberTexture_5
+  - first:
+      213: 6229512867103771153
+    second: LongChamberTexture_6
+  - first:
+      213: -4504762378276243790
+    second: LongChamberTexture_7
+  - first:
+      213: 8691767169388196896
+    second: LongChamberTexture_8
+  - first:
+      213: -7441963689143938181
+    second: LongChamberTexture_9
+  - first:
+      213: 8948690378850969273
+    second: LongChamberTexture_10
+  - first:
+      213: -7234933920097303691
+    second: LongChamberTexture_11
+  - first:
+      213: 906461804062570360
+    second: LongChamberTexture_12
+  - first:
+      213: -7295453753953347871
+    second: LongChamberTexture_0
+  - first:
+      213: 7310744694831986071
+    second: LongChamberTexture_1
+  - first:
+      213: -1432237095672447727
+    second: LongChamberTexture_2
+  - first:
+      213: -4138613698700075333
+    second: LongChamberTexture_3
+  - first:
+      213: 3148532400729763359
+    second: LongChamberTexture_4
+  - first:
+      213: -8682631048702911290
+    second: LongChamberTexture_5
+  - first:
+      213: -4903146128790164721
+    second: LongChamberTexture_6
+  - first:
+      213: 6077311397286910715
+    second: LongChamberTexture_7
+  - first:
+      213: -8939463954098577603
+    second: LongChamberTexture_8
+  - first:
+      213: 4828484840199299856
+    second: LongChamberTexture_9
+  - first:
+      213: -8137574418978778411
+    second: LongChamberTexture_10
+  - first:
+      213: 7014596877254094581
+    second: LongChamberTexture_11
+  - first:
+      213: 4532540199355098727
+    second: LongChamberTexture_12
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 10
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: LongChamberTexture_0
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 442
+        width: 54
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e61258b67751ca90800000000000000
+      internalID: -7295453753953347871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LongChamberTexture_1
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 442
+        width: 79
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7953803e09bf47560800000000000000
+      internalID: 7310744694831986071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LongChamberTexture_2
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 407
+        width: 120
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11d7e4623fbaf1ce0800000000000000
+      internalID: -1432237095672447727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LongChamberTexture_3
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 431
+        width: 70
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbe9a62b4c0b096c0800000000000000
+      internalID: -4138613698700075333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LongChamberTexture_4
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 362
+        width: 180
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1e2e4d6985d1bb20800000000000000
+      internalID: 3148532400729763359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LongChamberTexture_5
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 353
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cc19425019118780800000000000000
+      internalID: -8682631048702911290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LongChamberTexture_6
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 353
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0b61a7e29684fbb0800000000000000
+      internalID: -4903146128790164721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LongChamberTexture_7
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 353
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfa18b05482f65450800000000000000
+      internalID: 6077311397286910715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LongChamberTexture_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 219
+        width: 500
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3f9b85a5e4a0f380800000000000000
+      internalID: -8939463954098577603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LongChamberTexture_9
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 196
+        width: 33
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01320773169320340800000000000000
+      internalID: 4828484840199299856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LongChamberTexture_10
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 196
+        width: 40
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d2d67f3e27811f80800000000000000
+      internalID: -8137574418978778411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LongChamberTexture_11
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 187
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fe6b47e1bad85160800000000000000
+      internalID: 7014596877254094581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LongChamberTexture_12
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 55
+        width: 280
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7662db00c41d6ee30800000000000000
+      internalID: 4532540199355098727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
