@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 9086385157733821896}
   - component: {fileID: 9086385157733821897}
   - component: {fileID: 9086385157733821898}
-  - component: {fileID: 9086385157733821902}
   - component: {fileID: 9086385157733821903}
+  - component: {fileID: 9086385157733821902}
   m_Layer: 14
   m_Name: Mushroom
   m_TagString: Untagged
@@ -27,10 +27,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9086385157733821899}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 13.329998, y: -13.316001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 7324101424294076690}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -71,8 +72,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -738014593
-  m_SortingLayer: 4
+  m_SortingLayerID: 1970854785
+  m_SortingLayer: 10
   m_SortingOrder: 0
   m_Sprite: {fileID: 6362388212197785035, guid: e7ee75c24ea3f6446b07fc1aca222345, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -104,6 +105,32 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!61 &9086385157733821903
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9086385157733821899}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.30141568}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.8, y: 1.8}
+    newSize: {x: 1.8, y: 1.8}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.7733716, y: 1.2065959}
+  m_EdgeRadius: 0
 --- !u!114 &9086385157733821902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116,32 +143,92 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a3729ec4bee9464295dbeeaff00fea3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _strength: 3
-  _defaultSprite: {fileID: 6362388212197785035, guid: e7ee75c24ea3f6446b07fc1aca222345, type: 3}
-  _hittableSprite: {fileID: -6373496780536623332, guid: e7ee75c24ea3f6446b07fc1aca222345, type: 3}
---- !u!61 &9086385157733821903
-BoxCollider2D:
+  _strength: 10
+  _hitParticles: {fileID: 1970948936823237502}
+--- !u!1001 &8600565206888537704
+PrefabInstance:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9086385157733821899}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.24172515}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.8, y: 1.8}
-    newSize: {x: 1.8, y: 1.8}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.7733716, y: 1.0872148}
-  m_EdgeRadius: 0
+  m_Modification:
+    m_TransformParent: {fileID: 9086385157733821896}
+    m_Modifications:
+    - target: {fileID: 1368873337057967994, guid: f9526603fe3790f45ae90e0a76293b49, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.020000458
+      objectReference: {fileID: 0}
+    - target: {fileID: 1368873337057967994, guid: f9526603fe3790f45ae90e0a76293b49, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.22600079
+      objectReference: {fileID: 0}
+    - target: {fileID: 1368873337057967994, guid: f9526603fe3790f45ae90e0a76293b49, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -12.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 1368873337057967994, guid: f9526603fe3790f45ae90e0a76293b49, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1368873337057967994, guid: f9526603fe3790f45ae90e0a76293b49, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1368873337057967994, guid: f9526603fe3790f45ae90e0a76293b49, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1368873337057967994, guid: f9526603fe3790f45ae90e0a76293b49, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1368873337057967994, guid: f9526603fe3790f45ae90e0a76293b49, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1368873337057967994, guid: f9526603fe3790f45ae90e0a76293b49, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 1368873337057967994, guid: f9526603fe3790f45ae90e0a76293b49, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1368873337057967994, guid: f9526603fe3790f45ae90e0a76293b49, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6451489449326739828, guid: f9526603fe3790f45ae90e0a76293b49, type: 3}
+      propertyPath: m_Name
+      value: MushroomHitParticles
+      objectReference: {fileID: 0}
+    - target: {fileID: 7782624645276284182, guid: f9526603fe3790f45ae90e0a76293b49, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0.003921569
+      objectReference: {fileID: 0}
+    - target: {fileID: 7782624645276284182, guid: f9526603fe3790f45ae90e0a76293b49, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.30980393
+      objectReference: {fileID: 0}
+    - target: {fileID: 7782624645276284182, guid: f9526603fe3790f45ae90e0a76293b49, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7782624645276284182, guid: f9526603fe3790f45ae90e0a76293b49, type: 3}
+      propertyPath: ShapeModule.radius.value
+      value: 0.28458786
+      objectReference: {fileID: 0}
+    - target: {fileID: 7782624645276284182, guid: f9526603fe3790f45ae90e0a76293b49, type: 3}
+      propertyPath: ShapeModule.angle
+      value: 22.832275
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f9526603fe3790f45ae90e0a76293b49, type: 3}
+--- !u!4 &7324101424294076690 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1368873337057967994, guid: f9526603fe3790f45ae90e0a76293b49, type: 3}
+  m_PrefabInstance: {fileID: 8600565206888537704}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &1970948936823237502 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 7782624645276284182, guid: f9526603fe3790f45ae90e0a76293b49, type: 3}
+  m_PrefabInstance: {fileID: 8600565206888537704}
+  m_PrefabAsset: {fileID: 0}
