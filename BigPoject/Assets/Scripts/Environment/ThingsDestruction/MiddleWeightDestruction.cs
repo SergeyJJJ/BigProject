@@ -6,15 +6,13 @@ namespace Environment.ThingsDestruction
 {
     public class MiddleWeightDestruction : MonoBehaviour, IBreakable
     {
-        [SerializeField] private int _strength = 0;                            // How many times crystal can be hit before it will be broken. 
-        [SerializeField] private Sprite _defaultSprite = null;                 // Default sprite of crystal.
-        [SerializeField] private Sprite _hittableSprite = null;                // Sprite used when player hit crystal.
-        private SpriteRenderer _spriteRenderer = null;                         // SpriteRender component of the crystal gameObject.                
+        [SerializeField] private int _strength = 0;               // How many times crystal can be hit before it will be broken.     
+        private Animator _animator = null;                        // Animator component that used to play hit animation.                   
 
         public void Break()
         {
             _strength--;
-            StartCoroutine(FlickRoutine());
+            PlayHitAnimation();
             
             if (_strength <= 0)
             {
@@ -25,7 +23,7 @@ namespace Environment.ThingsDestruction
 
         private void Awake()
         {
-            _spriteRenderer = GetComponent<SpriteRenderer>();
+            _animator = GetComponent<Animator>();
         }
         
 
@@ -35,15 +33,9 @@ namespace Environment.ThingsDestruction
         }
 
 
-        private IEnumerator FlickRoutine()
+        private void PlayHitAnimation()
         {
-            float spriteChangeDelay = 0.035f; 
-            
-            _spriteRenderer.sprite = _hittableSprite;
-            
-            yield return new WaitForSeconds(spriteChangeDelay);
-
-            _spriteRenderer.sprite = _defaultSprite;
+            _animator.SetTrigger("Hit");
         }
     }
 }
