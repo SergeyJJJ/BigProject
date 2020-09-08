@@ -1348,6 +1348,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6186909735433404481, guid: a5cc6dc7879b2db4b95abe7068928b61, type: 3}
+      propertyPath: _strength
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8972311426814683207, guid: a5cc6dc7879b2db4b95abe7068928b61, type: 3}
       propertyPath: m_Name
       value: Crystal

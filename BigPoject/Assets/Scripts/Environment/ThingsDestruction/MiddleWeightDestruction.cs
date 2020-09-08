@@ -26,7 +26,7 @@ namespace Environment.ThingsDestruction
             
             if (_strength <= 0)
             {
-                Destroy();
+                PlayCrushAnimation();
             }
         }
 
@@ -46,6 +46,12 @@ namespace Environment.ThingsDestruction
         private void PlayHitAnimation()
         {
             _animator.SetTrigger("Hit");
+        }
+        
+        
+        private void PlayCrushAnimation()
+        {
+            _animator.SetTrigger("Crush");
         }
         
         
