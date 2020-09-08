@@ -20,7 +20,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/LevelsPrototypes/JetPackMiniGame.unity
     guid: 97698814b2a8ab44a9a2868883a39728
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/TexturesTestChambers/Box.unity
     guid: e5b33ed15458603429769d1f0fb1ac1c
+  - enabled: 1
+    path: Assets/Scenes/TexturesTestChambers/LongBox.unity
+    guid: 7706130f97c608a41ada05514161cc56
   m_configObjects: {}

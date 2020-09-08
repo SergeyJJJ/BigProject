@@ -162,7 +162,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1368873337057967994, guid: f9526603fe3790f45ae90e0a76293b49, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -12.48
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1368873337057967994, guid: f9526603fe3790f45ae90e0a76293b49, type: 3}
       propertyPath: m_LocalRotation.x
@@ -199,26 +199,6 @@ PrefabInstance:
     - target: {fileID: 6451489449326739828, guid: f9526603fe3790f45ae90e0a76293b49, type: 3}
       propertyPath: m_Name
       value: MushroomHitParticles
-      objectReference: {fileID: 0}
-    - target: {fileID: 7782624645276284182, guid: f9526603fe3790f45ae90e0a76293b49, type: 3}
-      propertyPath: InitialModule.startColor.maxColor.r
-      value: 0.003921569
-      objectReference: {fileID: 0}
-    - target: {fileID: 7782624645276284182, guid: f9526603fe3790f45ae90e0a76293b49, type: 3}
-      propertyPath: InitialModule.startColor.maxColor.g
-      value: 0.30980393
-      objectReference: {fileID: 0}
-    - target: {fileID: 7782624645276284182, guid: f9526603fe3790f45ae90e0a76293b49, type: 3}
-      propertyPath: InitialModule.startColor.maxColor.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7782624645276284182, guid: f9526603fe3790f45ae90e0a76293b49, type: 3}
-      propertyPath: ShapeModule.radius.value
-      value: 0.28458786
-      objectReference: {fileID: 0}
-    - target: {fileID: 7782624645276284182, guid: f9526603fe3790f45ae90e0a76293b49, type: 3}
-      propertyPath: ShapeModule.angle
-      value: 22.832275
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9526603fe3790f45ae90e0a76293b49, type: 3}

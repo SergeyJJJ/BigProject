@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _damage: 15
   _flightRange: 15
-  _flightSpeed: 15
+  _flightSpeed: 23
   _flightSprite: {fileID: -3087264978319007404, guid: 0be82e7df2d7aaa42a6eae46e72480eb, type: 3}
