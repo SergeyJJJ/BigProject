@@ -26,6 +26,7 @@ namespace Environment.ThingsDestruction
             
             if (_strength <= 0)
             {
+                DisableGetDamageCollider();
                 PlayCrushAnimation();
             }
         }
@@ -42,6 +43,17 @@ namespace Environment.ThingsDestruction
             Destroy(gameObject);
         }
 
+
+        private void DisableGetDamageCollider()
+        {
+            Collider2D objectCollider = GetComponent<Collider2D>();
+            if (objectCollider != null)
+            {
+                Debug.Log("Hello");
+                objectCollider.enabled = false;
+            }
+        }
+        
 
         private void PlayHitAnimation()
         {
