@@ -7,10 +7,6 @@ namespace Arsenal.Bullets
     public class ActiveBullet : MonoBehaviour
     {
         [SerializeField] private LayerMask _hittableByBullet = Physics2D.AllLayers;     // Determine what can be damaged by bullet.
-
-        [Header("For bullet speed fix")]
-        [SerializeField] private Rigidbody2D _playerRigidbody2D = null;                 // Used to get player`s speed right now and add this speed to the player.                   
-            
         private Bullet _currentBullet = null;
         private Vector2 _launchDirection = Vector2.zero;
         private Vector2 _startFlightPosition = Vector2.zero;

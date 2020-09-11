@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5616292551596334445}
   - component: {fileID: 8683494154219875075}
+  - component: {fileID: 1499288281}
   m_Layer: 0
   m_Name: Arsenal
   m_TagString: Untagged
@@ -49,6 +50,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rifleCasings: {fileID: 2853593132499648351}
+--- !u!114 &1499288281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3461797548803673895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5642c85eb30a924eb762cad7e9a8da2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animator: {fileID: 3358275394135082939}
+  _rifleMuzzleSpriteRenderer: {fileID: 1060188261596445523}
 --- !u!1001 &1180896906874267921
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -180,46 +195,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5616292551596334445}
     m_Modifications:
-    - target: {fileID: 555501737349482767, guid: 552966005c72f7140b2927a61b16a444, type: 3}
-      propertyPath: InitialModule.startLifetime.scalar
-      value: 3.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 555501737349482767, guid: 552966005c72f7140b2927a61b16a444, type: 3}
-      propertyPath: InitialModule.startLifetime.minScalar
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 555501737349482767, guid: 552966005c72f7140b2927a61b16a444, type: 3}
-      propertyPath: InitialModule.startSpeed.scalar
-      value: 6.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 555501737349482767, guid: 552966005c72f7140b2927a61b16a444, type: 3}
-      propertyPath: InitialModule.startRotationX.minMaxState
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 555501737349482767, guid: 552966005c72f7140b2927a61b16a444, type: 3}
-      propertyPath: InitialModule.startRotationY.minMaxState
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 555501737349482767, guid: 552966005c72f7140b2927a61b16a444, type: 3}
-      propertyPath: InitialModule.startRotation.minMaxState
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 555501737349482767, guid: 552966005c72f7140b2927a61b16a444, type: 3}
-      propertyPath: InitialModule.startRotation.scalar
-      value: 1.5707963
-      objectReference: {fileID: 0}
-    - target: {fileID: 555501737349482767, guid: 552966005c72f7140b2927a61b16a444, type: 3}
-      propertyPath: InitialModule.startRotation.minScalar
-      value: -1.5707963
-      objectReference: {fileID: 0}
-    - target: {fileID: 555501737349482767, guid: 552966005c72f7140b2927a61b16a444, type: 3}
-      propertyPath: InitialModule.gravityModifier.scalar
-      value: 2.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 555501737349482767, guid: 552966005c72f7140b2927a61b16a444, type: 3}
-      propertyPath: RotationModule.enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 889919698736914788, guid: 552966005c72f7140b2927a61b16a444, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.049
@@ -275,9 +250,19 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 889919698736914788, guid: 552966005c72f7140b2927a61b16a444, type: 3}
   m_PrefabInstance: {fileID: 2318357885894440528}
   m_PrefabAsset: {fileID: 0}
+--- !u!212 &1060188261596445523 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 3358275394272234755, guid: 552966005c72f7140b2927a61b16a444, type: 3}
+  m_PrefabInstance: {fileID: 2318357885894440528}
+  m_PrefabAsset: {fileID: 0}
 --- !u!198 &2853593132499648351 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 555501737349482767, guid: 552966005c72f7140b2927a61b16a444, type: 3}
+  m_PrefabInstance: {fileID: 2318357885894440528}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &3358275394135082939 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1060188261733757419, guid: 552966005c72f7140b2927a61b16a444, type: 3}
   m_PrefabInstance: {fileID: 2318357885894440528}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3428040866411823614

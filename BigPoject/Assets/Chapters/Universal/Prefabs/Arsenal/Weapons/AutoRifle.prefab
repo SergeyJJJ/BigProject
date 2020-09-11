@@ -33,6 +33,7 @@ Transform:
   m_Children:
   - {fileID: 5512221518568195820}
   - {fileID: 7154215685505454342}
+  - {fileID: 1060188261733757417}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -255,4 +256,66 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 2385766878261209602, guid: 7a1d50c28c176564993caeddecffc407, type: 3}
   m_PrefabInstance: {fileID: 4779184620060179204}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &5333878112390407061
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 889919698736914788}
+    m_Modifications:
+    - target: {fileID: 4950360310003208828, guid: 56c5486522f18764d9e3c4f772d171bd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4950360310003208828, guid: 56c5486522f18764d9e3c4f772d171bd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 4950360310003208828, guid: 56c5486522f18764d9e3c4f772d171bd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.8648902
+      objectReference: {fileID: 0}
+    - target: {fileID: 4950360310003208828, guid: 56c5486522f18764d9e3c4f772d171bd, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4950360310003208828, guid: 56c5486522f18764d9e3c4f772d171bd, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4950360310003208828, guid: 56c5486522f18764d9e3c4f772d171bd, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4950360310003208828, guid: 56c5486522f18764d9e3c4f772d171bd, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4950360310003208828, guid: 56c5486522f18764d9e3c4f772d171bd, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4950360310003208828, guid: 56c5486522f18764d9e3c4f772d171bd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4950360310003208828, guid: 56c5486522f18764d9e3c4f772d171bd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4950360310003208828, guid: 56c5486522f18764d9e3c4f772d171bd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4950360310003208829, guid: 56c5486522f18764d9e3c4f772d171bd, type: 3}
+      propertyPath: m_Name
+      value: AuroRifleMuzzleFlash
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 56c5486522f18764d9e3c4f772d171bd, type: 3}
+--- !u!4 &1060188261733757417 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4950360310003208828, guid: 56c5486522f18764d9e3c4f772d171bd, type: 3}
+  m_PrefabInstance: {fileID: 5333878112390407061}
   m_PrefabAsset: {fileID: 0}
