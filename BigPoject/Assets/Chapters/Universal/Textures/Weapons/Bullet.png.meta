@@ -1,19 +1,7 @@
 fileFormatVersion: 2
-guid: 1768864aa320e7e45acf6b1bdfe75a10
+guid: f7379c1705ae5f74cad076facb9f0ae3
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: 8321299943145428690
-    second: ShootRifleEffect2_0
-  - first:
-      213: 6520097686147937901
-    second: ShootRifleEffect2_1
-  - first:
-      213: -6190519711366380723
-    second: ShootRifleEffect2_2
-  - first:
-      213: 5696540481400180165
-    second: ShootRifleEffect2_3
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -53,7 +41,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -113,70 +101,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: ShootRifleEffect2_0
-      rect:
-        serializedVersion: 2
-        x: 13
-        y: 38
-        width: 10
-        height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2d659acc5323b7370800000000000000
-      internalID: 8321299943145428690
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ShootRifleEffect2_1
-      rect:
-        serializedVersion: 2
-        x: 45
-        y: 38
-        width: 10
-        height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d66b1b3fc4a0c7a50800000000000000
-      internalID: 6520097686147937901
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ShootRifleEffect2_2
-      rect:
-        serializedVersion: 2
-        x: 13
-        y: 5
-        width: 10
-        height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d4304fc0f1bd61aa0800000000000000
-      internalID: -6190519711366380723
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []

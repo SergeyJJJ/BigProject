@@ -1,16 +1,16 @@
 fileFormatVersion: 2
-guid: dbc9ccca5cf3b944aaa94e01871fb61b
+guid: 2f10d6fd596a0fb47981f54fca6f0c4b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2084437943906784948
-    second: ShootRifleEffect_0
+      213: -5081203331706307063
+    second: ShootRifleEffect 1_0
   - first:
-      213: -8750870640841239520
-    second: ShootRifleEffect_1
+      213: 3045996901704000268
+    second: ShootRifleEffect 1_1
   - first:
-      213: -8795708073922954693
-    second: ShootRifleEffect_2
+      213: 1202452621618873484
+    second: ShootRifleEffect 1_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -112,64 +112,64 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ShootRifleEffect_0
+      name: ShootRifleEffect 1_0
       rect:
         serializedVersion: 2
         x: 13
-        y: 40
-        width: 9
-        height: 10
+        y: 39
+        width: 11
+        height: 12
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4b6d8e224496dec10800000000000000
-      internalID: 2084437943906784948
+      spriteID: 90e3d1ebd70fb79b0800000000000000
+      internalID: -5081203331706307063
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ShootRifleEffect_1
+      name: ShootRifleEffect 1_1
       rect:
         serializedVersion: 2
         x: 45
-        y: 40
-        width: 9
-        height: 10
+        y: 39
+        width: 11
+        height: 12
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 02453492489ae8680800000000000000
-      internalID: -8750870640841239520
+      spriteID: c03e1013b0e854a20800000000000000
+      internalID: 3045996901704000268
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ShootRifleEffect_2
+      name: ShootRifleEffect 1_2
       rect:
         serializedVersion: 2
         x: 13
-        y: 8
-        width: 9
-        height: 10
+        y: 7
+        width: 11
+        height: 12
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b3a79c1cb1e5fe580800000000000000
-      internalID: -8795708073922954693
+      spriteID: c8484dad948ffa010800000000000000
+      internalID: 1202452621618873484
       vertices: []
       indices: 
       edges: []
