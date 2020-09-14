@@ -8,7 +8,7 @@ namespace Environment
         [SerializeField] private List<GameObject> _lootStorage = null;             // Storage for loot that must be spread.
         [SerializeField] private float _throwLootForce = 0f;                       // Force that will be applied to the loot to throw it in a difference direction.
 
-        private void SpreadLoot()
+        public void SpreadLoot()
         {
             foreach (GameObject loot in _lootStorage)
             {

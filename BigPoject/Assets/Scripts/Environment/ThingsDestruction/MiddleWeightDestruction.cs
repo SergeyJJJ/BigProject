@@ -8,6 +8,7 @@ namespace Environment.ThingsDestruction
     {
         [SerializeField] private int _strength = 0;                           // How many times crystal can be hit before it will be broken.
         [SerializeField] private ParticleSystem _hitParticles = null;         // Particles that used when object was hit.
+        [SerializeField] private LootSpreader _loot = null;                   // Used to throw loot if its available.
         private Animator _animator = null;                                    // Animator component that used to play hit animation.                   
 
         public void Break()
@@ -28,6 +29,7 @@ namespace Environment.ThingsDestruction
             {
                 DisableGetDamageCollider();
                 PlayCrushAnimation();
+                ThrowLoot();
             }
         }
 
@@ -44,12 +46,17 @@ namespace Environment.ThingsDestruction
         }
 
 
+        private void ThrowLoot()
+        {
+            _loot.SpreadLoot();
+        }
+
+
         private void DisableGetDamageCollider()
         {
             Collider2D objectCollider = GetComponent<Collider2D>();
             if (objectCollider != null)
             {
-                Debug.Log("Hello");
                 objectCollider.enabled = false;
             }
         }

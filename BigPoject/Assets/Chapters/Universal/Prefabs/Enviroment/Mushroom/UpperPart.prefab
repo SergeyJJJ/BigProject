@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 9086385157733821903}
   - component: {fileID: 9086385157733821902}
   m_Layer: 14
-  m_Name: Mushroom
+  m_Name: UpperPart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -142,5 +142,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a3729ec4bee9464295dbeeaff00fea3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _strength: 10
+  _strength: 5
   _hitParticles: {fileID: 0}

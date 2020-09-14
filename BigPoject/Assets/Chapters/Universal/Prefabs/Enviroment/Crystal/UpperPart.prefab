@@ -123,7 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a3729ec4bee9464295dbeeaff00fea3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _strength: 100
+  _strength: 5
   _hitParticles: {fileID: 0}
 --- !u!95 &1457861361
 Animator:
