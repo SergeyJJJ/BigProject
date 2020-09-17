@@ -6,10 +6,11 @@ namespace Environment.ThingsDestruction
 {
     public class MiddleWeightDestruction : MonoBehaviour, IBreakable
     {
-        [SerializeField] private int _strength = 0; // How many times crystal can be hit before it will be broken.
-        [SerializeField] private ParticleSystem _hitParticles = null; // Particles that used when object was hit.
-        [SerializeField] private LootSpreader _loot = null; // Used to throw loot if its available.
-        private Animator _animator = null; // Animator component that used to play hit animation.                   
+        [SerializeField] private int _strength = 0;                             // How many times crystal can be hit before it will be broken.
+        [SerializeField] private ParticleSystem _hitParticles = null;           // Particles that used when object was hit.
+        [SerializeField] private ParticleSystem _destructionParticles = null;   // Particles that used when object was destructed.
+        [SerializeField] private LootSpreader _loot = null;                     // Used to throw loot if its available.
+        private Animator _animator = null;                                      // Animator component that used to play hit animation.                   
 
         public void Break()
         {
@@ -54,6 +55,11 @@ namespace Environment.ThingsDestruction
                 DisableGetDamageCollider(objectCollider);
             }
 
+            if (_destructionParticles != null)
+            {
+                _destructionParticles.Play();    
+            }
+            
             if (_animator != null)
             {
                 PlayCrushAnimation();

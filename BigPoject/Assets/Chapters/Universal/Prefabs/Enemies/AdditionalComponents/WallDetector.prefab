@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2465739340164623948}
   - component: {fileID: 4422153858967893534}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: WallDetector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,5 +45,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _whatIsGround:
     serializedVersion: 2
-    m_Bits: 4294967291
-  _platformCheckDistance: 0
+    m_Bits: 512
+  _platformCheckDistance: 1.1

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1233258868234583638}
   - component: {fileID: 4918943519837737350}
   - component: {fileID: 4919017905385288331}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: AttackZoneDetector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47,7 +47,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.62
+  m_Radius: 0.63416773
 --- !u!114 &4919017905385288331
 MonoBehaviour:
   m_ObjectHideFlags: 0

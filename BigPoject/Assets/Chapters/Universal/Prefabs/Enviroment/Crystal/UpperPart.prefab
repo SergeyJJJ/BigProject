@@ -125,6 +125,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _strength: 5
   _hitParticles: {fileID: 0}
+  _destructionParticles: {fileID: 0}
+  _loot: {fileID: 0}
 --- !u!95 &1457861361
 Animator:
   serializedVersion: 3

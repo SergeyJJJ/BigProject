@@ -4,8 +4,11 @@ namespace Living_beings
 {
     public class Health : MonoBehaviour
     {
-        [SerializeField] private float _maxHealth = 0; // Maximum health amount that have entity.
-        private float _currentHealth = 0; // Current health amount that have entity.
+        [SerializeField] private float _maxHealth = 0;                                // Maximum health amount that have entity.
+
+        [Header("Effects")] [SerializeField] private ParticleSystem _blood = null;    // Particles that used to represent blood. 
+        
+        private float _currentHealth = 0;                                             // Current health amount that have entity.
 
         #region Properties
 
@@ -42,6 +45,11 @@ namespace Living_beings
             }
             
             CurrentHealth -= damageAmount;
+
+            if (_blood != null)
+            {
+                _blood.Play();
+            }
         }
 
 
