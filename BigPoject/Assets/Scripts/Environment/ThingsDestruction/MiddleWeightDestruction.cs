@@ -6,30 +6,22 @@ namespace Environment.ThingsDestruction
 {
     public class MiddleWeightDestruction : MonoBehaviour, IBreakable
     {
-        [SerializeField] private int _strength = 0;                           // How many times crystal can be hit before it will be broken.
-        [SerializeField] private ParticleSystem _hitParticles = null;         // Particles that used when object was hit.
-        [SerializeField] private LootSpreader _loot = null;                   // Used to throw loot if its available.
-        private Animator _animator = null;                                    // Animator component that used to play hit animation.                   
+        [SerializeField] private int _strength = 0; // How many times crystal can be hit before it will be broken.
+        [SerializeField] private ParticleSystem _hitParticles = null; // Particles that used when object was hit.
+        [SerializeField] private LootSpreader _loot = null; // Used to throw loot if its available.
+        private Animator _animator = null; // Animator component that used to play hit animation.                   
 
         public void Break()
         {
             _strength--;
 
-            if (_animator != null)
+            if (_strength > 0)
             {
-                PlayHitAnimation();
+                OnGetDamage();
             }
-            
-            if (_hitParticles != null)
+            else
             {
-                SpawnHitParticles();
-            }
-            
-            if (_strength <= 0)
-            {
-                DisableGetDamageCollider();
-                PlayCrushAnimation();
-                ThrowLoot();
+                OnDestruction();
             }
         }
 
@@ -38,7 +30,41 @@ namespace Environment.ThingsDestruction
         {
             _animator = GetComponent<Animator>();
         }
-        
+
+
+        private void OnGetDamage()
+        {
+            if (_animator != null)
+            {
+                PlayHitAnimation();
+            }
+
+            if (_hitParticles != null)
+            {
+                SpawnHitParticles();
+            }
+        }
+
+
+        private void OnDestruction()
+        {
+            Collider2D objectCollider = GetComponent<Collider2D>();
+            if (objectCollider != null)
+            {
+                DisableGetDamageCollider(objectCollider);
+            }
+
+            if (_animator != null)
+            {
+                PlayCrushAnimation();
+            }
+
+            if (_loot != null)
+            {
+                ThrowLoot();
+            }
+        }
+
 
         private void Destroy()
         {
@@ -52,13 +78,9 @@ namespace Environment.ThingsDestruction
         }
 
 
-        private void DisableGetDamageCollider()
+        private void DisableGetDamageCollider(Collider2D objectCollider)
         {
-            Collider2D objectCollider = GetComponent<Collider2D>();
-            if (objectCollider != null)
-            {
-                objectCollider.enabled = false;
-            }
+            objectCollider.enabled = false;
         }
         
 

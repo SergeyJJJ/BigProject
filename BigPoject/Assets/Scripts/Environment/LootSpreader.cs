@@ -13,8 +13,6 @@ namespace Environment
         }
         [SerializeField] private Loot[] _loot = null;
 
-        [SerializeField] private float _throwLootForce = 0f;                       // Force that will be applied to the loot to throw it in a difference direction.
-
         public void SpreadLoot()
         {
             // Pass through every element in Loot array, and instantiate every
@@ -33,7 +31,7 @@ namespace Environment
 
                     if (thrownItemRigidbody2D != null)
                     {
-                        thrownItemRigidbody2D.AddForce(GetRandomDirection() * _throwLootForce, ForceMode2D.Impulse);
+                        thrownItemRigidbody2D.AddForce(GetRandomDirection() * GetRandomThrowForce(), ForceMode2D.Impulse);
                     }
                 }
             }
@@ -42,11 +40,10 @@ namespace Environment
 
         private Vector2 GetRandomDirection()
         {
-            int xMin = 5, xMax = 11;
-            int yMin = 4, yMax = 8;
+            int xMin = 0, xMax = 4;
+            int yDirection = 5;
             
             int xDirection = UnityEngine.Random.Range(xMin, xMax) * GetRandomSign();
-            int yDirection = UnityEngine.Random.Range(yMin, yMax) * GetRandomSign();
 
             return new Vector2(xDirection, yDirection).normalized;
         }
@@ -54,6 +51,13 @@ namespace Environment
         private int GetRandomSign()
         {
             return UnityEngine.Random.Range(1, 3) == 1 ? -1 : 1;
+        }
+
+
+        private int GetRandomThrowForce()
+        {
+            int minForce = 7, maxForce = 11;
+            return UnityEngine.Random.Range(minForce, maxForce);
         }
     }
 }
