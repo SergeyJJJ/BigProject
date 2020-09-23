@@ -10,7 +10,7 @@ namespace Environment
     
         public void Interact()
         {
-            
+            Debug.Log("Go to another room");
         }
 
 
