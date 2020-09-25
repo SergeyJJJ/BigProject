@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Living_beings.Enemies.PatrolTypes
 {
@@ -6,7 +7,8 @@ namespace Living_beings.Enemies.PatrolTypes
     public abstract class Patrol : MonoBehaviour
     {
         private bool _isFacingRight = true;                           // Check if player is facing right.
-        private bool _isWaitingOnPoint = false;                                  // Check if enemy is now waiting.
+        private bool _isWaitingOnPoint = false;                       // Check if enemy is now waiting.
+        private EnemyAnimations _enemyAnimations = null;              // Control enemy animations.        
         
         #region Properties
         
@@ -21,6 +23,8 @@ namespace Living_beings.Enemies.PatrolTypes
             get => _isWaitingOnPoint;
             set => _isWaitingOnPoint = value;
         }
+        
+        public EnemyAnimations EnemyAnimationsControl => _enemyAnimations;
 
         #endregion Properties
         
@@ -44,6 +48,13 @@ namespace Living_beings.Enemies.PatrolTypes
         {
             _isFacingRight = !_isFacingRight;
             transform.Rotate(0f, 180f, 0f);
+        }
+
+
+        private void Awake()
+        {
+            _enemyAnimations = GetComponent<EnemyAnimations>();
+            Debug.Log("_enemyAnimations");
         }
     }
 }

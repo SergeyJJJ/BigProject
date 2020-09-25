@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Runtime.InteropServices;
+using UnityEngine;
 
 namespace Living_beings.Enemies.PatrolTypes
 {
@@ -13,12 +14,21 @@ namespace Living_beings.Enemies.PatrolTypes
             if (IsWaitingOnPoint)
             {
                 StayOnPointTimer -= Time.deltaTime;
-
+                
+                IsAlreadyMoving = false;
+                
+                if (!IsAlreadyStanding)
+                {
+                    EnemyAnimationsControl.StartIdleAnimation();
+                    IsAlreadyStanding = true;
+                }
+                
                 // When time for staying is out
                 if (StayOnPointTimer < 0)
                 {    
                     // Set that is time to go further.
                     IsWaitingOnPoint = false;
+                    IsAlreadyStanding = false;
                     
                     // Change facing direction if needed.
                     if (IsTargetPointToTheRight() && !IsFacingRight)
@@ -49,6 +59,12 @@ namespace Living_beings.Enemies.PatrolTypes
                 }
                 else
                 {
+                    if (!IsAlreadyMoving)
+                    {
+                        EnemyAnimationsControl.StartWalkingAnimation();
+                        IsAlreadyMoving = true;
+                    }
+                    
                     // Move enemy to the target point.
                     Move(enemyTransform, enemyRigidbody);
                 }
@@ -64,8 +80,8 @@ namespace Living_beings.Enemies.PatrolTypes
 
             enemyRigidbody.velocity = targetDirection * (PatrolSpeed * Time.deltaTime);
         }
-        
-        
+
+
         private bool IsPlatformEndReached()
         {
             return _platformEndDetector.IsPlatformEndReached;

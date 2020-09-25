@@ -13,6 +13,10 @@ namespace Living_beings.Enemies.PatrolTypes
         private int _currentPointIndex = 0;                                      // Target point index.
         private float _stayOnPointTimer = 0f;                                    // Timer that control how long enemy will stand.
 
+        private bool _isAlreadyMoving = false;                                   // Determine if enemy is moving right now.
+        private bool _isAlreadyStanding = false;                                 // Determine if enemy is standing right now.
+        
+        
         #region Properties
         
         protected float PatrolSpeed => _patrolSpeed;
@@ -29,6 +33,18 @@ namespace Living_beings.Enemies.PatrolTypes
         {
             get => _stayOnPointTimer;
             set => _stayOnPointTimer = value;
+        }
+        
+        protected bool IsAlreadyMoving
+        {
+            get => _isAlreadyMoving;
+            set => _isAlreadyMoving = value;
+        }
+
+        protected bool IsAlreadyStanding
+        {
+            get => _isAlreadyStanding;
+            set => _isAlreadyStanding = value;
         }
 
         #endregion Properties

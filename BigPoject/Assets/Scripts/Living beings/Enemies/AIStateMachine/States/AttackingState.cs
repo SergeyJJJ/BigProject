@@ -17,7 +17,6 @@ namespace Living_beings.Enemies.AIStateMachine.States
             base.Enter();
             EnemyAi.EnemyAttack.SetTimeBeforeAttackEqualZero();
             Debug.Log("Attack state");
-            
         }
 
 
