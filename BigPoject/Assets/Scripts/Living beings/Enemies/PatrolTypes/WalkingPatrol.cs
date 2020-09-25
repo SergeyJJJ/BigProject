@@ -56,6 +56,12 @@ namespace Living_beings.Enemies.PatrolTypes
                     
                     // Set how long enemy will stay.
                     StayOnPointTimer = TimeToStayOnPoint;
+                    
+                    if (!IsAlreadyStanding)
+                    {
+                        EnemyAnimationsControl.StartIdleAnimation();
+                        IsAlreadyStanding = true;
+                    }
                 }
                 else
                 {

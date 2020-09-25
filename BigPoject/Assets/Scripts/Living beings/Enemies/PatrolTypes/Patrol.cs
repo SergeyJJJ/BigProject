@@ -51,10 +51,9 @@ namespace Living_beings.Enemies.PatrolTypes
         }
 
 
-        private void Awake()
+        protected virtual void Awake()
         {
             _enemyAnimations = GetComponent<EnemyAnimations>();
-            Debug.Log("_enemyAnimations");
         }
     }
 }

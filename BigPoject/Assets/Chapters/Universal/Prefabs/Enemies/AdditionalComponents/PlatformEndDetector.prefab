@@ -46,4 +46,4 @@ MonoBehaviour:
   _whatIsGround:
     serializedVersion: 2
     m_Bits: 512
-  _platformCheckDistance: 1.5
+  _platformCheckDistance: 1
