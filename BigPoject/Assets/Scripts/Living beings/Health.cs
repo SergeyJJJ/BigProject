@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Living_beings
 {
@@ -6,7 +7,9 @@ namespace Living_beings
     {
         [SerializeField] private float _maxHealth = 0;                                // Maximum health amount that have entity.
 
-        [Header("Effects")] [SerializeField] private ParticleSystem _blood = null;    // Particles that used to represent blood. 
+        [Header("Effects")]
+        [SerializeField] private ParticleSystem _blood = null;                        // Particles that used to represent blood. 
+        [SerializeField] private Animator _animator = null;                           // Animator that used to play hit animation.
         
         private float _currentHealth = 0;                                             // Current health amount that have entity.
 
@@ -49,6 +52,11 @@ namespace Living_beings
             if (_blood != null)
             {
                 _blood.Play();
+            }
+
+            if (_animator != null)
+            {
+                _animator.SetTrigger("Hit");
             }
         }
 

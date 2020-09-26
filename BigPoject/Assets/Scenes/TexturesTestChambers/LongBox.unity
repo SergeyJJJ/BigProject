@@ -311,7 +311,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6479117650325892611, guid: 687ad3921ab373341b7f212d512b075c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.1282876
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6479117650325892611, guid: 687ad3921ab373341b7f212d512b075c, type: 3}
       propertyPath: m_LocalRotation.x
@@ -810,6 +810,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &890292568 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4345433881753158760, guid: b97effc1a957e6c489675e0691984359, type: 3}
+  m_PrefabInstance: {fileID: 7607190943163164631}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1019137498
 GameObject:
   m_ObjectHideFlags: 0
@@ -899,7 +904,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1285927539}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 50.1566, y: 5.8273597, z: -2.1282876}
+  m_LocalPosition: {x: 50.1566, y: 5.8273597, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 438060544}
@@ -1389,7 +1394,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1717540484}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.1599998, y: 1.5, z: 2.1282876}
+  m_LocalPosition: {x: 2.1599998, y: 1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1019137499}
@@ -1754,7 +1759,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3492639329056296391, guid: b97effc1a957e6c489675e0691984359, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.1282876
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3492639329056296391, guid: b97effc1a957e6c489675e0691984359, type: 3}
       propertyPath: m_LocalRotation.x
@@ -1788,14 +1793,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5584681862658513396, guid: b97effc1a957e6c489675e0691984359, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1.33
-      objectReference: {fileID: 0}
     - target: {fileID: 6186889034348307376, guid: b97effc1a957e6c489675e0691984359, type: 3}
       propertyPath: m_Name
       value: Centipode
       objectReference: {fileID: 0}
+    - target: {fileID: 6404551066768038046, guid: b97effc1a957e6c489675e0691984359, type: 3}
+      propertyPath: _animator
+      value: 
+      objectReference: {fileID: 890292568}
     - target: {fileID: 7607190942381015938, guid: b97effc1a957e6c489675e0691984359, type: 3}
       propertyPath: _player
       value: 

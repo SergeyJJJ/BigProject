@@ -109,10 +109,8 @@ namespace Living_beings.Enemies.PatrolTypes
         }
 
 
-        protected override void Awake()
+        private void Awake()
         {
-            base.Awake();
-            
             if (IsPointsExist())
             {
                 _currentTargetPoint = _patrolTrajectoryPoints[0].position;

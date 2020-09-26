@@ -8,8 +8,7 @@ namespace Living_beings.Enemies.PatrolTypes
     {
         private bool _isFacingRight = true;                           // Check if player is facing right.
         private bool _isWaitingOnPoint = false;                       // Check if enemy is now waiting.
-        private EnemyAnimations _enemyAnimations = null;              // Control enemy animations.        
-        
+
         #region Properties
         
         protected bool IsFacingRight
@@ -24,8 +23,6 @@ namespace Living_beings.Enemies.PatrolTypes
             set => _isWaitingOnPoint = value;
         }
         
-        public EnemyAnimations EnemyAnimationsControl => _enemyAnimations;
-
         #endregion Properties
         
         public abstract void PatrolArea(Transform enemyTransform, Rigidbody2D enemyRigidbody);
@@ -48,12 +45,6 @@ namespace Living_beings.Enemies.PatrolTypes
         {
             _isFacingRight = !_isFacingRight;
             transform.Rotate(0f, 180f, 0f);
-        }
-
-
-        protected virtual void Awake()
-        {
-            _enemyAnimations = GetComponent<EnemyAnimations>();
         }
     }
 }

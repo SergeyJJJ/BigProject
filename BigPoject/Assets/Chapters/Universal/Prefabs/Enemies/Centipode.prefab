@@ -18,7 +18,6 @@ GameObject:
   - component: {fileID: 2479349025832067917}
   - component: {fileID: 8062920105638997907}
   - component: {fileID: 4345433881753158760}
-  - component: {fileID: 4345433881753158761}
   m_Layer: 12
   m_Name: Centipode
   m_TagString: Untagged
@@ -244,18 +243,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &4345433881753158761
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6186889034348307376}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c25d2aa7d8b1474ab1fb0bbff9e13bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &6513744046078422870
 GameObject:
   m_ObjectHideFlags: 0
@@ -645,7 +632,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8867715132233648520, guid: 8902ee85bb47d254eb9b923f5241059b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.98
+      value: 1.33
       objectReference: {fileID: 0}
     - target: {fileID: 8867715132233648520, guid: 8902ee85bb47d254eb9b923f5241059b, type: 3}
       propertyPath: m_LocalPosition.y
