@@ -1,11 +1,13 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 namespace Living_beings.Enemies.AttackTypes
 {
     // Class that provides functionality to perform melee attack.
     public class MeleeAttack : Attack
     {
-        [SerializeField] private float _damagePerAttack = 0;
+        [SerializeField] private float _damagePerAttack = 0;                // Determine how much damage will be applied to the player.
+        [SerializeField] private float _timeBeforeDamageApplying = 0;       // Determine how long needed to wait before applying damage to the player.
         
         public override void AttackPlayer()
         {
@@ -24,10 +26,19 @@ namespace Living_beings.Enemies.AttackTypes
 
                     IsAlreadyAttacking = true;
                 }
+
+                StartCoroutine(ApplyDamageRoutine());
                 
-                PlayerHealth.TakeDamage(_damagePerAttack);
                 NextAttackTimer = TimeBetweenAttacks;
             }
+        }
+
+
+        private IEnumerator ApplyDamageRoutine()
+        {
+            yield return new WaitForSeconds(_timeBeforeDamageApplying);
+            
+            PlayerHealth.TakeDamage(_damagePerAttack);
         }
     }
 }

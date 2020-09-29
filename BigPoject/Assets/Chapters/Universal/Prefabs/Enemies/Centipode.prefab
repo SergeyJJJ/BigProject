@@ -104,7 +104,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6186889034348307376}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -225,6 +225,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _attackPerMinute: 40
   _damagePerAttack: 30
+  _timeBeforeDamageApplying: 0.3
 --- !u!95 &4345433881753158760
 Animator:
   serializedVersion: 3
@@ -465,11 +466,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4602661923340872943, guid: c173796d796095e4ca3ba65d185323e4, type: 3}
       propertyPath: m_Offset.x
-      value: 1.2478256
+      value: 1.2488098
       objectReference: {fileID: 0}
     - target: {fileID: 4602661923340872943, guid: c173796d796095e4ca3ba65d185323e4, type: 3}
       propertyPath: m_Size.x
-      value: 11.074799
+      value: 10.369476
       objectReference: {fileID: 0}
     - target: {fileID: 5614098085151796223, guid: c173796d796095e4ca3ba65d185323e4, type: 3}
       propertyPath: m_Name
@@ -702,11 +703,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2465739340164623948, guid: a93bb29dd1bc54444b49727f8491dce0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.04
+      value: 0.52
       objectReference: {fileID: 0}
     - target: {fileID: 2465739340164623948, guid: a93bb29dd1bc54444b49727f8491dce0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.82
       objectReference: {fileID: 0}
     - target: {fileID: 2465739340164623948, guid: a93bb29dd1bc54444b49727f8491dce0, type: 3}
       propertyPath: m_LocalPosition.z
