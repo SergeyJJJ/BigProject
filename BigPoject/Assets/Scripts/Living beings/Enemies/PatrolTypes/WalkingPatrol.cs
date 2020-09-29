@@ -1,4 +1,5 @@
 ﻿using System.Runtime.InteropServices;
+using TMPro;
 using UnityEngine;
 
 namespace Living_beings.Enemies.PatrolTypes
@@ -14,6 +15,16 @@ namespace Living_beings.Enemies.PatrolTypes
             if (IsWaitingOnPoint)
             {
                 StayOnPointTimer -= Time.deltaTime;
+                
+                if (!IsAlreadyStanding)
+                {
+                    EnemyAnimator.SetBool("Patrol", false);
+                    EnemyAnimator.SetBool("Chase", false);
+                    EnemyAnimator.SetBool("Idle", true);
+                    
+                    IsAlreadyStanding = true;
+                    IsAlreadyMoving = false;
+                }
 
                 // When time for staying is out
                 if (StayOnPointTimer < 0)
@@ -37,6 +48,16 @@ namespace Living_beings.Enemies.PatrolTypes
                 // If platform reached the target point.
                 if (IsPointReached(enemyTransform) || IsPlatformEndReached() || IsWallInFrontOfEnemy())
                 {
+                    if (!IsAlreadyStanding)
+                    {
+                        EnemyAnimator.SetBool("Patrol", false);
+                        EnemyAnimator.SetBool("Chase", false);
+                        EnemyAnimator.SetBool("Idle", true);
+                        
+                        IsAlreadyStanding = true;
+                        IsAlreadyMoving = false;
+                    }
+                    
                     // Change current target point.
                     ChangeTargetPoint();
                     
@@ -50,8 +71,21 @@ namespace Living_beings.Enemies.PatrolTypes
                 }
                 else
                 {
-                    // Move enemy to the target point.
-                    Move(enemyTransform, enemyRigidbody);
+                    if (!EnemyAnimator.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
+                    {
+                        if (!IsAlreadyMoving)
+                        {
+                            EnemyAnimator.SetBool("Patrol", true);
+                            EnemyAnimator.SetBool("Chase", false);
+                            EnemyAnimator.SetBool("Idle", false);
+
+                            IsAlreadyMoving = true;
+                            IsAlreadyStanding = false;
+                        }
+
+                        // Move enemy to the target point.
+                        Move(enemyTransform, enemyRigidbody);
+                    }
                 }
             }
         }

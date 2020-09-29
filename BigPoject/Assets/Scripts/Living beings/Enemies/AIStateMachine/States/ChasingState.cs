@@ -17,6 +17,7 @@ namespace Living_beings.Enemies.AIStateMachine.States
             base.Enter();
             
             EnemyAi.EnemyChase.SetFacingDirection();
+            EnemyAi.EnemyChase.SetMovingAndStandingBoolsToDefault();
             Debug.Log("Chase state");
         }
 

@@ -6,12 +6,25 @@ namespace Living_beings.Enemies.AttackTypes
     public abstract class Attack : MonoBehaviour
     {
         [SerializeField] private float _attackPerMinute = 0;         // How often will the enemy attack;
+        
+        private Animator _animator = null;                           // Animator that used to control enemy`s animations.
+
+        private bool _isAlreadyAttacking = false;                    // Determine if enemy is attacking right now.
+        
         private float _nextAttackTimer = 0f;                         // Timer that control when enemy can shoot again.
         private float _timeBetweenAttacks = 0f;                      // Time that must pass between each attack.
 
         private Health _playerHealth = null;                         // Player health component needed to apply damage to the player.
 
         #region Properties
+
+        protected Animator EnemyAnimator => _animator;
+
+        protected bool IsAlreadyAttacking
+        {
+            get => _isAlreadyAttacking;
+            set => _isAlreadyAttacking = value;
+        }
 
         protected float NextAttackTimer
         {
@@ -31,11 +44,18 @@ namespace Living_beings.Enemies.AttackTypes
         {
             _nextAttackTimer = 0;
         }
+        
 
         private float GetTimeBetweenEachAttack()
         {
             float secondsPerMinute = 60;
             return secondsPerMinute / _attackPerMinute;
+        }
+
+        
+        protected virtual void Awake()
+        {
+            _animator = GetComponent<Animator>();
         }
         
         
@@ -43,6 +63,7 @@ namespace Living_beings.Enemies.AttackTypes
         {
             _timeBetweenAttacks = GetTimeBetweenEachAttack();
             _playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<Health>();
+            
         }
     }
 }

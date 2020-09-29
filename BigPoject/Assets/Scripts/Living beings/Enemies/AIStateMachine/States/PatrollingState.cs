@@ -17,6 +17,7 @@ namespace Living_beings.Enemies.AIStateMachine.States
             base.Enter();
             
             EnemyAi.EnemyPatrol.SetFacingDirection();
+            EnemyAi.EnemyPatrol.SetMovingAndStandingBoolsToDefault();
             EnemyAi.EnemyPatrol.StaySomeTime();
             Debug.Log("Patrol state");
         }

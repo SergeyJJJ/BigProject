@@ -157,6 +157,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxHealth: 100
   _blood: {fileID: 3170509800549118967}
+  _animator: {fileID: 4345433881753158760}
 --- !u!114 &7607190942381015938
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -815,6 +816,14 @@ PrefabInstance:
     - target: {fileID: 1233258868234583638, guid: d91d2d1e6da83e84e87fd47a645e3bce, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4918943519837737350, guid: d91d2d1e6da83e84e87fd47a645e3bce, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.30044317
+      objectReference: {fileID: 0}
+    - target: {fileID: 4918943519837737350, guid: d91d2d1e6da83e84e87fd47a645e3bce, type: 3}
+      propertyPath: m_Radius
+      value: 0.93461084
       objectReference: {fileID: 0}
     - target: {fileID: 8124017914269615614, guid: d91d2d1e6da83e84e87fd47a645e3bce, type: 3}
       propertyPath: m_Name

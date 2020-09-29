@@ -12,20 +12,53 @@ namespace Living_beings.Enemies.ChaseTypes
         {
             if (IsPlatformEndReached() || IsWallInFrontOfEnemy())
             {
+                if (!IsAlreadyStanding)
+                {
+                    EnemyAnimator.SetBool("Chase", false);
+                    EnemyAnimator.SetBool("Patrol", false);
+                    EnemyAnimator.SetBool("Idle", true);
+                    
+                    IsAlreadyStanding = true;
+                    IsAlreadyMoving = false;
+                }
+                
                 enemyRigidbody.velocity = Vector2.zero;
             }
             else
             {
                 if (IsEnoughDistance(playerTransform))
                 {
-                    Vector2 enemyPosition = enemyTransform.position;
-                    Vector2 targetPosition = new Vector2(playerTransform.position.x, enemyPosition.y);
-                    Vector2 chaseDirection = (targetPosition - enemyPosition).normalized;
+                    if (!EnemyAnimator.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
+                    {
+                        if (!IsAlreadyMoving)
+                        {
+                            EnemyAnimator.SetBool("Chase", true);
+                            EnemyAnimator.SetBool("Idle", false);
+                            EnemyAnimator.SetBool("Patrol", false);
 
-                    enemyRigidbody.velocity = chaseDirection * (ChasingSpeed * Time.deltaTime);
+                            IsAlreadyMoving = true;
+                            IsAlreadyStanding = false;
+                        }
+
+                        Vector2 enemyPosition = enemyTransform.position;
+                        Vector2 targetPosition = new Vector2(playerTransform.position.x, enemyPosition.y);
+                        Vector2 chaseDirection = (targetPosition - enemyPosition).normalized;
+
+                        enemyRigidbody.velocity = chaseDirection * (ChasingSpeed * Time.deltaTime);
+                    }
                 }
                 else
                 {
+                    if (!IsAlreadyStanding)
+                    {
+                        EnemyAnimator.SetBool("Chase", false);
+                        EnemyAnimator.SetBool("Patrol", false);
+                        EnemyAnimator.SetBool("Idle", true);
+                        
+                        IsAlreadyStanding = true;
+                        IsAlreadyMoving = false;
+                    }
+                    
                     enemyRigidbody.velocity = Vector2.zero;
                 }
             }

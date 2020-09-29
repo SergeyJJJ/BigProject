@@ -11,8 +11,20 @@ namespace Living_beings.Enemies.AttackTypes
         {
             NextAttackTimer -= Time.deltaTime;
 
+            IsAlreadyAttacking = false;
+            
             if (NextAttackTimer < 0)
             {
+                if (!IsAlreadyAttacking)
+                {
+                    EnemyAnimator.SetTrigger("Attack");
+                    EnemyAnimator.SetBool("Idle", true);
+                    EnemyAnimator.SetBool("Chase", false);
+                    EnemyAnimator.SetBool("Patrol", false);
+
+                    IsAlreadyAttacking = true;
+                }
+                
                 PlayerHealth.TakeDamage(_damagePerAttack);
                 NextAttackTimer = TimeBetweenAttacks;
             }
