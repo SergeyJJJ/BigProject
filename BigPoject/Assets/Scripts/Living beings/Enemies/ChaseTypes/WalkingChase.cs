@@ -5,6 +5,7 @@ namespace Living_beings.Enemies.ChaseTypes
     // Class that provides functionality to perform walking chase.
     public class WalkingChase : Chase
     {
+        [SerializeField] private float _stoppingDistanceToPlayer = 0;             // Distance to the Player at which the enemy stop chasing.
         [SerializeField] private PlatformEndDetector _platformEndDetector = null; // Component that detect end of platform.
         [SerializeField] private WallDetector _wallDetector = null;               // Component that detect if wall is in front of player.
         
@@ -82,9 +83,7 @@ namespace Living_beings.Enemies.ChaseTypes
         // It`s important to prevent enemy from endless flipping.
         private bool IsEnoughDistance(Transform playerTransform)
         {
-            float threshold = 1.8f;
-
-            return Vector2.Distance(playerTransform.position, transform.position) > threshold;
+            return Vector2.Distance(playerTransform.position, transform.position) > _stoppingDistanceToPlayer;
         }
         
         

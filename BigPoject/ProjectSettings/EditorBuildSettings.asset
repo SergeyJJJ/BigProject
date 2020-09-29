@@ -23,7 +23,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/TexturesTestChambers/Box.unity
     guid: e5b33ed15458603429769d1f0fb1ac1c
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/TexturesTestChambers/LongBox.unity
     guid: 7706130f97c608a41ada05514161cc56
   - enabled: 0
@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/TileMapTest/14.09.2020DifferentChambers/RoomsTest.unity
     guid: 62b80d2199a85b4409551ee111d9175f
+  - enabled: 1
+    path: Assets/Scenes/TexturesTestChambers/UpdatedTexturesLongBox.unity
+    guid: fa152eb25e016fe4289547d6b65df1ef
   m_configObjects: {}
