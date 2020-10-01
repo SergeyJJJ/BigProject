@@ -17,7 +17,7 @@ namespace Living_beings.Player.CharacterMovement.MovementStateMachine
         [SerializeField] private float _jumpHeight = 0f;                          // Character`s jump height.
         [SerializeField] private float _afterGroundTouchJumpTime = 0f;            // Time during which character still can jump after he touch ground last time.
         [SerializeField] private float _pressBeforeGroundTime = 0f;               // Time during which character can perform jump after he press jump button last time.
-        [Range(0f, 1f), SerializeField] private float _cutJumpHeight = 0;        // Coefficient that determine how much jump will be cut, after player relesase jump button.
+        [Range(0f, 1f), SerializeField] private float _cutJumpHeight = 0;         // Coefficient that determine how much jump will be cut, after player relesase jump button.
         [SerializeField] private CustomButton _upMoveButton = null;               // Jump and climb button.
 
         [Header("Ladder movement control")]

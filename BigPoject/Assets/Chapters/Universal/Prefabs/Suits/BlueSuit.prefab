@@ -282,7 +282,7 @@ MonoBehaviour:
   _jumpHeight: 12.75
   _afterGroundTouchJumpTime: 0.1
   _pressBeforeGroundTime: 0.1
-  _cutJumpHeight: 0.27
+  _cutJumpHeight: 0.8
   _upMoveButton: {fileID: 0}
   _climbUpSpeed: 6
   _climbDownSpeed: 3
