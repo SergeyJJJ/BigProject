@@ -58,6 +58,13 @@ namespace Living_beings
             {
                 _animator.SetTrigger("Hit");
             }
+
+            if (CurrentHealth <= 0)
+            {
+                Kill();
+            }
+
+            Debug.Log(CurrentHealth);
         }
 
 
@@ -75,6 +82,12 @@ namespace Living_beings
         public void ResetHealth()
         {
             _currentHealth = _maxHealth;
+        }
+
+
+        private void Kill()
+        {
+            Destroy(gameObject);
         }
         
         

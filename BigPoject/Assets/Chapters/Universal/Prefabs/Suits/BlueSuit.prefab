@@ -283,7 +283,7 @@ MonoBehaviour:
   _jumpHeight: 12.75
   _afterGroundTouchJumpTime: 0.1
   _pressBeforeGroundTime: 0.1
-  _cutJumpHeight: 0.8
+  _cutJumpHeight: 0.83
   _upMoveButton: {fileID: 0}
   _climbUpSpeed: 6
   _climbDownSpeed: 3
@@ -569,7 +569,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2225479389187876346, guid: b80f3a976ae542e468b9b276b49d407f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 2225479389187876346, guid: b80f3a976ae542e468b9b276b49d407f, type: 3}
       propertyPath: m_LocalPosition.y

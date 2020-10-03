@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4931594260bea604ea88e66401a02c20, type: 3}
   m_Name: AutoRifleBullet
   m_EditorClassIdentifier: 
-  _damage: 15
+  _damage: 20
   _flightRange: 15
   _flightSpeed: 23
   _flightSprite: {fileID: 21300000, guid: f7379c1705ae5f74cad076facb9f0ae3, type: 3}
