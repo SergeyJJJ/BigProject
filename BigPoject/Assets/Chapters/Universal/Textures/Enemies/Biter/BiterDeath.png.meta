@@ -158,9 +158,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 5
-        y: 71
+        y: 68
         width: 21
-        height: 19
+        height: 22
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -178,10 +178,10 @@ TextureImporter:
       name: BiterDeath_1
       rect:
         serializedVersion: 2
-        x: 37
-        y: 71
+        x: 38
+        y: 68
         width: 21
-        height: 19
+        height: 22
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,9 +200,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 67
-        y: 71
+        y: 68
         width: 21
-        height: 19
+        height: 22
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -221,9 +221,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 4
-        y: 38
+        y: 35
         width: 21
-        height: 19
+        height: 22
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -242,9 +242,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 36
-        y: 38
+        y: 35
         width: 21
-        height: 19
+        height: 22
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -263,9 +263,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 68
-        y: 38
+        y: 35
         width: 21
-        height: 19
+        height: 22
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -283,10 +283,10 @@ TextureImporter:
       name: BiterDeath_6
       rect:
         serializedVersion: 2
-        x: 4
-        y: 6
+        x: 5
+        y: 3
         width: 21
-        height: 19
+        height: 22
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

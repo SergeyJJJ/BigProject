@@ -93,7 +93,7 @@ namespace Living_beings
 
         private void PlayDeathAnimation()
         {
-            
+            throw new NotImplementedException();
         }
         
         
