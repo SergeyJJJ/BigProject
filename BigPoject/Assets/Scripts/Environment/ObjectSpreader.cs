@@ -1,31 +1,30 @@
-using System.Collections.Generic;
 using System;
 using UnityEngine;
 
 namespace Environment
 {
-    public class LootSpreader : MonoBehaviour
+    public class ObjectSpreader : MonoBehaviour
     {
-        [Serializable] public struct Loot                                         // Used as storage for different loot that will be thrown.
+        [Serializable] public struct Object                                         // Used as storage for different loot that will be thrown.
         {
             public int amount;
             public GameObject item;
         }
-        [SerializeField] private Loot[] _loot = null;
+        [SerializeField] private Object[] _objects = null;
 
-        public void SpreadLoot()
+        public void SpreadObjects()
         {
-            // Pass through every element in Loot array, and instantiate every
+            // Pass through every element in Objects array, and instantiate every
             // item some amount of times. After item was instantiated apply 
             // force to it to throw it on some distance.
-            for (int lootIndex = 0; lootIndex < _loot.Length; lootIndex++)
+            for (int lootIndex = 0; lootIndex < _objects.Length; lootIndex++)
             {
-                int itemAmount = _loot[lootIndex].amount;
+                int itemAmount = _objects[lootIndex].amount;
 
                 for (int itemIndex = 0; itemIndex < itemAmount; itemIndex++)
                 {
                     GameObject thrownItem =
-                        Instantiate(_loot[lootIndex].item, transform.position, Quaternion.identity);
+                        Instantiate(_objects[lootIndex].item, transform.position, Quaternion.identity);
 
                     Rigidbody2D thrownItemRigidbody2D = thrownItem.GetComponent<Rigidbody2D>();
 
@@ -42,7 +41,7 @@ namespace Environment
         {
             int xMin = 0, xMax = 4;
             int yDirection = 5;
-            
+        
             int xDirection = UnityEngine.Random.Range(xMin, xMax) * GetRandomSign();
 
             return new Vector2(xDirection, yDirection).normalized;

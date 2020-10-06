@@ -157,6 +157,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Loot
       objectReference: {fileID: 0}
+    - target: {fileID: 8874653784453624074, guid: 1b96fb8538290ae4cb6705edd2f4c7f3, type: 3}
+      propertyPath: _objects.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8874653784453624074, guid: 1b96fb8538290ae4cb6705edd2f4c7f3, type: 3}
+      propertyPath: _objects.Array.data[0].amount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8874653784453624074, guid: 1b96fb8538290ae4cb6705edd2f4c7f3, type: 3}
+      propertyPath: _objects.Array.data[0].item
+      value: 
+      objectReference: {fileID: 7148536434729271876, guid: f2d25d8523760e045b9e6c94826c0fec, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b96fb8538290ae4cb6705edd2f4c7f3, type: 3}
 --- !u!4 &6186909733844143242 stripped
@@ -164,15 +176,15 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6437188955792569694, guid: 1b96fb8538290ae4cb6705edd2f4c7f3, type: 3}
   m_PrefabInstance: {fileID: 903302267736340948}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &6186909733844143237 stripped
+--- !u!114 &8619949304151640286 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6437188955792569681, guid: 1b96fb8538290ae4cb6705edd2f4c7f3, type: 3}
+  m_CorrespondingSourceObject: {fileID: 8874653784453624074, guid: 1b96fb8538290ae4cb6705edd2f4c7f3, type: 3}
   m_PrefabInstance: {fileID: 903302267736340948}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d4ac96893dd10543842fcadfd429a9d, type: 3}
+  m_Script: {fileID: 11500000, guid: 1cb717b5b796313449f773ecbbe584d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &6186909735158257932
@@ -193,7 +205,11 @@ PrefabInstance:
     - target: {fileID: 812226893, guid: 012fc26551d2f8e449790bcc4d2f25fd, type: 3}
       propertyPath: _loot
       value: 
-      objectReference: {fileID: 6186909733844143237}
+      objectReference: {fileID: 0}
+    - target: {fileID: 812226893, guid: 012fc26551d2f8e449790bcc4d2f25fd, type: 3}
+      propertyPath: _objects
+      value: 
+      objectReference: {fileID: 8619949304151640286}
     - target: {fileID: 931170855086079178, guid: 012fc26551d2f8e449790bcc4d2f25fd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

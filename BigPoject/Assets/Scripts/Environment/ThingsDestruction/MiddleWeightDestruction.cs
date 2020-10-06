@@ -9,7 +9,7 @@ namespace Environment.ThingsDestruction
         [SerializeField] private int _strength = 0;                             // How many times crystal can be hit before it will be broken.
         [SerializeField] private ParticleSystem _hitParticles = null;           // Particles that used when object was hit.
         [SerializeField] private ParticleSystem _destructionParticles = null;   // Particles that used when object was destructed.
-        [SerializeField] private LootSpreader _loot = null;                     // Used to throw loot if its available.
+        [SerializeField] private ObjectSpreader _objects = null;                // Used to throw loot if its available.
         private Animator _animator = null;                                      // Animator component that used to play hit animation.                   
 
         public void Break()
@@ -65,7 +65,7 @@ namespace Environment.ThingsDestruction
                 PlayCrushAnimation();
             }
 
-            if (_loot != null)
+            if (_objects != null)
             {
                 ThrowLoot();
             }
@@ -80,7 +80,7 @@ namespace Environment.ThingsDestruction
 
         private void ThrowLoot()
         {
-            _loot.SpreadLoot();
+            _objects.SpreadObjects();
         }
 
 

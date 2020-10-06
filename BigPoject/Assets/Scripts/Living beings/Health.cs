@@ -89,6 +89,12 @@ namespace Living_beings
         {
             Destroy(gameObject);
         }
+
+
+        private void PlayDeathAnimation()
+        {
+            
+        }
         
         
         private void Awake()
