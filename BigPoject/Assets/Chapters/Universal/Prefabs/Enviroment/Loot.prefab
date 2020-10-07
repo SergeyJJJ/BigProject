@@ -43,4 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cb717b5b796313449f773ecbbe584d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objects: []
+  _objects:
+  - amount: 3
+    item: {fileID: 7148536434729271876, guid: f2d25d8523760e045b9e6c94826c0fec, type: 3}

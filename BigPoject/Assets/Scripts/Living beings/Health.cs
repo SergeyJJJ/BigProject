@@ -12,6 +12,8 @@ namespace Living_beings
         [SerializeField] private Animator _animator = null;                           // Animator that used to play hit animation.
         
         private float _currentHealth = 0;                                             // Current health amount that have entity.
+        private bool _isCanBeDamaged = true;                                          // Define if entity can be damaged.
+
 
         #region Properties
 
@@ -48,23 +50,15 @@ namespace Living_beings
             }
             
             CurrentHealth -= damageAmount;
-
-            if (_blood != null)
+            
+            if (CurrentHealth > 0)
             {
-                _blood.Play();
+                OnGetDamage();
             }
-
-            if (_animator != null)
+            else
             {
-                _animator.SetTrigger("Hit");
+                OnDeath();
             }
-
-            if (CurrentHealth <= 0)
-            {
-                Kill();
-            }
-
-            Debug.Log(CurrentHealth);
         }
 
 
@@ -83,20 +77,61 @@ namespace Living_beings
         {
             _currentHealth = _maxHealth;
         }
-
-
-        private void Kill()
+        
+        
+        private void OnGetDamage()
         {
-            Destroy(gameObject);
+            Collider2D creaturesDamageCollider = GetComponent<Collider2D>();
+            if (creaturesDamageCollider != null)
+            {
+                creaturesDamageCollider.enabled = false;
+            }
+            
+            if (_blood != null)
+            {
+                SpawnBloodParticles();
+            }
+
+            if (_animator != null)
+            {
+                PlayHitAnimation();
+            }
+        }
+
+
+        private void OnDeath()
+        {
+            if (_animator != null)
+            {
+                PlayDeathAnimation();
+            }
+        }
+        
+        
+        private void DisableCreatureDamageCollider(Collider2D creaturesDamageCollider)
+        {
+            creaturesDamageCollider.enabled = false;
+        }
+
+
+        private void SpawnBloodParticles()
+        {
+            _blood.Play();
         }
 
 
         private void PlayDeathAnimation()
         {
-            throw new NotImplementedException();
+            _animator.SetTrigger("Death");
         }
-        
-        
+
+
+        private void PlayHitAnimation()
+        {
+            _animator.SetTrigger("Hit");
+        }
+
+
         private void Awake()
         {
             _currentHealth = _maxHealth;

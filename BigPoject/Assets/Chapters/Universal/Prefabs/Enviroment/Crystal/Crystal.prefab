@@ -1,5 +1,17 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &2989795293840090314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6426776762962257346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22315462b429da64ba6cac51c4feef33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8972311426814683207
 GameObject:
   m_ObjectHideFlags: 0
@@ -157,18 +169,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Loot
       objectReference: {fileID: 0}
-    - target: {fileID: 8874653784453624074, guid: 1b96fb8538290ae4cb6705edd2f4c7f3, type: 3}
-      propertyPath: _objects.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8874653784453624074, guid: 1b96fb8538290ae4cb6705edd2f4c7f3, type: 3}
-      propertyPath: _objects.Array.data[0].amount
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8874653784453624074, guid: 1b96fb8538290ae4cb6705edd2f4c7f3, type: 3}
-      propertyPath: _objects.Array.data[0].item
-      value: 
-      objectReference: {fileID: 7148536434729271876, guid: f2d25d8523760e045b9e6c94826c0fec, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b96fb8538290ae4cb6705edd2f4c7f3, type: 3}
 --- !u!4 &6186909733844143242 stripped
@@ -260,6 +260,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 012fc26551d2f8e449790bcc4d2f25fd, type: 3}
+--- !u!1 &6426776762962257346 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 931170855086079182, guid: 012fc26551d2f8e449790bcc4d2f25fd, type: 3}
+  m_PrefabInstance: {fileID: 6186909735158257932}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6426776762962257350 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 931170855086079178, guid: 012fc26551d2f8e449790bcc4d2f25fd, type: 3}

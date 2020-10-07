@@ -1,46 +1,28 @@
 fileFormatVersion: 2
-guid: 37db414fc0ef5dc44ae4f822ef9ce671
+guid: 645887cde9f25dc48b7b0a041f8d587b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1338197032812963953
-    second: BiterDeath_0
+      213: -5135621975558875791
+    second: BiterDeathAlpha_0
   - first:
-      213: -296331583938902742
-    second: BiterDeath_1
+      213: -6547038120858913103
+    second: BiterDeathAlpha_1
   - first:
-      213: 443573374008150843
-    second: BiterDeath_2
+      213: 8568561328794830923
+    second: BiterDeathAlpha_2
   - first:
-      213: 4600010857696003072
-    second: BiterDeath_3
+      213: -4446752909490016248
+    second: BiterDeathAlpha_3
   - first:
-      213: -6917752596886721621
-    second: BiterDeath_4
+      213: 4751292978092961083
+    second: BiterDeathAlpha_4
   - first:
-      213: 8975411782318774495
-    second: BiterDeath_5
+      213: 6828515580824731019
+    second: BiterDeathAlpha_5
   - first:
-      213: -9058953272909769022
-    second: BiterDeath_6
-  - first:
-      213: 2501844155259083693
-    second: BiterDeath_7
-  - first:
-      213: 2652494290366901817
-    second: BiterDeath_8
-  - first:
-      213: 8717692552102685673
-    second: BiterDeath_9
-  - first:
-      213: -3206313926273557475
-    second: BiterDeath_10
-  - first:
-      213: -9032149689540347881
-    second: BiterDeath_11
-  - first:
-      213: -4856827124314212275
-    second: BiterDeath_12
+      213: 6483278942928802286
+    second: BiterDeathAlpha_6
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -154,49 +136,49 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BiterDeath_0
+      name: BiterDeathAlpha_0
       rect:
         serializedVersion: 2
-        x: 5
+        x: 4
         y: 68
         width: 21
         height: 22
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f8793b383e4cd6de0800000000000000
-      internalID: -1338197032812963953
+      spriteID: 1759f1ed50b9ab8b0800000000000000
+      internalID: -5135621975558875791
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BiterDeath_1
+      name: BiterDeathAlpha_1
       rect:
         serializedVersion: 2
-        x: 38
+        x: 36
         y: 68
         width: 21
         height: 22
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a25c7939ef733ebf0800000000000000
-      internalID: -296331583938902742
+      spriteID: 1b6734b448f3425a0800000000000000
+      internalID: -6547038120858913103
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BiterDeath_2
+      name: BiterDeathAlpha_2
       rect:
         serializedVersion: 2
         x: 67
@@ -204,98 +186,98 @@ TextureImporter:
         width: 21
         height: 22
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b3bc39d22a3e72600800000000000000
-      internalID: 443573374008150843
+      spriteID: b4807fe5125a9e670800000000000000
+      internalID: 8568561328794830923
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BiterDeath_3
+      name: BiterDeathAlpha_3
       rect:
         serializedVersion: 2
         x: 4
-        y: 35
+        y: 37
         width: 21
         height: 22
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 00409efc08586df30800000000000000
-      internalID: 4600010857696003072
+      spriteID: 800b9e9e9c5f942c0800000000000000
+      internalID: -4446752909490016248
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BiterDeath_4
+      name: BiterDeathAlpha_4
       rect:
         serializedVersion: 2
         x: 36
-        y: 35
+        y: 37
         width: 21
         height: 22
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: babe78a3aa43fff90800000000000000
-      internalID: -6917752596886721621
+      spriteID: b3de9074acbffe140800000000000000
+      internalID: 4751292978092961083
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BiterDeath_5
+      name: BiterDeathAlpha_5
       rect:
         serializedVersion: 2
-        x: 68
-        y: 35
+        x: 67
+        y: 37
         width: 21
         height: 22
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fd857f556711f8c70800000000000000
-      internalID: 8975411782318774495
+      spriteID: b8d3742edb2c3ce50800000000000000
+      internalID: 6828515580824731019
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BiterDeath_6
+      name: BiterDeathAlpha_6
       rect:
         serializedVersion: 2
-        x: 5
-        y: 3
+        x: 4
+        y: 10
         width: 21
         height: 22
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2c6d953aef1284280800000000000000
-      internalID: -9058953272909769022
+      spriteID: ee19a0549db39f950800000000000000
+      internalID: 6483278942928802286
       vertices: []
       indices: 
       edges: []

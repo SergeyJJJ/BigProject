@@ -57,7 +57,7 @@ namespace Environment.ThingsDestruction
 
             if (_destructionParticles != null)
             {
-                _destructionParticles.Play();    
+                SpawnDestructionParticles();
             }
             
             if (_animator != null)
@@ -69,12 +69,6 @@ namespace Environment.ThingsDestruction
             {
                 ThrowLoot();
             }
-        }
-
-
-        private void Destroy()
-        {
-            Destroy(gameObject);
         }
 
 
@@ -105,6 +99,12 @@ namespace Environment.ThingsDestruction
         private void SpawnHitParticles()
         {
             _hitParticles.Play();
+        }
+
+
+        private void SpawnDestructionParticles()
+        {
+            _destructionParticles.Play();
         }
     }
 }
