@@ -44,20 +44,26 @@ namespace Living_beings
 
         public void TakeDamage(float damageAmount)
         {
-            if (damageAmount < 0)
+            if (_isCanBeDamaged == true)
             {
-                damageAmount = -damageAmount;
-            }
-            
-            CurrentHealth -= damageAmount;
-            
-            if (CurrentHealth > 0)
-            {
-                OnGetDamage();
-            }
-            else
-            {
-                OnDeath();
+                Debug.Log("Damage");
+                
+                if (damageAmount < 0)
+                {
+                    damageAmount = -damageAmount;
+                }
+
+                CurrentHealth -= damageAmount;
+
+                if (CurrentHealth > 0)
+                {
+                    OnGetDamage();
+                }
+                else
+                {
+                    _isCanBeDamaged = false;
+                    OnDeath();
+                }
             }
         }
 
@@ -81,12 +87,6 @@ namespace Living_beings
         
         private void OnGetDamage()
         {
-            Collider2D creaturesDamageCollider = GetComponent<Collider2D>();
-            if (creaturesDamageCollider != null)
-            {
-                creaturesDamageCollider.enabled = false;
-            }
-            
             if (_blood != null)
             {
                 SpawnBloodParticles();
@@ -105,12 +105,6 @@ namespace Living_beings
             {
                 PlayDeathAnimation();
             }
-        }
-        
-        
-        private void DisableCreatureDamageCollider(Collider2D creaturesDamageCollider)
-        {
-            creaturesDamageCollider.enabled = false;
         }
 
 
