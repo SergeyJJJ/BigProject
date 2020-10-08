@@ -1,5 +1,5 @@
 ﻿using Environment.InterfacesOfUsing;
-using Living_beings;
+using LivingBeings;
 using UnityEngine;
 
 namespace Arsenal.Bullets

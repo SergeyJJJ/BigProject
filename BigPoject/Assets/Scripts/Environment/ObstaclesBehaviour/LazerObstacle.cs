@@ -1,4 +1,4 @@
-﻿using Living_beings;
+﻿using LivingBeings;
 using UnityEngine;
 
 namespace Environment.ObstaclesBehaviour

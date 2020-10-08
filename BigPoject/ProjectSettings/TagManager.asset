@@ -28,7 +28,7 @@ TagManager:
   - Enemy
   - BulletIgnoreWalkableSurface
   - HittableEnvironment
-  - 
+  - BodyParts
   - 
   - 
   - 

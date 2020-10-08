@@ -1,4 +1,4 @@
-﻿using Living_beings.Player.CharacterMovement.MovementStateMachine;
+﻿using LivingBeings.Player.CharacterMovement.MovementStateMachine;
 using UnityEngine;
 
 namespace DevelopmentProcessHelpers

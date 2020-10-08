@@ -1,5 +1,4 @@
-﻿using Living_beings.Player;
-using UI;
+﻿using UI;
 using UnityEngine;
 
 namespace Arsenal.Weapons

@@ -1,4 +1,4 @@
-﻿using Living_beings;
+﻿using LivingBeings;
 using TMPro;
 using UnityEngine;
 
