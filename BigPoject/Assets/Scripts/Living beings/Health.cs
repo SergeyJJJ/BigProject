@@ -99,6 +99,13 @@ namespace Living_beings
 
         private void OnDeath()
         {
+            Rigidbody2D entityRigidbody2D = GetComponent<Rigidbody2D>();
+
+            if (entityRigidbody2D != null)
+            {
+                StopMovement(entityRigidbody2D);
+            }
+            
             if (_animator != null)
             {
                 PlayDeathAnimation();
@@ -121,6 +128,12 @@ namespace Living_beings
         private void PlayHitAnimation()
         {
             _animator.SetTrigger("Hit");
+        }
+
+
+        private void StopMovement(Rigidbody2D entityRigidbody2D)
+        {
+            entityRigidbody2D.constraints = RigidbodyConstraints2D.FreezeAll;
         }
 
 
