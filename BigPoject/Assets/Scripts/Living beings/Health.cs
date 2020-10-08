@@ -46,8 +46,6 @@ namespace Living_beings
         {
             if (_isCanBeDamaged == true)
             {
-                Debug.Log("Damage");
-                
                 if (damageAmount < 0)
                 {
                     damageAmount = -damageAmount;
