@@ -120,7 +120,7 @@ namespace LivingBeings
 
             if (_deathBodyParts != null && _explosion != null)
             {
-                StartCoroutine(ThrowBodyPartsRotine());
+                StartCoroutine(ThrowBodyPartsRoutine());
             }
         }
 
@@ -160,11 +160,14 @@ namespace LivingBeings
         }
 
 
-        private IEnumerator ThrowBodyPartsRotine()
+        private IEnumerator ThrowBodyPartsRoutine()
         {
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.11f);
             
-            _deathBodyParts.transform.position = new Vector2(_deathBodyPartsSpawnPoint.position.x - 2, _deathBodyPartsSpawnPoint.position.y + 0.5f);
+            Vector2 shiftedDeathBodyPartsPosition = new Vector2(_deathBodyPartsSpawnPoint.position.x + _shiftFixForDeathBodySpawn.x,
+                                                                _deathBodyPartsSpawnPoint.position.y + _shiftFixForDeathBodySpawn.y);
+
+            _deathBodyParts.transform.position = shiftedDeathBodyPartsPosition;
             _deathBodyParts.SetActive(true);
             _explosion.Explode();
         }
