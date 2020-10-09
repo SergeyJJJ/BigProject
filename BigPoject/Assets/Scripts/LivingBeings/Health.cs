@@ -1,4 +1,6 @@
-﻿using ForItemsAndCreatures;
+﻿using System.Collections;
+using System.Collections.Generic;
+using ForItemsAndCreatures;
 using UnityEngine;
 
 namespace LivingBeings
@@ -12,6 +14,8 @@ namespace LivingBeings
         [SerializeField] private Animator _animator = null;                           // Animator that used to play hit animation.
         [SerializeField] private Explosion _explosion = null;                         // Used to throw body parts of the entity.
         [SerializeField] private GameObject _deathBodyParts = null;                   // Dead body parts.
+        [SerializeField] private Transform _deathBodyPartsSpawnPoint = null;          // Where dead body parts will be spawned.
+        [SerializeField] private Vector2 _shiftFixForDeathBodySpawn = Vector2.zero;   // Used to spawn body parts in proper position. 
         
         private float _currentHealth = 0;                                             // Current health amount that have entity.
         private bool _isCanBeDamaged = true;                                          // Define if entity can be damaged.
@@ -115,7 +119,7 @@ namespace LivingBeings
 
             if (_deathBodyParts != null && _explosion != null)
             {
-                ThrowBodyParts();
+                StartCoroutine(ThrowBodyPartsRotine());
             }
         }
 
@@ -144,13 +148,12 @@ namespace LivingBeings
         }
 
 
-        private void ThrowBodyParts()
+        private IEnumerator ThrowBodyPartsRotine()
         {
-            _deathBodyParts.transform.position = _explosion.transform.position;
+            yield return new WaitForSeconds(0.1f);
+            
+            _deathBodyParts.transform.position = new Vector2(_deathBodyPartsSpawnPoint.position.x - 2, _deathBodyPartsSpawnPoint.position.y + 0.5f);
             _deathBodyParts.SetActive(true);
-            
-            Debug.Log("Explosion: " + _explosion.transform.position + "Body parts:" + _deathBodyParts.transform.position);
-            
             _explosion.Explode();
         }
 
