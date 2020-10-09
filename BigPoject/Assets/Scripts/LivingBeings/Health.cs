@@ -12,6 +12,7 @@ namespace LivingBeings
         [Header("Visual Effects")]
         [SerializeField] private ParticleSystem _blood = null;                        // Particles that used to represent blood. 
         [SerializeField] private Animator _animator = null;                           // Animator that used to play hit animation.
+        [SerializeField] private SpriteRenderer _renderer = null;                     // Used to work with entities sprites. 
         [SerializeField] private Explosion _explosion = null;                         // Used to throw body parts of the entity.
         [SerializeField] private GameObject _deathBodyParts = null;                   // Dead body parts.
         [SerializeField] private Transform _deathBodyPartsSpawnPoint = null;          // Where dead body parts will be spawned.
@@ -96,9 +97,9 @@ namespace LivingBeings
                 SpawnBloodParticles();
             }
 
-            if (_animator != null)
+            if (_renderer != null)
             {
-                PlayHitAnimation();
+                StartCoroutine(ChangeSpriteToHitColorRoutine());
             }
         }
 
@@ -136,11 +137,22 @@ namespace LivingBeings
         }
 
 
-        private void PlayHitAnimation()
+        /*private void PlayHitAnimation()
         {
             _animator.SetTrigger("Hit");
-        }
+        }*/ // Obsolete.
 
+        
+        private IEnumerator ChangeSpriteToHitColorRoutine()
+        {
+            _renderer.color = Color.red;
+
+            float timeInHitColorTime = 0.18f;
+            yield return new WaitForSeconds(timeInHitColorTime);
+            
+            _renderer.color = Color.white;
+        }
+        
 
         private void StopMovement(Rigidbody2D entityRigidbody2D)
         {
