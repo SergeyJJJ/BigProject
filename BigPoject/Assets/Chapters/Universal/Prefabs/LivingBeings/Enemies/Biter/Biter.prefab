@@ -124,6 +124,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5762297539782087327}
+  - {fileID: 8608890243703389557}
   m_Father: {fileID: 1976873990945137926}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -306,11 +307,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2301325165682649768, guid: b296cb3e65685964189b96570b5d4c78, type: 3}
       propertyPath: m_Name
-      value: OrangeBloodParticles
+      value: HitOrangeBloodParticles
       objectReference: {fileID: 0}
     - target: {fileID: 3055366427596283594, guid: b296cb3e65685964189b96570b5d4c78, type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
-      value: 80
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 6095779869989573798, guid: b296cb3e65685964189b96570b5d4c78, type: 3}
       propertyPath: m_LocalPosition.x
@@ -368,6 +369,77 @@ ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 3055366427596283594, guid: b296cb3e65685964189b96570b5d4c78, type: 3}
   m_PrefabInstance: {fileID: 1976873990733760057}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2585175510844746195
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1976873991263770700}
+    m_Modifications:
+    - target: {fileID: 2301325165682649768, guid: b296cb3e65685964189b96570b5d4c78, type: 3}
+      propertyPath: m_Name
+      value: DeathOrangeBloodParticles (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3055366427596283594, guid: b296cb3e65685964189b96570b5d4c78, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 155
+      objectReference: {fileID: 0}
+    - target: {fileID: 6095779869989573798, guid: b296cb3e65685964189b96570b5d4c78, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 6095779869989573798, guid: b296cb3e65685964189b96570b5d4c78, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 6095779869989573798, guid: b296cb3e65685964189b96570b5d4c78, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6095779869989573798, guid: b296cb3e65685964189b96570b5d4c78, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6095779869989573798, guid: b296cb3e65685964189b96570b5d4c78, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6095779869989573798, guid: b296cb3e65685964189b96570b5d4c78, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6095779869989573798, guid: b296cb3e65685964189b96570b5d4c78, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6095779869989573798, guid: b296cb3e65685964189b96570b5d4c78, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6095779869989573798, guid: b296cb3e65685964189b96570b5d4c78, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 6095779869989573798, guid: b296cb3e65685964189b96570b5d4c78, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6095779869989573798, guid: b296cb3e65685964189b96570b5d4c78, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b296cb3e65685964189b96570b5d4c78, type: 3}
+--- !u!4 &8608890243703389557 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6095779869989573798, guid: b296cb3e65685964189b96570b5d4c78, type: 3}
+  m_PrefabInstance: {fileID: 2585175510844746195}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &686434995337131801 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 3055366427596283594, guid: b296cb3e65685964189b96570b5d4c78, type: 3}
+  m_PrefabInstance: {fileID: 2585175510844746195}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8061550514116115750
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -387,6 +459,14 @@ PrefabInstance:
       propertyPath: _deathBodyParts
       value: 
       objectReference: {fileID: 8226122369103382860}
+    - target: {fileID: 8398972583055034388, guid: c86f58c82b66e2b4eb8e3ae68e683966, type: 3}
+      propertyPath: _hitBlood
+      value: 
+      objectReference: {fileID: 3533518077098645747}
+    - target: {fileID: 8398972583055034388, guid: c86f58c82b66e2b4eb8e3ae68e683966, type: 3}
+      propertyPath: _deathBlood
+      value: 
+      objectReference: {fileID: 686434995337131801}
     - target: {fileID: 8398972583055034393, guid: c86f58c82b66e2b4eb8e3ae68e683966, type: 3}
       propertyPath: _patrolTrajectoryPoints.Array.data[0]
       value: 

@@ -11,7 +11,8 @@ namespace LivingBeings
         [SerializeField] private float _maxHealth = 0;                                // Maximum health amount that have entity.
 
         [Header("Visual Effects")]
-        [SerializeField] private ParticleSystem _blood = null;                        // Particles that used to represent blood. 
+        [SerializeField] private ParticleSystem _hitBlood = null;                     // Particles that used to represent hit blood.
+        [SerializeField] private ParticleSystem _deathBlood = null;                     // Particles that used to represent death blood. 
         [SerializeField] private Animator _animator = null;                           // Animator that used to play hit animation.
         [SerializeField] private SpriteFlash _spriteFlash = null;                     // Used to do spriteFlash when entity is hitted.
         [SerializeField] private Explosion _explosion = null;                         // Used to throw body parts of the entity.
@@ -96,9 +97,9 @@ namespace LivingBeings
         
         private void OnGetDamage()
         {
-            if (_blood != null)
+            if (_hitBlood != null)
             {
-                SpawnBloodParticles();
+                SpawnHitBloodParticles();
             }
 
             if (_spriteFlash != null)
@@ -122,6 +123,11 @@ namespace LivingBeings
                 PlayDeathAnimation();
             }
 
+            if (_deathBlood != null)
+            {
+                SpawnDeathBloodParticles();
+            }
+
             if (_deathBodyParts != null && _explosion != null)
             {
                 StartCoroutine(ThrowBodyPartsRoutine());
@@ -129,16 +135,28 @@ namespace LivingBeings
         }
 
 
-        private void SpawnBloodParticles()
+        private void SpawnHitBloodParticles()
         {
             if (_bloodParticlesSpawnPoint)
             {
-                _blood.transform.position = _bloodParticlesSpawnPoint.position;
+                _hitBlood.transform.position = _bloodParticlesSpawnPoint.position;
             }
             
-            _blood.Play();
+            _hitBlood.Play();
         }
 
+        
+        private void SpawnDeathBloodParticles()
+        {
+            if (_bloodParticlesSpawnPoint)
+            {
+                _deathBlood.transform.position = _bloodParticlesSpawnPoint.position;
+            }
+            
+            _deathBlood.Play();
+        }
+        
+        
 
         private void PlayDeathAnimation()
         {

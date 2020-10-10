@@ -262,8 +262,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxHealth: 100
-  _blood: {fileID: 6484195574205218863}
+  _hitBlood: {fileID: 0}
+  _deathBlood: {fileID: 0}
   _animator: {fileID: 0}
+  _spriteFlash: {fileID: 0}
+  _explosion: {fileID: 0}
+  _deathBodyParts: {fileID: 0}
+  _shiftFixForDeathBodySpawn: {x: 0, y: 0}
+  _deathBodyPartsSpawnPoint: {fileID: 0}
+  _bloodParticlesSpawnPoint: {fileID: 0}
 --- !u!114 &6700315359917075697
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -493,11 +500,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3278063402088115395, guid: 5271f8901eb7e4e448a9d8a5a3f5276a, type: 3}
   m_PrefabInstance: {fileID: 755514174774273664}
   m_PrefabAsset: {fileID: 0}
---- !u!198 &6484195574205218863 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 6016912071937549999, guid: 5271f8901eb7e4e448a9d8a5a3f5276a, type: 3}
-  m_PrefabInstance: {fileID: 755514174774273664}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1282433547203098259
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -629,9 +631,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2824605566533303579}
     m_Modifications:
+    - target: {fileID: 1925110533943293907, guid: 501e8a6b81416644e9d9b1e1c6a13c34, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3461797548803673895, guid: 501e8a6b81416644e9d9b1e1c6a13c34, type: 3}
       propertyPath: m_Name
       value: Arsenal
+      objectReference: {fileID: 0}
+    - target: {fileID: 3781972565573866794, guid: 501e8a6b81416644e9d9b1e1c6a13c34, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5616292551596334445, guid: 501e8a6b81416644e9d9b1e1c6a13c34, type: 3}
       propertyPath: m_LocalPosition.x
@@ -677,6 +687,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7539454585464360422, guid: 501e8a6b81416644e9d9b1e1c6a13c34, type: 3}
+      propertyPath: _maxLazerLength
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7539454585464360422, guid: 501e8a6b81416644e9d9b1e1c6a13c34, type: 3}
+      propertyPath: _hittableByLazer.m_Bits
+      value: 20992
+      objectReference: {fileID: 0}
+    - target: {fileID: 7539454585701389884, guid: 501e8a6b81416644e9d9b1e1c6a13c34, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 8a280e9801c3c6144bee0da9016583bb, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 501e8a6b81416644e9d9b1e1c6a13c34, type: 3}
 --- !u!114 &2318357886443214080 stripped

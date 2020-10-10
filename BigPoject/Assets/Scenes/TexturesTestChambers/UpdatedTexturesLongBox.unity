@@ -790,14 +790,6 @@ PrefabInstance:
       propertyPath: _fireButton
       value: 
       objectReference: {fileID: 1808298728}
-    - target: {fileID: 979211922, guid: db841216772e4844187962a048cfddbb, type: 3}
-      propertyPath: _currentWeapon
-      value: 
-      objectReference: {fileID: 1451907362}
-    - target: {fileID: 1938440850994330488, guid: db841216772e4844187962a048cfddbb, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2824605566533303579, guid: db841216772e4844187962a048cfddbb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 10.49
@@ -841,18 +833,6 @@ PrefabInstance:
     - target: {fileID: 2824605566533303579, guid: db841216772e4844187962a048cfddbb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3759837705574259073, guid: db841216772e4844187962a048cfddbb, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5060770900941027438, guid: db841216772e4844187962a048cfddbb, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 8a280e9801c3c6144bee0da9016583bb, type: 2}
-    - target: {fileID: 5060770901240964020, guid: db841216772e4844187962a048cfddbb, type: 3}
-      propertyPath: _hittableByLazer.m_Bits
-      value: 20992
       objectReference: {fileID: 0}
     - target: {fileID: 6256377088121115038, guid: db841216772e4844187962a048cfddbb, type: 3}
       propertyPath: _interactButton
@@ -1641,17 +1621,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1451907362 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5060770901240964020, guid: db841216772e4844187962a048cfddbb, type: 3}
-  m_PrefabInstance: {fileID: 559604546}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 803f75c70ca542648b0fd4a0d428e762, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &1501236423 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 9004649171288624030, guid: 95e99f9ab9e88d44ebc72051c375eb85, type: 3}
