@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using ForItemsAndCreatures;
 using UnityEngine;
@@ -12,7 +13,7 @@ namespace LivingBeings
         [Header("Visual Effects")]
         [SerializeField] private ParticleSystem _blood = null;                        // Particles that used to represent blood. 
         [SerializeField] private Animator _animator = null;                           // Animator that used to play hit animation.
-        [SerializeField] private SpriteRenderer _renderer = null;                     // Used to work with entities sprites. 
+        [SerializeField] private SpriteFlash _spriteFlash = null;                     // Used to do spriteFlash when entity is hitted.
         [SerializeField] private Explosion _explosion = null;                         // Used to throw body parts of the entity.
         [SerializeField] private GameObject _deathBodyParts = null;                   // Dead body parts.
         [SerializeField] private Transform _deathBodyPartsSpawnPoint = null;          // Where dead body parts will be spawned.
@@ -97,9 +98,9 @@ namespace LivingBeings
                 SpawnBloodParticles();
             }
 
-            if (_renderer != null)
+            if (_spriteFlash != null)
             {
-                StartCoroutine(ChangeSpriteToHitColorRoutine());
+                StartHitSpriteFlash();
             }
         }
 
@@ -141,22 +142,17 @@ namespace LivingBeings
         {
             _animator.SetTrigger("Hit");
         }*/ // Obsolete.
-
-        
-        private IEnumerator ChangeSpriteToHitColorRoutine()
-        {
-            _renderer.color = Color.red;
-
-            float timeInHitColorTime = 0.18f;
-            yield return new WaitForSeconds(timeInHitColorTime);
-            
-            _renderer.color = Color.white;
-        }
         
 
         private void StopMovement(Rigidbody2D entityRigidbody2D)
         {
             entityRigidbody2D.constraints = RigidbodyConstraints2D.FreezeAll;
+        }
+        
+        
+        private void StartHitSpriteFlash()
+        {
+            _spriteFlash.Flash();
         }
 
 

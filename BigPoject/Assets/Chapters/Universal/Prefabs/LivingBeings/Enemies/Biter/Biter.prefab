@@ -49,6 +49,7 @@ GameObject:
   - component: {fileID: 7895600184112299111}
   - component: {fileID: 7878777949704818281}
   - component: {fileID: 8426060690740028457}
+  - component: {fileID: 703396886}
   m_Layer: 12
   m_Name: Biter
   m_TagString: Untagged
@@ -95,7 +96,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: eb67e094091fe8b4ca70269c6a9049a7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -189,7 +190,7 @@ MonoBehaviour:
   _maxHealth: 100
   _blood: {fileID: 6016912073796165013}
   _animator: {fileID: 7878777949704818281}
-  _renderer: {fileID: 5585250576740182018}
+  _spriteFlash: {fileID: 703396886}
   _explosion: {fileID: 0}
   _deathBodyParts: {fileID: 0}
   _deathBodyPartsSpawnPoint: {fileID: 1449621853}
@@ -294,6 +295,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22315462b429da64ba6cac51c4feef33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &703396886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6317370884003016772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca7da94591a56be409902152e4202c0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _flashColor: {r: 1, g: 1, b: 1, a: 0}
+  _flashDuration: 0.2
 --- !u!1 &6346282330505870498
 GameObject:
   m_ObjectHideFlags: 0
@@ -640,9 +655,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5523463731967825141}
     m_Modifications:
+    - target: {fileID: 482402859158814363, guid: b296cb3e65685964189b96570b5d4c78, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e1b3cf392ce796d4792a06bb42911272, type: 2}
     - target: {fileID: 2301325165682649768, guid: b296cb3e65685964189b96570b5d4c78, type: 3}
       propertyPath: m_Name
       value: OrangeBloodParticles
+      objectReference: {fileID: 0}
+    - target: {fileID: 3055366427596283594, guid: b296cb3e65685964189b96570b5d4c78, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3055366427596283594, guid: b296cb3e65685964189b96570b5d4c78, type: 3}
+      propertyPath: InitialModule.startLifetime.minScalar
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3055366427596283594, guid: b296cb3e65685964189b96570b5d4c78, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 6.2
       objectReference: {fileID: 0}
     - target: {fileID: 6095779869989573798, guid: b296cb3e65685964189b96570b5d4c78, type: 3}
       propertyPath: m_LocalPosition.x

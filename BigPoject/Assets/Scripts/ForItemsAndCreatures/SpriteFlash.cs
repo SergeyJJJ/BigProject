@@ -5,49 +5,47 @@ namespace ForItemsAndCreatures
 {
     public class SpriteFlash : MonoBehaviour {
 
-        public Color flashColor;
-        public float flashDuration;
+        [SerializeField] private Color _flashColor = Color.clear;         // Color used for flash.
+        [SerializeField] private float _flashDuration = 0f;               // How long flash will be going on.
+        
+        private Material _material;                                       // Material used in current object.
 
-        Material mat;
+        private IEnumerator _flashCoroutine;                              // Contains flashCoroutine.
 
-        private IEnumerator flashCoroutine;
+        public void Flash()
+        {
+            if (_flashCoroutine != null)
+            {
+                StopCoroutine(_flashCoroutine);
+            }
 
-        private void Awake() {
-            mat = GetComponent<SpriteRenderer>().material;
+            _flashCoroutine = DoFlashRoutine();
+            StartCoroutine(_flashCoroutine);
+        }
+        
+        
+        private void Awake()
+        {
+            _material = GetComponent<SpriteRenderer>().material;
         }
 
     
         private void Start()
         {
-            mat.SetColor("_FlashColor", flashColor);
+            _material.SetColor("_FlashColor", _flashColor);
         }
+        
 
-    
-        private void Update() {
-            if(Input.GetKeyDown(KeyCode.Space))
-                Flash();
-        }
-    
-
-        private void Flash(){
-            if (flashCoroutine != null)
-                StopCoroutine(flashCoroutine);
-
-            flashCoroutine = DoFlash();
-            StartCoroutine(flashCoroutine);
-        }
-
-
-        private IEnumerator DoFlash()
+        private IEnumerator DoFlashRoutine()
         {
             float lerpTime = 0;
 
-            while (lerpTime < flashDuration)
+            while (lerpTime < _flashDuration)
             {
                 lerpTime += Time.deltaTime;
-                float perc = lerpTime / flashDuration;
+                float percentage = lerpTime / _flashDuration;
 
-                SetFlashAmount(1f - perc);
+                SetFlashAmount(1f - percentage);
                 yield return null;
             }
             SetFlashAmount(0);
@@ -56,7 +54,7 @@ namespace ForItemsAndCreatures
     
         private void SetFlashAmount(float flashAmount)
         {
-            mat.SetFloat("_FlashAmount", flashAmount);
+            _material.SetFloat("_FlashAmount", flashAmount);
         }
     }
 }
