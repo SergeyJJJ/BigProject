@@ -72,18 +72,6 @@ namespace Arsenal.Bullets
             gameObject.SetActive(false);
         }
         
-        
-        private void ApplyDamageTo(GameObject damageable)
-        {
-            bool isComponentExist = false;
-            isComponentExist = damageable.TryGetComponent<Health>(out var health);
-            
-            if (isComponentExist)
-            {
-                health.TakeDamage(_currentBullet.Damage);
-            }
-        }
-
 
         private bool IsObjectHittableByBullet(GameObject hitObject)
         {

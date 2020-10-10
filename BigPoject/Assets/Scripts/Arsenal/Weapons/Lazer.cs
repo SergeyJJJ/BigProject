@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using GameBehaviour;
+using LivingBeings;
 using LivingBeings.Player.CharacterMovement.MovementStateMachine;
 using UnityEngine;
 
@@ -12,8 +13,8 @@ namespace Arsenal.Weapons
         [SerializeField] private GameObject _lazerMiddle = null;                         // Middle lazer gameObject that contains middle lazer sprit.
         [SerializeField] private GameObject _lazerEnd = null;                            // End lazer gameObject that contains end lazer sprite.
         [SerializeField] private float _maxLazerLength = 1f;                             // Length of the lazer.
-        [SerializeField] private LayerMask _damageableByLazer = Physics2D.AllLayers;     // Determine what can be damaged by lazer.
-        
+        [SerializeField] private LayerMask _hittableByLazer = Physics2D.AllLayers;     // Determine what can be hitted by lazer.
+
         private float _currentLazerLength = 1f;                                          // Current length of the lazer.
         private float _startSpriteWidth = 0f;                                            // Start lazer sprite length.
         private SpriteRenderer _startSpriteRenderer = null;                              // SpriteRenderer component of the start lazer sparite.
@@ -98,7 +99,13 @@ namespace Arsenal.Weapons
                     {
                         InitializeEndPart();
                         ActivateLazerPart(_lazerEnd);
+                        
+                        Health health = GetHealthComponent(ray.collider.gameObject);
 
+                        if (health != null)
+                        {
+                            ApplyDamageTo(health);
+                        }
                     }
                     else
                     {
@@ -161,7 +168,7 @@ namespace Arsenal.Weapons
 
         private RaycastHit2D ThrowRaycast()
         {
-            return Physics2D.Raycast(FirePoint.transform.position, transform.right, _maxLazerLength, _damageableByLazer);
+            return Physics2D.Raycast(FirePoint.transform.position, transform.right, _maxLazerLength, _hittableByLazer);
         }
 
 
@@ -196,6 +203,19 @@ namespace Arsenal.Weapons
         {
             float movementForce = 19;
             _characterMovement.AddForceInDirection(-transform.right * movementForce);
+        }
+
+
+        private Health GetHealthComponent(GameObject collidedObject)
+        {
+            Health health = collidedObject.GetComponent<Health>();
+            return health;
+        }
+
+
+        private void ApplyDamageTo(Health health)
+        {
+            health.TakeDamage(2f);
         }
 
 

@@ -308,6 +308,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: OrangeBloodParticles
       objectReference: {fileID: 0}
+    - target: {fileID: 3055366427596283594, guid: b296cb3e65685964189b96570b5d4c78, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 80
+      objectReference: {fileID: 0}
     - target: {fileID: 6095779869989573798, guid: b296cb3e65685964189b96570b5d4c78, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.16
