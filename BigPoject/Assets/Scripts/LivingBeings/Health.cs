@@ -16,8 +16,11 @@ namespace LivingBeings
         [SerializeField] private SpriteFlash _spriteFlash = null;                     // Used to do spriteFlash when entity is hitted.
         [SerializeField] private Explosion _explosion = null;                         // Used to throw body parts of the entity.
         [SerializeField] private GameObject _deathBodyParts = null;                   // Dead body parts.
-        [SerializeField] private Transform _deathBodyPartsSpawnPoint = null;          // Where dead body parts will be spawned.
         [SerializeField] private Vector2 _shiftFixForDeathBodySpawn = Vector2.zero;   // Used to spawn body parts in proper position. 
+        
+        [Header("Spawn Points")]
+        [SerializeField] private Transform _deathBodyPartsSpawnPoint = null;          // Where dead body parts will be spawned.
+        [SerializeField] private Transform _bloodParticlesSpawnPoint = null;          // Where blood particles will be spawned.
         
         private float _currentHealth = 0;                                             // Current health amount that have entity.
         private bool _isCanBeDamaged = true;                                          // Define if entity can be damaged.
@@ -128,6 +131,11 @@ namespace LivingBeings
 
         private void SpawnBloodParticles()
         {
+            if (_bloodParticlesSpawnPoint)
+            {
+                _blood.transform.position = _bloodParticlesSpawnPoint.position;
+            }
+            
             _blood.Play();
         }
 
@@ -136,12 +144,6 @@ namespace LivingBeings
         {
             _animator.SetTrigger("Death");
         }
-
-
-        /*private void PlayHitAnimation()
-        {
-            _animator.SetTrigger("Hit");
-        }*/ // Obsolete.
         
 
         private void StopMovement(Rigidbody2D entityRigidbody2D)

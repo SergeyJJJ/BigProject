@@ -43,9 +43,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 063758c908f0a8144ac09a9ef6719f5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _explosionCenterPosition: {fileID: 4832667856098310334}
-  _explosionForce: 10
-  _explosionRadius: 2
+  _explosionCenterPoint: {fileID: 4832667856098310334}
+  _explosionForce: 8
+  _explosionRadius: 4
   _affectedByExplosion:
     serializedVersion: 2
     m_Bits: 32768

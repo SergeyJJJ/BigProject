@@ -698,22 +698,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7585832941231355442}
     m_Modifications:
-    - target: {fileID: 361141057280001241, guid: d0223b00f0f4a4144990d2a46276a75e, type: 3}
-      propertyPath: _explosionRadius
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 361141057280001241, guid: d0223b00f0f4a4144990d2a46276a75e, type: 3}
-      propertyPath: _explosionCenterPosition
-      value: 
-      objectReference: {fileID: 4832667857614410744}
-    - target: {fileID: 361141057280001241, guid: d0223b00f0f4a4144990d2a46276a75e, type: 3}
-      propertyPath: _explosionCenterPoint
-      value: 
-      objectReference: {fileID: 4832667857614410744}
-    - target: {fileID: 361141057280001241, guid: d0223b00f0f4a4144990d2a46276a75e, type: 3}
-      propertyPath: _explosionForce
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 4832667856098310334, guid: d0223b00f0f4a4144990d2a46276a75e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.1766014

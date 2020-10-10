@@ -8,5 +8,11 @@ namespace ForItemsAndCreatures
         {
             Destroy(gameObject);
         }
+
+
+        public void DestroyParentObject()
+        {
+            Destroy(gameObject.transform.parent.gameObject);
+        }
     }
 }
