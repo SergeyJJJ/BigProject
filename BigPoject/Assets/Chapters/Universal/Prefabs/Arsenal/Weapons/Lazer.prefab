@@ -94,7 +94,7 @@ Animator:
   m_GameObject: {fileID: 4234314657676450}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8a280e9801c3c6144bee0da9016583bb, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -425,7 +425,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4591738617380861019
 Transform:
   m_ObjectHideFlags: 0
@@ -543,10 +543,12 @@ MonoBehaviour:
   _lazerStart: {fileID: 508042110910633180}
   _lazerMiddle: {fileID: 6275760348657954435}
   _lazerEnd: {fileID: 4234314657676450}
-  _maxLazerLength: 60
-  _damageableByLazer:
+  _maxLazerLength: 20
+  _hittableByLazer:
     serializedVersion: 2
-    m_Bits: 4880
+    m_Bits: 20992
+  _damageAmount: 2
+  _timeBeforeAapplyingDamage: 0.08
 --- !u!114 &3550605817717760622
 MonoBehaviour:
   m_ObjectHideFlags: 0

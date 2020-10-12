@@ -178,7 +178,9 @@ namespace LivingBeings
 
         private IEnumerator ThrowBodyPartsRoutine()
         {
-            yield return new WaitForSeconds(0.11f);
+            float waitBeforeSpawn = 0.15f;
+            
+            yield return new WaitForSeconds(waitBeforeSpawn);
             
             Vector2 shiftedDeathBodyPartsPosition = new Vector2(_deathBodyPartsSpawnPoint.position.x + _shiftFixForDeathBodySpawn.x,
                                                                 _deathBodyPartsSpawnPoint.position.y + _shiftFixForDeathBodySpawn.y);

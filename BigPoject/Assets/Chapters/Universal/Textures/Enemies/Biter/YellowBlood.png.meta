@@ -1,16 +1,7 @@
 fileFormatVersion: 2
-guid: 3bb4a1398fce83141ba8233f8fb22cf9
+guid: f2952d5fb197dcf4db55021e50f6daa7
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: 1236197677608480133
-    second: BiterBloodParticles_0
-  - first:
-      213: 1676316871425777987
-    second: BiterBloodParticles_1
-  - first:
-      213: 7956890818794021771
-    second: BiterBloodParticles_2
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -122,70 +113,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: BiterBloodParticles_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 2
-        height: 2
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 58d2406fc3bd72110800000000000000
-      internalID: 1236197677608480133
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BiterBloodParticles_1
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 2
-        width: 2
-        height: 2
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 341e3542059734710800000000000000
-      internalID: 1676316871425777987
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BiterBloodParticles_2
-      rect:
-        serializedVersion: 2
-        x: 2
-        y: 2
-        width: 2
-        height: 2
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b83e8c2da0e8c6e60800000000000000
-      internalID: 7956890818794021771
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []

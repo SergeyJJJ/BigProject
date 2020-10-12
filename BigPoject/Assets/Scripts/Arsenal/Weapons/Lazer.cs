@@ -13,8 +13,10 @@ namespace Arsenal.Weapons
         [SerializeField] private GameObject _lazerMiddle = null;                         // Middle lazer gameObject that contains middle lazer sprit.
         [SerializeField] private GameObject _lazerEnd = null;                            // End lazer gameObject that contains end lazer sprite.
         [SerializeField] private float _maxLazerLength = 1f;                             // Length of the lazer.
-        [SerializeField] private LayerMask _hittableByLazer = Physics2D.AllLayers;     // Determine what can be hitted by lazer.
-
+        [SerializeField] private LayerMask _hittableByLazer = Physics2D.AllLayers;       // Determine what can be hitted by lazer.
+        [SerializeField] private float _damageAmount = 0f;                               // How much damage will be applied to the entity with Health component every second.
+        [SerializeField] private float _timeBeforeAapplyingDamage = 0f;                  // How much time should pass before next damage applying : Seconds.
+        
         private float _currentLazerLength = 1f;                                          // Current length of the lazer.
         private float _startSpriteWidth = 0f;                                            // Start lazer sprite length.
         private SpriteRenderer _startSpriteRenderer = null;                              // SpriteRenderer component of the start lazer sparite.
@@ -31,7 +33,8 @@ namespace Arsenal.Weapons
         
         private float _spendEnergyTimer = 1;                                             // Timer that control how fast lazer energy will be decremented.
         private float _decrementEnergeyTime = 1;                                         // Time after which energy will be decremented.
-
+        private float _damageApllyingTimer = 0;                                          // Timer that control how often damage will be applyed.
+        
         private CharacterMovement _characterMovement = null;                             // Characters movement control script.
 
         protected override void CallShotEvent()
@@ -62,7 +65,7 @@ namespace Arsenal.Weapons
         }
 
 
-        private void Update()
+        private void FixedUpdate()
         {
             if (IsShotTriggered)
             {
@@ -99,12 +102,19 @@ namespace Arsenal.Weapons
                     {
                         InitializeEndPart();
                         ActivateLazerPart(_lazerEnd);
-                        
-                        Health health = GetHealthComponent(ray.collider.gameObject);
 
-                        if (health != null)
+                        _damageApllyingTimer -= Time.deltaTime;
+                        
+                        if (IsTimeBeforeDamageApplyingPass())
                         {
-                            ApplyDamageTo(health);
+                            _damageApllyingTimer = _timeBeforeAapplyingDamage;
+                            
+                            Health health = GetHealthComponent(ray.collider.gameObject);
+
+                            if (health != null)
+                            {
+                                ApplyDamageTo(health);
+                            }
                         }
                     }
                     else
@@ -215,7 +225,7 @@ namespace Arsenal.Weapons
 
         private void ApplyDamageTo(Health health)
         {
-            health.TakeDamage(2f);
+            health.TakeDamage(_damageAmount);
         }
 
 
@@ -228,6 +238,12 @@ namespace Arsenal.Weapons
         private bool IsFarEnoughToObject(float distance)
         {
             return _currentLazerLength >= distance;
+        }
+
+
+        private bool IsTimeBeforeDamageApplyingPass()
+        {
+            return _damageApllyingTimer < 0;
         }
     }
 }
