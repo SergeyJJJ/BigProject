@@ -45,6 +45,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _explosionCenterPoint: {fileID: 4832667856098310334}
   _explosionForce: 8
+  _torqueLimits:
+    minTorque: -75
+    maxTorque: 75
   _explosionRadius: 4
   _affectedByExplosion:
     serializedVersion: 2
