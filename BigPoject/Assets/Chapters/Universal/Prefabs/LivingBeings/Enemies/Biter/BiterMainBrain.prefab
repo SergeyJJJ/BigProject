@@ -228,10 +228,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxHealth: 100
-  _blood: {fileID: 0}
+  _hitBlood: {fileID: 0}
+  _deathBlood: {fileID: 0}
   _animator: {fileID: 8398972583055034395}
   _spriteFlash: {fileID: 8398972583055034397}
   _explosion: {fileID: 0}
+  _timeBeforeBodyPartsThrown: 0.21
   _deathBodyParts: {fileID: 0}
   _shiftFixForDeathBodySpawn: {x: -2, y: 0.5}
   _deathBodyPartsSpawnPoint: {fileID: 8398972584950977162}

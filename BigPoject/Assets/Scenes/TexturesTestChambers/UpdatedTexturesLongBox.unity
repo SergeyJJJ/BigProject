@@ -388,7 +388,7 @@ GameObject:
   m_Component:
   - component: {fileID: 215962135}
   - component: {fileID: 215962136}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RightWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2261,7 +2261,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1939651091}
   - component: {fileID: 1939651092}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: LeftWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}

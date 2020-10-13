@@ -12,10 +12,11 @@ namespace LivingBeings
 
         [Header("Visual Effects")]
         [SerializeField] private ParticleSystem _hitBlood = null;                     // Particles that used to represent hit blood.
-        [SerializeField] private ParticleSystem _deathBlood = null;                     // Particles that used to represent death blood. 
+        [SerializeField] private ParticleSystem _deathBlood = null;                   // Particles that used to represent death blood. 
         [SerializeField] private Animator _animator = null;                           // Animator that used to play hit animation.
         [SerializeField] private SpriteFlash _spriteFlash = null;                     // Used to do spriteFlash when entity is hitted.
         [SerializeField] private Explosion _explosion = null;                         // Used to throw body parts of the entity.
+        [SerializeField] private float _timeBeforeBodyPartsThrown = 0f;               // How much time must pass before enemy body parts will be thrown
         [SerializeField] private GameObject _deathBodyParts = null;                   // Dead body parts.
         [SerializeField] private Vector2 _shiftFixForDeathBodySpawn = Vector2.zero;   // Used to spawn body parts in proper position. 
         
@@ -178,9 +179,7 @@ namespace LivingBeings
 
         private IEnumerator ThrowBodyPartsRoutine()
         {
-            float waitBeforeSpawn = 0.15f;
-            
-            yield return new WaitForSeconds(waitBeforeSpawn);
+            yield return new WaitForSeconds(_timeBeforeBodyPartsThrown);
             
             Vector2 shiftedDeathBodyPartsPosition = new Vector2(_deathBodyPartsSpawnPoint.position.x + _shiftFixForDeathBodySpawn.x,
                                                                 _deathBodyPartsSpawnPoint.position.y + _shiftFixForDeathBodySpawn.y);
