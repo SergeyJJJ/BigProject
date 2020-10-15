@@ -237,7 +237,7 @@ MonoBehaviour:
   _deathBodyParts: {fileID: 0}
   _shiftFixForDeathBodySpawn: {x: -2, y: 0.5}
   _deathBodyPartsSpawnPoint: {fileID: 8398972584950977162}
-  _bloodParticlesSpawnPoint: {fileID: 8398972584958245186}
+  _deathBloodParticlesSpawnPoint: {fileID: 8398972584791773757}
 --- !u!114 &8398972583055034391
 MonoBehaviour:
   m_ObjectHideFlags: 0

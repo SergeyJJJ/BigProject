@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5393669199289577012}
   - component: {fileID: 4268555618262338533}
   - component: {fileID: 6662488476504409353}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: CollectionZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,7 +71,7 @@ GameObject:
   - component: {fileID: 5221130081753242595}
   - component: {fileID: 6256377088121115038}
   - component: {fileID: 8803050744171911322}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: InteractionZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -262,15 +262,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxHealth: 100
-  _hitBlood: {fileID: 0}
+  _hitBlood: {fileID: 6484195574205218863}
   _deathBlood: {fileID: 0}
   _animator: {fileID: 0}
   _spriteFlash: {fileID: 0}
   _explosion: {fileID: 0}
+  _timeBeforeBodyPartsThrown: 0
   _deathBodyParts: {fileID: 0}
   _shiftFixForDeathBodySpawn: {x: 0, y: 0}
   _deathBodyPartsSpawnPoint: {fileID: 0}
-  _bloodParticlesSpawnPoint: {fileID: 0}
+  _deathBloodParticlesSpawnPoint: {fileID: 0}
 --- !u!114 &6700315359917075697
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -500,6 +501,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3278063402088115395, guid: 5271f8901eb7e4e448a9d8a5a3f5276a, type: 3}
   m_PrefabInstance: {fileID: 755514174774273664}
   m_PrefabAsset: {fileID: 0}
+--- !u!198 &6484195574205218863 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 6016912071937549999, guid: 5271f8901eb7e4e448a9d8a5a3f5276a, type: 3}
+  m_PrefabInstance: {fileID: 755514174774273664}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1282433547203098259
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -679,25 +685,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7539454585464360422, guid: 501e8a6b81416644e9d9b1e1c6a13c34, type: 3}
-      propertyPath: _damageAmount
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7539454585464360422, guid: 501e8a6b81416644e9d9b1e1c6a13c34, type: 3}
-      propertyPath: _timeBeforeAapplyingDamage
-      value: 0.1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 501e8a6b81416644e9d9b1e1c6a13c34, type: 3}
---- !u!114 &5060770901240964020 stripped
+--- !u!114 &2318357886443214080 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7539454585464360422, guid: 501e8a6b81416644e9d9b1e1c6a13c34, type: 3}
+  m_CorrespondingSourceObject: {fileID: 1060188261596445522, guid: 501e8a6b81416644e9d9b1e1c6a13c34, type: 3}
   m_PrefabInstance: {fileID: 3358275394797235794}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 803f75c70ca542648b0fd4a0d428e762, type: 3}
+  m_Script: {fileID: 11500000, guid: d66b4cdb06737b9479a537b9ec29c2ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &7164076900808176447 stripped
@@ -869,7 +867,7 @@ PrefabInstance:
     - target: {fileID: 5433480261800985400, guid: dbf7edadc67d6ee4d89b1cad4f5acf97, type: 3}
       propertyPath: _currentWeapon
       value: 
-      objectReference: {fileID: 5060770901240964020}
+      objectReference: {fileID: 2318357886443214080}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dbf7edadc67d6ee4d89b1cad4f5acf97, type: 3}
 --- !u!4 &536803573 stripped

@@ -15,7 +15,7 @@ namespace ForItemsAndCreatures
         
         [SerializeField] private Transform _explosionCenterPoint = null;               // Explosion center point. Used as a point from which force will be applied.
         [SerializeField] private float _explosionForce = 0;                            // Explosion force.
-        [SerializeField] private TorqueLimits _torqueLimits;                           // Minimum and maximum torque of pieces.
+        [SerializeField] private TorqueLimits _torqueLimits = default(TorqueLimits);   // Minimum and maximum torque of pieces.
         [SerializeField] private float _explosionRadius = 0f;                          // Explosion radius.
         [SerializeField] private LayerMask _affectedByExplosion = Physics2D.AllLayers; // What can be affect by explosion.
 

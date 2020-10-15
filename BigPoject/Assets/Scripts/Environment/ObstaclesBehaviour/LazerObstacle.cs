@@ -98,7 +98,7 @@ namespace Environment.ObstaclesBehaviour
                         {
                             if (IsRayCanApplyDamageTo(ray.collider.gameObject))
                             {
-                                ApplyDamageTo(ray.collider.gameObject);
+                                ApplyDamageTo(ray.collider.gameObject, ray.point);
                             }
                             InitializeEndPart();
                             ActivateLazerPart(_lazerEnd);
@@ -193,14 +193,14 @@ namespace Environment.ObstaclesBehaviour
         }
         
         
-        private void ApplyDamageTo(GameObject collidedObject)
+        private void ApplyDamageTo(GameObject collidedObject, Vector2 hitPosition)
         {
             bool isComponentExist = false;
             isComponentExist = collidedObject.TryGetComponent<Health>(out var health);
             
             if (isComponentExist)
             {
-                health.TakeDamage(_damage);
+                health.TakeHurt(_damage, hitPosition);
             }
         }
         

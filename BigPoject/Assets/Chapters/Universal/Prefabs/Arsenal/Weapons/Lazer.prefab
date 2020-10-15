@@ -425,7 +425,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4591738617380861019
 Transform:
   m_ObjectHideFlags: 0
@@ -547,8 +547,8 @@ MonoBehaviour:
   _hittableByLazer:
     serializedVersion: 2
     m_Bits: 20992
-  _damageAmount: 2
-  _timeBeforeAapplyingDamage: 0.08
+  _damageAmount: 4
+  _timeBeforeAapplyingDamage: 0.1
 --- !u!114 &3550605817717760622
 MonoBehaviour:
   m_ObjectHideFlags: 0

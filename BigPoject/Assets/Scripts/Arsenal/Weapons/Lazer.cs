@@ -113,7 +113,7 @@ namespace Arsenal.Weapons
 
                             if (health != null)
                             {
-                                ApplyDamageTo(health);
+                                ApplyDamageTo(health, ray.point);
                             }
                         }
                     }
@@ -223,9 +223,9 @@ namespace Arsenal.Weapons
         }
 
 
-        private void ApplyDamageTo(Health health)
+        private void ApplyDamageTo(Health health, Vector2 hitPosition)
         {
-            health.TakeDamage(_damageAmount);
+            health.TakeHurt(_damageAmount, hitPosition);
         }
 
 

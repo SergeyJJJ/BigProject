@@ -22,7 +22,9 @@ namespace LivingBeings
         
         [Header("Spawn Points")]
         [SerializeField] private Transform _deathBodyPartsSpawnPoint = null;          // Where dead body parts will be spawned.
-        [SerializeField] private Transform _bloodParticlesSpawnPoint = null;          // Where blood particles will be spawned.
+        [SerializeField] private Transform _deathBloodParticlesSpawnPoint = null;     // Where death blood particles will be spawned.
+
+        private Vector2 _hurtBloodSpawnPosition = Vector2.zero;                       // Where hurt blood particles will be spawned. 
         
         private float _currentHealth = 0;                                             // Current health amount that have entity.
         private bool _isCanBeDamaged = true;                                          // Define if entity can be damaged.
@@ -55,10 +57,12 @@ namespace LivingBeings
 
         #endregion Properties
 
-        public void TakeDamage(float damageAmount)
+        public void TakeHurt(float damageAmount, Vector2 hurtPosition)
         {
             if (_isCanBeDamaged == true)
             {
+                _hurtBloodSpawnPosition = hurtPosition;
+                
                 if (damageAmount < 0)
                 {
                     damageAmount = -damageAmount;
@@ -94,13 +98,13 @@ namespace LivingBeings
         {
             _currentHealth = _maxHealth;
         }
-        
-        
+
+
         private void OnGetDamage()
         {
             if (_hitBlood != null)
             {
-                SpawnHitBloodParticles();
+                SpawnHurtBloodParticles();
             }
 
             if (_spriteFlash != null)
@@ -136,11 +140,11 @@ namespace LivingBeings
         }
 
 
-        private void SpawnHitBloodParticles()
+        private void SpawnHurtBloodParticles()
         {
-            if (_bloodParticlesSpawnPoint)
+            if (_hurtBloodSpawnPosition != Vector2.zero)
             {
-                _hitBlood.transform.position = _bloodParticlesSpawnPoint.position;
+                _hitBlood.transform.position = _hurtBloodSpawnPosition;
             }
             
             _hitBlood.Play();
@@ -149,9 +153,9 @@ namespace LivingBeings
         
         private void SpawnDeathBloodParticles()
         {
-            if (_bloodParticlesSpawnPoint)
+            if (_deathBloodParticlesSpawnPoint)
             {
-                _deathBlood.transform.position = _bloodParticlesSpawnPoint.position;
+                _deathBlood.transform.position = _deathBloodParticlesSpawnPoint.position;
             }
             
             _deathBlood.Play();

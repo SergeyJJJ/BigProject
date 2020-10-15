@@ -790,12 +790,8 @@ PrefabInstance:
       propertyPath: _fireButton
       value: 
       objectReference: {fileID: 1808298728}
-    - target: {fileID: 979211922, guid: db841216772e4844187962a048cfddbb, type: 3}
-      propertyPath: _currentWeapon
-      value: 
-      objectReference: {fileID: 1583335554}
-    - target: {fileID: 1938440850994330488, guid: db841216772e4844187962a048cfddbb, type: 3}
-      propertyPath: m_IsActive
+    - target: {fileID: 1054635701364010699, guid: db841216772e4844187962a048cfddbb, type: 3}
+      propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2824605566533303579, guid: db841216772e4844187962a048cfddbb, type: 3}
@@ -842,9 +838,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3759837705574259073, guid: db841216772e4844187962a048cfddbb, type: 3}
-      propertyPath: m_IsActive
-      value: 1
+    - target: {fileID: 3946890686439765596, guid: db841216772e4844187962a048cfddbb, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6256377088121115038, guid: db841216772e4844187962a048cfddbb, type: 3}
       propertyPath: _interactButton
@@ -972,6 +968,11 @@ Transform:
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 9004649170233982759, guid: 95e99f9ab9e88d44ebc72051c375eb85, type: 3}
   m_PrefabInstance: {fileID: 9004649170335139673}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &686033251 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1976873992052551451, guid: cdc52b9073c8b0d43bd61ea98ff05093, type: 3}
+  m_PrefabInstance: {fileID: 1976873990317524296}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &716749142
 GameObject:
@@ -1638,17 +1639,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 9004649171288624030, guid: 95e99f9ab9e88d44ebc72051c375eb85, type: 3}
   m_PrefabInstance: {fileID: 9004649170335139673}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1583335554 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2318357886443214080, guid: db841216772e4844187962a048cfddbb, type: 3}
-  m_PrefabInstance: {fileID: 559604546}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d66b4cdb06737b9479a537b9ec29c2ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1599528665
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2678,10 +2668,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1285927540}
     m_Modifications:
+    - target: {fileID: 686434995337131801, guid: cdc52b9073c8b0d43bd61ea98ff05093, type: 3}
+      propertyPath: UVModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1976873990072808753, guid: cdc52b9073c8b0d43bd61ea98ff05093, type: 3}
       propertyPath: _player
       value: 
       objectReference: {fileID: 1171821650}
+    - target: {fileID: 1976873990072808766, guid: cdc52b9073c8b0d43bd61ea98ff05093, type: 3}
+      propertyPath: _attackPoint
+      value: 
+      objectReference: {fileID: 686033251}
     - target: {fileID: 1976873991354477456, guid: cdc52b9073c8b0d43bd61ea98ff05093, type: 3}
       propertyPath: m_Name
       value: Biter

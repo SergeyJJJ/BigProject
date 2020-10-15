@@ -242,10 +242,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: AutoRifle
       objectReference: {fileID: 0}
-    - target: {fileID: 4223017327198454147, guid: 552966005c72f7140b2927a61b16a444, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 552966005c72f7140b2927a61b16a444, type: 3}
 --- !u!4 &3203703614084257588 stripped

@@ -1,4 +1,5 @@
-﻿using Environment.InterfacesOfUsing;
+﻿using System;
+using Environment.InterfacesOfUsing;
 using LivingBeings;
 using UnityEngine;
 
@@ -59,7 +60,9 @@ namespace Arsenal.Bullets
                 Health health = other.gameObject.GetComponent<Health>();
                 if (health != null)
                 {
-                    health.TakeDamage(_currentBullet.Damage);
+                    RaycastHit2D hitRay = new RaycastHit2D();     // Used to determine point in which bullet collide with object.
+                    hitRay = Physics2D.Raycast(transform.position, transform.forward, _hittableByBullet);
+                    health.TakeHurt(_currentBullet.Damage, hitRay.point);
                 }
 
                 DisableBullet();
