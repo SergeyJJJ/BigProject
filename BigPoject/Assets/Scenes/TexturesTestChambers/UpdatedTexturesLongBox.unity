@@ -1625,6 +1625,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!198 &1488674379 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 3533518077098645747, guid: cdc52b9073c8b0d43bd61ea98ff05093, type: 3}
+  m_PrefabInstance: {fileID: 1976873990317524296}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1501236423 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 9004649171288624030, guid: 95e99f9ab9e88d44ebc72051c375eb85, type: 3}
@@ -2663,6 +2668,10 @@ PrefabInstance:
       propertyPath: _player
       value: 
       objectReference: {fileID: 1171821650}
+    - target: {fileID: 1976873990072808754, guid: cdc52b9073c8b0d43bd61ea98ff05093, type: 3}
+      propertyPath: _hitBlood
+      value: 
+      objectReference: {fileID: 1488674379}
     - target: {fileID: 1976873991354477456, guid: cdc52b9073c8b0d43bd61ea98ff05093, type: 3}
       propertyPath: m_Name
       value: Biter

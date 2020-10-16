@@ -200,7 +200,7 @@ namespace Environment.ObstaclesBehaviour
             
             if (isComponentExist)
             {
-                health.TakeHurt(_damage, hitPosition);
+                health.TakeDamage(_damage);
             }
         }
         

@@ -225,7 +225,7 @@ namespace Arsenal.Weapons
 
         private void ApplyDamageTo(Health health, Vector2 hitPosition)
         {
-            health.TakeHurt(_damageAmount, hitPosition);
+            health.TakeDamage(_damageAmount);
         }
 
 

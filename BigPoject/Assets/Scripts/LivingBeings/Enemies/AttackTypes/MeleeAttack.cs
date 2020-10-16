@@ -41,7 +41,7 @@ namespace LivingBeings.Enemies.AttackTypes
             yield return new WaitForSeconds(_timeBeforeDamageApplying);
 
             Vector2 hurtPosition = GetHurtPosition();
-            PlayerHealth.TakeHurt(_damagePerAttack, hurtPosition);
+            PlayerHealth.TakeDamage(_damagePerAttack);
         }
         
         
