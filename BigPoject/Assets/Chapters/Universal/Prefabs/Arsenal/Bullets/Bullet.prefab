@@ -146,5 +146,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _hittableByBullet:
     serializedVersion: 2
-    m_Bits: 21248
-  _playerRigidbody2D: {fileID: -1767523105098985399, guid: db841216772e4844187962a048cfddbb, type: 3}
+    m_Bits: 86784

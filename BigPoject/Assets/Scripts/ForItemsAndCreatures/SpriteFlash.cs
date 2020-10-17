@@ -38,7 +38,9 @@ namespace ForItemsAndCreatures
 
         private IEnumerator DoFlashRoutine()
         {
-            float lerpTime = 0;
+            SetFlashAmount(1);
+            yield return new WaitForSeconds(_flashDuration);
+            /*float lerpTime = 0;
 
             while (lerpTime < _flashDuration)
             {
@@ -47,7 +49,7 @@ namespace ForItemsAndCreatures
 
                 SetFlashAmount(1f - percentage);
                 yield return null;
-            }
+            }*/
             SetFlashAmount(0);
         }
     

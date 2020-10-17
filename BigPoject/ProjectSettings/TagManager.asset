@@ -29,7 +29,7 @@ TagManager:
   - BulletIgnoreWalkableSurface
   - HittableEnvironment
   - DestrucitonParts
-  - 
+  - WalkableHittableEnvironment
   - 
   - 
   - 
