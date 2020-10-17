@@ -227,7 +227,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad26e9a9f28febe40862da07ed22ffc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 100
+  _maxHealth: 150
   _hitBlood: {fileID: 0}
   _deathBlood: {fileID: 0}
   _animator: {fileID: 8398972583055034395}
@@ -237,7 +237,7 @@ MonoBehaviour:
   _deathBodyParts: {fileID: 0}
   _shiftFixForDeathBodySpawn: {x: -2, y: 0.5}
   _deathBodyPartsSpawnPoint: {fileID: 8398972584950977162}
-  _deathBloodParticlesSpawnPoint: {fileID: 8398972584791773757}
+  _bloodParticlesSpawnPoint: {fileID: 8398972584791773757}
 --- !u!114 &8398972583055034391
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -307,6 +307,7 @@ MonoBehaviour:
   _attackPerMinute: 40
   _damagePerAttack: 10
   _timeBeforeDamageApplying: 0.22
+  _attackPoint: {fileID: 8398972584791773757}
 --- !u!95 &8398972583055034395
 Animator:
   serializedVersion: 3

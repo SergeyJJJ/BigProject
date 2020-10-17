@@ -1394,6 +1394,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!4 &1089188781 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1976873992052551451, guid: cdc52b9073c8b0d43bd61ea98ff05093, type: 3}
+  m_PrefabInstance: {fileID: 1976873990317524296}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1123135193 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1976873991354477457, guid: cdc52b9073c8b0d43bd61ea98ff05093, type: 3}
@@ -2664,6 +2669,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1285927540}
     m_Modifications:
+    - target: {fileID: 686434995337131801, guid: cdc52b9073c8b0d43bd61ea98ff05093, type: 3}
+      propertyPath: CollisionModule.m_Dampen.scalar
+      value: 0.07
+      objectReference: {fileID: 0}
     - target: {fileID: 1976873990072808753, guid: cdc52b9073c8b0d43bd61ea98ff05093, type: 3}
       propertyPath: _player
       value: 
@@ -2672,6 +2681,14 @@ PrefabInstance:
       propertyPath: _hitBlood
       value: 
       objectReference: {fileID: 1488674379}
+    - target: {fileID: 1976873990072808754, guid: cdc52b9073c8b0d43bd61ea98ff05093, type: 3}
+      propertyPath: _bloodParticlesSpawnPoint
+      value: 
+      objectReference: {fileID: 1089188781}
+    - target: {fileID: 1976873990072808754, guid: cdc52b9073c8b0d43bd61ea98ff05093, type: 3}
+      propertyPath: _maxHealth
+      value: 150
+      objectReference: {fileID: 0}
     - target: {fileID: 1976873991354477456, guid: cdc52b9073c8b0d43bd61ea98ff05093, type: 3}
       propertyPath: m_Name
       value: Biter
@@ -2719,6 +2736,54 @@ PrefabInstance:
     - target: {fileID: 1976873991354477457, guid: cdc52b9073c8b0d43bd61ea98ff05093, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3533518077098645747, guid: cdc52b9073c8b0d43bd61ea98ff05093, type: 3}
+      propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3533518077098645747, guid: cdc52b9073c8b0d43bd61ea98ff05093, type: 3}
+      propertyPath: ShapeModule.randomDirectionAmount
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3533518077098645747, guid: cdc52b9073c8b0d43bd61ea98ff05093, type: 3}
+      propertyPath: InitialModule.startSize.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3533518077098645747, guid: cdc52b9073c8b0d43bd61ea98ff05093, type: 3}
+      propertyPath: InitialModule.startSizeY.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3533518077098645747, guid: cdc52b9073c8b0d43bd61ea98ff05093, type: 3}
+      propertyPath: InitialModule.startSizeZ.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3533518077098645747, guid: cdc52b9073c8b0d43bd61ea98ff05093, type: 3}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 0.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 3533518077098645747, guid: cdc52b9073c8b0d43bd61ea98ff05093, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3533518077098645747, guid: cdc52b9073c8b0d43bd61ea98ff05093, type: 3}
+      propertyPath: InitialModule.rotation3D
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3533518077098645747, guid: cdc52b9073c8b0d43bd61ea98ff05093, type: 3}
+      propertyPath: InitialModule.gravityModifier.scalar
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3533518077098645747, guid: cdc52b9073c8b0d43bd61ea98ff05093, type: 3}
+      propertyPath: VelocityModule.z.scalar
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3533518077098645747, guid: cdc52b9073c8b0d43bd61ea98ff05093, type: 3}
+      propertyPath: ShapeModule.m_Scale.x
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3533518077098645747, guid: cdc52b9073c8b0d43bd61ea98ff05093, type: 3}
+      propertyPath: CollisionModule.m_Dampen.scalar
+      value: 0.05
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cdc52b9073c8b0d43bd61ea98ff05093, type: 3}
