@@ -48,7 +48,7 @@ MonoBehaviour:
   _torqueLimits:
     minTorque: -75
     maxTorque: 75
-  _explosionRadius: 4
+  _explosionRadius: 1
   _affectedByExplosion:
     serializedVersion: 2
     m_Bits: 32768
