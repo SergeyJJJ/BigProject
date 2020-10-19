@@ -2878,6 +2878,18 @@ PrefabInstance:
       propertyPath: m_GravityScale
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1976873990072808757, guid: cdc52b9073c8b0d43bd61ea98ff05093, type: 3}
+      propertyPath: m_Color.g
+      value: 0.909804
+      objectReference: {fileID: 0}
+    - target: {fileID: 1976873990072808757, guid: cdc52b9073c8b0d43bd61ea98ff05093, type: 3}
+      propertyPath: m_Color.b
+      value: 0.10980393
+      objectReference: {fileID: 0}
+    - target: {fileID: 1976873990072808757, guid: cdc52b9073c8b0d43bd61ea98ff05093, type: 3}
+      propertyPath: m_Color.r
+      value: 0.91372555
+      objectReference: {fileID: 0}
     - target: {fileID: 1976873990533490040, guid: cdc52b9073c8b0d43bd61ea98ff05093, type: 3}
       propertyPath: _platformCheckDistance
       value: 2

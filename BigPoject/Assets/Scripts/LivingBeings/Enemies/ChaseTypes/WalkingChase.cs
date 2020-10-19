@@ -45,8 +45,7 @@ namespace LivingBeings.Enemies.ChaseTypes
                         Vector2 enemyPosition = enemyTransform.position;
                         Vector2 targetPosition = new Vector2(playerTransform.position.x, enemyPosition.y);
                         Vector2 chaseDirection = (targetPosition - enemyPosition).normalized;
-
-                        //enemyRigidbody.velocity = chaseDirection * (ChasingSpeed * Time.deltaTime);
+                        
                         enemyRigidbody.velocity = new Vector2(chaseDirection.x * (ChasingSpeed * Time.deltaTime),
                                                               enemyRigidbody.velocity.y);
                     }

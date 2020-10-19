@@ -94,13 +94,9 @@ namespace LivingBeings.Enemies.PatrolTypes
             Vector2 currentPosition = enemyTransform.position;
             Vector2 targetPosition = new Vector2(CurrentTargetPoint.x, CurrentTargetPoint.y);
             Vector2 targetDirection = (targetPosition - currentPosition).normalized;
-
-            //enemyRigidbody.velocity = targetDirection * (PatrolSpeed * Time.deltaTime);
+            
             enemyRigidbody.velocity = new Vector2(targetDirection.x * (PatrolSpeed * Time.deltaTime),
                                                      enemyRigidbody.velocity.y);
-                                                     
-                                                     // if we use CurrentTargetPoint.y for target postion
-                                                     // enemy never reaches the target point.
         }
 
 
