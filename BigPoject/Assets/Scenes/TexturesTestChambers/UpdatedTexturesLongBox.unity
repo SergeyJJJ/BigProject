@@ -838,6 +838,22 @@ PrefabInstance:
       propertyPath: _interactButton
       value: 
       objectReference: {fileID: 2140020073}
+    - target: {fileID: 6484195574205218863, guid: db841216772e4844187962a048cfddbb, type: 3}
+      propertyPath: ColorModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6484195574205218863, guid: db841216772e4844187962a048cfddbb, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key1.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6484195574205218863, guid: db841216772e4844187962a048cfddbb, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.atime0
+      value: 55705
+      objectReference: {fileID: 0}
+    - target: {fileID: 6484195574205218863, guid: db841216772e4844187962a048cfddbb, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.atime2
+      value: 65535
+      objectReference: {fileID: 0}
     - target: {fileID: 6700315359917075697, guid: db841216772e4844187962a048cfddbb, type: 3}
       propertyPath: _leftMoveButton
       value: 
@@ -1562,7 +1578,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1285927540
 Transform:
   m_ObjectHideFlags: 0
