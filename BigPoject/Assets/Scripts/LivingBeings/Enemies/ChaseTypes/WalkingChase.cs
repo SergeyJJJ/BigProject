@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace LivingBeings.Enemies.ChaseTypes
 {
@@ -45,7 +46,9 @@ namespace LivingBeings.Enemies.ChaseTypes
                         Vector2 targetPosition = new Vector2(playerTransform.position.x, enemyPosition.y);
                         Vector2 chaseDirection = (targetPosition - enemyPosition).normalized;
 
-                        enemyRigidbody.velocity = chaseDirection * (ChasingSpeed * Time.deltaTime);
+                        //enemyRigidbody.velocity = chaseDirection * (ChasingSpeed * Time.deltaTime);
+                        enemyRigidbody.velocity = new Vector2(chaseDirection.x * (ChasingSpeed * Time.deltaTime),
+                                                              enemyRigidbody.velocity.y);
                     }
                 }
                 else
