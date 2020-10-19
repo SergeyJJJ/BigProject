@@ -312,7 +312,7 @@ MonoBehaviour:
   _groundCheckBoxSize: {x: 0.21, y: 0.38}
   _whatIsGround:
     serializedVersion: 2
-    m_Bits: 8704
+    m_Bits: 74240
 --- !u!114 &21399133001567398
 MonoBehaviour:
   m_ObjectHideFlags: 0
