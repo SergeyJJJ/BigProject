@@ -8,8 +8,15 @@ namespace LivingBeings.Player.CharacterMovement
         [SerializeField] private Transform _groundCheckPoint = null;            // A position marking where to check if the character is grounded.
         [SerializeField] private Vector2 _groundCheckBoxSize = Vector2.zero;    // Shape of the overlap box, that used to determine if character is grounded.
         [SerializeField] private LayerMask _whatIsGround = Physics2D.AllLayers; // A mask determine what is the ground for the character.
+        private GameObject _onWhatIsStanding = null;                            // On what surface is player standing right now.
         private const float _groundCheckBoxRotation = 0f;                       // Rotation the overlap box, that used to determine if character is grounded.
 
+        #region Properties
+
+        public GameObject OnWhatIsStanding => _onWhatIsStanding;
+
+        #endregion Properties
+        
         public bool IsCharacterIsOnSurface()
         {
             bool isGrounded = false;
@@ -22,6 +29,7 @@ namespace LivingBeings.Player.CharacterMovement
             if (colliders != null)
             {
                 isGrounded = true;
+                _onWhatIsStanding = colliders[0].gameObject;
             }
 
             return isGrounded;

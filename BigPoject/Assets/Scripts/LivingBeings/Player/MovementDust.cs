@@ -21,13 +21,16 @@ namespace LivingBeings.Player
 
         private void SpawnLandDust()
         {
-            if (_characterMovement.LastFallHeight > _hightLandDustSpawnHeight)
+            if (IsDustCanBeSpawnedOnCurrentSurface())
             {
-                SpawnHightLandDust();
-            }
-            else if (_characterMovement.LastFallHeight > _middleLandDustSpawnHeight)
-            {
-                SpawnMiddleLandDust();
+                if (_characterMovement.LastFallHeight > _hightLandDustSpawnHeight)
+                {
+                    SpawnHightLandDust();
+                }
+                else if (_characterMovement.LastFallHeight > _middleLandDustSpawnHeight)
+                {
+                    SpawnMiddleLandDust();
+                }
             }
         }
 
@@ -47,6 +50,12 @@ namespace LivingBeings.Player
         private void SpawnJumpDust()
         {
             Instantiate(_jumpDust, transform.position, Quaternion.identity);
+        }
+
+
+        private bool IsDustCanBeSpawnedOnCurrentSurface()
+        {
+            return ! _characterMovement.SurfaceCheck.OnWhatIsStanding.CompareTag("Trampoline");
         }
         
         

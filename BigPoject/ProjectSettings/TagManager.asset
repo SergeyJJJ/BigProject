@@ -12,6 +12,7 @@ TagManager:
   - FrameConfiner
   - FirePoint
   - Obstacle
+  - Trampoline
   layers:
   - Default
   - TransparentFX

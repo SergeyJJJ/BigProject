@@ -203,7 +203,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1629687948}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &45079147
 GameObject:
@@ -1873,9 +1873,9 @@ Transform:
   - {fileID: 1415604994}
   - {fileID: 892172943}
   - {fileID: 938276248}
+  - {fileID: 2053771350}
   - {fileID: 2098308607}
   - {fileID: 14360456}
-  - {fileID: 2053771350}
   m_Father: {fileID: 863782783}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2810,7 +2810,7 @@ Transform:
   - {fileID: 2087414701}
   - {fileID: 464040021}
   m_Father: {fileID: 1629687948}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2140020068 stripped
 GameObject:
@@ -3328,7 +3328,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051663944800995568, guid: 82e380ff589759b4eb0e7d0d4b572b4c, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8051663944800995568, guid: 82e380ff589759b4eb0e7d0d4b572b4c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3363,13 +3363,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Trampoline
       objectReference: {fileID: 0}
-    - target: {fileID: 8530592087705335654, guid: 0db39cc280e6cab419c796ff5a0969e8, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8530592087705335655, guid: 0db39cc280e6cab419c796ff5a0969e8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -25.451162
+      value: -23.43
       objectReference: {fileID: 0}
     - target: {fileID: 8530592087705335655, guid: 0db39cc280e6cab419c796ff5a0969e8, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3377,7 +3373,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8530592087705335655, guid: 0db39cc280e6cab419c796ff5a0969e8, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -14.670903
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8530592087705335655, guid: 0db39cc280e6cab419c796ff5a0969e8, type: 3}
       propertyPath: m_LocalRotation.x
