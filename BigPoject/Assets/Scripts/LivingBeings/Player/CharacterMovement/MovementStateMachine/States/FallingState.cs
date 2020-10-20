@@ -1,4 +1,5 @@
-﻿using GameBehaviour;
+﻿using System.Runtime.InteropServices;
+using GameBehaviour;
 using UnityEngine;
 
 namespace LivingBeings.Player.CharacterMovement.MovementStateMachine.States
@@ -14,7 +15,9 @@ namespace LivingBeings.Player.CharacterMovement.MovementStateMachine.States
         public override void Enter()
         {
             base.Enter();
-            
+
+            _characterMovement.StartFallingPosition = _characterMovement.Transform.position;
+
             EventSystem.TriggerEvent("OnFall");
         }
 
@@ -52,7 +55,7 @@ namespace LivingBeings.Player.CharacterMovement.MovementStateMachine.States
                 }
             }
 
-            if (_characterMovement.SurfaceCheck.IsCharecterIsOnSurface())
+            if (_characterMovement.SurfaceCheck.IsCharacterIsOnSurface())
             {
                 _stateMachine.TransitionToState(_characterMovement.Landing);
             }

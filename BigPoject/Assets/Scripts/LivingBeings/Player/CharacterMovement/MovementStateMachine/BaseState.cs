@@ -66,7 +66,7 @@ namespace LivingBeings.Player.CharacterMovement.MovementStateMachine
             // Set smoothed velocity to the character.
             _characterMovement.RigidBody.velocity = Vector2.SmoothDamp(_characterMovement.RigidBody.velocity,
                 targetVelocity, ref _currentVelocity,
-                _characterMovement.MoventSmoothing);
+                _characterMovement.MovementSmoothing);
         }
 
 

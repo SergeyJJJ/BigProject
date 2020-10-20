@@ -15,8 +15,12 @@ namespace LivingBeings.Player.CharacterMovement.MovementStateMachine.States
         {
             base.Enter();
             
-            EventSystem.TriggerEvent("OnLand");
+            _characterMovement.LandingPosition = _characterMovement.Transform.position;
+            _characterMovement.LastFallHeight = GetLastFallHeight();
+            Debug.Log(_characterMovement.LastFallHeight);
             
+            EventSystem.TriggerEvent("OnLand");
+
             if (_characterMovement.PressButtonTimer > 0)
             {
                 _stateMachine.TransitionToState(_characterMovement.Jumping);
@@ -64,6 +68,12 @@ namespace LivingBeings.Player.CharacterMovement.MovementStateMachine.States
         public override void Exit()
         {
             _characterMovement.AfterGroundTouchTimer = _characterMovement.AfterGroundTouchJumpTime;
+        }
+        
+        
+        private float GetLastFallHeight()
+        {
+            return _characterMovement.StartFallingPosition.y - _characterMovement.LandingPosition.y;
         }
     }
 }

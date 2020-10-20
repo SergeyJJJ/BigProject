@@ -10,7 +10,7 @@ namespace LivingBeings.Player.CharacterMovement
         [SerializeField] private LayerMask _whatIsGround = Physics2D.AllLayers; // A mask determine what is the ground for the character.
         private const float _groundCheckBoxRotation = 0f;                       // Rotation the overlap box, that used to determine if character is grounded.
 
-        public bool IsCharecterIsOnSurface()
+        public bool IsCharacterIsOnSurface()
         {
             bool isGrounded = false;
             Collider2D[] colliders = null;

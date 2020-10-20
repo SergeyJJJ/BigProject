@@ -43,5 +43,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dd553daa16da7a40811a8b09055a198, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _jumpDust: {fileID: 143799321553927598, guid: ac1119426def3bf438ae75092c312369, type: 3}
-  _landDust: {fileID: 3901482666482961106, guid: 814a897e2ec18b94ba98e6958a745fdb, type: 3}
+  _jumpDust: {fileID: 143799321553927598, guid: 90a8b3e7d70ac0447a50a4017419740b, type: 3}
+  _hightLandDust: {fileID: 143799321553927598, guid: ac1119426def3bf438ae75092c312369, type: 3}
+  _middleLandDust: {fileID: 7412068577537202991, guid: 45b35654ca43e664cbe7f8e3c0170e8b, type: 3}
+  _hightLandDustSpawnHeight: 2.8
+  _middleLandDustSpawnHeight: 2.3
+  _characterMovement: {fileID: 0}

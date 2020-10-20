@@ -309,7 +309,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _groundCheckPoint: {fileID: 1118506233617382984}
-  _groundCheckBoxSize: {x: 0.21, y: 0.38}
+  _groundCheckBoxSize: {x: 0.23, y: 0.38}
   _whatIsGround:
     serializedVersion: 2
     m_Bits: 74240
@@ -442,6 +442,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6016912071937549999, guid: 5271f8901eb7e4e448a9d8a5a3f5276a, type: 3}
+      propertyPath: ColorModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6016912071937549999, guid: 5271f8901eb7e4e448a9d8a5a3f5276a, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key1.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6016912071937549999, guid: 5271f8901eb7e4e448a9d8a5a3f5276a, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.atime0
+      value: 55705
+      objectReference: {fileID: 0}
+    - target: {fileID: 6016912071937549999, guid: 5271f8901eb7e4e448a9d8a5a3f5276a, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.atime2
+      value: 65535
+      objectReference: {fileID: 0}
     - target: {fileID: 7352541178118623949, guid: 5271f8901eb7e4e448a9d8a5a3f5276a, type: 3}
       propertyPath: m_Name
       value: RedBloodParticles
@@ -570,6 +586,18 @@ PrefabInstance:
     - target: {fileID: 2225479389187876346, guid: b80f3a976ae542e468b9b276b49d407f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4400853892669074310, guid: b80f3a976ae542e468b9b276b49d407f, type: 3}
+      propertyPath: _characterMovement
+      value: 
+      objectReference: {fileID: 6700315359917075697}
+    - target: {fileID: 4400853892669074310, guid: b80f3a976ae542e468b9b276b49d407f, type: 3}
+      propertyPath: _middleLandDustSpawnHeight
+      value: 1.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4400853892669074310, guid: b80f3a976ae542e468b9b276b49d407f, type: 3}
+      propertyPath: _hightLandDustSpawnHeight
+      value: 2.8
       objectReference: {fileID: 0}
     - target: {fileID: 7746502497692729020, guid: b80f3a976ae542e468b9b276b49d407f, type: 3}
       propertyPath: m_Name

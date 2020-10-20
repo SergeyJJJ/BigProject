@@ -27,6 +27,11 @@ namespace LivingBeings.Player.CharacterMovement.MovementStateMachine
         [Header("Is on ground control")]
         [SerializeField] private SurfaceCheck _surfaceCheck = null;               // Script that check if character is on ground.
 
+        // Fall information.
+        private Vector2 _startFallingPosition = Vector2.zero;                     // Used to calculate last fall height, that`s needed to play appropriate landing dust animation.
+        private Vector2 _landingPosition = Vector2.zero;                          // Used to calculate last fall height, that`s needed to play appropriate landing dust animation.
+        private float _lastFallHeight = 0f;                                       // Used to play appropriate landing dust animation.
+        
         // Movement states.
         private StateMachine _stateMachine = null;                                // Script that control transition between states.
         private JumpingState _jumpingState = null;
@@ -38,16 +43,16 @@ namespace LivingBeings.Player.CharacterMovement.MovementStateMachine
 
         //Character`s components.
         private Transform _transform = null;                                      // Characters Transform component.
-        private Rigidbody2D _rigidBody = null;                                    // Charecters Rigidbody2D component.
+        private Rigidbody2D _rigidBody = null;                                    // Characters Rigidbody2D component.
 
         // Timers.
-        private float _afterGroundTouchTimer = 0;                                 // Timer that controlls time during which character still can jump after he touch ground last time.
-        private float _pressButtonTimer = 0;                                      // Timer that controlls time furing which character can perform jump after he press jump button last time.
+        private float _afterGroundTouchTimer = 0;                                 // Timer that controls time during which character still can jump after he touch ground last time.
+        private float _pressButtonTimer = 0;                                      // Timer that controls time during which character can perform jump after he press jump button last time.
 
         #region Properties
         public float HorizontalSpeed => _horizontalSpeed;
 
-        public float MoventSmoothing => _movementSmoothing;
+        public float MovementSmoothing => _movementSmoothing;
 
         public CustomButton LeftMoveButton => _leftMoveButton;
 
@@ -106,7 +111,25 @@ namespace LivingBeings.Player.CharacterMovement.MovementStateMachine
             get => _pressButtonTimer;
             set => _pressButtonTimer = value;
         }
-        
+
+        public Vector2 StartFallingPosition
+        {
+            get => _startFallingPosition;
+            set => _startFallingPosition = value;
+        }
+
+        public Vector2 LandingPosition
+        {
+            get => _landingPosition;
+            set => _landingPosition = value;
+        }
+
+        public float LastFallHeight
+        {
+            get => _lastFallHeight;
+            set => _lastFallHeight = value;
+        }
+
         #endregion Properties
 
 
