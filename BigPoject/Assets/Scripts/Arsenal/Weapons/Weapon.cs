@@ -31,7 +31,7 @@ namespace Arsenal.Weapons
             set => _currentBulletCount = value >= 0 ? value : _currentBulletCount;
         }
         
-        protected GameObject FirePoint => _firePoint;
+        public GameObject FirePoint => _firePoint;
 
         public SpriteRenderer WeaponSpriteRenderer
         {
