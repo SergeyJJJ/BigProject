@@ -19,6 +19,8 @@ namespace Arsenal.Weapons.Lazer
         [SerializeField] private float _damageAmount = 0f;                               // How much damage will be applied to the entity with Health component every second.
         [SerializeField] private float _timeBeforeAapplyingDamage = 0f;                  // How much time should pass before next damage applying : Seconds.
 
+        private bool _isButtonPressedNow = false;                                       // Determine is fire button pressed or not.
+        
         private enum ButtonPressTimes                                                    // Enumeration that used to indicate how many times fire button was pressed.
         {
             NotOnce,
@@ -86,30 +88,74 @@ namespace Arsenal.Weapons.Lazer
          {
              if (IsShotTriggered)
             {
-                if (_buttonPressTimes == ButtonPressTimes.NotOnce)
+                if (!_isButtonPressedNow)
                 {
-                    _buttonPressTimes = ButtonPressTimes.Once;
-                }
-                else if (_buttonPressTimes == ButtonPressTimes.Once)
-                {
-                    _buttonPressTimes = ButtonPressTimes.Twice;
+                    _isButtonPressedNow = true;
+                    
+                    if (_buttonPressTimes == ButtonPressTimes.NotOnce)
+                    {
+                        _buttonPressTimes = ButtonPressTimes.Once;
+                    }
+                    else if (_buttonPressTimes == ButtonPressTimes.Once)
+                    {
+                        _buttonPressTimes = ButtonPressTimes.Twice;
+                    }
                 }
             }
             else
             {
-                if (_buttonPressTimes == ButtonPressTimes.Once)
+                if (_isButtonPressedNow)
                 {
-                    StopAllProcesses();
-                    StartCoroutine(StartLazerShootingRoutine());
-                }
-                else if (_buttonPressTimes == ButtonPressTimes.Twice)
-                {
-                    StopAllProcesses();
-                    StartCoroutine(StopLazerShootingRoutine());  
+                    _isButtonPressedNow = false;
+                    
+                    if (_buttonPressTimes == ButtonPressTimes.Once)
+                    {
+                        StopAllProcesses();
+                        StartCoroutine(StartLazerShootingRoutine());
+                    }
+                    else if (_buttonPressTimes == ButtonPressTimes.Twice)
+                    {
+                        _buttonPressTimes = ButtonPressTimes.NotOnce;
+                        
+                        StopAllProcesses();
+                        StartCoroutine(StopLazerShootingRoutine());
+                    }
                 }
             }
          }
 
+         
+         private IEnumerator StartLazerShootingRoutine()
+         {
+             yield return StartCoroutine(LazerActivationRoutine());
+             Debug.Log("LazerShooting");
+         }
+         
+         
+         private IEnumerator StopLazerShootingRoutine()
+         {
+             yield return StartCoroutine(LazerDeactivationRoutine());
+         }
+
+
+         private IEnumerator LazerActivationRoutine()
+         {
+             yield return new WaitForFixedUpdate();
+             Debug.Log("LazerActivated");
+         }
+
+
+         private IEnumerator LazerDeactivationRoutine()
+         {
+             yield return new WaitForFixedUpdate();
+             Debug.Log("LazerDeactivated");
+         }
+
+
+         private void StopAllProcesses()
+         {
+             StopAllCoroutines();
+         }
 
 
          /*private void FixedUpdate()
