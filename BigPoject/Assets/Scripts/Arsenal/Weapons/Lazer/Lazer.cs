@@ -54,6 +54,8 @@ namespace Arsenal.Weapons.Lazer
 
         public float CurrentLazerLength => _currentLazerLength;
 
+        public float StartSpriteWidth => _startSpriteWidth;
+
         #endregion Properties
         
         protected override void CallShotEvent()
@@ -65,6 +67,18 @@ namespace Arsenal.Weapons.Lazer
         protected override void CallStopShotEvent()
         {
             EventSystem.TriggerEvent("OnStopLazerShot");
+        }
+
+
+        private void CallActivationEvent()
+        {
+            EventSystem.TriggerEvent("OnLazerActivation");
+        }
+
+
+        private void CallDeactivationEvent()
+        {
+            EventSystem.TriggerEvent("OnLazerDeactivation");
         }
 
 
@@ -128,7 +142,8 @@ namespace Arsenal.Weapons.Lazer
          private IEnumerator StartLazerShootingRoutine()
          {
              yield return StartCoroutine(LazerActivationRoutine());
-             Debug.Log("LazerShooting");
+             
+             StartCoroutine(LazerShootingRoutine());
          }
          
          
@@ -140,28 +155,32 @@ namespace Arsenal.Weapons.Lazer
 
          private IEnumerator LazerActivationRoutine()
          {
-             yield return new WaitForFixedUpdate();
-             Debug.Log("LazerActivated");
+             CallActivationEvent();
+             
+             yield return new WaitForSeconds(0.6f);
          }
 
 
          private IEnumerator LazerDeactivationRoutine()
          {
              yield return new WaitForFixedUpdate();
-             Debug.Log("LazerDeactivated");
+             
+             CallStopShotEvent();
+             
+             DeactivateLazerPart(_lazerStart);
+             DeactivateLazerPart(_lazerMiddle);
+             DeactivateLazerPart(_lazerEnd);
+             
+             CallDeactivationEvent();
          }
 
 
-         private void StopAllProcesses()
+         private IEnumerator LazerShootingRoutine()
          {
-             StopAllCoroutines();
-         }
-
-
-         /*private void FixedUpdate()
-         {
-             if (IsShotTriggered)
+             while (true)
              {
+                 yield return new WaitForFixedUpdate();
+                 
                  if (IsEnoughBullets())
                  {
                      SpendEnergy();
@@ -223,16 +242,15 @@ namespace Arsenal.Weapons.Lazer
                      CallStopShotEvent();
                  }
              }
-             else
-             {
-                 DeactivateLazerPart(_lazerStart);
-                 DeactivateLazerPart(_lazerMiddle);
-                 DeactivateLazerPart(_lazerEnd);
-                 CallStopShotEvent();
-             }
-         }*/
+         }
 
 
+         private void StopAllProcesses()
+         {
+             StopAllCoroutines();
+         }
+
+         
         private void InitializeStartLazerPart()
         {
             _startSpriteWidth = _startSpriteRenderer.bounds.size.x;
