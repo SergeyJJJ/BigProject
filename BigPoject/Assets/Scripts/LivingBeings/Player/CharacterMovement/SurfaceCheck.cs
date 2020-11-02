@@ -16,7 +16,17 @@ namespace LivingBeings.Player.CharacterMovement
         public GameObject OnWhatIsStanding => _onWhatIsStanding;
 
         #endregion Properties
+
+        /*  IsCharacterIsOnSurface
+                
+                Throw two raycasts from groundCheck points(left and right).
+                
+                If one or both raycasts is hitting ground, we say that character is grounded.
+                
+                Also if only one raycast is hitting ground we say that character is on stairs.
+        */
         
+        #region OldSrcipt
         public bool IsCharacterIsOnSurface()
         {
             bool isGrounded = false;
@@ -89,5 +99,7 @@ namespace LivingBeings.Player.CharacterMovement
 
             return filteredColliders;
         }
+
+        #endregion OldScript
     }
 }
