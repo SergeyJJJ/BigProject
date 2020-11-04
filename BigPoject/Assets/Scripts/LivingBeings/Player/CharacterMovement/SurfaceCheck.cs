@@ -1,15 +1,21 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace LivingBeings.Player.CharacterMovement
 {
     public class SurfaceCheck : MonoBehaviour
     {
-        [Header("Is on ground controll")]
-        [SerializeField] private Transform _groundCheckPoint = null;            // A position marking where to check if the character is grounded.
-        [SerializeField] private Vector2 _groundCheckBoxSize = Vector2.zero;    // Shape of the overlap box, that used to determine if character is grounded.
+        [Serializable]
+        public struct GroundCheckPoints
+        {
+            public Transform _leftGroundCheckPoint;
+            public Transform _rightGroundCheckPoint;
+        }
+        
+        [SerializeField] private GroundCheckPoints _groundCheckPoints;          // A points that define from where will be thrown rays that check if character is grounded.
+        [SerializeField] private float _groundCheckDepth = 0;                   // How deep we must check to define is character standing on ground now.
         [SerializeField] private LayerMask _whatIsGround = Physics2D.AllLayers; // A mask determine what is the ground for the character.
         private GameObject _onWhatIsStanding = null;                            // On what surface is player standing right now.
-        private const float _groundCheckBoxRotation = 0f;                       // Rotation the overlap box, that used to determine if character is grounded.
 
         #region Properties
 
@@ -17,17 +23,80 @@ namespace LivingBeings.Player.CharacterMovement
 
         #endregion Properties
 
-        /*  IsCharacterIsOnSurface
-                
-                Throw two raycasts from groundCheck points(left and right).
-                
-                If one or both raycasts is hitting ground, we say that character is grounded.
-                
-                Also if only one raycast is hitting ground we say that character is on stairs.
-        */
-        
-        #region OldSrcipt
         public bool IsCharacterIsOnSurface()
+        {
+            //Throw two rays from groundCheck points(left and right).
+            RaycastHit2D leftRay = ThrowRayFromPoint(_groundCheckPoints._leftGroundCheckPoint.position);
+            RaycastHit2D rightRay = ThrowRayFromPoint(_groundCheckPoints._rightGroundCheckPoint.position);
+            
+            //If one or both rays is hitting ground, we say that character is grounded.
+            bool isLeftRayHitGround = IsRayCollidedWithGround(leftRay);
+            bool isRightRayHitGround = IsRayCollidedWithGround(rightRay);
+
+            if (isRightRayHitGround)
+            {
+                _onWhatIsStanding = rightRay.collider.gameObject;
+            }
+            else if (isLeftRayHitGround)
+            {
+                _onWhatIsStanding = leftRay.collider.gameObject;
+            }
+            else
+            {
+                _onWhatIsStanding = null;
+            }
+
+            return isLeftRayHitGround || isRightRayHitGround;
+        }
+
+
+        public bool IsCharacterIsOnInclinedSurface()
+        {
+            //Throw two rays from groundCheck points(left and right).
+            RaycastHit2D leftRay = ThrowRayFromPoint(_groundCheckPoints._leftGroundCheckPoint.position);
+            RaycastHit2D rightRay = ThrowRayFromPoint(_groundCheckPoints._rightGroundCheckPoint.position);
+
+            //If only one ray is hitting ground we say that character is on stairs.
+            bool isLeftRayHitGround = IsRayCollidedWithGround(leftRay);
+            bool isRightRayHitGround = IsRayCollidedWithGround(rightRay);
+
+            if (isRightRayHitGround)
+            {
+                _onWhatIsStanding = rightRay.collider.gameObject;
+            }
+            else if (isLeftRayHitGround)
+            {
+                _onWhatIsStanding = leftRay.collider.gameObject;
+            }
+            else
+            {
+                _onWhatIsStanding = null;
+            }
+            
+            return isLeftRayHitGround ^ isRightRayHitGround;
+        }
+
+
+        private RaycastHit2D ThrowRayFromPoint(Vector2 throwFormPoint)
+        {
+            return Physics2D.Raycast(throwFormPoint, -transform.up, _groundCheckDepth, _whatIsGround);
+        }
+
+
+        private bool IsRayCollidedWithGround(RaycastHit2D thorwnRay)
+        {
+            if (thorwnRay.collider != null)
+            {
+                return ((1 << thorwnRay.collider.gameObject.layer) & _whatIsGround) != 0;   
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        #region OldSrcipt
+        /*public bool IsCharacterIsOnSurface()
         {
             bool isGrounded = false;
             Collider2D[] colliders = null;
@@ -98,7 +167,7 @@ namespace LivingBeings.Player.CharacterMovement
             }
 
             return filteredColliders;
-        }
+        }*/
 
         #endregion OldScript
     }

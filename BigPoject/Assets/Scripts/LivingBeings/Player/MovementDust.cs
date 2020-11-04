@@ -55,7 +55,14 @@ namespace LivingBeings.Player
 
         private bool IsDustCanBeSpawnedOnCurrentSurface()
         {
-            return ! _characterMovement.SurfaceCheck.OnWhatIsStanding.CompareTag("Trampoline");
+            if (_characterMovement.SurfaceCheck.OnWhatIsStanding != null)
+            {
+                return ! _characterMovement.SurfaceCheck.OnWhatIsStanding.CompareTag("Trampoline");
+            }
+            else
+            {
+                return false;
+            }
         }
         
         

@@ -37,11 +37,20 @@ namespace LivingBeings.Player.CharacterMovement.MovementStateMachine.States
         public override void PhysicsUpdate()
         {
             base.PhysicsUpdate();
-
+            
             bool isStartRunning = (_characterMovement.RigidBody.velocity.x > 1) ||
                                   (_characterMovement.RigidBody.velocity.x < -1);
             bool isStartFalling = _characterMovement.RigidBody.velocity.y < -1f;
             bool isUpButtonPressed = _characterMovement.UpMoveButton.IsPressed;
+
+            if (_characterMovement.SurfaceCheck.IsCharacterIsOnInclinedSurface())
+            {
+                _characterMovement.RigidBody.constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
+            }
+            else
+            {
+                _characterMovement.RigidBody.constraints = RigidbodyConstraints2D.FreezeRotation;
+            }
 
             if (isStartFalling)
             {
@@ -63,6 +72,7 @@ namespace LivingBeings.Player.CharacterMovement.MovementStateMachine.States
         public override void Exit()
         {
             _characterMovement.AfterGroundTouchTimer = _characterMovement.AfterGroundTouchJumpTime;
+            _characterMovement.RigidBody.constraints = RigidbodyConstraints2D.FreezeRotation;
         }
     }
 } 
