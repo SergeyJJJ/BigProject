@@ -31,7 +31,7 @@ TagManager:
   - HittableEnvironment
   - DestrucitonParts
   - WalkableHittableEnvironment
-  - 
+  - ParticlesDestroyer
   - 
   - 
   - 
