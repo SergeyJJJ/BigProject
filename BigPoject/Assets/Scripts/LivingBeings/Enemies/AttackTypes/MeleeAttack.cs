@@ -9,7 +9,7 @@ namespace LivingBeings.Enemies.AttackTypes
     {
         [SerializeField] private float _damagePerAttack = 0;                // Determine how much damage will be applied to the player.
         [SerializeField] private float _timeBeforeDamageApplying = 0;       // Determine how long needed to wait before applying damage to the player.
-        [SerializeField] private Transform _attackPoint = null;             // Use this point as a point from which attack is performed.
+        //[SerializeField] private Transform _attackPoint = null;             // Use this point as a point from which attack is performed.
         
         public override void AttackPlayer()
         {

@@ -1,18 +1,30 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
-public class WeaponsSwitcher : MonoBehaviour
+namespace Arsenal.Weapons
 {
-    // Start is called before the first frame update
-    void Start()
+    public class WeaponsSwitcher : MonoBehaviour
     {
-        
-    }
+        [SerializeField] private Weapon[] _weapons = new Weapon[5];         // Array that stores weapons.
+        [SerializeField] private ActiveWeapon _activeWeapon = null;                 // Used to set active weapon at this moment.
 
-    // Update is called once per frame
-    void Update()
-    {
+        public void SwitchToWeapon(Weapon weapon)
+        {
+            DeactivateWeaponsOtherThan(weapon);
+            _activeWeapon.CurrentWeapon = weapon;
+            weapon.gameObject.SetActive(true);
+        }
         
+        
+        private void DeactivateWeaponsOtherThan(Weapon activeWeapon)
+        {
+            foreach (Weapon weapon in _weapons)
+            {
+                if (weapon != activeWeapon)
+                {
+                    weapon.gameObject.SetActive(false);
+                }
+            }
+        }
     }
 }

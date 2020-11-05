@@ -7,6 +7,16 @@ namespace Arsenal.Weapons
     {
         [SerializeField] private Weapon _currentWeapon = null;
         [SerializeField] private CustomButton _fireButton = null;
+
+        #region Properties
+
+        public Weapon CurrentWeapon
+        {
+            get => _currentWeapon;
+            set => _currentWeapon = value;
+        }
+
+        #endregion
         
         private void FixedUpdate()
         {
