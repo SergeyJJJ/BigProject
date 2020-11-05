@@ -9,12 +9,15 @@ namespace Arsenal.Weapons.Lazer
         [SerializeField] private ParticleSystem _energyConcentrationParticles = null;   // Particles that used to represent energy concentration effect.
         [SerializeField] private ParticleSystem _energyFlowingParticles = null;         // Particles that used to represent particles flowing along tha lazer.
         [SerializeField] private Lazer _lazer = null;                                   // Used to get lazer characteristics.
-
+        [SerializeField] private GameObject _flowingParticlesDestroyer = null;         // Destroys flowing particles when them touch to it.
+        
         private void OnEnable()
         {
             EventSystem.StartListening("OnLazerActivation", ThrowEnergyConcentrationParticles);
             EventSystem.StartListening("OnLazerShot", StopEnergyConcentrationParticles);
+            EventSystem.StartListening("OnLazerShot", ReplaceFlowingParticlesDestroyerToLazerEnd);
             EventSystem.StartListening("OnLazerShot", ThrowEnergyFlowingParticles);
+            EventSystem.StartListening("OnLazerDeactivation", StopEnergyFlowingParticles);
             EventSystem.StartListening("OnLazerDeactivation", StopEnergyConcentrationParticles);
         }
 
@@ -39,14 +42,7 @@ namespace Arsenal.Weapons.Lazer
                 if (!_energyFlowingParticles.isPlaying)
                 {
                     var flowingParticlesShape = _energyFlowingParticles.shape;
-
-                    flowingParticlesShape.scale = new Vector3((_lazer.CurrentLazerLength - _lazer.StartSpriteWidth),
-                        flowingParticlesShape.scale.y,
-                        flowingParticlesShape.scale.z);
                     
-                    _energyFlowingParticles.transform.localPosition = new Vector2(_lazer.CurrentLazerLength/2, _lazer.FirePoint.transform.localPosition.y);
-
-                    _energyFlowingParticles.gameObject.SetActive(true);
                     _energyFlowingParticles.Play();
                 }
             }
@@ -72,9 +68,15 @@ namespace Arsenal.Weapons.Lazer
                 if (_energyFlowingParticles.isPlaying)
                 {
                     _energyFlowingParticles.Stop();
-                    _energyFlowingParticles.gameObject.SetActive(false);
                 }
             }
+        }
+
+
+        private void ReplaceFlowingParticlesDestroyerToLazerEnd()
+        {
+            Vector2 replacePosition = new Vector2(_lazer.CurrentLazerLength, _flowingParticlesDestroyer.transform.localPosition.y);
+            _flowingParticlesDestroyer.transform.localPosition = replacePosition;
         }
 
 
@@ -83,6 +85,7 @@ namespace Arsenal.Weapons.Lazer
             EventSystem.StopListening("OnLazerActivation", ThrowEnergyConcentrationParticles);
             EventSystem.StopListening("OnLazerShot", StopEnergyConcentrationParticles);
             EventSystem.StopListening("OnLazerShot", ThrowEnergyFlowingParticles);
+            EventSystem.StopListening("OnLazerDeactivation", StopEnergyFlowingParticles);
             EventSystem.StopListening("OnLazerDeactivation", StopEnergyConcentrationParticles);
         }
     }
