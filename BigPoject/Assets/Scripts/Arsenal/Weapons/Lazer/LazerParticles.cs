@@ -9,7 +9,7 @@ namespace Arsenal.Weapons.Lazer
         [SerializeField] private ParticleSystem _energyConcentrationParticles = null;   // Particles that used to represent energy concentration effect.
         [SerializeField] private ParticleSystem _energyFlowingParticles = null;         // Particles that used to represent particles flowing along tha lazer.
         [SerializeField] private Lazer _lazer = null;                                   // Used to get lazer characteristics.
-        [SerializeField] private GameObject _flowingParticlesDestroyer = null;         // Destroys flowing particles when them touch to it.
+        [SerializeField] private GameObject _forwardFlowingParticlesDestroyer = null;         // Destroys flowing particles when them touch to it.
         
         private void OnEnable()
         {
@@ -75,8 +75,8 @@ namespace Arsenal.Weapons.Lazer
 
         private void ReplaceFlowingParticlesDestroyerToLazerEnd()
         {
-            Vector2 replacePosition = new Vector2(_lazer.CurrentLazerLength, _flowingParticlesDestroyer.transform.localPosition.y);
-            _flowingParticlesDestroyer.transform.localPosition = replacePosition;
+            Vector2 replacePosition = new Vector2(_lazer.CurrentLazerLength, _forwardFlowingParticlesDestroyer.transform.localPosition.y);
+            _forwardFlowingParticlesDestroyer.transform.localPosition = replacePosition;
         }
 
 

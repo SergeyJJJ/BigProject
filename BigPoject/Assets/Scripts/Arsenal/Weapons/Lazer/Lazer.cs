@@ -356,5 +356,15 @@ namespace Arsenal.Weapons.Lazer
         {
             return _damageApllyingTimer < 0;
         }
+
+
+        private void OnDisable()
+        {
+            _buttonPressTimes = ButtonPressTimes.NotOnce;
+            
+            DeactivateLazerPart(_lazerStart);
+            DeactivateLazerPart(_lazerMiddle);
+            DeactivateLazerPart(_lazerEnd);
+        }
     }
 }

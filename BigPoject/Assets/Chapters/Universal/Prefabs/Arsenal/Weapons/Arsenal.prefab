@@ -244,6 +244,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5616292551596334445}
     m_Modifications:
+    - target: {fileID: 555501737349482767, guid: 552966005c72f7140b2927a61b16a444, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 555501737349482767, guid: 552966005c72f7140b2927a61b16a444, type: 3}
+      propertyPath: InitialModule.startSizeY.scalar
+      value: 0.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 555501737349482767, guid: 552966005c72f7140b2927a61b16a444, type: 3}
+      propertyPath: InitialModule.startRotation.scalar
+      value: 1.7453293
+      objectReference: {fileID: 0}
+    - target: {fileID: 555501737349482767, guid: 552966005c72f7140b2927a61b16a444, type: 3}
+      propertyPath: InitialModule.startRotation.minScalar
+      value: -1.7453293
+      objectReference: {fileID: 0}
     - target: {fileID: 889919698736914788, guid: 552966005c72f7140b2927a61b16a444, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.049
@@ -412,10 +428,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5616292551596334445}
     m_Modifications:
-    - target: {fileID: 24164975, guid: 3bb8dabd3dde3fc4ab9c603c003c23a7, type: 3}
-      propertyPath: _flowingParticlesDestroyer
-      value: 
-      objectReference: {fileID: 3358275395063001896}
     - target: {fileID: 4591738617380861019, guid: 3bb8dabd3dde3fc4ab9c603c003c23a7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.049
@@ -482,8 +494,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 803f75c70ca542648b0fd4a0d428e762, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &3358275395063001896 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7539454584677807056, guid: 3bb8dabd3dde3fc4ab9c603c003c23a7, type: 3}
-  m_PrefabInstance: {fileID: 5060770901797306616}
-  m_PrefabAsset: {fileID: 0}
