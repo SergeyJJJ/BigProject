@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4931594260bea604ea88e66401a02c20, type: 3}
   m_Name: ShotgunBullet
   m_EditorClassIdentifier: 
-  _damage: 10
-  _flightRange: 15
-  _flightSpeed: 15
+  _damage: 18
+  _flightRange: 5
+  _flightSpeed: 17
   _flightSprite: {fileID: -5082318553336741150, guid: 0be82e7df2d7aaa42a6eae46e72480eb, type: 3}

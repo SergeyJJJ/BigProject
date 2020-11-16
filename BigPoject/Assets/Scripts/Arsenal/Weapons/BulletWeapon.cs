@@ -9,8 +9,10 @@ namespace Arsenal.Weapons
         [SerializeField] private float _fireRate = 0f;              // Weapon fire rate. Shots per minute: from 0.
         private float _nextShootTimer = 0f;                         // Timer that control when player can shoot again.
         private float _timeBetweenShoots = 0f;                      // Time that must pass between each shoot.
-    
+
         #region Properties
+
+        protected Bullet BulletType => _bulletType;
 
         public float FireRate => _fireRate;
 
@@ -49,7 +51,7 @@ namespace Arsenal.Weapons
         }
     
     
-        protected Vector2 GetLaunchDirection()
+        protected virtual Vector2 GetLaunchDirection()
         {
             return transform.right;
         }

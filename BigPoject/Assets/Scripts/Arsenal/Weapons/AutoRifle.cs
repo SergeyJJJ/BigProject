@@ -34,6 +34,7 @@ namespace Arsenal.Weapons
                         GameObject bullet = GetBullet();
                         Vector2 launchDirection = GetLaunchDirection();
                         InitializeBullet(bullet, launchDirection, FirePoint.transform.position);
+                        RotateBullet(bullet);
                         LaunchBullet(bullet);
                         CallShotEvent();
                         DecrementBulletsCount();
@@ -42,6 +43,12 @@ namespace Arsenal.Weapons
             }
             
             NextShootTimer -= Time.deltaTime;
+        }
+
+
+        private void RotateBullet(GameObject bullet)
+        {
+            bullet.transform.rotation = Quaternion.identity;
         }
         
         

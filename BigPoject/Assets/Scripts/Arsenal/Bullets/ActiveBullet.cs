@@ -2,25 +2,35 @@
 using Environment.InterfacesOfUsing;
 using LivingBeings;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Arsenal.Bullets
 {
     public class ActiveBullet : MonoBehaviour
     {
         [SerializeField] private LayerMask _hittableByBullet = Physics2D.AllLayers;     // Determine what can be damaged by bullet.
-        private Bullet _currentBullet = null;
-        private Vector2 _launchDirection = Vector2.zero;
-        private Vector2 _startFlightPosition = Vector2.zero;
-        private Rigidbody2D _rigidbody2D = null;
-        private SpriteRenderer _spriteRenderer = null;
+        private Bullet _currentBullet = null;                                           // Used to get bullet data.
+        private Vector2 _launchDirection = Vector2.zero;                                // Used to set direction in which bullet will be launched.
+        private Vector2 _startFlightPosition = Vector2.zero;                            // Determine from which point bullet will be launched.
+        private Rigidbody2D _rigidbody2D = null;                                        // Used to set launch direction.                            
+        private SpriteRenderer _spriteRenderer = null;                                  // Used to set appropriate sprite to sprite renderer component of the bullet gameObject.
+        private float _flightRange = 0;                                                 // Used to determine when bullet will be disabled.
         
         public void Initialize(Bullet bullet, Vector2 launchDirection, Vector2 startLaunchPosition)
         {
             _currentBullet = bullet;
-            _launchDirection = new Vector2(launchDirection.x * _currentBullet.FlightSpeed, launchDirection.y);
+            _launchDirection = new Vector2(launchDirection.x, launchDirection.y) * _currentBullet.FlightSpeed;
             transform.position = startLaunchPosition;
             _spriteRenderer.sprite = _currentBullet.FlightSprite;
+            _flightRange = _currentBullet.FlightRange;
         }
+        
+        
+        public void RandomizeLifeTimeInScatter(float scatter)
+        {
+            _flightRange += Random.Range(-scatter, scatter);
+        }
+        
         
         private void Awake()
         {
@@ -40,7 +50,7 @@ namespace Arsenal.Bullets
         {
             float flyedDistance = Mathf.Abs(transform.position.x - _startFlightPosition.x);
 
-            if (flyedDistance > _currentBullet.FlightRange)
+            if (flyedDistance > _flightRange)
             {
                 DisableBullet();
             }
