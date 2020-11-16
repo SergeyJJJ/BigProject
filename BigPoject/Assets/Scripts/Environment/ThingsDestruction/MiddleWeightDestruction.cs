@@ -6,15 +6,15 @@ namespace Environment.ThingsDestruction
 {
     public class MiddleWeightDestruction : MonoBehaviour, IBreakable
     {
-        [SerializeField] private int _strength = 0;                             // How many times crystal can be hit before it will be broken.
+        [SerializeField] private float _strength = 0;                             // How many times crystal can be hit before it will be broken.
         [SerializeField] private ParticleSystem _hitParticles = null;           // Particles that used when object was hit.
         [SerializeField] private ParticleSystem _destructionParticles = null;   // Particles that used when object was destructed.
         [SerializeField] private ObjectSpreader _objects = null;                // Used to throw loot if its available.
         private Animator _animator = null;                                      // Animator component that used to play hit animation.                   
 
-        public void Break()
+        public void Break(float damageAmount)
         {
-            _strength--;
+            _strength -= damageAmount;
 
             if (_strength > 0)
             {

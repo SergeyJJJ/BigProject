@@ -64,15 +64,17 @@ namespace Arsenal.Bullets
                 IBreakable breakable = other.gameObject.GetComponent<IBreakable>();
                 if (breakable != null)
                 {
-                    breakable.Break();
+                    breakable.Break(_currentBullet.Damage);
                 }
-
-                Health health = other.gameObject.GetComponent<Health>();
-                if (health != null)
+                else
                 {
-                    RaycastHit2D hitRay = new RaycastHit2D();     // Used to determine point in which bullet collide with object.
-                    hitRay = Physics2D.Raycast(transform.position, transform.forward, _hittableByBullet);
-                    health.TakeDamage(_currentBullet.Damage);
+                    Health health = other.gameObject.GetComponent<Health>();
+                    if (health != null)
+                    {
+                        RaycastHit2D hitRay = new RaycastHit2D();     // Used to determine point in which bullet collide with object.
+                        hitRay = Physics2D.Raycast(transform.position, transform.forward, _hittableByBullet);
+                        health.TakeDamage(_currentBullet.Damage);
+                    }
                 }
 
                 DisableBullet();

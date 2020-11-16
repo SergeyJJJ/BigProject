@@ -142,7 +142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a3729ec4bee9464295dbeeaff00fea3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _strength: 5
+  _strength: 30
   _hitParticles: {fileID: 0}
   _destructionParticles: {fileID: 0}
-  _loot: {fileID: 0}
+  _objects: {fileID: 0}

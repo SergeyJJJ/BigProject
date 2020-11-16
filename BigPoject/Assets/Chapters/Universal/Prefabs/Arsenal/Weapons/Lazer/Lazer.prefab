@@ -490,7 +490,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4591738617380861019
 Transform:
   m_ObjectHideFlags: 0
@@ -613,9 +613,9 @@ MonoBehaviour:
   _maxLazerLength: 20
   _hittableByLazer:
     serializedVersion: 2
-    m_Bits: 20992
+    m_Bits: 86528
   _damageAmount: 20
-  _timeBeforeAapplyingDamage: 0.1
+  _timeBeforeAapplyingDamage: 0.3
 --- !u!114 &3550605817717760622
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -646,7 +646,7 @@ MonoBehaviour:
   _energyConcentrationParticles: {fileID: 7539454585739184772}
   _energyFlowingParticles: {fileID: 7539454584050406991}
   _lazer: {fileID: 3358275394272234782}
-  _forwardFlowingParticlesDestroyer: {fileID: 0}
+  _forwardFlowingParticlesDestroyer: {fileID: 7084541800703960940}
 --- !u!1001 &512636296397403097
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -704,6 +704,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79adabbf9cff1194a82c348d0cc71350, type: 3}
+--- !u!1 &7084541800703960940 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7299322095222166709, guid: 79adabbf9cff1194a82c348d0cc71350, type: 3}
+  m_PrefabInstance: {fileID: 512636296397403097}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7084541800703960941 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7299322095222166708, guid: 79adabbf9cff1194a82c348d0cc71350, type: 3}
@@ -896,7 +901,7 @@ PrefabInstance:
     - target: {fileID: 333230008174568477, guid: d7db6556f1834df43a5746c178ca633a, type: 3}
       propertyPath: TriggerModule.primitives.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 7084541800703960941}
     - target: {fileID: 333230008174568477, guid: d7db6556f1834df43a5746c178ca633a, type: 3}
       propertyPath: TriggerModule.primitives.Array.data[1]
       value: 

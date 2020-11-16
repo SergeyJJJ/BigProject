@@ -70,7 +70,7 @@ GameObject:
   - component: {fileID: 3358275394272234779}
   - component: {fileID: 3358275394838914639}
   - component: {fileID: 3358275394272234778}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Icegun
   m_TagString: Untagged
   m_Icon: {fileID: 0}

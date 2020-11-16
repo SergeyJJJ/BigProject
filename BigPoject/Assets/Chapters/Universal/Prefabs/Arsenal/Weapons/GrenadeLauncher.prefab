@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3358275394272234777}
   - component: {fileID: 3358275394348063334}
   - component: {fileID: 3358275394272234776}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: GrenadeLauncher
   m_TagString: Untagged
   m_Icon: {fileID: 0}

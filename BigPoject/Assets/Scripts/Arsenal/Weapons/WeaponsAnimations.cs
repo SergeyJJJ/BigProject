@@ -55,7 +55,7 @@ namespace Arsenal.Weapons
             EventSystem.StopListening("OnRifleShot", StartRifleRecoilAnimation);
             EventSystem.StopListening("OnLazerShot", StartLazerRecoilAnimation);
             EventSystem.StopListening("OnStopLazerShot", StopLazerRecoilAnimation);
-            EventSystem.StartListening("OnShotgunShot", StartShotgunRecoilAnimation);
+            EventSystem.StopListening("OnShotgunShot", StartShotgunRecoilAnimation);
         }
     }
 }

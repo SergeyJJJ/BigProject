@@ -4,6 +4,6 @@ namespace Environment.InterfacesOfUsing
 {
     public interface IBreakable
     {
-        void Break();
+        void Break(float damageAmount);
     }
 }

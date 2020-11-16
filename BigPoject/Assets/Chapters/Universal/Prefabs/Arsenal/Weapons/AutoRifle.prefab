@@ -13,13 +13,13 @@ GameObject:
   - component: {fileID: 3358275394272234755}
   - component: {fileID: 2760646867165244683}
   - component: {fileID: 3358275394272234754}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: AutoRifle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &889919698736914788
 Transform:
   m_ObjectHideFlags: 0

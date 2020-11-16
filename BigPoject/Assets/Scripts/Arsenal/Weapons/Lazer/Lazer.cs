@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Environment.InterfacesOfUsing;
 using GameBehaviour;
 using LivingBeings;
 using LivingBeings.Player.CharacterMovement.MovementStateMachine;
@@ -225,7 +226,16 @@ namespace Arsenal.Weapons.Lazer
  
                              if (health != null)
                              {
-                                 ApplyDamageTo(health, ray.point);
+                                 ApplyDamageTo(health);
+                             }
+                             else
+                             {
+                                 IBreakable breakable = GetBreakableComponent(ray.collider.gameObject);
+
+                                 if (breakable != null)
+                                 {
+                                     ApplyDamageTo(breakable);
+                                 }
                              }
                          }
                      }
@@ -334,9 +344,22 @@ namespace Arsenal.Weapons.Lazer
         }
 
 
-        private void ApplyDamageTo(Health health, Vector2 hitPosition)
+        private IBreakable GetBreakableComponent(GameObject collidedObject)
+        {
+            IBreakable breakable = collidedObject.GetComponent<IBreakable>();
+            return breakable;
+        }
+
+
+        private void ApplyDamageTo(Health health)
         {
             health.TakeDamage(_damageAmount);
+        }
+
+
+        private void ApplyDamageTo(IBreakable breakable)
+        {
+            breakable.Break(_damageAmount);
         }
 
 
