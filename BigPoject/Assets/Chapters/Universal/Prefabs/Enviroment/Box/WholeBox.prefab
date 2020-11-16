@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac4245ef322d70449b900732d6a4dc14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _strength: 30
+  _safetyMargin: 30
   _spriteFlash: {fileID: 2591513084665932969}
   _objectParts: {fileID: 0}
   _explosion: {fileID: 0}

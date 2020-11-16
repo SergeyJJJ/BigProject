@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using Environment.InterfacesOfUsing;
+﻿using System.Collections;
+using Environment.ThingsDestruction;
 using GameBehaviour;
 using LivingBeings;
 using LivingBeings.Player.CharacterMovement.MovementStateMachine;
@@ -230,7 +228,7 @@ namespace Arsenal.Weapons.Lazer
                              }
                              else
                              {
-                                 IBreakable breakable = GetBreakableComponent(ray.collider.gameObject);
+                                 ThingsDestruction breakable = GetBreakableComponent(ray.collider.gameObject);
 
                                  if (breakable != null)
                                  {
@@ -344,9 +342,9 @@ namespace Arsenal.Weapons.Lazer
         }
 
 
-        private IBreakable GetBreakableComponent(GameObject collidedObject)
+        private ThingsDestruction GetBreakableComponent(GameObject collidedObject)
         {
-            IBreakable breakable = collidedObject.GetComponent<IBreakable>();
+            ThingsDestruction breakable = collidedObject.GetComponent<ThingsDestruction>();
             return breakable;
         }
 
@@ -357,7 +355,7 @@ namespace Arsenal.Weapons.Lazer
         }
 
 
-        private void ApplyDamageTo(IBreakable breakable)
+        private void ApplyDamageTo(ThingsDestruction breakable)
         {
             breakable.Break(_damageAmount);
         }

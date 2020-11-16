@@ -3222,10 +3222,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Crystal
       objectReference: {fileID: 0}
-    - target: {fileID: 8972311426814683207, guid: a5cc6dc7879b2db4b95abe7068928b61, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5cc6dc7879b2db4b95abe7068928b61, type: 3}
 --- !u!1001 &6765121793881895919
@@ -3360,10 +3356,6 @@ PrefabInstance:
     - target: {fileID: 8530592087705335654, guid: 0db39cc280e6cab419c796ff5a0969e8, type: 3}
       propertyPath: m_Name
       value: Trampoline
-      objectReference: {fileID: 0}
-    - target: {fileID: 8530592087705335654, guid: 0db39cc280e6cab419c796ff5a0969e8, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8530592087705335655, guid: 0db39cc280e6cab419c796ff5a0969e8, type: 3}
       propertyPath: m_LocalPosition.x

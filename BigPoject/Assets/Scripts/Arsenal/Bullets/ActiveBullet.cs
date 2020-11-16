@@ -1,5 +1,6 @@
 ﻿using System;
 using Environment.InterfacesOfUsing;
+using Environment.ThingsDestruction;
 using LivingBeings;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -61,7 +62,7 @@ namespace Arsenal.Bullets
         {
             if (IsObjectHittableByBullet(other.gameObject))
             {
-                IBreakable breakable = other.gameObject.GetComponent<IBreakable>();
+                ThingsDestruction breakable = other.gameObject.GetComponent<ThingsDestruction>();
                 if (breakable != null)
                 {
                     breakable.Break(_currentBullet.Damage);
