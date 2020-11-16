@@ -4,36 +4,20 @@ using UnityEngine;
 
 namespace Environment.ThingsDestruction
 {
-    public class MiddleWeightDestruction : MonoBehaviour, IBreakable
+    public class MiddleWeightDestruction : ThingsDestruction
     {
-        [SerializeField] private float _strength = 0;                             // How many times crystal can be hit before it will be broken.
         [SerializeField] private ParticleSystem _hitParticles = null;           // Particles that used when object was hit.
         [SerializeField] private ParticleSystem _destructionParticles = null;   // Particles that used when object was destructed.
         [SerializeField] private ObjectSpreader _objects = null;                // Used to throw loot if its available.
         private Animator _animator = null;                                      // Animator component that used to play hit animation.                   
 
-        public void Break(float damageAmount)
-        {
-            _strength -= damageAmount;
-
-            if (_strength > 0)
-            {
-                OnGetDamage();
-            }
-            else
-            {
-                OnDestruction();
-            }
-        }
-
-
         private void Awake()
         {
             _animator = GetComponent<Animator>();
         }
-
-
-        private void OnGetDamage()
+        
+        
+        protected override void OnGetDamage()
         {
             if (_animator != null)
             {
@@ -47,7 +31,7 @@ namespace Environment.ThingsDestruction
         }
 
 
-        private void OnDestruction()
+        protected override void OnDestruction()
         {
             Collider2D objectCollider = GetComponent<Collider2D>();
             if (objectCollider != null)

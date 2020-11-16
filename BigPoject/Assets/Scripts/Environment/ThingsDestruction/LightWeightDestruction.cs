@@ -6,30 +6,13 @@ using UnityEngine;
 
 namespace Environment.ThingsDestruction
 {
-    public class LightWeightDestruction : MonoBehaviour, IBreakable
+    public class LightWeightDestruction : ThingsDestruction
     {
-        [SerializeField] private float _strength = 0;                        // How many times crystal can be hit before it will be broken.
         [SerializeField] private SpriteFlash _spriteFlash = null;          // Used to do spriteFlash when entity is hitted.
         [SerializeField] private GameObject _objectParts = null;           // Broken object parts.
         [SerializeField] private Explosion _explosion = null;              // Used to broken object parts.  
         
-        
-        public void Break(float damageAmount)
-        {
-            _strength -= damageAmount;
-
-            if (_strength > 0)
-            {
-                OnGetDamage();
-            }
-            else
-            {
-                OnDestruction();
-            }
-        }
-        
-        
-        private void OnGetDamage()
+        protected override void OnGetDamage()
         {
             if (_spriteFlash != null)
             {
@@ -38,7 +21,7 @@ namespace Environment.ThingsDestruction
         }
 
 
-        private void OnDestruction()
+        protected override void OnDestruction()
         {
             if (_objectParts != null && _explosion != null)
             {
