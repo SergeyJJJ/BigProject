@@ -855,50 +855,6 @@ PrefabInstance:
       value: EnergyFlowingParticles
       objectReference: {fileID: 0}
     - target: {fileID: 333230008174568477, guid: d7db6556f1834df43a5746c178ca633a, type: 3}
-      propertyPath: TriggerModule.primitives.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 333230008174568477, guid: d7db6556f1834df43a5746c178ca633a, type: 3}
-      propertyPath: moveWithTransform
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 333230008174568477, guid: d7db6556f1834df43a5746c178ca633a, type: 3}
-      propertyPath: ShapeModule.m_Rotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 333230008174568477, guid: d7db6556f1834df43a5746c178ca633a, type: 3}
-      propertyPath: ShapeModule.m_Rotation.y
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 333230008174568477, guid: d7db6556f1834df43a5746c178ca633a, type: 3}
-      propertyPath: ShapeModule.m_Scale.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 333230008174568477, guid: d7db6556f1834df43a5746c178ca633a, type: 3}
-      propertyPath: VelocityModule.x.scalar
-      value: 7.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 333230008174568477, guid: d7db6556f1834df43a5746c178ca633a, type: 3}
-      propertyPath: CollisionModule.enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 333230008174568477, guid: d7db6556f1834df43a5746c178ca633a, type: 3}
-      propertyPath: CollisionModule.type
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 333230008174568477, guid: d7db6556f1834df43a5746c178ca633a, type: 3}
-      propertyPath: CollisionModule.m_EnergyLossOnCollision.scalar
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 333230008174568477, guid: d7db6556f1834df43a5746c178ca633a, type: 3}
-      propertyPath: CollisionModule.collidesWith.m_Bits
-      value: 131584
-      objectReference: {fileID: 0}
-    - target: {fileID: 333230008174568477, guid: d7db6556f1834df43a5746c178ca633a, type: 3}
-      propertyPath: TriggerModule.enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 333230008174568477, guid: d7db6556f1834df43a5746c178ca633a, type: 3}
       propertyPath: TriggerModule.primitives.Array.data[0]
       value: 
       objectReference: {fileID: 7084541800703960941}

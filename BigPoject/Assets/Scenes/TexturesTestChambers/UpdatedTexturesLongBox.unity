@@ -420,8 +420,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 6439205864473672751, guid: 78bd2eef5ce8b2844bcffb440b2a24e5, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 78bd2eef5ce8b2844bcffb440b2a24e5, type: 3}
 --- !u!1 &215962134
 GameObject:
@@ -944,10 +943,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: FrontalDoor
       objectReference: {fileID: 0}
-    - target: {fileID: 6265060363126195214, guid: 0a574a31380b7224db89c93a4fd9ddf4, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6265060363126195215, guid: 0a574a31380b7224db89c93a4fd9ddf4, type: 3}
       propertyPath: m_LocalPosition.x
       value: -25.07
@@ -1044,25 +1039,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3425377481519284479, guid: a5cc6dc7879b2db4b95abe7068928b61, type: 3}
   m_PrefabInstance: {fileID: 6186909735516639757}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &704415213 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8424585666400199014, guid: 78bd2eef5ce8b2844bcffb440b2a24e5, type: 3}
+--- !u!114 &704415214 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 704415214, guid: 78bd2eef5ce8b2844bcffb440b2a24e5, type: 3}
   m_PrefabInstance: {fileID: 166380491}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &704415214
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 704415213}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 715ea2333b6661f4083b61217d775937, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _object: {fileID: 1768811019580733582, guid: 5c674cffa82466544b8811b2970e91ee, type: 3}
-  _poolAmount: 100
 --- !u!1 &716749142
 GameObject:
   m_ObjectHideFlags: 0
@@ -2042,10 +2029,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Crystal (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 8972311426814683207, guid: a5cc6dc7879b2db4b95abe7068928b61, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5cc6dc7879b2db4b95abe7068928b61, type: 3}
 --- !u!1 &1607388041
@@ -2884,26 +2867,6 @@ PrefabInstance:
       propertyPath: _player
       value: 
       objectReference: {fileID: 1171821650}
-    - target: {fileID: 1976873990072808756, guid: cdc52b9073c8b0d43bd61ea98ff05093, type: 3}
-      propertyPath: m_GravityScale
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1976873990072808757, guid: cdc52b9073c8b0d43bd61ea98ff05093, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1976873990072808757, guid: cdc52b9073c8b0d43bd61ea98ff05093, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1976873990072808757, guid: cdc52b9073c8b0d43bd61ea98ff05093, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1976873990533490040, guid: cdc52b9073c8b0d43bd61ea98ff05093, type: 3}
-      propertyPath: _platformCheckDistance
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 1976873991354477456, guid: cdc52b9073c8b0d43bd61ea98ff05093, type: 3}
       propertyPath: m_Name
       value: Biter
@@ -2951,14 +2914,6 @@ PrefabInstance:
     - target: {fileID: 1976873991354477457, guid: cdc52b9073c8b0d43bd61ea98ff05093, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1976873991973539715, guid: cdc52b9073c8b0d43bd61ea98ff05093, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 15.19
-      objectReference: {fileID: 0}
-    - target: {fileID: 1976873991973539715, guid: cdc52b9073c8b0d43bd61ea98ff05093, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cdc52b9073c8b0d43bd61ea98ff05093, type: 3}
@@ -3360,17 +3315,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8051663944800995571, guid: 82e380ff589759b4eb0e7d0d4b572b4c, type: 3}
-      propertyPath: InitialModule.startLifetime.scalar
-      value: 0.35
-      objectReference: {fileID: 0}
     - target: {fileID: 8051663944800995573, guid: 82e380ff589759b4eb0e7d0d4b572b4c, type: 3}
       propertyPath: m_Name
       value: Gas
-      objectReference: {fileID: 0}
-    - target: {fileID: 8051663944800995573, guid: 82e380ff589759b4eb0e7d0d4b572b4c, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82e380ff589759b4eb0e7d0d4b572b4c, type: 3}

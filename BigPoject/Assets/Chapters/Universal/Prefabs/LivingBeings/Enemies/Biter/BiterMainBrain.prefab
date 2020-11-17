@@ -183,7 +183,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 2
   m_Material: {fileID: 0}
   m_Interpolate: 1
   m_SleepingMode: 1
@@ -307,7 +307,6 @@ MonoBehaviour:
   _attackPerMinute: 40
   _damagePerAttack: 10
   _timeBeforeDamageApplying: 0.22
-  _attackPoint: {fileID: 8398972584791773757}
 --- !u!95 &8398972583055034395
 Animator:
   serializedVersion: 3
@@ -430,7 +429,7 @@ MonoBehaviour:
   _whatIsGround:
     serializedVersion: 2
     m_Bits: 512
-  _platformCheckDistance: 1
+  _platformCheckDistance: 2
 --- !u!1 &8398972583944939686
 GameObject:
   m_ObjectHideFlags: 0

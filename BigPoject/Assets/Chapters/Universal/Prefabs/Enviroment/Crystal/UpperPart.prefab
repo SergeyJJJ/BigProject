@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 931170855086079181}
   - component: {fileID: 812226893}
   - component: {fileID: 1457861361}
+  - component: {fileID: 2989795293840090314}
   m_Layer: 14
   m_Name: UpperPart
   m_TagString: Untagged
@@ -123,10 +124,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a3729ec4bee9464295dbeeaff00fea3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _strength: 5
+  _safetyMargin: 0
   _hitParticles: {fileID: 0}
   _destructionParticles: {fileID: 0}
-  _loot: {fileID: 0}
+  _objects: {fileID: 0}
 --- !u!95 &1457861361
 Animator:
   serializedVersion: 3
@@ -146,3 +147,15 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2989795293840090314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 931170855086079182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22315462b429da64ba6cac51c4feef33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
