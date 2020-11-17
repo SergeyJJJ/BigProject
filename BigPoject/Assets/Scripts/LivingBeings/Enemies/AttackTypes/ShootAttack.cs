@@ -1,4 +1,4 @@
-﻿using Arsenal.Bullets;
+﻿using Arsenal;
 using UnityEngine;
 
 namespace LivingBeings.Enemies.AttackTypes

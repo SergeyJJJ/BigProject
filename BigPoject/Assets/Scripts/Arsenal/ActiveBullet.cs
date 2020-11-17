@@ -1,15 +1,13 @@
-﻿using System;
-using Environment.InterfacesOfUsing;
-using Environment.ThingsDestruction;
+﻿using Environment.ThingsDestruction;
 using LivingBeings;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace Arsenal.Bullets
+namespace Arsenal
 {
     public class ActiveBullet : MonoBehaviour
     {
-        [SerializeField] private LayerMask _hittableByBullet = Physics2D.AllLayers;     // Determine what can be damaged by bullet.
+        private LayerMask _hittableByBullet = Physics2D.AllLayers;                      // Determine what can be damaged by bullet.
         private Bullet _currentBullet = null;                                           // Used to get bullet data.
         private Vector2 _launchDirection = Vector2.zero;                                // Used to set direction in which bullet will be launched.
         private Vector2 _startFlightPosition = Vector2.zero;                            // Determine from which point bullet will be launched.
@@ -19,6 +17,7 @@ namespace Arsenal.Bullets
         
         public void Initialize(Bullet bullet, Vector2 launchDirection, Vector2 startLaunchPosition)
         {
+            _hittableByBullet = bullet.HittableObjects;
             _currentBullet = bullet;
             _launchDirection = new Vector2(launchDirection.x, launchDirection.y) * _currentBullet.FlightSpeed;
             transform.position = startLaunchPosition;

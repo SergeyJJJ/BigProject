@@ -16,3 +16,6 @@ MonoBehaviour:
   _flightRange: 17
   _flightSpeed: 23
   _flightSprite: {fileID: 21300000, guid: f7379c1705ae5f74cad076facb9f0ae3, type: 3}
+  _hittableObjets:
+    serializedVersion: 2
+    m_Bits: 86784

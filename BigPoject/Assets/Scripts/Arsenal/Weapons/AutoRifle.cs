@@ -1,5 +1,4 @@
-﻿using Arsenal.Bullets;
-using GameBehaviour;
+﻿using GameBehaviour;
 using UnityEngine;
 
 namespace Arsenal.Weapons

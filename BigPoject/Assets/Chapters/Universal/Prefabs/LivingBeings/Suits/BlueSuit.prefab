@@ -707,6 +707,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Arsenal
       objectReference: {fileID: 0}
+    - target: {fileID: 3526867534070052376, guid: 501e8a6b81416644e9d9b1e1c6a13c34, type: 3}
+      propertyPath: m_Name
+      value: RocketLauncher
+      objectReference: {fileID: 0}
     - target: {fileID: 5616292551596334445, guid: 501e8a6b81416644e9d9b1e1c6a13c34, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.151

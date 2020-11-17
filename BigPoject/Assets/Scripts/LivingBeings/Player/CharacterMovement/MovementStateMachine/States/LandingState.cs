@@ -17,8 +17,7 @@ namespace LivingBeings.Player.CharacterMovement.MovementStateMachine.States
             
             _characterMovement.LandingPosition = _characterMovement.Transform.position;
             _characterMovement.LastFallHeight = GetLastFallHeight();
-            Debug.Log(_characterMovement.LastFallHeight);
-            
+
             EventSystem.TriggerEvent("OnLand");
 
             if (_characterMovement.PressButtonTimer > 0)
