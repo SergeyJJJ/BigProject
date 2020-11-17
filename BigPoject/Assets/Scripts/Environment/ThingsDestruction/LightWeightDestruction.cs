@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Environment.ThingsDestruction
 {
-    public class LightWeightDestruction : ThingsDestruction
+    public class LightWeightDestruction : Destruction
     {
         [SerializeField] private SpriteFlash _spriteFlash = null;          // Used to do spriteFlash when entity is hitted.
         [SerializeField] private GameObject _objectParts = null;           // Broken object parts.

@@ -62,10 +62,10 @@ namespace Arsenal.Bullets
         {
             if (IsObjectHittableByBullet(other.gameObject))
             {
-                ThingsDestruction breakable = other.gameObject.GetComponent<ThingsDestruction>();
-                if (breakable != null)
+                Destruction destruction = other.gameObject.GetComponent<Destruction>();
+                if (destruction != null)
                 {
-                    breakable.Break(_currentBullet.Damage);
+                    destruction.Break(_currentBullet.Damage);
                 }
                 else
                 {

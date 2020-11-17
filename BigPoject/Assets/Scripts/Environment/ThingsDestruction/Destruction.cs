@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Environment.ThingsDestruction
 {
-    public abstract class ThingsDestruction : MonoBehaviour
+    public abstract class Destruction : MonoBehaviour
     {
         [SerializeField] private float _safetyMargin = 0;                       // How many healthPoint have an object.
         

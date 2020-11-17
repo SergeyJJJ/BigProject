@@ -228,11 +228,11 @@ namespace Arsenal.Weapons.Lazer
                              }
                              else
                              {
-                                 ThingsDestruction breakable = GetBreakableComponent(ray.collider.gameObject);
+                                 Destruction destruction = GetDestructionComponent(ray.collider.gameObject);
 
-                                 if (breakable != null)
+                                 if (destruction != null)
                                  {
-                                     ApplyDamageTo(breakable);
+                                     ApplyDamageTo(destruction);
                                  }
                              }
                          }
@@ -342,10 +342,10 @@ namespace Arsenal.Weapons.Lazer
         }
 
 
-        private ThingsDestruction GetBreakableComponent(GameObject collidedObject)
+        private Destruction GetDestructionComponent(GameObject collidedObject)
         {
-            ThingsDestruction breakable = collidedObject.GetComponent<ThingsDestruction>();
-            return breakable;
+            Destruction destruction = collidedObject.GetComponent<Destruction>();
+            return destruction;
         }
 
 
@@ -355,9 +355,9 @@ namespace Arsenal.Weapons.Lazer
         }
 
 
-        private void ApplyDamageTo(ThingsDestruction breakable)
+        private void ApplyDamageTo(Destruction destruction)
         {
-            breakable.Break(_damageAmount);
+            destruction.Break(_damageAmount);
         }
 
 

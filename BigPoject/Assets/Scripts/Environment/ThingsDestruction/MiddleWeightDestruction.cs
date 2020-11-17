@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Environment.ThingsDestruction
 {
-    public class MiddleWeightDestruction : ThingsDestruction
+    public class MiddleWeightDestruction : Destruction
     {
         [SerializeField] private ParticleSystem _hitParticles = null;           // Particles that used when object was hit.
         [SerializeField] private ParticleSystem _destructionParticles = null;   // Particles that used when object was destructed.
