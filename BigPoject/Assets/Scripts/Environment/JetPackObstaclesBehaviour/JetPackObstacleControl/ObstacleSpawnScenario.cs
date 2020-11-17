@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using ForItemsAndCreatures;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -7,13 +8,13 @@ namespace Environment.JetPackObstaclesBehaviour.JetPackObstacleControl
     public class ObstacleSpawnScenario : MonoBehaviour
     {
         [Header("Pools of obstacles")]
-        [SerializeField] private ObstaclePool _singlePlatformsPool = null;
-        [SerializeField] private ObstaclePool _movingSinglePlatformsPool = null;
-        [SerializeField] private ObstaclePool _singleGatesPool = null;
-        [SerializeField] private ObstaclePool _spinningPlatfromsPool = null;
-        [SerializeField] private ObstaclePool _doubleGatesPool = null;
-        [SerializeField] private ObstaclePool _lazersPool = null;
-        [SerializeField] private ObstaclePool _ventilatorsPool = null;
+        [SerializeField] private ObjectPool _singlePlatformsPool = null;
+        [SerializeField] private ObjectPool _movingSinglePlatformsPool = null;
+        [SerializeField] private ObjectPool _singleGatesPool = null;
+        [SerializeField] private ObjectPool _spinningPlatfromsPool = null;
+        [SerializeField] private ObjectPool _doubleGatesPool = null;
+        [SerializeField] private ObjectPool _lazersPool = null;
+        [SerializeField] private ObjectPool _ventilatorsPool = null;
 
         private delegate void SpawnObstacleDelegate();                                                // Delegate that can contain obstacle spawn method.
         private readonly SpawnObstacleDelegate[] _obstacleSpawnTypes = new SpawnObstacleDelegate[7];  // Array contains collection of different obstacle spawn methods.

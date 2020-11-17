@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 714186442}
   - component: {fileID: 5182335913364228391}
+  - component: {fileID: 3278100871312289466}
   m_Layer: 0
   m_Name: SpinnigPlatforms
   m_TagString: Untagged
@@ -45,6 +46,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _poolAmount: 13
   _obstacle: {fileID: 3599285512904392212, guid: 5a0c9b0e4f7d02a40a0ae38c58cf88f5, type: 3}
+--- !u!114 &3278100871312289466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 714186441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 715ea2333b6661f4083b61217d775937, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _object: {fileID: 3599285512904392212, guid: 5a0c9b0e4f7d02a40a0ae38c58cf88f5, type: 3}
+  _poolAmount: 13
 --- !u!1 &4559350755635043874
 GameObject:
   m_ObjectHideFlags: 0
@@ -55,6 +70,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3148137454087235766}
   - component: {fileID: 3583733886277847776}
+  - component: {fileID: 3581462138127244454}
   m_Layer: 0
   m_Name: SingleGates
   m_TagString: Untagged
@@ -90,6 +106,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _poolAmount: 13
   _obstacle: {fileID: 110738754070601543, guid: c81c6c8dd16f05941aa1bc6eb9d8cc60, type: 3}
+--- !u!114 &3581462138127244454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4559350755635043874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 715ea2333b6661f4083b61217d775937, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _object: {fileID: 110738754070601543, guid: c81c6c8dd16f05941aa1bc6eb9d8cc60, type: 3}
+  _poolAmount: 13
 --- !u!1 &4782253412250655964
 GameObject:
   m_ObjectHideFlags: 0
@@ -100,6 +130,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6481979838429228535}
   - component: {fileID: 1113375237460492788}
+  - component: {fileID: 9144118960914543220}
   m_Layer: 0
   m_Name: LazerObstacles
   m_TagString: Untagged
@@ -135,6 +166,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _poolAmount: 13
   _obstacle: {fileID: 4940808797366137180, guid: c95b3928a7bb961459122f1a898996e0, type: 3}
+--- !u!114 &9144118960914543220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4782253412250655964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 715ea2333b6661f4083b61217d775937, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _object: {fileID: 4940808797366137180, guid: c95b3928a7bb961459122f1a898996e0, type: 3}
+  _poolAmount: 13
 --- !u!1 &5704681186586975891
 GameObject:
   m_ObjectHideFlags: 0
@@ -182,6 +227,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5704681186879703946}
   - component: {fileID: 5704681186879703947}
+  - component: {fileID: 8003928360450343460}
   m_Layer: 0
   m_Name: SinglePlatforms
   m_TagString: Untagged
@@ -217,6 +263,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _poolAmount: 13
   _obstacle: {fileID: 1437002482359855935, guid: 8b3c518e6c99e1140906a3e2256d8f5b, type: 3}
+--- !u!114 &8003928360450343460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5704681186879703989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 715ea2333b6661f4083b61217d775937, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _object: {fileID: 1437002482359855935, guid: 8b3c518e6c99e1140906a3e2256d8f5b, type: 3}
+  _poolAmount: 13
 --- !u!1 &6435832431231294861
 GameObject:
   m_ObjectHideFlags: 0
@@ -227,6 +287,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6327699222946684690}
   - component: {fileID: 8896930414156429352}
+  - component: {fileID: 946076787552181939}
   m_Layer: 0
   m_Name: Ventilators
   m_TagString: Untagged
@@ -262,6 +323,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _poolAmount: 13
   _obstacle: {fileID: 1669358846862014896, guid: 9806464419376504c9cd5beba3a1214b, type: 3}
+--- !u!114 &946076787552181939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435832431231294861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 715ea2333b6661f4083b61217d775937, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _object: {fileID: 1669358846862014896, guid: 9806464419376504c9cd5beba3a1214b, type: 3}
+  _poolAmount: 13
 --- !u!1 &7786833358343684095
 GameObject:
   m_ObjectHideFlags: 0
@@ -272,6 +347,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6550445145102364887}
   - component: {fileID: 5802174120848063653}
+  - component: {fileID: 6460602456169607691}
   m_Layer: 0
   m_Name: MovingSinglePlatforms
   m_TagString: Untagged
@@ -307,6 +383,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _poolAmount: 13
   _obstacle: {fileID: 140285456364486351, guid: 3379faeba22cd104ba073ad4f3c769ee, type: 3}
+--- !u!114 &6460602456169607691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7786833358343684095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 715ea2333b6661f4083b61217d775937, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _object: {fileID: 140285456364486351, guid: 3379faeba22cd104ba073ad4f3c769ee, type: 3}
+  _poolAmount: 13
 --- !u!1 &9091245613674520592
 GameObject:
   m_ObjectHideFlags: 0
@@ -317,6 +407,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5695442371747103647}
   - component: {fileID: 325040035181623699}
+  - component: {fileID: 5439285034133854885}
   m_Layer: 0
   m_Name: DoubleGates
   m_TagString: Untagged
@@ -352,3 +443,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _poolAmount: 13
   _obstacle: {fileID: 6695254693181846896, guid: ffcd1c3fa125e68488aa0e062656c19a, type: 3}
+--- !u!114 &5439285034133854885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9091245613674520592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 715ea2333b6661f4083b61217d775937, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _object: {fileID: 6695254693181846896, guid: ffcd1c3fa125e68488aa0e062656c19a, type: 3}
+  _poolAmount: 13

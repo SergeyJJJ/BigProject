@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using ForItemsAndCreatures;
+using UnityEngine;
 using Random = UnityEngine.Random;
 
 namespace Environment.JetPackObstaclesBehaviour.JetPackObstacleControl
@@ -11,9 +12,9 @@ namespace Environment.JetPackObstaclesBehaviour.JetPackObstacleControl
 
         // Method that spawns an obstacle on random position
         // within specific range.
-        public static void RandomSpawnOnXAxisRange(ObstaclePool obstaclePool, float leftBoundary, float rightBoundary)
+        public static void RandomSpawnOnXAxisRange(ObjectPool obstaclePool, float leftBoundary, float rightBoundary)
         {
-            GameObject obstacle = obstaclePool.GetPooledObstacle();
+            GameObject obstacle = obstaclePool.GetPooledObject();
 
             // If obstacle was received from the pool.
             if (obstacle != null)
@@ -31,9 +32,9 @@ namespace Environment.JetPackObstaclesBehaviour.JetPackObstacleControl
         
         
         // Method that spawns an obstacle on specific position.
-        public static void SpawnOnPosition(ObstaclePool obstaclePool, Vector2 spawnPosition)
+        public static void SpawnOnPosition(ObjectPool obstaclePool, Vector2 spawnPosition)
         {
-            GameObject obstacle = obstaclePool.GetPooledObstacle();
+            GameObject obstacle = obstaclePool.GetPooledObject();
 
             // If obstacle was received from the pool.
             if (obstacle != null)
@@ -49,9 +50,9 @@ namespace Environment.JetPackObstaclesBehaviour.JetPackObstacleControl
         
         // Method that spawns an obstacle randomly facing
         // to the left or to the right.
-        public static void SpawnOnPositionFacingOnRandomXAxisSide(ObstaclePool obstaclePool, Vector2 spawnPosition)
+        public static void SpawnOnPositionFacingOnRandomXAxisSide(ObjectPool obstaclePool, Vector2 spawnPosition)
         {
-            GameObject obstacle = obstaclePool.GetPooledObstacle();
+            GameObject obstacle = obstaclePool.GetPooledObject();
 
             // If obstacle was received from the pool.
             if (obstacle != null)
@@ -81,8 +82,6 @@ namespace Environment.JetPackObstaclesBehaviour.JetPackObstacleControl
         {
             float[] facingRotations = {0, 180};
             int randomFacingIndex = Random.Range(0, facingRotations.Length);
-            
-            Debug.Log(randomFacingIndex);
             
             obstacle.transform.Rotate(new Vector2(0, facingRotations[randomFacingIndex]));
         }
