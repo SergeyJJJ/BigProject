@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace Environment.ObstaclesBehaviour.JetPackObstacleControl
+namespace Environment.JetPackObstaclesBehaviour.JetPackObstacleControl
 {
     // Class that contains methods to spawn obstacles in
     // different ways.

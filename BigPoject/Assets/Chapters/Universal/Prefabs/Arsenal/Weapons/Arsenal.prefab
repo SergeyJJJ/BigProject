@@ -92,7 +92,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2347096878233116425, guid: d198afb0dec5a0742b76d2c93b7107a0, type: 3}
       propertyPath: m_Name
-      value: GrenadeLauncher
+      value: RocketLauncher
       objectReference: {fileID: 0}
     - target: {fileID: 4137676668914389076, guid: d198afb0dec5a0742b76d2c93b7107a0, type: 3}
       propertyPath: m_LocalPosition.x

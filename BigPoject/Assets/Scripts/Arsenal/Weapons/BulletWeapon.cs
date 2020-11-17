@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using ForItemsAndCreatures;
+using UnityEngine;
 
 namespace Arsenal.Weapons
 {
@@ -6,6 +7,7 @@ namespace Arsenal.Weapons
     {
         [SerializeField] private Bullet _bulletType = null;         // Contains information about bullet that current weapon will use.
         [SerializeField] private float _fireRate = 0f;              // Weapon fire rate. Shots per minute: from 0.
+        [SerializeField] private ObjectPool _bulletPool = null;     // Pool from which we get bullets to use.
         private float _nextShootTimer = 0f;                         // Timer that control when player can shoot again.
         private float _timeBetweenShoots = 0f;                      // Time that must pass between each shoot.
 
@@ -32,7 +34,7 @@ namespace Arsenal.Weapons
         protected GameObject GetBullet()
         {
             GameObject bullet = null;
-            bullet = BulletPool.SharedInstance.GetBullet();
+            bullet = _bulletPool.GetPooledObject();
             return bullet;
         }
     

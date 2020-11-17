@@ -1,7 +1,7 @@
 ﻿using LivingBeings;
 using UnityEngine;
 
-namespace Environment.ObstaclesBehaviour
+namespace Environment.JetPackObstaclesBehaviour
 {
     public class LazerObstacle : MonoBehaviour
     {

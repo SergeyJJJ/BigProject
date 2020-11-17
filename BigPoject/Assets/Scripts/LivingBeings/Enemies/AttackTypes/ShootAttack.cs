@@ -1,4 +1,5 @@
 ﻿using Arsenal;
+using ForItemsAndCreatures;
 using UnityEngine;
 
 namespace LivingBeings.Enemies.AttackTypes
@@ -8,6 +9,7 @@ namespace LivingBeings.Enemies.AttackTypes
     {
         [SerializeField] private Bullet _bulletType = null;         // Contains information about bullet that current weapon will use.
         [SerializeField] private GameObject _firePoint = null;      // Position in which bullet will appear.
+        [SerializeField] private ObjectPool _bulletPool = null;     // Pool from which we get bullets to use.
         
         public override void AttackPlayer()
         {
@@ -28,7 +30,7 @@ namespace LivingBeings.Enemies.AttackTypes
         private GameObject GetBullet()
         {
             GameObject bullet = null;
-            bullet = BulletPool.SharedInstance.GetBullet();
+            bullet = _bulletPool.GetPooledObject();
             return bullet;
         }
         

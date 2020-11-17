@@ -420,7 +420,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6439205864473672751, guid: 78bd2eef5ce8b2844bcffb440b2a24e5, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 78bd2eef5ce8b2844bcffb440b2a24e5, type: 3}
 --- !u!1 &215962134
 GameObject:
@@ -858,6 +859,10 @@ PrefabInstance:
       propertyPath: _fireButton
       value: 
       objectReference: {fileID: 869973066}
+    - target: {fileID: 2318357886443214080, guid: db841216772e4844187962a048cfddbb, type: 3}
+      propertyPath: _bulletPool
+      value: 
+      objectReference: {fileID: 704415214}
     - target: {fileID: 2824605566533303579, guid: db841216772e4844187962a048cfddbb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 10.49
@@ -902,6 +907,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3428040865852236464, guid: db841216772e4844187962a048cfddbb, type: 3}
+      propertyPath: _bulletPool
+      value: 
+      objectReference: {fileID: 704415214}
     - target: {fileID: 6256377088121115038, guid: db841216772e4844187962a048cfddbb, type: 3}
       propertyPath: _interactButton
       value: 
@@ -1035,6 +1044,25 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3425377481519284479, guid: a5cc6dc7879b2db4b95abe7068928b61, type: 3}
   m_PrefabInstance: {fileID: 6186909735516639757}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &704415213 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8424585666400199014, guid: 78bd2eef5ce8b2844bcffb440b2a24e5, type: 3}
+  m_PrefabInstance: {fileID: 166380491}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &704415214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 704415213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 715ea2333b6661f4083b61217d775937, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _object: {fileID: 1768811019580733582, guid: 5c674cffa82466544b8811b2970e91ee, type: 3}
+  _poolAmount: 100
 --- !u!1 &716749142
 GameObject:
   m_ObjectHideFlags: 0
