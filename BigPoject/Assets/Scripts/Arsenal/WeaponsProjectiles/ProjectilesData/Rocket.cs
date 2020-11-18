@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Arsenal
+namespace Arsenal.WeaponsProjectiles.ProjectilesData
 {
     [CreateAssetMenu(menuName = "WeaponProjectile/Rocket", fileName = "Rocket")]
     public class Rocket : WeaponProjectile

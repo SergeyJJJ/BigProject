@@ -1,4 +1,6 @@
 ﻿using Arsenal;
+using Arsenal.WeaponsProjectiles.ProjectilesBehaviour;
+using Arsenal.WeaponsProjectiles.ProjectilesData;
 using ForItemsAndCreatures;
 using UnityEngine;
 

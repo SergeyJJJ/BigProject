@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Arsenal
+namespace Arsenal.WeaponsProjectiles.ProjectilesData
 {
     /*
      * Can be important to know.

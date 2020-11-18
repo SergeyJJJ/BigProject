@@ -1,4 +1,6 @@
-﻿using ForItemsAndCreatures;
+﻿using Arsenal.WeaponsProjectiles.ProjectilesBehaviour;
+using Arsenal.WeaponsProjectiles.ProjectilesData;
+using ForItemsAndCreatures;
 using UnityEngine;
 
 namespace Arsenal.Weapons
