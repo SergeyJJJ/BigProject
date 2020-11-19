@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Arsenal.Weapons
 {
     [RequireComponent((typeof(SpriteRenderer)))]
-    public class AutoRifle : BulletWeapon
+    public class AutoRifle : ProjectileWeapon
     {
         private void Awake()
         {
@@ -30,11 +30,11 @@ namespace Arsenal.Weapons
                     {
                         NextShootTimer = TimeBetweenShoots;
 
-                        GameObject bullet = GetBullet();
+                        GameObject bullet = GetProjectile();
                         Vector2 launchDirection = GetLaunchDirection();
-                        InitializeBullet(bullet, launchDirection, FirePoint.transform.position);
+                        InitializeProjectile(bullet, launchDirection, FirePoint.transform.position);
                         RotateBullet(bullet);
-                        LaunchBullet(bullet);
+                        LaunchProjectile(bullet);
                         CallShotEvent();
                         DecrementBulletsCount();
                     }

@@ -7,7 +7,7 @@ using Random = UnityEngine.Random;
 namespace Arsenal.Weapons
 {
     [RequireComponent(typeof(SpriteRenderer))]
-    public class Shotgun : BulletWeapon
+    public class Shotgun : ProjectileWeapon
     {
         [Serializable]
         public struct BulletDirectionBoundaries
@@ -53,13 +53,13 @@ namespace Arsenal.Weapons
                         
                         while (_currentShotBulletIndex < _bulletsPerShot)
                         {
-                            GameObject bullet = GetBullet();
+                            GameObject bullet = GetProjectile();
                             Vector2 launchDirection = GetLaunchDirection();
-                            InitializeBullet(bullet, launchDirection.normalized, startLaunchPosition);
+                            InitializeProjectile(bullet, launchDirection.normalized, startLaunchPosition);
                             RotateBulletToDirection(bullet, launchDirection);
                             ActiveBullet activeBullet = bullet.GetComponent<ActiveBullet>();
                             activeBullet.RandomizeLifeTimeInScatter(lifeTimeScatter);
-                            LaunchBullet(bullet);
+                            LaunchProjectile(bullet);
                             CallShotEvent();
                             
                             _currentShotBulletIndex++;
