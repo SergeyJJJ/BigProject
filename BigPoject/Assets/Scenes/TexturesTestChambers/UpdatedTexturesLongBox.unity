@@ -935,6 +935,10 @@ PrefabInstance:
       propertyPath: _interactButton
       value: 
       objectReference: {fileID: 2140020073}
+    - target: {fileID: 6272600008437230679, guid: db841216772e4844187962a048cfddbb, type: 3}
+      propertyPath: _projectilePool
+      value: 
+      objectReference: {fileID: 4592939204717160662}
     - target: {fileID: 6700315359917075697, guid: db841216772e4844187962a048cfddbb, type: 3}
       propertyPath: _upMoveButton
       value: 
@@ -1710,6 +1714,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8702310545741433508, guid: db841216772e4844187962a048cfddbb, type: 3}
   m_PrefabInstance: {fileID: 559604546}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1198776995 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6272600008437230679, guid: db841216772e4844187962a048cfddbb, type: 3}
+  m_PrefabInstance: {fileID: 559604546}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 044f848d88091d1469127f4a39bd4920, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1234650577
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3180,6 +3195,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3cda80f548f973845a985ca7ddac8b8d, type: 3}
+--- !u!114 &4592939204717160662 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3837969788996471724, guid: 78e297dc2b433314da300ac289d45878, type: 3}
+  m_PrefabInstance: {fileID: 792159572024451962}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 715ea2333b6661f4083b61217d775937, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4939398029121278324
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3505,6 +3531,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2004184666}
+    - target: {fileID: 7794037604837100059, guid: 95e99f9ab9e88d44ebc72051c375eb85, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1198776995}
     - target: {fileID: 8886941734253783280, guid: 95e99f9ab9e88d44ebc72051c375eb85, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
