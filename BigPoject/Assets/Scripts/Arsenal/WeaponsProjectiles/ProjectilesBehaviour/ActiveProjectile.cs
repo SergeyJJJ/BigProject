@@ -75,6 +75,7 @@ namespace Arsenal.WeaponsProjectiles.ProjectilesBehaviour
         {
             _spriteRenderer = GetComponent<SpriteRenderer>();
             _rigidbody2D = GetComponent<Rigidbody2D>();
+            Debug.Log("Awake form AcvtiveProjectile class");
         }
         
         
@@ -84,6 +85,7 @@ namespace Arsenal.WeaponsProjectiles.ProjectilesBehaviour
 
             if (flownDistance > _flightRange)
             {
+                Debug.Log("Update form AcvtiveProjectile class");
                 DisableBullet();
             }
         }
