@@ -1,3 +1,4 @@
+using System;
 using Arsenal.WeaponsProjectiles.ProjectilesData;
 using UnityEngine;
 
@@ -75,17 +76,22 @@ namespace Arsenal.WeaponsProjectiles.ProjectilesBehaviour
         {
             _spriteRenderer = GetComponent<SpriteRenderer>();
             _rigidbody2D = GetComponent<Rigidbody2D>();
-            Debug.Log("Awake form AcvtiveProjectile class");
         }
-        
-        
+
+
+        private void OnEnable()
+        {
+            _startFlightPosition = transform.position;
+            _rigidbody2D.velocity = _launchDirection;
+        }
+
+
         private void Update()
         {
             float flownDistance = Mathf.Abs(transform.position.x - _startFlightPosition.x);
 
             if (flownDistance > _flightRange)
             {
-                Debug.Log("Update form AcvtiveProjectile class");
                 DisableBullet();
             }
         }
