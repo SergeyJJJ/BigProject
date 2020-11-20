@@ -86,7 +86,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 582098943
   m_SortingLayer: 8
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -9133065350520741325, guid: 26b7ade7ac48c2a44a73e4a69d2bd8f4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -135,7 +135,7 @@ MonoBehaviour:
   _maxBulletsAmount: 13
   _firePoint: {fileID: 6574282937447096814}
   _projectile: {fileID: 11400000, guid: 22480a61178a5f14296fb8cd6c60d81a, type: 2}
-  _fireRate: 210
+  _fireRate: 100
   _projectilePool: {fileID: 0}
 --- !u!1 &6574282937447096814
 GameObject:
@@ -162,7 +162,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6574282937447096814}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.8, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4137676668914389076}

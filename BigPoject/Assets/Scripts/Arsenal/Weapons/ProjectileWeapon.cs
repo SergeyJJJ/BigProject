@@ -41,8 +41,7 @@ namespace Arsenal.Weapons
     
         protected void InitializeProjectile(GameObject projectile, Vector2 launchDirection, Vector2 startLaunchPosition)
         {
-            ActiveProjectile activeProjectile = projectile.GetComponent<ActiveRocket>();
-            Debug.Log(projectile);
+            ActiveProjectile activeProjectile = projectile.GetComponent<ActiveProjectile>();
             activeProjectile.Initialize(_projectile, launchDirection, startLaunchPosition);
         }
     

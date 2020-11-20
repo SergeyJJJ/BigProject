@@ -319,17 +319,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5616292551596334445}
     m_Modifications:
-    - target: {fileID: 3358275394272234780, guid: 6e8a534ad19e4774abd13f304eace223, type: 3}
-      propertyPath: _projectile
-      value: 
-      objectReference: {fileID: 11400000, guid: f70586650c9138e4c924228a4db7eec3, type: 2}
     - target: {fileID: 5455490985939168592, guid: 6e8a534ad19e4774abd13f304eace223, type: 3}
       propertyPath: m_Name
       value: Shotgun
-      objectReference: {fileID: 0}
-    - target: {fileID: 5455490985939168592, guid: 6e8a534ad19e4774abd13f304eace223, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6822267117504960753, guid: 6e8a534ad19e4774abd13f304eace223, type: 3}
       propertyPath: m_RootOrder

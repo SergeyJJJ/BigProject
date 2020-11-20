@@ -76,7 +76,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6822267117504960753
 Transform:
   m_ObjectHideFlags: 0
@@ -143,7 +143,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 582098943
   m_SortingLayer: 8
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 4bd8d698535bd884a96bc37fba68a4a1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -191,8 +191,9 @@ MonoBehaviour:
   _inGameSprite: {fileID: 5711273657361161810, guid: 0be82e7df2d7aaa42a6eae46e72480eb, type: 3}
   _maxBulletsAmount: 150
   _firePoint: {fileID: 3920235435376413350}
-  _bulletType: {fileID: 11400000, guid: f70586650c9138e4c924228a4db7eec3, type: 2}
+  _projectile: {fileID: 11400000, guid: f70586650c9138e4c924228a4db7eec3, type: 2}
   _fireRate: 120
+  _projectilePool: {fileID: 0}
   _bulletDirectionBoundaries:
     yAxisMin: -4.5
     yAxisMax: 4.5

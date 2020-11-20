@@ -51,6 +51,7 @@ namespace Arsenal.WeaponsProjectiles.ProjectilesBehaviour
             _currentProjectile = projectile;
             _hittableByProjectile = projectile.HittableObjects;
             transform.position = startLaunchPosition;
+            _startFlightPosition = startLaunchPosition;
             _launchDirection = new Vector2(launchDirection.x, launchDirection.y) * _currentProjectile.FlightSpeed;
             _flightRange = _currentProjectile.FlightRange;
             _spriteRenderer.sprite = _currentProjectile.FlightSprite;
@@ -81,7 +82,6 @@ namespace Arsenal.WeaponsProjectiles.ProjectilesBehaviour
 
         private void OnEnable()
         {
-            _startFlightPosition = transform.position;
             _rigidbody2D.velocity = _launchDirection;
         }
 

@@ -6,7 +6,7 @@ namespace Arsenal.WeaponsProjectiles.ProjectilesBehaviour
     {
         protected override void OnTriggerEnter2D(Collider2D other)
         {
-            throw new System.NotImplementedException();
+            //throw new System.NotImplementedException();
         }
     }
 }

@@ -737,15 +737,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 501e8a6b81416644e9d9b1e1c6a13c34, type: 3}
---- !u!114 &3428040865852236464 stripped
+--- !u!114 &6272600008437230679 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 74349719173188834, guid: 501e8a6b81416644e9d9b1e1c6a13c34, type: 3}
+  m_CorrespondingSourceObject: {fileID: 8761258109693952517, guid: 501e8a6b81416644e9d9b1e1c6a13c34, type: 3}
   m_PrefabInstance: {fileID: 3358275394797235794}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aad7b5dda3b4b714b80b5587de1b7d5e, type: 3}
+  m_Script: {fileID: 11500000, guid: 044f848d88091d1469127f4a39bd4920, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &7164076900808176447 stripped
@@ -917,7 +917,7 @@ PrefabInstance:
     - target: {fileID: 5433480261800985400, guid: dbf7edadc67d6ee4d89b1cad4f5acf97, type: 3}
       propertyPath: _currentWeapon
       value: 
-      objectReference: {fileID: 3428040865852236464}
+      objectReference: {fileID: 6272600008437230679}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dbf7edadc67d6ee4d89b1cad4f5acf97, type: 3}
 --- !u!114 &979211922 stripped
