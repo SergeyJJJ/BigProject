@@ -1,4 +1,6 @@
 using System;
+using Arsenal.WeaponsProjectiles.ProjectilesBehaviour;
+using Arsenal.WeaponsProjectiles.ProjectilesData;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -12,13 +14,36 @@ namespace ForItemsAndCreatures
             public float minTorque;
             public float maxTorque;
         }
-        
-        [SerializeField] private Transform _explosionCenterPoint = null;               // Explosion center point. Used as a point from which force will be applied.
-        [SerializeField] private float _explosionForce = 0;                            // Explosion force.
+
+        [SerializeField] private float _force = 0;                            // Explosion force.
+        [SerializeField] private float _radius = 0f;                          // Explosion radius.
+        [SerializeField] private Transform _centerPoint = null;               // Explosion center point. Used as a point from which force will be applied.
         [SerializeField] private TorqueLimits _torqueLimits = default(TorqueLimits);   // Minimum and maximum torque of pieces.
-        [SerializeField] private float _explosionRadius = 0f;                          // Explosion radius.
         [SerializeField] private LayerMask _affectedByExplosion = Physics2D.AllLayers; // What can be affect by explosion.
 
+        public void Initialize(LayerMask affectedByExplosion, float force = 0f, float radius = 0f,
+                                        Transform centerPoint = null, TorqueLimits torqueLimits = default(TorqueLimits))
+        {
+            _affectedByExplosion = affectedByExplosion;
+            _force = force;
+            _radius = radius;
+            _centerPoint = centerPoint;
+            _torqueLimits = torqueLimits;
+            _affectedByExplosion = affectedByExplosion;
+        }
+
+
+        public void Initialize(Rocket rocket)
+        {
+            _affectedByExplosion = rocket.HittableObjects;
+            _force = rocket.ExplosionForce;
+            _radius = rocket.ExplosionRadius;
+            _centerPoint = rocket.ExplosionCenterPoint;
+            _torqueLimits.maxTorque = rocket.ExplosionTorqueLimits.maxTorque;
+            _torqueLimits.minTorque = rocket.ExplosionTorqueLimits.minTorque;
+        }
+        
+        
         // Simulate an explosion by throwing
         // and rotating objects, available in some zone(radius).
         public void Explode()
@@ -41,11 +66,11 @@ namespace ForItemsAndCreatures
                 AddRandomTorque(affectedRigidbody2Ds);
             }
         }
-
+        
 
         private Collider2D[] GetObjectsCollidersInExplosionRadius()
         {
-            return Physics2D.OverlapCircleAll(_explosionCenterPoint.position, _explosionRadius, _affectedByExplosion);
+            return Physics2D.OverlapCircleAll(_centerPoint.position, _radius, _affectedByExplosion);
         }
         
         
@@ -94,8 +119,8 @@ namespace ForItemsAndCreatures
         {
             foreach (Rigidbody2D rigidBody in affectedRigidbody2Ds)
             {
-                Vector2 forceDirection = (rigidBody.transform.position - _explosionCenterPoint.position).normalized;
-                rigidBody.AddForce(forceDirection * _explosionForce, ForceMode2D.Impulse);
+                Vector2 forceDirection = (rigidBody.transform.position - _centerPoint.position).normalized;
+                rigidBody.AddForce(forceDirection * _force, ForceMode2D.Impulse);
             }
         }
 

@@ -6,8 +6,8 @@ namespace Arsenal.WeaponsProjectiles.ProjectilesBehaviour
 {
     public abstract class ActiveProjectile : MonoBehaviour
     {
-        private LayerMask _hittableByProjectile = Physics2D.AllLayers;                      // Determine what can be damaged by bullet.
-        private WeaponProjectile _currentProjectile = null;                                           // Used to get bullet data.
+        private LayerMask _hittableByProjectile = Physics2D.AllLayers;                  // Determine what can be damaged by bullet.
+        private WeaponProjectile _currentProjectile = null;                             // Used to get bullet data.
         private Vector2 _launchDirection = Vector2.zero;                                // Used to set direction in which bullet will be launched.
         private Vector2 _startFlightPosition = Vector2.zero;                            // Determine from which point bullet will be launched.
         private Rigidbody2D _rigidbody2D = null;                                        // Used to set launch direction.                            
@@ -61,7 +61,7 @@ namespace Arsenal.WeaponsProjectiles.ProjectilesBehaviour
         protected abstract void OnTriggerEnter2D(Collider2D other);
 
 
-        protected void DisableBullet()
+        protected void DisableProjectile()
         {
             gameObject.SetActive(false);
         }
@@ -92,7 +92,7 @@ namespace Arsenal.WeaponsProjectiles.ProjectilesBehaviour
 
             if (flownDistance > _flightRange)
             {
-                DisableBullet();
+                DisableProjectile();
             }
         }
     }

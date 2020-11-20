@@ -34,7 +34,7 @@ namespace Arsenal.WeaponsProjectiles.ProjectilesBehaviour
                     }
                 }
 
-                DisableBullet();
+                DisableProjectile();
             }
         }
     } 
