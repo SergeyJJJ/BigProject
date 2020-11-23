@@ -879,6 +879,14 @@ PrefabInstance:
       propertyPath: _fireButton
       value: 
       objectReference: {fileID: 869973066}
+    - target: {fileID: 979211922, guid: db841216772e4844187962a048cfddbb, type: 3}
+      propertyPath: _currentWeapon
+      value: 
+      objectReference: {fileID: 359795360}
+    - target: {fileID: 2191862117912057930, guid: db841216772e4844187962a048cfddbb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2318357886443214080, guid: db841216772e4844187962a048cfddbb, type: 3}
       propertyPath: _projectilePool
       value: 
@@ -928,9 +936,37 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3428040865852236464, guid: db841216772e4844187962a048cfddbb, type: 3}
+      propertyPath: _bulletData
+      value: 
+      objectReference: {fileID: 11400000, guid: f70586650c9138e4c924228a4db7eec3, type: 2}
+    - target: {fileID: 3428040865852236464, guid: db841216772e4844187962a048cfddbb, type: 3}
+      propertyPath: _inGameSprite
+      value: 
+      objectReference: {fileID: 971730415042980139, guid: 7a98455aa6645014da6459b394488605, type: 3}
+    - target: {fileID: 3428040865852236464, guid: db841216772e4844187962a048cfddbb, type: 3}
       propertyPath: _projectilePool
       value: 
       objectReference: {fileID: 704415214}
+    - target: {fileID: 3428040865852236465, guid: db841216772e4844187962a048cfddbb, type: 3}
+      propertyPath: m_Size.x
+      value: 1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3428040865852236465, guid: db841216772e4844187962a048cfddbb, type: 3}
+      propertyPath: m_Size.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3428040865852236465, guid: db841216772e4844187962a048cfddbb, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 971730415042980139, guid: 7a98455aa6645014da6459b394488605, type: 3}
+    - target: {fileID: 3428040865852236465, guid: db841216772e4844187962a048cfddbb, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5385716406343090940, guid: db841216772e4844187962a048cfddbb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6256377088121115038, guid: db841216772e4844187962a048cfddbb, type: 3}
       propertyPath: _interactButton
       value: 
@@ -951,6 +987,14 @@ PrefabInstance:
       propertyPath: _rightMoveButton
       value: 
       objectReference: {fileID: 588980368}
+    - target: {fileID: 6892103237803652957, guid: db841216772e4844187962a048cfddbb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.051
+      objectReference: {fileID: 0}
+    - target: {fileID: 6892103237803652957, guid: db841216772e4844187962a048cfddbb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.144
+      objectReference: {fileID: 0}
     - target: {fileID: 8702310545741433508, guid: db841216772e4844187962a048cfddbb, type: 3}
       propertyPath: m_Name
       value: BlueSuit

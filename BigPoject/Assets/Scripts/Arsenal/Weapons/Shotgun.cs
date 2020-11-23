@@ -1,5 +1,6 @@
 ﻿using System;
 using Arsenal.WeaponsProjectiles.ProjectilesBehaviour;
+using Arsenal.WeaponsProjectiles.ProjectilesData;
 using GameBehaviour;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -19,6 +20,7 @@ namespace Arsenal.Weapons
         }
 
         [SerializeField] private BulletDirectionBoundaries _bulletDirectionBoundaries;       // Used to define min and max bullet launch direction coordinates.
+        [SerializeField] private Bullet _bulletData = null;                                      // Contains data about bullet that used by Shotgun.
         [SerializeField] private int _bulletsPerShot = 6;                                    // Bullets amount that will be launched per one shot.
 
         private int _currentShotBulletIndex = 0;                                             // Used to get appropriate bullets direction. 
@@ -53,13 +55,13 @@ namespace Arsenal.Weapons
                         
                         while (_currentShotBulletIndex < _bulletsPerShot)
                         {
-                            GameObject bullet = GetProjectile();
+                            GameObject bulletObject = GetProjectile();
                             Vector2 launchDirection = GetLaunchDirection();
-                            InitializeProjectile(bullet, launchDirection.normalized, startLaunchPosition);
-                            RotateBulletToDirection(bullet, launchDirection);
-                            ActiveBullet activeBullet = bullet.GetComponent<ActiveBullet>();
+                            InitializeBullet(bulletObject, _bulletData, launchDirection.normalized, startLaunchPosition);
+                            RotateBulletToDirection(bulletObject, launchDirection);
+                            ActiveBullet activeBullet = bulletObject.GetComponent<ActiveBullet>();
                             activeBullet.RandomizeLifeTimeInScatter(lifeTimeScatter);
-                            LaunchProjectile(bullet);
+                            LaunchProjectile(bulletObject);
                             CallShotEvent();
                             
                             _currentShotBulletIndex++;

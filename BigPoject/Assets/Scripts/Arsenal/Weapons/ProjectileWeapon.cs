@@ -34,14 +34,7 @@ namespace Arsenal.Weapons
             projectile = _projectilePool.GetPooledObject();
             return projectile;
         }
-
-
-        protected void InitializeProjectile(GameObject projectile, Vector2 launchDirection, Vector2 startLaunchPosition)
-        {
-            ActiveProjectile activeProjectile = projectile.GetComponent<ActiveProjectile>();
-            //activeProjectile.Initialize(_projectile, launchDirection, startLaunchPosition);
-        }
-
+        
 
         protected void InitializeRocket(GameObject rocketObject, Rocket rocketData, Vector2 launchDirection, Vector2 startLaunchPosition)
         {

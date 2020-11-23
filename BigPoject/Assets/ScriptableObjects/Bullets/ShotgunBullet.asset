@@ -15,7 +15,7 @@ MonoBehaviour:
   _damage: 18
   _flightRange: 5
   _flightSpeed: 17
-  _flightSprite: {fileID: -5082318553336741150, guid: 0be82e7df2d7aaa42a6eae46e72480eb, type: 3}
+  _flightSprite: {fileID: 8933763132932780156, guid: 7a98455aa6645014da6459b394488605, type: 3}
   _hittableObjets:
     serializedVersion: 2
     m_Bits: 86528

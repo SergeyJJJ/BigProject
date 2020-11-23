@@ -1,7 +1,19 @@
 fileFormatVersion: 2
-guid: 4bd8d698535bd884a96bc37fba68a4a1
+guid: 7a98455aa6645014da6459b394488605
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 4099191518589774541
+    second: Shotgun 1_0
+  - first:
+      213: 971730415042980139
+    second: Shotgun 1_1
+  - first:
+      213: -8563752144803422848
+    second: Shotgun 1_2
+  - first:
+      213: 8933763132932780156
+    second: Shotgun 1_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -41,7 +53,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -113,7 +125,91 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Shotgun 1_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 21
+        width: 29
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dca66dbb7f043e830800000000000000
+      internalID: 4099191518589774541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun 1_1
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 14
+        width: 13
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b29641ef9a74c7d00800000000000000
+      internalID: 971730415042980139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun 1_2
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 8
+        width: 9
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08d90880cc0772980800000000000000
+      internalID: -8563752144803422848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun 1_3
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 9
+        width: 5
+        height: 3
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7070fd7c3a1bfb70800000000000000
+      internalID: 8933763132932780156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
