@@ -880,6 +880,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 869973066}
     - target: {fileID: 2318357886443214080, guid: db841216772e4844187962a048cfddbb, type: 3}
+      propertyPath: _bulletData
+      value: 
+      objectReference: {fileID: 11400000, guid: 7dd5f3963c978754a912a79f8194ff8a, type: 2}
+    - target: {fileID: 2318357886443214080, guid: db841216772e4844187962a048cfddbb, type: 3}
       propertyPath: _projectilePool
       value: 
       objectReference: {fileID: 704415214}

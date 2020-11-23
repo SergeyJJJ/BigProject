@@ -1,3 +1,4 @@
+using Arsenal.WeaponsProjectiles.ProjectilesData;
 using GameBehaviour;
 using UnityEngine;
 
@@ -6,6 +7,8 @@ namespace Arsenal.Weapons
     [RequireComponent((typeof(SpriteRenderer)))]
     public class RocketLauncher : ProjectileWeapon
     {
+        [SerializeField] private Rocket _rocketData = null;            // Contains data about bullet that used by RocketLauncher.
+        
         private void Awake()
         {
             WeaponSpriteRenderer = gameObject.GetComponent<SpriteRenderer>();
@@ -30,11 +33,11 @@ namespace Arsenal.Weapons
                     {
                         NextShootTimer = TimeBetweenShoots;
 
-                        GameObject rocket = GetProjectile();
+                        GameObject rocketObject = GetProjectile();
                         Vector2 launchDirection = GetLaunchDirection();
-                        InitializeProjectile(rocket, launchDirection, FirePoint.transform.position);
-                        RotateBullet(rocket);
-                        LaunchProjectile(rocket);
+                        InitializeRocket(rocketObject, _rocketData, launchDirection, FirePoint.transform.position);
+                        RotateBullet(rocketObject);
+                        LaunchProjectile(rocketObject);
                         //CallShotEvent();
                         DecrementBulletsCount();
                     }

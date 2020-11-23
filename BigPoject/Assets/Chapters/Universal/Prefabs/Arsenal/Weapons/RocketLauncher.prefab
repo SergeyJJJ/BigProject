@@ -134,9 +134,9 @@ MonoBehaviour:
   _inGameSprite: {fileID: -9133065350520741325, guid: 26b7ade7ac48c2a44a73e4a69d2bd8f4, type: 3}
   _maxBulletsAmount: 13
   _firePoint: {fileID: 6574282937447096814}
-  _projectile: {fileID: 11400000, guid: 22480a61178a5f14296fb8cd6c60d81a, type: 2}
   _fireRate: 100
   _projectilePool: {fileID: 0}
+  _rocketData: {fileID: 11400000, guid: 22480a61178a5f14296fb8cd6c60d81a, type: 2}
 --- !u!1 &6574282937447096814
 GameObject:
   m_ObjectHideFlags: 0

@@ -43,12 +43,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 063758c908f0a8144ac09a9ef6719f5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _explosionCenterPoint: {fileID: 4832667856098310334}
-  _explosionForce: 9
+  _force: 11
+  _radius: 0.8
+  _centerPoint: {fileID: 4832667856098310334}
   _torqueLimits:
     minTorque: -75
     maxTorque: 75
-  _explosionRadius: 1.5
   _affectedByExplosion:
     serializedVersion: 2
     m_Bits: 32768

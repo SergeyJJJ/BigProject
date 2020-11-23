@@ -1,4 +1,5 @@
-﻿using GameBehaviour;
+﻿using Arsenal.WeaponsProjectiles.ProjectilesData;
+using GameBehaviour;
 using UnityEngine;
 
 namespace Arsenal.Weapons
@@ -6,6 +7,8 @@ namespace Arsenal.Weapons
     [RequireComponent((typeof(SpriteRenderer)))]
     public class AutoRifle : ProjectileWeapon
     {
+        [SerializeField] private Bullet _bulletData = null;            // Contains data about bullet that used by AutoRifle.
+    
         private void Awake()
         {
             WeaponSpriteRenderer = gameObject.GetComponent<SpriteRenderer>();
@@ -30,11 +33,11 @@ namespace Arsenal.Weapons
                     {
                         NextShootTimer = TimeBetweenShoots;
 
-                        GameObject bullet = GetProjectile();
+                        GameObject bulletObject = GetProjectile();
                         Vector2 launchDirection = GetLaunchDirection();
-                        InitializeProjectile(bullet, launchDirection, FirePoint.transform.position);
-                        RotateBullet(bullet);
-                        LaunchProjectile(bullet);
+                        InitializeBullet(bulletObject, _bulletData, launchDirection, FirePoint.transform.position);
+                        RotateBullet(bulletObject);
+                        LaunchProjectile(bulletObject);
                         CallShotEvent();
                         DecrementBulletsCount();
                     }

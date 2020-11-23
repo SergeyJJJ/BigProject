@@ -7,7 +7,6 @@ namespace Arsenal.WeaponsProjectiles.ProjectilesBehaviour
     public abstract class ActiveProjectile : MonoBehaviour
     {
         private LayerMask _hittableByProjectile = Physics2D.AllLayers;                  // Determine what can be damaged by bullet.
-        private WeaponProjectile _currentProjectile = null;                             // Used to get bullet data.
         private Vector2 _launchDirection = Vector2.zero;                                // Used to set direction in which bullet will be launched.
         private Vector2 _startFlightPosition = Vector2.zero;                            // Determine from which point bullet will be launched.
         private Rigidbody2D _rigidbody2D = null;                                        // Used to set launch direction.                            
@@ -15,28 +14,8 @@ namespace Arsenal.WeaponsProjectiles.ProjectilesBehaviour
         private float _flightRange = 0;                                                 // Used to determine when bullet will be disabled.
 
         #region Properties
-
-        /*
-
-        protected Vector2 LaunchDirection
-        {
-            get => _launchDirection;
-            set => _launchDirection = value;
-        }
-
-        protected Vector2 StartFlightPosition
-        {
-            get => _startFlightPosition;
-            set => _startFlightPosition = value;
-        }
-
-        protected Rigidbody2D RigidbodyComponent => _rigidbody2D;
-
-        protected SpriteRenderer SpriteRendererComponent => _spriteRenderer;
-*/
-        protected LayerMask HittableByProjectile => _hittableByProjectile;
         
-        protected WeaponProjectile CurrentProjectile => _currentProjectile;
+        protected LayerMask HittableByProjectile => _hittableByProjectile;
         
         protected float FlightRange
         {
@@ -48,13 +27,24 @@ namespace Arsenal.WeaponsProjectiles.ProjectilesBehaviour
 
         public void Initialize(WeaponProjectile projectile, Vector2 launchDirection, Vector2 startLaunchPosition)
         {
-            _currentProjectile = projectile;
             _hittableByProjectile = projectile.HittableObjects;
             transform.position = startLaunchPosition;
             _startFlightPosition = startLaunchPosition;
-            _launchDirection = new Vector2(launchDirection.x, launchDirection.y) * _currentProjectile.FlightSpeed;
-            _flightRange = _currentProjectile.FlightRange;
-            _spriteRenderer.sprite = _currentProjectile.FlightSprite;
+            _launchDirection = new Vector2(launchDirection.x, launchDirection.y) * projectile.FlightSpeed;
+            _flightRange = projectile.FlightRange;
+            _spriteRenderer.sprite = projectile.FlightSprite;
+        }
+
+
+        public virtual void InitializeRocket(Rocket rocket, Vector2 launchDirection, Vector2 startLaunchPosition)
+        {
+            
+        }
+
+
+        public virtual void InitializeBullet(Bullet bullet, Vector2 launchDirection, Vector2 startLaunchPosition)
+        {
+            
         }
 
 
