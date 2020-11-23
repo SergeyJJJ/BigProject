@@ -57,7 +57,7 @@ namespace Arsenal.Weapons
         }
 
 
-    protected void LaunchProjectile(GameObject projectile)
+        protected void LaunchProjectile(GameObject projectile)
         {
             projectile.SetActive(true);
         }

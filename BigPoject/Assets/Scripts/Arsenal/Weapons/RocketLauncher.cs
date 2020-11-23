@@ -36,7 +36,7 @@ namespace Arsenal.Weapons
                         GameObject rocketObject = GetProjectile();
                         Vector2 launchDirection = GetLaunchDirection();
                         InitializeRocket(rocketObject, _rocketData, launchDirection, FirePoint.transform.position);
-                        RotateBullet(rocketObject);
+                        RotateRocket(rocketObject);
                         LaunchProjectile(rocketObject);
                         //CallShotEvent();
                         DecrementBulletsCount();
@@ -48,15 +48,20 @@ namespace Arsenal.Weapons
         }
 
 
-        private void RotateBullet(GameObject bullet)
+        private void RotateRocket(GameObject rocket)
         {
-            bullet.transform.rotation = Quaternion.identity;
+            rocket.transform.rotation = Quaternion.identity;
+            
+            if (transform.right.x < 0)
+            {
+                rocket.transform.Rotate(0, 180, 0);
+            }
         }
         
         
         protected override void CallShotEvent()
         {
-            EventSystem.TriggerEvent("OnRifleShot");
+            //EventSystem.TriggerEvent("OnRifleShot");
         }
     }
 }
