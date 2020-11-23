@@ -50,7 +50,7 @@ namespace Arsenal.Weapons
 
         private void RotateRocket(GameObject rocket)
         {
-            rocket.transform.rotation = Quaternion.identity;
+            SetProjectileRotationToIdentity(rocket);
             
             if (transform.right.x < 0)
             {

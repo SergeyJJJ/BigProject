@@ -74,6 +74,12 @@ namespace Arsenal.Weapons
             const float secondsPerMinute = 60;
             return secondsPerMinute / _fireRate;
         }
+
+
+        protected void SetProjectileRotationToIdentity(GameObject projectile)
+        {
+            projectile.transform.rotation = Quaternion.identity;
+        }
     
 
         protected bool IsTimeForShootCome()
