@@ -25,7 +25,7 @@ namespace Arsenal.WeaponsProjectiles.ProjectilesBehaviour
 
         #endregion Properties
 
-        public void Initialize(WeaponProjectile projectile, Vector2 launchDirection, Vector2 startLaunchPosition)
+        public void Initialize(Projectile projectile, Vector2 launchDirection, Vector2 startLaunchPosition)
         {
             _hittableByProjectile = projectile.HittableObjects;
             transform.position = startLaunchPosition;

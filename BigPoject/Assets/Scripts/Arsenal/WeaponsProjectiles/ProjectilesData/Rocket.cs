@@ -3,7 +3,7 @@ using UnityEngine;
 namespace Arsenal.WeaponsProjectiles.ProjectilesData
 {
     [CreateAssetMenu(menuName = "WeaponProjectile/Rocket", fileName = "Rocket")]
-    public class Rocket : WeaponProjectile
+    public class Rocket : Projectile
     {
         public struct TorqueLimits
         {
@@ -13,7 +13,6 @@ namespace Arsenal.WeaponsProjectiles.ProjectilesData
         
         [SerializeField] private float _explosionRadius = 0f;
         [SerializeField] private float _explosionForce = 0;
-        [SerializeField] private Transform _explosionCenterPoint = null;
         [SerializeField] private TorqueLimits _torqueLimits = default(TorqueLimits);
 
         #region Properties
@@ -21,8 +20,6 @@ namespace Arsenal.WeaponsProjectiles.ProjectilesData
         public float ExplosionRadius => _explosionRadius;
 
         public float ExplosionForce => _explosionForce;
-
-        public Transform ExplosionCenterPoint => _explosionCenterPoint;
 
         public TorqueLimits ExplosionTorqueLimits => _torqueLimits;
 

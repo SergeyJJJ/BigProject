@@ -145,6 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dc825b9efa023e418351b0b19ccb116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _explosion: {fileID: -4005889422458488179}
 --- !u!114 &-4005889422458488179
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -157,12 +158,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 063758c908f0a8144ac09a9ef6719f5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _explosionCenterPoint: {fileID: 0}
-  _explosionForce: 0
+  _force: 0
+  _radius: 0
+  _centerPoint: {fileID: 0}
   _torqueLimits:
     minTorque: 0
     maxTorque: 0
-  _explosionRadius: 0
   _affectedByExplosion:
     serializedVersion: 2
     m_Bits: 4294967295

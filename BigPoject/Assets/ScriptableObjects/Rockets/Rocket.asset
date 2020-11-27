@@ -18,5 +18,6 @@ MonoBehaviour:
   _flightSprite: {fileID: 7113931014328197031, guid: 26b7ade7ac48c2a44a73e4a69d2bd8f4, type: 3}
   _hittableObjets:
     serializedVersion: 2
-    m_Bits: 86528
+    m_Bits: 119296
   _explosionRadius: 2
+  _explosionForce: 5

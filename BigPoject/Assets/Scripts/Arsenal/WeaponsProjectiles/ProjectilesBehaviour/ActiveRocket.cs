@@ -21,7 +21,9 @@ namespace Arsenal.WeaponsProjectiles.ProjectilesBehaviour
         {
             if (IsObjectHittableByProjectile(other.gameObject))
             {
-                //_explosion.Initialize();
+                _explosion.Initialize(_currentRocket);
+                _explosion.Explode();
+                DisableProjectile();
             }
         }
 

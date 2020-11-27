@@ -3,7 +3,7 @@
 namespace Arsenal.WeaponsProjectiles.ProjectilesData
 {
     [CreateAssetMenu(menuName = "WeaponProjectile/Bullet", fileName = "Bullet")]
-    public class Bullet : WeaponProjectile
+    public class Bullet : Projectile
     {
         
     }
