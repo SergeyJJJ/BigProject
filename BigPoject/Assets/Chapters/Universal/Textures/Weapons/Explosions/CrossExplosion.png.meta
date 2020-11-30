@@ -1,0 +1,756 @@
+fileFormatVersion: 2
+guid: 2301db6ea199afb45b0b9dbc4d7f4c45
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2732864192098402921
+    second: CrossExplosion_0
+  - first:
+      213: 1283397521061386263
+    second: CrossExplosion_1
+  - first:
+      213: 7309370304587707038
+    second: CrossExplosion_2
+  - first:
+      213: 1696562949765443722
+    second: CrossExplosion_3
+  - first:
+      213: -3887694292647651991
+    second: CrossExplosion_4
+  - first:
+      213: -3852547490206051065
+    second: CrossExplosion_5
+  - first:
+      213: -2450301462394435452
+    second: CrossExplosion_6
+  - first:
+      213: -6465416099198078622
+    second: CrossExplosion_7
+  - first:
+      213: 5216005712277278045
+    second: CrossExplosion_8
+  - first:
+      213: -6116846898059273164
+    second: CrossExplosion_9
+  - first:
+      213: 3656349830455796255
+    second: CrossExplosion_10
+  - first:
+      213: -5636337871554548465
+    second: CrossExplosion_11
+  - first:
+      213: 6081879914882987801
+    second: CrossExplosion_12
+  - first:
+      213: 1157286218672270426
+    second: CrossExplosion_13
+  - first:
+      213: -3352498737243040361
+    second: CrossExplosion_14
+  - first:
+      213: 799930386639294059
+    second: CrossExplosion_15
+  - first:
+      213: 2758892783636524613
+    second: CrossExplosion_16
+  - first:
+      213: -8059072221014477193
+    second: CrossExplosion_17
+  - first:
+      213: -5468446471392296193
+    second: CrossExplosion_18
+  - first:
+      213: -3258457690968618070
+    second: CrossExplosion_19
+  - first:
+      213: 8935501389987476015
+    second: CrossExplosion_20
+  - first:
+      213: -4808910837241409469
+    second: CrossExplosion_21
+  - first:
+      213: -8362789826275127301
+    second: CrossExplosion_22
+  - first:
+      213: -7893922800748223245
+    second: CrossExplosion_23
+  - first:
+      213: -109969736300730141
+    second: CrossExplosion_24
+  - first:
+      213: 654282453977134364
+    second: CrossExplosion_25
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 20
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: CrossExplosion_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 272
+        width: 89
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 962096dd0851de520800000000000000
+      internalID: 2732864192098402921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrossExplosion_1
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 272
+        width: 89
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7181b74ee3b8fc110800000000000000
+      internalID: 1283397521061386263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrossExplosion_2
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 272
+        width: 89
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e923db8b099107560800000000000000
+      internalID: 7309370304587707038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrossExplosion_3
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 272
+        width: 89
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a80bbd793076b8710800000000000000
+      internalID: 1696562949765443722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrossExplosion_4
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 272
+        width: 89
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9655c6383a22c0ac0800000000000000
+      internalID: -3887694292647651991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrossExplosion_5
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 10
+        width: 47
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70512f52870098ac0800000000000000
+      internalID: -3852547490206051065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrossExplosion_6
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 120
+        width: 57
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4880c5d5dc7cefdd0800000000000000
+      internalID: -2450301462394435452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrossExplosion_7
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 180
+        width: 89
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 261f432205a3646a0800000000000000
+      internalID: -6465416099198078622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrossExplosion_8
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 10
+        width: 47
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5d02ba4f89f26840800000000000000
+      internalID: 5216005712277278045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrossExplosion_9
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 60
+        width: 57
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43c1ab797289c1ba0800000000000000
+      internalID: -6116846898059273164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrossExplosion_10
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 120
+        width: 57
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f12a0e27cc6fdb230800000000000000
+      internalID: 3656349830455796255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrossExplosion_11
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 10
+        width: 47
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0de8e38194b7c1b0800000000000000
+      internalID: -5636337871554548465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrossExplosion_12
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 60
+        width: 57
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 917fe253f8d276450800000000000000
+      internalID: 6081879914882987801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrossExplosion_13
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 120
+        width: 57
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5c6a6f2fa18f0010800000000000000
+      internalID: 1157286218672270426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrossExplosion_14
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 10
+        width: 47
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 795dea829288971d0800000000000000
+      internalID: -3352498737243040361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrossExplosion_15
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 60
+        width: 57
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6e0dacc27ce91b00800000000000000
+      internalID: 799930386639294059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrossExplosion_16
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 180
+        width: 89
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54e2b069e5e894620800000000000000
+      internalID: 2758892783636524613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrossExplosion_17
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 60
+        width: 57
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 776b637838c682090800000000000000
+      internalID: -8059072221014477193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrossExplosion_18
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 120
+        width: 57
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff28c6748ec2c14b0800000000000000
+      internalID: -5468446471392296193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrossExplosion_19
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 10
+        width: 47
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aab0d2e7ef1a7c2d0800000000000000
+      internalID: -3258457690968618070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrossExplosion_20
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 180
+        width: 89
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2276300c27410c70800000000000000
+      internalID: 8935501389987476015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrossExplosion_21
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 180
+        width: 89
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34013bd7211534db0800000000000000
+      internalID: -4808910837241409469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrossExplosion_22
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 180
+        width: 89
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bffce9106f661fb80800000000000000
+      internalID: -8362789826275127301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrossExplosion_23
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 60
+        width: 57
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f4ab095907237290800000000000000
+      internalID: -7893922800748223245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrossExplosion_24
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 120
+        width: 57
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e860c38b1f497ef0800000000000000
+      internalID: -109969736300730141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrossExplosion_25
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 10
+        width: 47
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c15f314ec6a741900800000000000000
+      internalID: 654282453977134364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

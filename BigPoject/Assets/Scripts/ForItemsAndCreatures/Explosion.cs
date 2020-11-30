@@ -23,6 +23,7 @@ namespace ForItemsAndCreatures
         [SerializeField] private Transform _centerPoint = null;                        // Explosion center point. Used as a point from which force will be applied.
         [SerializeField] private TorqueLimits _torqueLimits = default(TorqueLimits);   // Minimum and maximum torque of pieces.
         [SerializeField] private LayerMask _affectedByExplosion = Physics2D.AllLayers; // What can be affect by explosion.
+        [SerializeField] private GameObject _explosionVisualEffects = null;            // Used to play explosion animation if it is exist. 
 
         public void Initialize(LayerMask affectedByExplosion, float damage, float force = 0f, float radius = 0f,
                                Transform centerPoint = null, Rocket.TorqueLimits torqueLimits = default(Rocket.TorqueLimits))
@@ -54,6 +55,11 @@ namespace ForItemsAndCreatures
         // and rotating objects, available in some zone(radius).
         public void Explode()
         {
+            if (_explosionVisualEffects != null)
+            {
+                Instantiate(_explosionVisualEffects, transform.position, Quaternion.identity);
+            }
+            
             // Get all objects that can be affected by explosion.
             Collider2D[] affectedColliders = GetObjectsCollidersInExplosionRadius();
             
