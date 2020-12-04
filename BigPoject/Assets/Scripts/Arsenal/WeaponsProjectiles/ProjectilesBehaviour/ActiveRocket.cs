@@ -21,16 +21,28 @@ namespace Arsenal.WeaponsProjectiles.ProjectilesBehaviour
         {
             if (IsObjectHittableByProjectile(other.gameObject))
             {
-                _explosion.Initialize(_currentRocket);
-                _explosion.Explode();
+                ExplodeRocket();
                 DisableProjectile();
             }
         }
 
 
-        private void GetDamageableObjectsColliders()
+        private void Update()
         {
-            
+            float flownDistance = Mathf.Abs(transform.position.x - StartFlightPosition.x);
+
+            if (flownDistance > FlightRange)
+            {
+                ExplodeRocket();
+                DisableProjectile();
+            }
+        }
+
+
+        private void ExplodeRocket()
+        {
+            _explosion.Initialize(_currentRocket);
+            _explosion.Explode();
         }
     }
 }

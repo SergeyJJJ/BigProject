@@ -168,4 +168,4 @@ MonoBehaviour:
   _affectedByExplosion:
     serializedVersion: 2
     m_Bits: 4294967295
-  _explosionVisualEffects: {fileID: 2886049975630067749, guid: 8cccdb2bf6491b24ab26625d56f5a247, type: 3}
+  _explosionVisualEffects: {fileID: 7091876951726592810, guid: de3cf8f2367abeb44b43f71359d07c1f, type: 3}

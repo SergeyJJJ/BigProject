@@ -16,7 +16,9 @@ namespace Arsenal.WeaponsProjectiles.ProjectilesBehaviour
         #region Properties
         
         protected LayerMask HittableByProjectile => _hittableByProjectile;
-        
+
+        public Vector2 StartFlightPosition => _startFlightPosition;
+
         protected float FlightRange
         {
             get => _flightRange;
@@ -73,17 +75,6 @@ namespace Arsenal.WeaponsProjectiles.ProjectilesBehaviour
         private void OnEnable()
         {
             _rigidbody2D.velocity = _launchDirection;
-        }
-
-
-        private void Update()
-        {
-            float flownDistance = Mathf.Abs(transform.position.x - _startFlightPosition.x);
-
-            if (flownDistance > _flightRange)
-            {
-                DisableProjectile();
-            }
         }
     }
 }

@@ -47,5 +47,16 @@ namespace Arsenal.WeaponsProjectiles.ProjectilesBehaviour
                 DisableProjectile();
             }
         }
+        
+        
+        private void Update()
+        {
+            float flownDistance = Mathf.Abs(transform.position.x - StartFlightPosition.x);
+
+            if (flownDistance > FlightRange)
+            {
+                DisableProjectile();
+            }
+        }
     } 
 }

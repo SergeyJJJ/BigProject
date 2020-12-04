@@ -2061,6 +2061,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7091876951726592804, guid: de3cf8f2367abeb44b43f71359d07c1f, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7091876951726592805, guid: de3cf8f2367abeb44b43f71359d07c1f, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -2071,7 +2075,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7091876951726592805, guid: de3cf8f2367abeb44b43f71359d07c1f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 19.86
+      value: 19.73
       objectReference: {fileID: 0}
     - target: {fileID: 7091876951726592805, guid: de3cf8f2367abeb44b43f71359d07c1f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2108,6 +2112,10 @@ PrefabInstance:
     - target: {fileID: 7091876951726592810, guid: de3cf8f2367abeb44b43f71359d07c1f, type: 3}
       propertyPath: m_Name
       value: MassiveExplosion
+      objectReference: {fileID: 0}
+    - target: {fileID: 7091876951726592810, guid: de3cf8f2367abeb44b43f71359d07c1f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de3cf8f2367abeb44b43f71359d07c1f, type: 3}
@@ -3049,9 +3057,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6060545512419030869, guid: c1950a43f26ceac4fa5f123a4295f0c0, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6060545512419030875, guid: c1950a43f26ceac4fa5f123a4295f0c0, type: 3}
       propertyPath: m_Name
       value: CrossExplosion
+      objectReference: {fileID: 0}
+    - target: {fileID: 6060545512419030875, guid: c1950a43f26ceac4fa5f123a4295f0c0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1950a43f26ceac4fa5f123a4295f0c0, type: 3}
@@ -3170,6 +3186,10 @@ PrefabInstance:
     - target: {fileID: 2428745106696246844, guid: 81538fde2908e914fb8e426ae060541d, type: 3}
       propertyPath: m_Name
       value: CrossExplosionDiagonal
+      objectReference: {fileID: 0}
+    - target: {fileID: 2428745106696246844, guid: 81538fde2908e914fb8e426ae060541d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81538fde2908e914fb8e426ae060541d, type: 3}
@@ -3546,6 +3566,10 @@ PrefabInstance:
     - target: {fileID: 1620574076680039681, guid: 657b52aa7dcaf4244a3186bbcf97c88b, type: 3}
       propertyPath: m_Name
       value: Rocket
+      objectReference: {fileID: 0}
+    - target: {fileID: 1620574076680039681, guid: 657b52aa7dcaf4244a3186bbcf97c88b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 657b52aa7dcaf4244a3186bbcf97c88b, type: 3}
